@@ -7,7 +7,7 @@ public class Exe001 {
 	}
 
 	private static void m1() {
-
+		System.out.println("Exe001.m1()");
 	}
 
 }
