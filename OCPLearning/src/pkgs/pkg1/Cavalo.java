@@ -4,6 +4,11 @@ import pkgs.pkg2.LetraGrega;
 import pkgs.pkg2.Omega;
 
 public class Cavalo extends Animal{
+
 	@Override
-	void locomover(LetraGrega p){}
+	void alimentar(){}
+
+	@Override
+	LetraGrega locomover(){return null;}
+
 }

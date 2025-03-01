@@ -4,5 +4,6 @@ import pkgs.pkg2.LetraGrega;
 import pkgs.pkg2.Omega;
 
 public class Animal{
-	void locomover(LetraGrega p){}
+	void locomover(){}
+	LetraGrega alimentar(){return null;}
 }
