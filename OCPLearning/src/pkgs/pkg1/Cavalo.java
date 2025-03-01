@@ -9,6 +9,6 @@ public class Cavalo extends Animal{
 	void alimentar(){}
 
 	@Override
-	LetraGrega locomover(){return null;}
+	void locomover(){}
 
 }
