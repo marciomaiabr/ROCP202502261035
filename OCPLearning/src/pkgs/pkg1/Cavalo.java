@@ -8,7 +8,4 @@ public class Cavalo extends Animal{
 	@Override
 	void locomover(){}
 
-	@Override
-	int alimentar(){return 0;}
-
 }

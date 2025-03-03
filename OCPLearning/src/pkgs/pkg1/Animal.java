@@ -5,5 +5,4 @@ import pkgs.pkg2.Omega;
 
 public class Animal{
 	void locomover(){}
-	int alimentar(){return 0;}
 }
