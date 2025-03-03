@@ -6,6 +6,6 @@ import pkgs.pkg3.ExceptionAA;
 
 public class Animal{
 
-	void locomover() throws ExceptionAA {}
+	void locomover() {}
 
 }
