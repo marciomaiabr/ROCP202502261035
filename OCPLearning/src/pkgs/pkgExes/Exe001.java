@@ -2,6 +2,12 @@ package pkgs.pkgExes;
 
 public class Exe001 {
 
+	private void mqqc() {}
+
+	private void usa_mqqc() {
+		mqqc();
+	}
+
 	public static void main(String[] args) {
 		m1();
 	}
