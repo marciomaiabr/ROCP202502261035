@@ -1,11 +1,15 @@
 package pkgs.pkgExes;
 
-public class Exe001 {
+class Exe002 {
 
 	private void mqqc() {}
 
-	private void usa_mqqc() {
-		Exe001 o = new Exe001();
+}
+
+public class Exe001 {
+
+	public void usa_mqqc() {
+		Exe002 o = new Exe002();
 		o.mqqc();
 	}
 
