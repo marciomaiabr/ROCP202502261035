@@ -8,6 +8,6 @@ import pkgs.pkg3.ExceptionAAA;
 public class Cavalo extends Animal{
 
 	@Override
-	void locomover() throws ExceptionAAA {}
+	void locomover()  {}
 
 }
