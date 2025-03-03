@@ -1,7 +1,7 @@
 package pkgs.pkg1;
 
-public class Animal{
+public class Animal {
 
-	void locomover() {}
+	public void andar(){System.out.println("Animal.andar()");}
 
 }
