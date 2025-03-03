@@ -10,6 +10,6 @@ import pkgs.pkg3.ExceptionRTA;
 public class Cavalo extends Animal{
 
 	@Override
-	void locomover() {}
+	static void locomover() {}
 
 }
