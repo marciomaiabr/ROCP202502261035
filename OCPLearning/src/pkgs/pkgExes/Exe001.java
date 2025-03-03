@@ -5,7 +5,8 @@ public class Exe001 {
 	private void mqqc() {}
 
 	private void usa_mqqc() {
-		mqqc();
+		Exe001 o = new Exe001();
+		o.mqqc();
 	}
 
 	public static void main(String[] args) {
