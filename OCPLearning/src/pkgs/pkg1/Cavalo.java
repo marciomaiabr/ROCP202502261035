@@ -6,9 +6,9 @@ import pkgs.pkg2.Omega;
 public class Cavalo extends Animal{
 
 	@Override
-	byte alimentar(){return 0;}
+	void locomover(){}
 
 	@Override
-	void locomover(){}
+	int alimentar(){return 0;}
 
 }
