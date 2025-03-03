@@ -6,7 +6,7 @@ class Exe002 {
 
 }
 
-public class Exe001 {
+public class Exe001 extends Exe002 {
 
 	public void usa_mqqc() {
 		Exe002 o = new Exe002();
