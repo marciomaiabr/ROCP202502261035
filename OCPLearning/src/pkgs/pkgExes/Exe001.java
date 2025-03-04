@@ -12,7 +12,7 @@ interface I12 extends I1{
 	default void mtc1() {System.out.println("I12.mtc1()");};
 }
 
-abstract class C1 {
+abstract class C1 implements I11 , I12 {
 
 }
 
