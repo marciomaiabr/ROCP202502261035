@@ -12,8 +12,8 @@ interface I12 extends I1{
 	default void mtc1() {System.out.println("I12.mtc1()");};
 }
 
-interface I11I12 extends I11 , I12 {
-	default void mtc1() { I11.super.mtc1(); };
+class C1 {
+
 }
 
 public class Exe001 {
