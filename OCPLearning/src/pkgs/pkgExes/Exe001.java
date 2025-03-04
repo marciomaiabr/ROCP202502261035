@@ -13,7 +13,7 @@ interface I12 extends I1{
 }
 
 abstract class C1 implements I11 , I12 {
-	public void mtc1() { I12.super.mtc1(); }
+	public void mtc1() {System.out.println("C1.mtc1()");};
 }
 
 public class Exe001 {
