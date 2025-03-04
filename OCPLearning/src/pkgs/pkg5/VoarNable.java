@@ -1,5 +1,5 @@
 package pkgs.pkg5;
 
-public interface VoarNable {
+public interface VoarNable extends MoverSeNable {
 
 }
