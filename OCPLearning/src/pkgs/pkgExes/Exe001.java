@@ -13,7 +13,7 @@ interface I12 extends I1{
 }
 
 interface I11I12 extends I11 , I12 {
-	void mtc1();
+	default void mtc1() {System.out.println("I11I12.mtc1()");};
 }
 
 public class Exe001 {
