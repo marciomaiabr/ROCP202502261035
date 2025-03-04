@@ -4,7 +4,4 @@ import pkgs.pkg1.Cavalo;
 
 public class Ponei extends Cavalo {
 
-	@Override
-	public void andar(){System.out.println("Ponei.andar()");}
-
 }

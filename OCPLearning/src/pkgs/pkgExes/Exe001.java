@@ -12,8 +12,6 @@ public class Exe001 {
 
 	private static void m1() {
 		System.out.println("Exe001.m1()");
-		Animal o = new Ponei();
-		o.andar();
 	}
 
 }
