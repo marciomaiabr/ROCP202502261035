@@ -1,8 +1,20 @@
 package pkgs.pkgExes;
 
-import pkgs.pkg1.Animal;
-import pkgs.pkg1.Cavalo;
-import pkgs.pkg1.pkg11.Ponei;
+interface I1{
+	void mtc1();
+}
+
+interface I11 extends I1{
+	default void mtc1() {System.out.println("I11.mtc1()");};
+}
+
+interface I12 extends I1{
+	default void mtc1() {System.out.println("I12.mtc1()");};
+}
+
+interface I11I12 extends I11 , I12 {
+
+}
 
 public class Exe001 {
 
