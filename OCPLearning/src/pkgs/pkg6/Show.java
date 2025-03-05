@@ -17,6 +17,9 @@ public class Show {
 		return availableSeats.remove(seat);
 	}
 
-	public static void ticketAgentBooks(String set) {}
+	public static void ticketAgentBooks(String set) {
+		Show show = new Show();
+		System.out.println(show.bookSeat(set));
+	}
 
 }
