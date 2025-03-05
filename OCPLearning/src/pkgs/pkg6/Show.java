@@ -5,9 +5,14 @@ import java.util.Set;
 
 public class Show {
 
+	private static final Show INSTANCE = new Show();
 	private Set<String> availableSeats;
 
-	public Show() {
+	public static Show getInstance() {
+		return INSTANCE;
+	}
+
+	private Show() {
 		availableSeats = new HashSet<String>();
 		availableSeats.add("1A");
 		availableSeats.add("1B");
@@ -18,8 +23,7 @@ public class Show {
 	}
 
 	public static void ticketAgentBooks(String set) {
-		Show show = new Show();
-		System.out.println(show.bookSeat(set));
+		System.out.println(INSTANCE.bookSeat(set));
 	}
 
 }
