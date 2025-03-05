@@ -3,18 +3,11 @@ package pkgs.pkg6;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Show {
-
-	private static Show INSTANCE;
+public enum ShowEnum {
+	INSTANCE;
 	private Set<String> availableSeats;
 
-	public static Show getInstance() {
-		if(INSTANCE == null)
-			INSTANCE = new Show();
-		return INSTANCE;
-	}
-
-	private Show() {
+	private ShowEnum() {
 		availableSeats = new HashSet<String>();
 		availableSeats.add("1A");
 		availableSeats.add("1B");
@@ -25,7 +18,7 @@ public class Show {
 	}
 
 	public static void ticketAgentBooks(String set) {
-		Show show = Show.getInstance();
+		ShowEnum show = ShowEnum.INSTANCE;
 		System.out.println(show.bookSeat(set));
 	}
 
