@@ -5,10 +5,12 @@ import java.util.Set;
 
 public class Show {
 
-	private static final Show INSTANCE = new Show();
+	private static Show INSTANCE;
 	private Set<String> availableSeats;
 
 	public static Show getInstance() {
+		if(INSTANCE == null)
+			INSTANCE = new Show();
 		return INSTANCE;
 	}
 
