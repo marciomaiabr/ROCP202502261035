@@ -23,7 +23,8 @@ public class Show {
 	}
 
 	public static void ticketAgentBooks(String set) {
-		System.out.println(INSTANCE.bookSeat(set));
+		Show show = Show.getInstance();
+		System.out.println(show.bookSeat(set));
 	}
 
 }
