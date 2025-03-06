@@ -12,3 +12,9 @@ public class Exe001 {
 	}
 
 }
+
+/*
+ao executar o metodo statico de uma classe
+PRIMEIRO sao executados os blocos staticos dos pais
+depois o da classe q contem o metodo a ser executado
+*/
