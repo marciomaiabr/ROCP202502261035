@@ -10,6 +10,6 @@ public class Animal {
 	static {System.out.println("Animal.sb3");}
 	{System.out.println("Animal.ib3");}
 	public Animal(int i) {System.out.println("Animal(int i)");}
-	public void sm() {System.out.println("Animal.sm()");}
-	public static void im() {System.out.println("Animal.im()");}
+	public static void sm() {System.out.println("Animal.sm()");}
+	public void im() {System.out.println("Animal.im()");}
 }
