@@ -8,13 +8,16 @@ public class Exe001 {
 
 	private static void m1() {
 		System.out.println("Exe001.m1()");
-		pkgs.pkg1.Cavalo.sm();
+		try {
+			Class.forName("pkgs.pkg1.Animal");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
 
 /*
-ao executar o metodo statico de uma classe
-PRIMEIRO sao executados os blocos staticos dos pais
-depois o da classe q contem o metodo a ser executado
+ao carregar de uma classe SEM supertype
+1 sao executados os blocos staticos em sequencia conforme ordem que estao escritos
 */
