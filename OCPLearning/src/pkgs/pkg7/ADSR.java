@@ -8,7 +8,7 @@ public final class ADSR {
 
 	public ADSR(StringBuilder name, int attack, int decay) {
 		super();
-		this.name = name;
+		this.name = new StringBuilder(name);
 		this.attack = attack;
 		this.decay = decay;
 	}
