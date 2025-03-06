@@ -20,5 +20,4 @@ public final class ADSR {
 	public ADSR getADSR() {
 		return this;
 	}
-
 }
