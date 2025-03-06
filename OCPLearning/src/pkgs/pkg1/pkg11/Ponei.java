@@ -10,6 +10,6 @@ public class Ponei extends pkgs.pkg1.Cavalo {
 	static {System.out.println("Ponei.sb3");}
 	{System.out.println("Ponei.ib3");}
 	public Ponei(int i) {System.out.println("Ponei(int i)");}
-	public static void sm() {System.out.println("Ponei.sm()");}
+	public void sm() {System.out.println("Ponei.sm()");}
 	public static void im() {System.out.println("Ponei.im()");}
 }
