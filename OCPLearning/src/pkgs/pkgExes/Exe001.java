@@ -18,6 +18,5 @@ public class Exe001 {
 }
 
 /*
-ao carregar de uma classe SEM supertype
-1 sao executados os blocos staticos em sequencia conforme ordem que estao escritos
+blocos staticos em classe sem supertype sao executados em sequencia conforme ordem que estao escritos
 */
