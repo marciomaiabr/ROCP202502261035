@@ -11,5 +11,7 @@ public class Ponei extends pkgs.pkg1.Cavalo {
 	{System.out.println("Ponei.ib3");}
 	public Ponei(int i) {System.out.println("Ponei(int i)");}
 	public static void sm() {System.out.println("Ponei.sm()");}
+	public static void smPonei() {System.out.println("Ponei.smPonei()");}
 	public void im() {System.out.println("Ponei.im()");}
+	public void imPonei() {System.out.println("Ponei.imPonei()");}
 }

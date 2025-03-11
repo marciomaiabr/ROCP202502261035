@@ -11,5 +11,7 @@ public class Cavalo extends Animal {
 	{System.out.println("Cavalo.ib3");}
 	public Cavalo(int i) {System.out.println("Cavalo(int i)");}
 	public static void sm() {System.out.println("Cavalo.sm()");}
+	public static void smCavalo() {System.out.println("Cavalo.smCavalo()");}
 	public void im() {System.out.println("Cavalo.im()");}
+	public void imCavalo() {System.out.println("Cavalo.imCavalo()");}
 }
