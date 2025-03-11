@@ -12,6 +12,7 @@ public class Animal {
 	public Animal(int i) {System.out.println("Animal(int i)");}
 	public static void sm() {System.out.println("Animal.sm()");}
 	public static void smAnimal() {System.out.println("Animal.smAnimal()");}
+	public static void sm2() {System.out.println("Animal.sm2()");sm();}
 	public void im() {System.out.println("Animal.im()");}
 	public void imAnimal() {System.out.println("Animal.imAnimal()");}
 }

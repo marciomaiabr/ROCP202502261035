@@ -12,6 +12,7 @@ public class Cavalo extends Animal {
 	public Cavalo(int i) {System.out.println("Cavalo(int i)");}
 	public static void sm() {System.out.println("Cavalo.sm()");}
 	public static void smCavalo() {System.out.println("Cavalo.smCavalo()");}
+	public static void sm2() {System.out.println("Cavalo.sm2()");sm();}
 	public void im() {System.out.println("Cavalo.im()");}
 	public void imCavalo() {System.out.println("Cavalo.imCavalo()");}
 }
