@@ -13,6 +13,7 @@ public class Ponei extends pkgs.pkg1.Cavalo {
 	public static void sm() {System.out.println("Ponei.sm()");}
 	public static void smPonei() {System.out.println("Ponei.smPonei()");}
 	public static void sm2() {System.out.println("Ponei.sm2()");sm();}
+	public static void sm4() {System.out.println("Ponei.sm4()");sm3();}
 	public void im() {System.out.println("Ponei.im()");}
 	public void imPonei() {System.out.println("Ponei.imPonei()");}
 }
