@@ -15,7 +15,7 @@ public class Animal {
 	public static void sm() {System.out.println("Animal.sm()");}
 	public static void smAnimal() {System.out.println("Animal.smAnimal()");}
 	public static void sm2() {System.out.println("Animal.sm2()");sm();}
-	public static void sm3() {System.out.println("Animal.sm3()");}
+	public static void sm3() {System.out.println("Animal.sm3()[I1="+(I1)+"][I2="+(I2)+"]");}
 	public static void sm4() {System.out.println("Animal.sm4()");sm3();}
 	public void im() {System.out.println("Animal.im()");}
 	public void imAnimal() {System.out.println("Animal.imAnimal()");}
