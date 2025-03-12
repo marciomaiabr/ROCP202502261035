@@ -6,6 +6,8 @@ public class Animal {
 	static {System.out.println("Animal.sb2");}
 	{System.out.println("Animal.ib2");}
 	public static final int X = 3;
+	public static final int I1 = 30;
+	public static int I2 = 39;
 	public Animal() {this(5);System.out.println("Animal()");}
 	static {System.out.println("Animal.sb3");}
 	{System.out.println("Animal.ib3");}

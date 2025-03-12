@@ -6,6 +6,8 @@ public class Cavalo extends Animal {
 	static {System.out.println("Cavalo.sb2");}
 	{System.out.println("Cavalo.ib2");}
 	public static final int Y = 2;
+	public static final int I1 = 20;
+	public static int I2 = 29;
 	public Cavalo() {this(5); System.out.println("Cavalo()");}
 	static {System.out.println("Cavalo.sb3");}
 	{System.out.println("Cavalo.ib3");}

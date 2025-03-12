@@ -6,6 +6,8 @@ public class Ponei extends pkgs.pkg1.Cavalo {
 	static {System.out.println("Ponei.sb2");}
 	{System.out.println("Ponei.ib2");}
 	public static final int Z = 1;
+	public static final int I1 = 10;
+	public static int I2 = 19;
 	public Ponei() {this(5);System.out.println("Ponei()");}
 	static {System.out.println("Ponei.sb3");}
 	{System.out.println("Ponei.ib3");}
