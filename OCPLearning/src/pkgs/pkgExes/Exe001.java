@@ -8,7 +8,7 @@ public class Exe001 {
 
 	private static void m1() {
 		System.out.println("Exe001.m1()");
-		assert(false);
+		assert(false):"msg personalizada";
 		System.out.println("/Exe001.m1()");
 	}
 
