@@ -1,12 +1,14 @@
 package pkgs.pkgExes;
 
 import pkgs.pkg3.ExceptionA;
-import pkgs.pkg3.ExceptionAA;
+import pkgs.pkg3.ExceptionB;
 
 class ClasseQQ{
-	public void mtd() throws ExceptionA, ExceptionA {
 
+	public void mtd() throws ExceptionA, ExceptionB {
+		try {} catch (Exception e) {}
 	}
+
 }
 
 public class Exe001 {
