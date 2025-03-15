@@ -6,7 +6,7 @@ import pkgs.pkg3.ExceptionB;
 class ClasseQQ{
 
 	public void mtd() throws ExceptionA, ExceptionB {
-		try {} catch (Exception e) {}
+		try {} catch (ExceptionA e) {}
 	}
 
 }
