@@ -12,7 +12,7 @@ class ClasseQQ {
 
 	public void mtd() throws ExceptionA, ExceptionB {
 		try {
-			throwsExceptionAExceptionB();
+			throwsExceptionAExceptionBExceptionC();
 		} catch (Exception e) {
 			throw e;
 		}
@@ -39,5 +39,5 @@ public class Exe001 {
 }
 
 /*
-OK pois o java sabe q no throws tem as exceptions disparadas no body do try
+NAO COMPILA pois tem excecao disparado no body do try que apesar de ter um catch (Exception e) a excecao disparado no body do try NAO CONSTA no throws
 */
