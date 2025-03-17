@@ -10,7 +10,7 @@ class ClasseQQ {
 	public void throwsExceptionAExceptionB() throws ExceptionA, ExceptionB {}
 	public void throwsExceptionAExceptionBExceptionC() throws ExceptionA, ExceptionB, ExceptionC {}
 
-	public void mtd() throws ExceptionA, ExceptionB {
+	public void mtd() throws ExceptionA, ExceptionB, ExceptionC {
 		try {
 			throwsExceptionAExceptionBExceptionC();
 		} catch (Exception e) {
@@ -39,5 +39,5 @@ public class Exe001 {
 }
 
 /*
-NAO COMPILA pois tem excecao disparado no body do try que apesar de ter um catch (Exception e) a excecao disparado no body do try NAO CONSTA no throws
+CORRECAO 1 OK pois foi adicionado no throws a excecao disparada no corpo do try
 */
