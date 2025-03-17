@@ -28,7 +28,7 @@ public class Exe001 {
 		System.out.println("Exe001.m1()");
 		try (
 				ClasseAutoCloseable1 ac1 = new ClasseAutoCloseable1();
-				ClasseAutoCloseable3 ac3 = new ClasseAutoCloseable3();
+				ClasseAutoCloseable3 ac3 = null;
 				ClasseAutoCloseable2 ac2 = new ClasseAutoCloseable2();
 				) {
 			System.out.println("try");
@@ -42,5 +42,5 @@ public class Exe001 {
 }
 
 /*
-OK testando AutoCloseable , ele executa o close na ordem inversa da declaracao
+OK testando AutoCloseable , caso alguma declaracao esteja nula NAO e disparado nenhuma excecao
 */
