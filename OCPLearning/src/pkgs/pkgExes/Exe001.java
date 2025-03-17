@@ -10,7 +10,7 @@ class ClasseQQ {
 	public void throwsExceptionAExceptionB() throws ExceptionA, ExceptionB {}
 	public void throwsExceptionAExceptionBExceptionC() throws ExceptionA, ExceptionB, ExceptionC {}
 
-	public void mtd() throws ExceptionA, ExceptionB, ExceptionC {
+	public void mtd() throws Exception {
 		try {
 			throwsExceptionAExceptionBExceptionC();
 		} catch (Exception e) {
@@ -39,5 +39,5 @@ public class Exe001 {
 }
 
 /*
-CORRECAO 1 OK pois foi adicionado no throws a excecao disparada no corpo do try
+CORRECAO 2 OK pois foi adicionado no throws uma Exception pai das exceptions disparadas no corpo do try
 */
