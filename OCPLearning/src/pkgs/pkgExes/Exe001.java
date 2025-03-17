@@ -27,8 +27,9 @@ public class Exe001 {
 	private static void m1() {
 		System.out.println("Exe001.m1()");
 		try (
-				ClasseAutoCloseable1 ac1 = null;
-				ac1 = new ClasseAutoCloseable1();
+				ClasseAutoCloseable1 ac1 = new ClasseAutoCloseable1();
+				ClasseAutoCloseable3 ac3 = new ClasseAutoCloseable3();
+				ClasseAutoCloseable2 ac2 = new ClasseAutoCloseable2();
 				) {
 			System.out.println("try");
 		} catch (Exception e) {
@@ -41,5 +42,5 @@ public class Exe001 {
 }
 
 /*
-ERRO testando AutoCloseable , pois NAO permite declarar o obj em uma linha e instanciar em outra
+OK testando AutoCloseable , ele executa o close na ordem inversa da declaracao
 */
