@@ -9,7 +9,7 @@ class ClasseAutoCloseable1 implements AutoCloseable {
 class ClasseAutoCloseable2 implements AutoCloseable {
 	public ClasseAutoCloseable2() {System.out.println("ClasseAutoCloseable2.this()");}
 	@Override
-	public void close() throws Exception { System.out.println("ClasseAutoCloseable2.close()"); }
+	public void close() throws Exception { System.out.println("ClasseAutoCloseable2.close()"); throw new RuntimeException("RTE do ClasseAutoCloseable2.close()"); }
 }
 
 class ClasseAutoCloseable3 implements AutoCloseable {
@@ -26,12 +26,15 @@ public class Exe001 {
 
 	private static void m1() {
 		System.out.println("Exe001.m1()");
+		int x = 5;
 		try (
 				ClasseAutoCloseable1 ac1 = new ClasseAutoCloseable1();
-				ClasseAutoCloseable3 ac3 = new ClasseAutoCloseable3();
 				ClasseAutoCloseable2 ac2 = new ClasseAutoCloseable2();
+				x = x+1;
+				ClasseAutoCloseable3 ac3 = new ClasseAutoCloseable3();
 				) {
 			System.out.println("try");
+			System.out.println(x);
 			throw new RuntimeException("RTE do try");
 		} catch (Exception e) {
 			System.out.println("[catch][e.getMessage()="+(e.getMessage())+"]");
@@ -43,5 +46,5 @@ public class Exe001 {
 }
 
 /*
-OK testando AutoCloseable , disparando exception no try e pegando no catch
+
 */
