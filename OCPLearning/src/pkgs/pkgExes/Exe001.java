@@ -31,7 +31,7 @@ public class Exe001 {
 				ClasseAutoCloseable2 cac2 = new ClasseAutoCloseable2();
 				ClasseAutoCloseable3 cac3 = new ClasseAutoCloseable3();
 				)  {
-
+			System.out.println("Exe001.m1()[try]");
 		}
 	}
 
