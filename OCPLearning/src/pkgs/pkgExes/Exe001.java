@@ -35,6 +35,7 @@ public class Exe001 {
 			throw new RuntimeException("RTE do try");
 		} catch (Exception e) {
 			System.out.println("Exe001.m1()[catch][e.getMessage()="+(e.getMessage())+"]");
+			e.printStackTrace();
 		} finally {
 			System.out.println("Exe001.m1()[finally]");
 		}
