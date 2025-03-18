@@ -9,7 +9,7 @@ class ClasseAutoCloseable1 implements AutoCloseable {
 class ClasseAutoCloseable2 implements AutoCloseable {
 	public ClasseAutoCloseable2() {System.out.println("ClasseAutoCloseable2.this()");}
 	@Override
-	public void close() { System.out.println("ClasseAutoCloseable2.close()"); }
+	public void close() { System.out.println("ClasseAutoCloseable2.close()"); throw new RuntimeException("RTE do ClasseAutoCloseable2.close()"); }
 }
 
 class ClasseAutoCloseable3 implements AutoCloseable {
