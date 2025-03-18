@@ -28,10 +28,11 @@ public class Exe001 {
 		System.out.println("Exe001.m1()");
 		try (
 				ClasseAutoCloseable1 ac1 = new ClasseAutoCloseable1();
-				ClasseAutoCloseable3 ac3 = null;
+				ClasseAutoCloseable3 ac3 = new ClasseAutoCloseable3();
 				ClasseAutoCloseable2 ac2 = new ClasseAutoCloseable2();
 				) {
 			System.out.println("try");
+			throw new RuntimeException("RTE do try");
 		} catch (Exception e) {
 			System.out.println("[catch][e.getMessage()="+(e.getMessage())+"]");
 		} finally {
@@ -42,5 +43,5 @@ public class Exe001 {
 }
 
 /*
-OK testando AutoCloseable , caso alguma declaracao esteja nula NAO e disparado nenhuma excecao
+OK testando AutoCloseable , disparando exception no try e pegando no catch
 */
