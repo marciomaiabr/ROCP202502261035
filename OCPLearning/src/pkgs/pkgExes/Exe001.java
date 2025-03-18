@@ -32,9 +32,10 @@ public class Exe001 {
 				ClasseAutoCloseable3 cac3 = new ClasseAutoCloseable3(); 
 				)  {
 			System.out.println("Exe001.m1()[try]");
-			throw new RuntimeException("RTE do try");
 		} catch (Exception e) {
 			System.out.println("Exe001.m1()[catch][e.getMessage()="+(e.getMessage())+"]");
+		} finally {
+			System.out.println("Exe001.m1()[finally]");
 		}
 	}
 
