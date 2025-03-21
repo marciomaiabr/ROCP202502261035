@@ -11,7 +11,7 @@ public class Exe001 {
 
 	public static void m1() {
 		System.out.println("Exe001.m1()");
-		ZonedDateTime zdt = ZonedDateTime.of(2024, 10, 17, 18, 35, 59, 9999, ZoneId.of("qwewqe"));//ZoneRulesException: Unknown time-zone ID: qwewqe
+		ZonedDateTime zdt = ZonedDateTime.of(2024, 10, 17, 18, 35, 59, 9999, ZoneId.of("US/Pacific"));
 		System.out.println(zdt);
 	}
 
