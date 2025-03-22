@@ -1,6 +1,7 @@
 package pkgs.pkgExes;
 
 import java.time.*;
+import java.time.temporal.ChronoUnit;
 
 public class Exe001 {
 
@@ -12,30 +13,25 @@ public class Exe001 {
 
 	public static void m1() {
 		System.out.println("Exe001.m1()");
-		LocalDate ld = LocalDate.of(2024, 4, 8);
-		LocalTime lt = LocalTime.of(13, 35, 56, 0);
-		LocalDateTime ldt = LocalDateTime.of(ld, lt);
-		System.out.println(ldt);
+		LocalTime lt1 = LocalTime.of(12, 17, 32);
+		System.out.println(lt1);
+		LocalTime lt2 = LocalTime.of(13, 35, 56);
+		System.out.println(lt2);
+		long minutos = ChronoUnit.MINUTES.between(lt1, lt2);//perda de segundos na conversão
+		System.out.println("[minutos="+(minutos)+"]");
+		Duration duration = Duration.ofMinutes(minutos);
+		System.out.println("[duration="+(duration)+"]");
+		LocalTime lt3 = lt1.plus(duration);
+		System.out.println("[lt2="+(lt2)+"][lt3="+(lt3)+"]");//não bateu pois houve perda de segundos na conversão
 
 		System.out.println();
 
-		ZoneId zoneIdUSCentral = ZoneId.of("US/Central");
+		System.out.println("[Duration.ofHours(49)="+(Duration.ofHours(49))+"][Duration.ofDays(3)="+(Duration.ofDays(3))+"]");//não são exibidos como dias para evitar confusão com Period
 
-		ZonedDateTime zdt = ZonedDateTime.of(ldt, zoneIdUSCentral);
-		System.out.println(zdt);
-		System.out.println(zdt.toLocalDateTime());
-		System.out.println("[isDaylightSavings="+(zdt.getZone().getRules().isDaylightSavings(zdt.toInstant()))+"]");
+		System.out.println("[Duration.of(5, ChronoUnit.DAYS)="+(Duration.of(5, ChronoUnit.DAYS))+"]");
 
-		System.out.println();
+		//System.out.println("[Duration.of(5, ChronoUnit.MONTHS)="+(Duration.of(5, ChronoUnit.MONTHS))+"]");//maior ChronoUnit permitido é DAYS//UnsupportedTemporalTypeException: Unit must not have an estimated duration
 
-		Period period = Period.ofMonths(1);
-		System.out.println(period);
-
-		ZonedDateTime zdt2 = zdt.minus(period);
-		System.out.println(zdt2);
-		LocalDateTime ldt2 = zdt2.toLocalDateTime();
-		System.out.println(ldt2);
-		System.out.println("[isDaylightSavings="+(zdt2.getZone().getRules().isDaylightSavings(zdt2.toInstant()))+"]");
 	}
 
 }
@@ -43,20 +39,18 @@ public class Exe001 {
 /*
 <>
 Exe001.m1()
-2024-04-08T13:35:56
+12:17:32
+13:35:56
+[minutos=78]
+[duration=PT1H18M]
+[lt2=13:35:56][lt3=13:35:32]
 
-2024-04-08T13:35:56-05:00[US/Central]
-2024-04-08T13:35:56
-[isDaylightSavings=true]
-
-P1M
-2024-03-08T13:35:56-06:00[US/Central]
-2024-03-08T13:35:56
-[isDaylightSavings=false]
+[Duration.ofHours(49)=PT49H][Duration.ofDays(3)=PT72H]
+[Duration.of(5, ChronoUnit.DAYS)=PT120H]
 </>
 */
 
 /*
-testando Period
-período de dias, meses ou anos
+testando Duration
+horas, minutos e segundos
 */
