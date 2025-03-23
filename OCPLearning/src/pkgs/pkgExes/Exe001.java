@@ -1,8 +1,6 @@
 package pkgs.pkgExes;
 
 import java.time.*;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.Locale;
 
 public class Exe001 {
@@ -22,9 +20,10 @@ public class Exe001 {
 		ZoneId zoneIdUSCentral = ZoneId.of("US/Central");
 		ZonedDateTime zdt = ZonedDateTime.of(ldt, zoneIdUSCentral);
 		System.out.println(zdt);
-		System.out.println(zdt.format(DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm")));
-		System.out.println(zdt.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT)));
-		System.out.println(zdt.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).withLocale(Locale.UK)));
+		System.out.println(Locale.ITALY);
+		System.out.println(Locale.ITALIAN);
+		System.out.println(new Locale("it"));//language
+		System.out.println(new Locale("it", "IT"));//language//country
 	}
 
 }
@@ -34,9 +33,10 @@ public class Exe001 {
 Exe001.m1()
 2024-04-08T13:35:56
 2024-04-08T13:35:56-05:00[US/Central]
-08/04/2024 01:35
-13:35
-13:35
+it_IT
+it
+it
+it_IT
 </>
 */
 
