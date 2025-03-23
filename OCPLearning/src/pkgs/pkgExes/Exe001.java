@@ -13,15 +13,21 @@ public class Exe001 {
 	public static void m1() {
 		System.out.println("Exe001.m1()");
 		Properties p = System.getProperties();
-		p.list(System.out);
+		System.out.println(p.getProperty("pmm"));
+		p.setProperty("pmm", "vmm");
+		System.out.println(p.getProperty("pmm"));
 	}
 
 }
 
 /*
-
+<>
+Exe001.m1()
+null
+vmm
+</>
 */
 
 /*
-
+System.getProperties() não persiste values
 */
