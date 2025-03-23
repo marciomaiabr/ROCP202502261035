@@ -1,6 +1,6 @@
 package pkgs.pkgExes;
 
-import java.time.*;
+import java.util.Properties;
 
 public class Exe001 {
 
@@ -12,13 +12,8 @@ public class Exe001 {
 
 	public static void m1() {
 		System.out.println("Exe001.m1()");
-		LocalDate ld = LocalDate.of(2024, 4, 8);
-		LocalTime lt = LocalTime.of(13, 35, 56, 0);
-		LocalDateTime ldt = LocalDateTime.of(ld, lt);
-		System.out.println(ldt);
-		ZoneId zoneIdUSCentral = ZoneId.of("US/Central");
-		ZonedDateTime zdt = ZonedDateTime.of(ldt, zoneIdUSCentral);
-		System.out.println(zdt);
+		Properties p = System.getProperties();
+		p.list(System.out);
 	}
 
 }
