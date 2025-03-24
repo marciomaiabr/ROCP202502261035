@@ -31,7 +31,7 @@ public class Exe001 {
 Exe001.m1()
 [Locale.getDefault()=pt_BR]
 [Locale.getDefault()=ja_JP]
-[resourceBundle.getString(mmProperty)=mmPropertyValue do mmProperties_fr_FR.properties]
+[resourceBundle.getString(mmProperty)=mmPropertyValue do MmProperties_fr.java]
 </>
 */
 
