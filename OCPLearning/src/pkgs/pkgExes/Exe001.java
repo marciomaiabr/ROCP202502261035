@@ -3,46 +3,32 @@ package pkgs.pkgExes;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.Locale;
 import java.util.Properties;
+import java.util.ResourceBundle;
 
 public class Exe001 {
 
 	public static void main(String[] args) {
 		System.out.println("<>");
-		m1();
+		m1(args);
 		System.out.println("</>");
 	}
 
-	public static void m1() {
+	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		try {
-			Properties p = new Properties();
-			p.setProperty("pmm", "vmm");
-			FileOutputStream fos = new FileOutputStream("C:\\temp\\myProps1.props");
-			p.store(fos, "test-comment");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		try {
-			Properties p = new Properties();
-			FileInputStream fis = new FileInputStream("C:\\temp\\myProps1.props");
-			p.load(fis);
-			System.out.println(p.getProperty("pmm"));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		Locale locale = new Locale(args[0]);
+		ResourceBundle resourceBundle = ResourceBundle.getBundle("mmProperties", locale);
+		String sMmProperty = resourceBundle.getString("mmProperty");
+		System.out.println("[sMmProperty="+(sMmProperty)+"]");
 	}
 
 }
 
 /*
-<>
-Exe001.m1()
-null
-vmm
-</>
+
 */
 
 /*
-System.getProperties() não persiste values
+
 */
