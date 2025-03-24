@@ -18,9 +18,9 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 		System.out.println("[Locale.getDefault()="+(Locale.getDefault())+"]");
-		String args0 = args[0];
+		String args0 = args.length > 0 ? args[0] : null;
 		System.out.println("[args0="+(args0)+"]");
-		Locale locale = new Locale(args0);
+		Locale locale = args0 != null ? new Locale(args0) : Locale.getDefault();
 		System.out.println("[locale="+(locale)+"]");
 		ResourceBundle resourceBundle = ResourceBundle.getBundle("mmProperties", locale);
 		String sMmProperty = resourceBundle.getString("mmProperty");
@@ -30,17 +30,9 @@ public class Exe001 {
 }
 
 /*
-<>
-Exe001.m1()
-[Locale.getDefault()=ja_JP]
-[args0=qqc]
-[locale=qqc]
-[sMmProperty=mmPropertyValue do mmProperties_ja_JP.properties]
-</>
+
 */
 
 /*
-using line command
--Duser.language=
--Duser.region=JP
+
 */
