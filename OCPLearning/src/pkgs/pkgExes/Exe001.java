@@ -18,7 +18,9 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 		System.out.println("[Locale.getDefault()="+(Locale.getDefault())+"]");
-		ResourceBundle resourceBundle = ResourceBundle.getBundle("MmProperties");
+		Locale.setDefault(new Locale("ja", "JP"));
+		System.out.println("[Locale.getDefault()="+(Locale.getDefault())+"]");
+		ResourceBundle resourceBundle = ResourceBundle.getBundle("MmProperties", new Locale("fr", "FR"));
 		System.out.println("[resourceBundle.getString(mmProperty)="+(resourceBundle.getString("mmProperty"))+"]");
 	}
 
@@ -28,12 +30,11 @@ public class Exe001 {
 <>
 Exe001.m1()
 [Locale.getDefault()=pt_BR]
-[resourceBundle.getString(mmProperty)=mmPropertyValue do MmProperties_pt_BR.java]
+[Locale.getDefault()=ja_JP]
+[resourceBundle.getString(mmProperty)=mmPropertyValue do mmProperties_fr_FR.properties]
 </>
 */
 
 /*
-Primeiro pegou da classe MmProperties_pt_BR.java
-pois classe tem prioridade sobre arquivo
-pois bate 100% language e country do ResourceBundle.getBundle
+
 */
