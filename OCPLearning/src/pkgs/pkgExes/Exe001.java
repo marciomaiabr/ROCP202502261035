@@ -22,17 +22,24 @@ public class Exe001 {
 		System.out.println("[args0="+(args0)+"]");
 		Locale locale = args0 != null ? new Locale(args0) : Locale.getDefault();
 		System.out.println("[locale="+(locale)+"]");
-		ResourceBundle resourceBundle = ResourceBundle.getBundle("mmProperties", locale);
-		String sMmProperty = resourceBundle.getString("mmProperty");
-		System.out.println("[sMmProperty="+(sMmProperty)+"]");
+		ResourceBundle resourceBundle = ResourceBundle.getBundle("pkgs.pkg9.MmProperties", locale);
+		System.out.println("[resourceBundle.getString(mmProperty)="+(resourceBundle.getString("mmProperty"))+"]");
+		System.out.println("[resourceBundle.getObject(mmProperty)="+(resourceBundle.getObject("mmProperty"))+"]");
 	}
 
 }
 
 /*
-
+<>
+Exe001.m1()
+[Locale.getDefault()=pt_BR]
+[args0=null]
+[locale=pt_BR]
+[resourceBundle.getString(mmProperty)=mmPropertyValue do MmProperties_pt_BR.java]
+[resourceBundle.getObject(mmProperty)=mmPropertyValue do MmProperties_pt_BR.java]
+</>
 */
 
 /*
-
+quando trabalhar com ListResourceBundle no ResourceBundle.getBundle deve-se especificar o nome COMPLETO
 */
