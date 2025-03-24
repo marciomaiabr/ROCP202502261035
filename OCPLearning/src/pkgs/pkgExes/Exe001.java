@@ -36,5 +36,7 @@ Exe001.m1()
 */
 
 /*
-
+Primeiro pegou da classe MmProperties_fr_FR.java
+pois classe tem prioridade sobre arquivo
+pois bate 100% language e country do ResourceBundle.getBundle
 */
