@@ -18,8 +18,6 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 		System.out.println("[Locale.getDefault()="+(Locale.getDefault())+"]");
-		Locale.setDefault(new Locale("fr"));
-		System.out.println("[Locale.getDefault()="+(Locale.getDefault())+"]");
 		String args0 = args[0];
 		System.out.println("[args0="+(args0)+"]");
 		Locale locale = new Locale(args0);
@@ -34,16 +32,15 @@ public class Exe001 {
 /*
 <>
 Exe001.m1()
-[Locale.getDefault()=pt_BR]
-[Locale.getDefault()=fr]
+[Locale.getDefault()=ja_JP]
 [args0=qqc]
 [locale=qqc]
-[sMmProperty=mmPropertyValue do mmProperties_fr.properties]
+[sMmProperty=mmPropertyValue do mmProperties_ja_JP.properties]
 </>
 */
 
 /*
-quando é um Locale que não existe ele assume o Default
-caso o Default alterado utiliza o novo valor
-Locale.setDefault NÃO altera definitivamente o Locale somente na execução atual
+using line command
+-Duser.language=
+-Duser.region=JP
 */
