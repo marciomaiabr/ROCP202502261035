@@ -1,5 +1,3 @@
-package pkgs.pkg9;
-
 import java.util.ListResourceBundle;
 
 public class MmProperties_ja_JP extends ListResourceBundle {
