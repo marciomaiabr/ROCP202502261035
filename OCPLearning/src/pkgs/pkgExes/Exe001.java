@@ -14,7 +14,7 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		char [] in = new char [] {'Z','Z','Z'};
+		char [] in = new char [20];
 		int size = 0;
 		try {
 			File file = new File("C:\\temp\\fileWrite2.txt");
@@ -24,12 +24,7 @@ public class Exe001 {
 			for (char c : in)
 				System.out.print("[c="+(c)+"]");
 
-			System.out.println();
-
-			size = fileReader.read(in);
-			System.out.println("[size="+(size)+"]");
-			for (char c : in)
-				System.out.print("[c="+(c)+"]");
+			fileReader.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -40,10 +35,10 @@ public class Exe001 {
 /*
 <>
 Exe001.m1()
-[size=3]
-[c=l][c=i][c=n]
-[size=3]
-[c=h][c=a][c=1]</>
+[size=14]
+[c=l][c=i][c=n][c=h][c=a][c=1][c=
+][c=l][c=i][c=n][c=h][c=a][c=2][c=
+][c= ][c= ][c= ][c= ][c= ][c= ]</>
 */
 
 /*
@@ -53,8 +48,5 @@ linha2
 */
 
 /*
-FileReader.read(char cbuf[]) caso o array seja menor q o conteúdo,
-sem disparar exceção ele TRUNCA o conteúdo
-quando executar NOVAMENTE FileReader.read(char cbuf[])
-ele continua de onde parou
+faltou o  close() nos outros testes
 */
