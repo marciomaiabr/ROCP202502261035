@@ -24,6 +24,14 @@ public class Exe001 {
 			for (char c : in)
 				System.out.print("[c="+(c)+"]");
 
+			System.out.println();
+
+			in = new char [20];
+			size = fileReader.read(in);
+			System.out.println("[size="+(size)+"]");
+			for (char c : in)
+				System.out.print("[c="+(c)+"]");
+
 			fileReader.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -38,7 +46,9 @@ Exe001.m1()
 [size=14]
 [c=l][c=i][c=n][c=h][c=a][c=1][c=
 ][c=l][c=i][c=n][c=h][c=a][c=2][c=
-][c= ][c= ][c= ][c= ][c= ][c= ]</>
+][c= ][c= ][c= ][c= ][c= ][c= ]
+[size=-1]
+[c= ][c= ][c= ][c= ][c= ][c= ][c= ][c= ][c= ][c= ][c= ][c= ][c= ][c= ][c= ][c= ][c= ][c= ][c= ][c= ]</>
 */
 
 /*
@@ -48,5 +58,7 @@ linha2
 */
 
 /*
-faltou o  close() nos outros testes
+caso tente ler após o final do stream
+o retorno do FileReader.read(char cbuf[]) será -1
+e o array permanece intacto
 */
