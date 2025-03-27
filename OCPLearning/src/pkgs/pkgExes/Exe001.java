@@ -23,6 +23,13 @@ public class Exe001 {
 			System.out.println("[size="+(size)+"]");
 			for (char c : in)
 				System.out.print("[c="+(c)+"]");
+
+			System.out.println();
+
+			size = fileReader.read(in);
+			System.out.println("[size="+(size)+"]");
+			for (char c : in)
+				System.out.print("[c="+(c)+"]");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -34,7 +41,9 @@ public class Exe001 {
 <>
 Exe001.m1()
 [size=3]
-[c=l][c=i][c=n]</>
+[c=l][c=i][c=n]
+[size=3]
+[c=h][c=a][c=1]</>
 */
 
 /*
@@ -46,4 +55,6 @@ linha2
 /*
 FileReader.read(char cbuf[]) caso o array seja menor q o conteúdo,
 sem disparar exceção ele TRUNCA o conteúdo
+quando executar NOVAMENTE FileReader.read(char cbuf[])
+ele continua de onde parou
 */
