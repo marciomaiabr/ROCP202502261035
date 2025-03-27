@@ -58,7 +58,5 @@ linha2
 */
 
 /*
-caso tente ler após o final do stream
-o retorno do FileReader.read(char cbuf[]) será -1
-e o array permanece intacto
+FileReader.read(char cbuf[]) retorna a quantidade de caracteres lidos
 */
