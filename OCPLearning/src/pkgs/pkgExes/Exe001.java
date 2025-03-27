@@ -1,6 +1,7 @@
 package pkgs.pkgExes;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 
 public class Exe001 {
@@ -13,18 +14,18 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-
+		char [] in = new char [] {'Z','Z','Z'};
+		int size = 0;
 		try {
 			File file = new File("C:\\temp\\fileWrite2.txt");
-			FileWriter fileWriter = new FileWriter(file);
-			fileWriter.write("linha1\nlinha2\n");
-			fileWriter.flush();
-			fileWriter.write("linha3\nlinha4\n");
-			fileWriter.close();
+			FileReader fileReader = new FileReader(file);
+			size = fileReader.read(in);
+			System.out.println("[size="+(size)+"]");
+			for (char c : in)
+				System.out.print("[c="+(c)+"]");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }
@@ -32,17 +33,17 @@ public class Exe001 {
 /*
 <>
 Exe001.m1()
-</>
+[size=3]
+[c=l][c=i][c=n]</>
 */
 
 /*
 C:\temp\fileWrite2.txt
 linha1
 linha2
-linha3
-linha4
 */
 
 /*
-PELO VISTO antes do "close()" ele executa um "flush()"
+FileReader.read(char cbuf[]) caso o array seja menor q o conteúdo,
+sem disparar exceção ele TRUNCA o conteúdo
 */
