@@ -19,6 +19,7 @@ public class Exe001 {
 			FileWriter fileWriter = new FileWriter(file);
 			fileWriter.write("linha1\nlinha2\n");
 			fileWriter.flush();
+			fileWriter.write("linha3\nlinha4\n");
 			fileWriter.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -35,5 +36,13 @@ Exe001.m1()
 */
 
 /*
-o arquivo é SOBREPOSTO e NÃO CONCATENADO
+C:\temp\fileWrite2.txt
+linha1
+linha2
+linha3
+linha4
+*/
+
+/*
+PELO VISTO antes do "close()" ele executa um "flush()"
 */
