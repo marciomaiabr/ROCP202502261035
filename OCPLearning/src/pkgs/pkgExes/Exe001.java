@@ -1,6 +1,7 @@
 package pkgs.pkgExes;
 
 import java.io.File;
+import java.io.FileWriter;
 
 public class Exe001 {
 
@@ -12,17 +13,17 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
+
 		try {
-			File file = new File("C:\\temp\\fileWrite1.txt");
-			System.out.println("[file.exists()="+(file.exists())+"]");
-			System.out.println("[file.createNewFile()="+(file.createNewFile())+"]");
-			System.out.println("[file.exists()="+(file.exists())+"]");
-			File file2 = new File("C:\\temp\\fileWrite1.txt");
-			System.out.println("[file2.delete()="+(file2.delete())+"]");
-			System.out.println("[file.exists()="+(file.exists())+"]");
+			File file = new File("C:\\temp\\fileWrite2.txt");
+			FileWriter fileWriter = new FileWriter(file);
+			fileWriter.write("linha1\nlinha2\n");
+			fileWriter.flush();
+			fileWriter.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 	}
 
 }
@@ -30,14 +31,9 @@ public class Exe001 {
 /*
 <>
 Exe001.m1()
-[file.exists()=false]
-[file.createNewFile()=true]
-[file.exists()=true]
-[file2.delete()=true]
-[file.exists()=false]
 </>
 */
 
 /*
-File não bloqueia o arquivo, tanto q nem tem um mdt close
+o arquivo é SOBREPOSTO e NÃO CONCATENADO
 */
