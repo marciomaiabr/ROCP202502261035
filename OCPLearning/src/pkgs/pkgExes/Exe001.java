@@ -1,10 +1,8 @@
 package pkgs.pkgExes;
 
-import java.io.BufferedWriter;
+import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileWriter;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.io.FileReader;
 
 public class Exe001 {
 
@@ -18,13 +16,14 @@ public class Exe001 {
 		System.out.println("Exe001.m1()");
 		try {
 			File file = new File("C:\\temp\\202503280725.txt");
-			FileWriter fileWriter = new FileWriter(file);
-			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-			bufferedWriter
-				.append(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss_n"))+"\n")
-				.append(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss_n"))+"\n");
-			bufferedWriter.close();
-			fileWriter.close();
+			FileReader fileReader = new FileReader(file);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			String linha = null;
+			while ((linha = bufferedReader.readLine()) != null) {
+				System.out.println("[linha="+(linha)+"]");
+			}
+			bufferedReader.close();
+			fileReader.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -34,13 +33,15 @@ public class Exe001 {
 
 /*
 C:\temp\202503280725.txt
-20250328072710_432000000
-20250328072710_438000000
+20250328072811_561000000
+20250328072811_567000000
 */
 
 /*
 <>
 Exe001.m1()
+[linha=20250328072811_561000000]
+[linha=20250328072811_567000000]
 </>
 */
 
