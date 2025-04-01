@@ -1,6 +1,7 @@
 package pkgs.pkgExes;
 
-import java.io.Console;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Exe001 {
 
@@ -12,11 +13,11 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		Console console = System.console();
-		String readLine = console.readLine();
-		System.out.println("[readLine="+(new String(readLine))+"]");
-		char [] readPassword = console.readPassword();
-		System.out.println("[readPassword="+(new String(readPassword))+"]");
+		Path path1 = Paths.get("src/main/java");
+		Path path2 = Paths.get("src/resources/images");
+
+		Path relativePath = path1.relativize(path2);
+		System.out.println("Relative Path: " + relativePath);
 	}
 
 }
@@ -26,9 +27,12 @@ public class Exe001 {
 */
 
 /*
-
+<>
+Exe001.m1()
+Relative Path: ..\..\resources\images
+</>
 */
 
 /*
-
+https://medium.com/@AlexanderObregon/javas-path-relativize-method-explained-773c3dd6e181
 */
