@@ -13,9 +13,9 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		Path path = Paths.get("/folderA/folderAA", "../..", "folderB/folderBB");
-		System.out.println("[path="+(path)+"]");
-		System.out.println("[path.normalize()="+(path.normalize())+"]");
+		Path absolute = Paths.get("/folderA/folderAA");
+		Path relative = Paths.get("folderB");
+		System.out.println("["+("("+absolute+").resolve("+relative+")")+"="+(absolute.resolve(relative))+"]");
 	}
 
 }
@@ -23,8 +23,7 @@ public class Exe001 {
 /*
 <>
 Exe001.m1()
-[path=\folderA\folderAA\..\..\folderB\folderBB]
-[path.normalize()=\folderB\folderBB]
+[(\folderA\folderAA).resolve(folderB)=\folderA\folderAA\folderB]
 </>
 */
 
