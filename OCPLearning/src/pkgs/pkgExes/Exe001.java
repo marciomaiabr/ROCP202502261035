@@ -3,12 +3,6 @@ package pkgs.pkgExes;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.attribute.BasicFileAttributeView;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.nio.file.attribute.FileTime;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 
 public class Exe001 {
 
@@ -37,14 +31,13 @@ public class Exe001 {
 		}
 	}
 
-	public static void m12(boolean deleteAndExit) {
+	public static void m12(boolean canExit) {
 		System.out.println("Exe001.m12()");
 		try {
 			Path path = Paths.get(STRING_FILE_NAME);
-			BasicFileAttributes bfa = Files.readAttributes(path, BasicFileAttributes.class);
-			System.out.println(ZonedDateTime.ofInstant(bfa.lastModifiedTime().toInstant(), ZoneId.systemDefault()));
-			if (deleteAndExit)
-				Files.deleteIfExists(path);
+			System.out.println(Files.isHidden(path));
+			if (canExit)
+				return;
 			else
 				m13();
 		} catch (Exception e) {
@@ -56,9 +49,7 @@ public class Exe001 {
 		System.out.println("Exe001.m13()");
 		try {
 			Path path = Paths.get(STRING_FILE_NAME);
-			Instant instant = ZonedDateTime.of(2024, 12, 31, 23, 59, 59, 9999, ZoneId.systemDefault()).toInstant();
-			BasicFileAttributeView bfav = Files.getFileAttributeView(path, BasicFileAttributeView.class);
-			bfav.setTimes(FileTime.from(instant), null, null);
+			Files.setAttribute(path, "dos:hidden", true);
 			m12(true);
 		} catch (Exception e) {
 			e.printStackTrace();
