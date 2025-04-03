@@ -1,9 +1,9 @@
 package pkgs.pkgExes;
 
-import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.attribute.FileTime;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -39,8 +39,7 @@ public class Exe001 {
 		System.out.println("Exe001.m12()");
 		try {
 			Path path = Paths.get(STRING_FILE_NAME);
-			File file = path.toFile();
-			System.out.println(ZonedDateTime.ofInstant(Instant.ofEpochMilli(file.lastModified()), ZoneId.systemDefault()));
+			System.out.println(ZonedDateTime.ofInstant(Files.getLastModifiedTime(path).toInstant(), ZoneId.systemDefault()));
 			if (deleteAndExit)
 				Files.deleteIfExists(path);
 			else
@@ -54,9 +53,8 @@ public class Exe001 {
 		System.out.println("Exe001.m13()");
 		try {
 			Path path = Paths.get(STRING_FILE_NAME);
-			File file = path.toFile();
 			Instant instant = ZonedDateTime.of(2024, 12, 31, 23, 59, 59, 9999, ZoneId.systemDefault()).toInstant();
-			file.setLastModified(instant.getEpochSecond() * 1000);
+			Files.setLastModifiedTime(path, FileTime.from(instant));
 			m12(true);
 		} catch (Exception e) {
 			e.printStackTrace();
