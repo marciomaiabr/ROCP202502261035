@@ -3,6 +3,8 @@ package pkgs.pkgExes;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributeView;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 import java.time.Instant;
 import java.time.ZoneId;
@@ -39,7 +41,8 @@ public class Exe001 {
 		System.out.println("Exe001.m12()");
 		try {
 			Path path = Paths.get(STRING_FILE_NAME);
-			System.out.println(ZonedDateTime.ofInstant(Files.getLastModifiedTime(path).toInstant(), ZoneId.systemDefault()));
+			BasicFileAttributes bfa = Files.readAttributes(path, BasicFileAttributes.class);
+			System.out.println(ZonedDateTime.ofInstant(bfa.lastModifiedTime().toInstant(), ZoneId.systemDefault()));
 			if (deleteAndExit)
 				Files.deleteIfExists(path);
 			else
@@ -54,7 +57,8 @@ public class Exe001 {
 		try {
 			Path path = Paths.get(STRING_FILE_NAME);
 			Instant instant = ZonedDateTime.of(2024, 12, 31, 23, 59, 59, 9999, ZoneId.systemDefault()).toInstant();
-			Files.setLastModifiedTime(path, FileTime.from(instant));
+			BasicFileAttributeView bfav = Files.getFileAttributeView(path, BasicFileAttributeView.class);
+			bfav.setTimes(FileTime.from(instant), null, null);
 			m12(true);
 		} catch (Exception e) {
 			e.printStackTrace();
