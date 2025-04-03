@@ -3,6 +3,8 @@ package pkgs.pkgExes;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.attribute.DosFileAttributeView;
+import java.nio.file.attribute.DosFileAttributes;
 
 public class Exe001 {
 
@@ -35,7 +37,8 @@ public class Exe001 {
 		System.out.println("Exe001.m12()");
 		try {
 			Path path = Paths.get(STRING_FILE_NAME);
-			System.out.println(Files.isHidden(path));
+			DosFileAttributes dfa = Files.readAttributes(path, DosFileAttributes.class);
+			System.out.println(dfa.isHidden());
 			if (canExit)
 				return;
 			else
@@ -49,7 +52,8 @@ public class Exe001 {
 		System.out.println("Exe001.m13()");
 		try {
 			Path path = Paths.get(STRING_FILE_NAME);
-			Files.setAttribute(path, "dos:hidden", true);
+			DosFileAttributeView dfav = Files.getFileAttributeView(path, DosFileAttributeView.class);
+			dfav.setHidden(true);
 			m12(true);
 		} catch (Exception e) {
 			e.printStackTrace();
