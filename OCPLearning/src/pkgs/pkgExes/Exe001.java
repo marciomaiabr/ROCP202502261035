@@ -1,5 +1,10 @@
 package pkgs.pkgExes;
 
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class Exe001 {
 
 	public static void main(String[] args) {
@@ -9,44 +14,29 @@ public class Exe001 {
 	}
 
 	public static void m1(String[] args) {
-		System.out.println("Exe001.m1()");//https://stackoverflow.com/questions/1700081/why-is-128-128-false-but-127-127-is-true-when-comparing-integer-wrappers-in-ja
-
-		{
-			Integer i1 = 127;
-			Integer i2 = 127;
-			System.out.println("["+(i1==i2)+"]");
+		System.out.println("Exe001.m1()");
+		try {
+			Path root = Paths.get("c:", "temp");
+			if(Files.notExists(root.resolve(Paths.get("folderB","folderBB","202504040905.txt")))) {
+				Files.createDirectories(root.resolve(Paths.get("folderA","folderAA","folderAAA")));
+				Files.createDirectories(root.resolve(Paths.get("folderB","folderBB","folderBBB")));
+				Files.createDirectories(root.resolve(Paths.get("folderC","folderCC","folderCCC")));
+				Files.createFile(root.resolve(Paths.get("folderB","folderBB","202504040905.txt")));
+			}
+			try(DirectoryStream<Path> directoryStream = Files.newDirectoryStream(root)){
+				for(Path path : directoryStream) {
+					System.out.println(path);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		{
-			Integer i1 = 128;
-			Integer i2 = 128;
-			System.out.println("["+(i1==i2)+"]");
-		}
-
-		{
-			Long l1 = 127l;
-			Long l2 = 127l;
-			System.out.println("["+(l1==l2)+"]");
-		}
-
-		{
-			Long l1 = 128l;
-			Long l2 = 128l;
-			System.out.println("["+(l1==l2)+"]");
-		}
-
 	}
 
 }
 
 /*
-<>
-Exe001.m1()
-[true]
-[false]
-[true]
-[false]
-</>
+
 */
 
 /*
