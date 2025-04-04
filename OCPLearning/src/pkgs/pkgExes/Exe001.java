@@ -1,14 +1,10 @@
 package pkgs.pkgExes;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.attribute.DosFileAttributeView;
-import java.nio.file.attribute.DosFileAttributes;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class Exe001 {
-
-	private static final String STRING_FILE_NAME = Paths.get("c:", "temp", "f202504020820.txt").toString();
 
 	public static void main(String[] args) {
 		System.out.println("<>");
@@ -18,46 +14,8 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		m11();
-	}
-
-	public static void m11() {
-		System.out.println("Exe001.m11()");
-		try {
-			Path path = Paths.get(STRING_FILE_NAME);
-			Files.deleteIfExists(path);
-			System.out.println(Files.createFile(path));
-			m12(false);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void m12(boolean canExit) {
-		System.out.println("Exe001.m12()");
-		try {
-			Path path = Paths.get(STRING_FILE_NAME);
-			DosFileAttributes dfa = Files.readAttributes(path, DosFileAttributes.class);
-			System.out.println(dfa.isHidden());
-			if (canExit)
-				return;
-			else
-				m13();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void m13() {
-		System.out.println("Exe001.m13()");
-		try {
-			Path path = Paths.get(STRING_FILE_NAME);
-			DosFileAttributeView dfav = Files.getFileAttributeView(path, DosFileAttributeView.class);
-			dfav.setHidden(true);
-			m12(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		System.out.println("[="+(LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE", new Locale("PT"))))+"]");
+		System.out.println("[="+(LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE", new Locale("EN"))))+"]");
 	}
 
 }
