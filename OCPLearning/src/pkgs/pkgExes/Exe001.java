@@ -1,9 +1,12 @@
 package pkgs.pkgExes;
 
-import java.nio.file.DirectoryStream;
+import java.io.IOException;
+import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 
 public class Exe001 {
 
@@ -28,11 +31,29 @@ public class Exe001 {
 				Files.createDirectories(root.resolve(Paths.get("folderC","folderCC","folderCCC")));
 				Files.createFile(root.resolve(Paths.get("folderB","folderBB","202504040905.txt")));
 			}
-			try(DirectoryStream<Path> directoryStream = Files.newDirectoryStream(root, "[rf]*")){//ou r ou f //MAIÚSCULA ou minúscula
-				for(Path path : directoryStream) {
-					System.out.println(path.getFileName());
+			SimpleFileVisitor<Path> simpleFileVisitor = new SimpleFileVisitor<Path>() {
+				@Override
+				public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+					System.out.println("TestSimpleFileVisitor.preVisitDirectory()"+"[dir="+(dir)+"]");
+					return FileVisitResult.CONTINUE;
 				}
-			}
+				@Override
+				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+					System.out.println("TestSimpleFileVisitor.visitFile()"+"[file="+(file)+"]");
+					return FileVisitResult.CONTINUE;
+				}
+				@Override
+				public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+					System.out.println("TestSimpleFileVisitor.visitFileFailed()"+"[file="+(file)+"]"+"[exc="+(exc)+"]");
+					return FileVisitResult.CONTINUE;
+				}
+				@Override
+				public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+					System.out.println("TestSimpleFileVisitor.postVisitDirectory()"+"[dir="+(dir)+"]"+"[exc="+(exc)+"]");
+					return FileVisitResult.CONTINUE;
+				}
+			};
+			Files.walkFileTree(root, simpleFileVisitor);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
