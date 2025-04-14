@@ -20,16 +20,13 @@ public class Exe001 {
 		System.out.println("Exe001.m1()");
 		try {
 			Path root = Paths.get("c:", "temp");
-			try {
+			/*try {
 				Files.createDirectories(root.resolve(Paths.get("folderA","folderAA","folderAAA")));
 				Files.createDirectories(root.resolve(Paths.get("folderB","folderBB","folderBBB")));
 				Files.createDirectories(root.resolve(Paths.get("folderC","folderCC","folderCCC")));
-				Thread.sleep(1000*62);
 				Files.createFile(root.resolve(Paths.get("folderB","folderBB","fz.txt")));
-				Thread.sleep(1000*65);
 				Files.createFile(root.resolve(Paths.get("folderB","folderBB","fa.txt")));
-				Thread.sleep(1000*68);
-			} catch(Exception e) {}
+			} catch(Exception e) {}*/
 			SimpleFileVisitor<Path> simpleFileVisitor = new SimpleFileVisitor<Path>() {
 				@Override
 				public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
@@ -67,137 +64,25 @@ C:\temp>dir /s
 
  Pasta de C:\temp
 
-14/04/2025  07:51    <DIR>          .
-14/04/2025  07:51    <DIR>          ..
-14/04/2025  07:51    <DIR>          folderA
-14/04/2025  07:51    <DIR>          folderB
-14/04/2025  07:51    <DIR>          folderC
-               0 arquivo(s)              0 bytes
-
- Pasta de C:\temp\folderA
-
-14/04/2025  07:51    <DIR>          .
-14/04/2025  07:51    <DIR>          ..
-14/04/2025  07:51    <DIR>          folderAA
-               0 arquivo(s)              0 bytes
-
- Pasta de C:\temp\folderA\folderAA
-
-14/04/2025  07:51    <DIR>          .
-14/04/2025  07:51    <DIR>          ..
-14/04/2025  07:51    <DIR>          folderAAA
-               0 arquivo(s)              0 bytes
-
- Pasta de C:\temp\folderA\folderAA\folderAAA
-
-14/04/2025  07:51    <DIR>          .
-14/04/2025  07:51    <DIR>          ..
-               0 arquivo(s)              0 bytes
-
- Pasta de C:\temp\folderB
-
-14/04/2025  07:51    <DIR>          .
-14/04/2025  07:51    <DIR>          ..
-14/04/2025  07:53    <DIR>          folderBB
-               0 arquivo(s)              0 bytes
-
- Pasta de C:\temp\folderB\folderBB
-
-14/04/2025  07:53    <DIR>          .
-14/04/2025  07:53    <DIR>          ..
-14/04/2025  07:53                 0 fa.txt
-14/04/2025  07:51    <DIR>          folderBBB
-14/04/2025  07:52                 0 fz.txt
-               2 arquivo(s)              0 bytes
-
- Pasta de C:\temp\folderB\folderBB\folderBBB
-
-14/04/2025  07:51    <DIR>          .
-14/04/2025  07:51    <DIR>          ..
-               0 arquivo(s)              0 bytes
-
- Pasta de C:\temp\folderC
-
-14/04/2025  07:51    <DIR>          .
-14/04/2025  07:51    <DIR>          ..
-14/04/2025  07:51    <DIR>          folderCC
-               0 arquivo(s)              0 bytes
-
- Pasta de C:\temp\folderC\folderCC
-
-14/04/2025  07:51    <DIR>          .
-14/04/2025  07:51    <DIR>          ..
-14/04/2025  07:51    <DIR>          folderCCC
-               0 arquivo(s)              0 bytes
-
- Pasta de C:\temp\folderC\folderCC\folderCCC
-
-14/04/2025  07:51    <DIR>          .
-14/04/2025  07:51    <DIR>          ..
+14/04/2025  08:52    <DIR>          .
+14/04/2025  08:52    <DIR>          ..
+14/04/2025  08:52    <DIR>          PastaDoAdm2
                0 arquivo(s)              0 bytes
 
      Total de Arquivos na Lista:
-               2 arquivo(s)              0 bytes
-              29 pasta(s)   71.558.111.232 bytes disponíveis
+               0 arquivo(s)              0 bytes
+               3 pasta(s)   71.401.869.312 bytes disponíveis
 */
 
 /*
 <>
 Exe001.m1()
-
-
 TestSimpleFileVisitor.preVisitDirectory()[dir=c:\temp]
-
-
-TestSimpleFileVisitor.preVisitDirectory()[dir=c:\temp\folderA]
-TestSimpleFileVisitor.preVisitDirectory()[dir=c:\temp\folderA\folderAA]
-TestSimpleFileVisitor.preVisitDirectory()[dir=c:\temp\folderA\folderAA\folderAAA]
-
-TestSimpleFileVisitor.postVisitDirectory()[dir=c:\temp\folderA\folderAA\folderAAA][exc=null]
-TestSimpleFileVisitor.postVisitDirectory()[dir=c:\temp\folderA\folderAA][exc=null]
-TestSimpleFileVisitor.postVisitDirectory()[dir=c:\temp\folderA][exc=null]
-
-
-TestSimpleFileVisitor.preVisitDirectory()[dir=c:\temp\folderB]
-TestSimpleFileVisitor.preVisitDirectory()[dir=c:\temp\folderB\folderBB]
-
-TestSimpleFileVisitor.visitFile()[file=c:\temp\folderB\folderBB\fa.txt]
-
-TestSimpleFileVisitor.preVisitDirectory()[dir=c:\temp\folderB\folderBB\folderBBB]
-TestSimpleFileVisitor.postVisitDirectory()[dir=c:\temp\folderB\folderBB\folderBBB][exc=null]
-
-TestSimpleFileVisitor.visitFile()[file=c:\temp\folderB\folderBB\fz.txt]
-
-TestSimpleFileVisitor.postVisitDirectory()[dir=c:\temp\folderB\folderBB][exc=null]
-TestSimpleFileVisitor.postVisitDirectory()[dir=c:\temp\folderB][exc=null]
-
-
-TestSimpleFileVisitor.preVisitDirectory()[dir=c:\temp\folderC]
-TestSimpleFileVisitor.preVisitDirectory()[dir=c:\temp\folderC\folderCC]
-TestSimpleFileVisitor.preVisitDirectory()[dir=c:\temp\folderC\folderCC\folderCCC]
-
-TestSimpleFileVisitor.postVisitDirectory()[dir=c:\temp\folderC\folderCC\folderCCC][exc=null]
-TestSimpleFileVisitor.postVisitDirectory()[dir=c:\temp\folderC\folderCC][exc=null]
-TestSimpleFileVisitor.postVisitDirectory()[dir=c:\temp\folderC][exc=null]
-
-
+TestSimpleFileVisitor.visitFileFailed()[file=c:\temp\PastaDoAdm2][exc=java.nio.file.AccessDeniedException: c:\temp\PastaDoAdm2]
 TestSimpleFileVisitor.postVisitDirectory()[dir=c:\temp][exc=null]
-
-
 </>
 */
 
 /*
-apesar de
-14/04/2025  07:52                 0 fz.txt
-14/04/2025  07:53                 0 fa.txt
-
-a sequencia da listagem fica
-TestSimpleFileVisitor.visitFile()[file=c:\temp\folderB\folderBB\fa.txt]
-TestSimpleFileVisitor.preVisitDirectory()[dir=c:\temp\folderB\folderBB\folderBBB]
-TestSimpleFileVisitor.postVisitDirectory()[dir=c:\temp\folderB\folderBB\folderBBB][exc=null]
-TestSimpleFileVisitor.visitFile()[file=c:\temp\folderB\folderBB\fz.txt]
-
-aparentemente ordem alfabetica
 
 */
