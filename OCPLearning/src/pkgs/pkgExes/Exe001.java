@@ -1,12 +1,12 @@
 package pkgs.pkgExes;
 
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardWatchEventKinds;
-import java.nio.file.WatchEvent;
-import java.nio.file.WatchKey;
-import java.nio.file.WatchService;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+class Cat implements Serializable{}
 
 public class Exe001 {
 
@@ -19,31 +19,20 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 		try {
-			Path temp = Paths.get("C:","temp");
-			WatchService watcher = FileSystems.getDefault().newWatchService();
-			temp.register(watcher, StandardWatchEventKinds.ENTRY_DELETE);
-			while (true) {
-				System.out.println("while...");
-				WatchKey key;
-				try {
-					key = watcher.take();
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-					return;
-				}
-				for(WatchEvent<?> event : key.pollEvents()) {
-					WatchEvent.Kind<?> kind = event.kind();
-					System.out.println("[="+(kind.name())+"]");
-					System.out.println("[="+(kind.type())+"]");
-					System.out.println("[="+(event.context())+"]");
-					String name = event.context().toString();
-					if(name.equals("directoryToDelete")) {
-						System.out.println("Diretorio deletado...");
-						return;
-					}
-				}
-				key.reset();
-			}
+			Cat c = new Cat();
+			FileOutputStream fos = new FileOutputStream("C:\\temp\\testSer.ser");
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(c);
+			oos.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			FileInputStream fos = new FileInputStream("C:\\temp\\testSer.ser");
+			ObjectInputStream ois = new ObjectInputStream(fos);
+			Cat c = (Cat) ois.readObject();
+			System.out.println(c);
+			ois.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
