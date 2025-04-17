@@ -7,7 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-class Colar implements Serializable {
+class Colar {
 	private int collarSize;
 	public Colar(int collarSize) {
 		this.collarSize = collarSize;
@@ -18,7 +18,7 @@ class Colar implements Serializable {
 }
 
 class Dog implements Serializable {
-	private Colar colar;
+	private transient Colar colar;
 	private int dogSize;
 	public Dog(Colar colar, int dogSize) {
 		super();
@@ -60,7 +60,7 @@ public class Exe001 {
 			ObjectInputStream ois = new ObjectInputStream(fos);
 			Dog dog = (Dog) ois.readObject();
 			System.out.println(dog.getDogSize());
-			System.out.println(dog.getColar().getCollarSize());
+			System.out.println(dog.getColar());
 			ois.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -74,7 +74,7 @@ public class Exe001 {
 Exe001.m1()
 false
 8
-3
+null
 </>
 */
 
