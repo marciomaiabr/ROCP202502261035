@@ -31,6 +31,33 @@ class Dog implements Serializable {
 	public int getDogSize() {
 		return dogSize;
 	}
+	//https://docs.oracle.com/javase/7/docs/api/java/io/ObjectOutputStream.html
+	//https://docs.oracle.com/en/java/javase/11/docs/specs/serialization/input.html
+	private void writeObject(ObjectOutputStream oos) {
+		System.out.println("Dog.writeObject()");
+		try {
+			oos.defaultWriteObject();//se ñ chamar, não escreve os atributos automaticamente, como dogSize por exemplo//se chamar um sem o outro=StreamCorruptedException: invalid type code: 00
+			oos.writeInt(colar.getCollarSize());
+			oos.writeInt(100);
+			oos.writeInt(200);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	private void readObject(ObjectInputStream ois) {
+		System.out.println("Dog.readObject()");
+		try {
+			ois.defaultReadObject();//se ñ chamar, não carrega os atributos automaticamente, como dogSize por exemplo//se chamar um sem o outro=StreamCorruptedException: invalid type code: 00
+			colar = new Colar(ois.readInt());
+			System.out.println("[="+(ois.readInt())+"]");
+			System.out.println("[="+(ois.readInt())+"]");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	private void readObjectNoData() {
+		System.out.println("Dog.readObjectNoData()");
+	}
 }
 
 public class Exe001 {
@@ -60,7 +87,7 @@ public class Exe001 {
 			ObjectInputStream ois = new ObjectInputStream(fos);
 			Dog dog = (Dog) ois.readObject();
 			System.out.println(dog.getDogSize());
-			System.out.println(dog.getColar());
+			System.out.println(dog.getColar().getCollarSize());
 			ois.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -73,8 +100,12 @@ public class Exe001 {
 <>
 Exe001.m1()
 false
+Dog.writeObject()
+Dog.readObject()
+[=100]
+[=200]
 8
-null
+3
 </>
 */
 
