@@ -1,12 +1,37 @@
 package pkgs.pkgExes;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-class Cat implements Serializable{}
+class Colar {
+	private int collarSize;
+	public Colar(int collarSize) {
+		this.collarSize = collarSize;
+	}
+	public int getCollarSize() {
+		return collarSize;
+	}
+}
+
+class Dog {
+	private Colar colar;
+	private int dogSize;
+	public Dog(Colar colar, int dogSize) {
+		super();
+		this.colar = colar;
+		this.dogSize = dogSize;
+	}
+	public Colar getColar() {
+		return colar;
+	}
+	public int getDogSize() {
+		return dogSize;
+	}
+}
 
 public class Exe001 {
 
@@ -18,30 +43,34 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
+		File file = new File("C:\\temp\\dog.ser");
 		try {
-			Cat c = new Cat();
-			FileOutputStream fos = new FileOutputStream("C:\\temp\\testSer.ser");
+			Colar colar = new Colar(3);
+			Dog dog = new Dog(colar, 8);
+			System.out.println(file.exists());
+			FileOutputStream fos = new FileOutputStream(file);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			oos.writeObject(c);
+			oos.writeObject(dog);
 			oos.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		try {
-			FileInputStream fos = new FileInputStream("C:\\temp\\testSer.ser");
-			ObjectInputStream ois = new ObjectInputStream(fos);
-			Cat c = (Cat) ois.readObject();
-			System.out.println(c);
-			ois.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		System.out.println(file.exists());
 	}
 
 }
 
 /*
-
+<>
+Exe001.m1()
+false
+java.io.NotSerializableException: pkgs.pkgExes.Dog
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:53)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:40)
+true
+</>
 */
 
 /*
