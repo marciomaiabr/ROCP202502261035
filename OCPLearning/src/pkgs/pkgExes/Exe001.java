@@ -55,7 +55,16 @@ public class Exe001 {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(file.exists());
+		try {
+			FileInputStream fos = new FileInputStream(file);
+			ObjectInputStream ois = new ObjectInputStream(fos);
+			Dog dog = (Dog) ois.readObject();
+			System.out.println(dog.getDogSize());
+			System.out.println(dog.getColar().getCollarSize());
+			ois.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
@@ -64,7 +73,8 @@ public class Exe001 {
 <>
 Exe001.m1()
 false
-true
+8
+3
 </>
 */
 
