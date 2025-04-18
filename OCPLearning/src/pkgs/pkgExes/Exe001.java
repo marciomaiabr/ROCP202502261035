@@ -14,11 +14,6 @@ class Animal {
 	private String atributo3;
 	private String atributo4;
 	private String atributo5;
-	public Animal() {
-		super();
-		System.out.println("Animal.Animal()");
-		this.atributo2 = "vAtributo2";
-	}
 	public Animal(String atributo4) {
 		super();
 		System.out.println("Animal.Animal(String atributo3)");
@@ -68,7 +63,7 @@ class Dog extends Animal implements Serializable {
 	private String atributo9;
 	private String atributo10;
 	public Dog() {
-		super();
+		super("vAtributo9");
 		System.out.println("Dog.Dog()");
 		this.atributo7 = "vAtributo7";
 	}
@@ -170,13 +165,19 @@ public class Exe001 {
 <>
 Exe001.m1()
 serialization
-Animal.Animal()
+Animal.Animal(String atributo3)
 Dog.Dog()
 false
 deserialization
-Animal.Animal()
-[Animal=[atributo1=vAtributo1][atributo2=vAtributo2][atributo3=null][atributo4=null][atributo5=null]]
-[Dog=[atributo6=vSetAtributo6][atributo7=vSetAtributo7][atributo8=vSetAtributo8][atributo9=vSetAtributo9][atributo10=vSetAtributo10]]
+java.io.InvalidClassException: pkgs.pkgExes.Dog; no valid constructor
+	at java.io.ObjectStreamClass$ExceptionInfo.newInvalidClassException(ObjectStreamClass.java:169)
+	at java.io.ObjectStreamClass.checkDeserialize(ObjectStreamClass.java:885)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2210)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1692)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:508)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:466)
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:153)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:120)
 </>
 */
 
