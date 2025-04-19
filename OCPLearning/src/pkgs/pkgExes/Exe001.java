@@ -9,19 +9,13 @@ import java.io.Serializable;
 import java.nio.file.Files;
 
 class Pessoa implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private int attribute1;
-	private int attribute2;
 	public int getAttribute1() {
 		return attribute1;
 	}
 	public void setAttribute1(int attribute1) {
 		this.attribute1 = attribute1;
-	}
-	public int getAttribute2() {
-		return attribute2;
-	}
-	public void setAttribute2(int attribute2) {
-		this.attribute2 = attribute2;
 	}
 }
 
@@ -69,16 +63,18 @@ public class Exe001 {
 /*
 <>
 Exe001.m2()
-java.io.InvalidClassException: pkgs.pkgExes.Pessoa; local class incompatible: stream classdesc serialVersionUID = 6924733891751361056, local class serialVersionUID = -7354908922431995500
-	at java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:699)
+java.io.InvalidClassException: pkgs.pkgExes.Pessoa; incompatible types for field attribute1
+	at java.io.ObjectStreamClass.matchFields(ObjectStreamClass.java:2468)
+	at java.io.ObjectStreamClass.getReflector(ObjectStreamClass.java:2362)
+	at java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:753)
 	at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2028)
 	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1875)
 	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2209)
 	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1692)
 	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:508)
 	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:466)
-	at pkgs.pkgExes.Exe001.m2(Exe001.java:58)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:32)
+	at pkgs.pkgExes.Exe001.m2(Exe001.java:52)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:26)
 </>
 */
 
