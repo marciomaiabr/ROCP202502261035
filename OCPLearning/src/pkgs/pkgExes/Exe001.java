@@ -23,6 +23,7 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 		new Exe002().m1();
+		new Exe003().m1();
 	}
 
 }
@@ -50,6 +51,23 @@ class Exe002 implements Serializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+}
+
+class Exe003 implements Serializable {
+
+	public class Pessoa implements Serializable {
+		private int attribute1;
+		public int getAttribute1() {
+			return attribute1;
+		}
+		public void setAttribute1(int attribute1) {
+			this.attribute1 = attribute1;
+		}
+	}
+
+	public void m1() {
 		try {
 			FileInputStream fos = new FileInputStream(Exe001.file);
 			ObjectInputStream ois = new ObjectInputStream(fos);
@@ -67,7 +85,10 @@ class Exe002 implements Serializable {
 /*
 <>
 Exe001.m1()
-pkgs.pkgExes.Exe002$Pessoa@7291c18f
+java.lang.ClassCastException: pkgs.pkgExes.Exe002$Pessoa cannot be cast to pkgs.pkgExes.Exe003$Pessoa
+	at pkgs.pkgExes.Exe003.m1(Exe001.java:74)
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:26)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:19)
 </>
 */
 
