@@ -35,16 +35,18 @@ class Pessoa {
 		if(obj == this) {
 			System.out.println("[ == ="+(true)+"]");
 			retorno = true;
-		}else if(obj instanceof Pessoa) {
-			System.out.println("[ == ="+(false)+"]");
-			System.out.println("[instanceof="+(true)+"]");
-			Pessoa pessoa = (Pessoa) obj;
-			System.out.println("[pessoa="+(pessoa)+"]");
-			if(pessoa.getCodigo() == this.getCodigo()) {
-				retorno = true;
-			}
 		}else {
-			System.out.println("[instanceof="+(false)+"]");
+			System.out.println("[ == ="+(false)+"]");
+			if(obj instanceof Pessoa) {
+				System.out.println("[instanceof="+(true)+"]");
+				Pessoa pessoa = (Pessoa) obj;
+				System.out.println("[pessoa="+(pessoa)+"]");
+				if(pessoa.getCodigo() == this.getCodigo()) {
+					retorno = true;
+				}
+			}else {
+				System.out.println("[instanceof="+(false)+"]");
+			}
 		}
 		return retorno;
 	}
@@ -61,7 +63,7 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		Pessoa pessoa1 = null;
+		Pessoa pessoa1 = new Pessoa(1, "Marcio");
 		System.out.println("[="+(pessoa1.equals(null))+"]");
 	}
 
@@ -70,9 +72,12 @@ public class Exe001 {
 /*
 <>
 Exe001.m1()
-Exception in thread "main" java.lang.NullPointerException
-	at pkgs.pkgExes.Exe001.m1(Exe001.java:65)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:58)
+Pessoa.equals()
+[obj=null]
+[ == =false]
+[instanceof=false]
+[=false]
+</>
 */
 
 /*
