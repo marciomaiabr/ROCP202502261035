@@ -64,7 +64,7 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 		Pessoa pessoa1 = new Pessoa(1, "Marcio");
-		System.out.println("[="+(pessoa1.equals(new Object()))+"]");
+		System.out.println("[="+(pessoa1.equals(new Pessoa(2, "Ana")))+"]");
 	}
 
 }
@@ -73,9 +73,12 @@ public class Exe001 {
 <>
 Exe001.m1()
 Pessoa.equals()
-[obj=java.lang.Object@15db9742]
+Pessoa.toString()
+[obj=Pessoa [codigo=2, nome=Ana]]
 [ == =false]
-[instanceof=false]
+[instanceof=true]
+Pessoa.toString()
+[pessoa=Pessoa [codigo=2, nome=Ana]]
 [=false]
 </>
 */
