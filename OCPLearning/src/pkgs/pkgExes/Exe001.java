@@ -28,6 +28,23 @@ class Pessoa {
 		System.out.println("Pessoa.toString()");
 		return "Pessoa [codigo=" + codigo + ", nome=" + nome + "]";
 	}
+	public boolean equals(Object obj) {
+		System.out.println("Pessoa.equals()");
+		System.out.println("[obj="+(obj)+"]");
+		boolean retorno = false;
+		if(obj instanceof Pessoa) {
+			System.out.println("[instanceof="+(true)+"]");
+			Pessoa pessoa = (Pessoa) obj;
+			System.out.println("[pessoa="+(pessoa)+"]");
+			if(pessoa.getCodigo() == this.getCodigo()) {
+				retorno = true;
+			}
+		}else {
+			System.out.println("[instanceof="+(false)+"]");
+		}
+		return retorno;
+	}
+
 }
 
 public class Exe001 {
@@ -40,18 +57,13 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		Pessoa pessoa = new Pessoa(41, "Marcio");
-		System.out.println("[="+(pessoa)+"]");
+		Pessoa pessoa1 = new Pessoa(1, "Marcio");
 	}
 
 }
 
 /*
-<>
-Exe001.m1()
-Pessoa.toString()
-[=Pessoa [codigo=41, nome=Marcio]]
-</>
+
 */
 
 /*
