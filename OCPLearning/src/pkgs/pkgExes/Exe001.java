@@ -61,13 +61,18 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		Pessoa pessoa1 = new Pessoa(1, "Marcio");
+		Pessoa pessoa1 = null;
+		System.out.println("[="+(pessoa1.equals(null))+"]");
 	}
 
 }
 
 /*
-
+<>
+Exe001.m1()
+Exception in thread "main" java.lang.NullPointerException
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:65)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:58)
 */
 
 /*
