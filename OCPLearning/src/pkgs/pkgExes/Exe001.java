@@ -32,7 +32,11 @@ class Pessoa {
 		System.out.println("Pessoa.equals()");
 		System.out.println("[obj="+(obj)+"]");
 		boolean retorno = false;
-		if(obj instanceof Pessoa) {
+		if(obj == this) {
+			System.out.println("[ == ="+(true)+"]");
+			retorno = true;
+		}else if(obj instanceof Pessoa) {
+			System.out.println("[ == ="+(false)+"]");
 			System.out.println("[instanceof="+(true)+"]");
 			Pessoa pessoa = (Pessoa) obj;
 			System.out.println("[pessoa="+(pessoa)+"]");
@@ -58,22 +62,12 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 		Pessoa pessoa1 = new Pessoa(1, "Marcio");
-		System.out.println("[="+(pessoa1.equals(new Pessoa(1, "Ana")))+"]");
 	}
 
 }
 
 /*
-<>
-Exe001.m1()
-Pessoa.equals()
-Pessoa.toString()
-[obj=Pessoa [codigo=1, nome=Ana]]
-[instanceof=true]
-Pessoa.toString()
-[pessoa=Pessoa [codigo=1, nome=Ana]]
-[=true]
-</>
+
 */
 
 /*
