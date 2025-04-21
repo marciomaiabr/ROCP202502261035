@@ -1,5 +1,7 @@
 package pkgs.pkgExes;
 
+import java.util.Objects;
+
 class Pessoa {
 	private int codigo;
 	private String nome;
@@ -64,10 +66,7 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 		Pessoa pessoa1 = new Pessoa(1, "Marcio");
-		Pessoa pessoa2 = pessoa1;
-		pessoa2.setCodigo(9);
-		Pessoa pessoa3 = pessoa2;
-		System.out.println("[="+(pessoa1.equals(pessoa3))+"]");
+		System.out.println("[="+(Objects.equals(pessoa1, null))+"]");
 	}
 
 }
@@ -76,10 +75,10 @@ public class Exe001 {
 <>
 Exe001.m1()
 Pessoa.equals()
-Pessoa.toString()
-[obj=Pessoa [codigo=9, nome=Marcio]]
-[ == =true]
-[=true]
+[obj=null]
+[ == =false]
+[instanceof=false]
+[=false]
 </>
 */
 
