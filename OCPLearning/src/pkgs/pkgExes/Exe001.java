@@ -10,10 +10,10 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
+		System.out.println("[="+(null == null)+"]");
 		Object o = null;
-		System.out.println("[="+(o instanceof Object)+"]");
-		Object o2 = new Object();
-		System.out.println("[="+(o2 instanceof Object)+"]");
+		Object o2 = null;
+		System.out.println("[="+(o == o2)+"]");
 	}
 
 }
@@ -21,7 +21,7 @@ public class Exe001 {
 /*
 <>
 Exe001.m1()
-[=false]
+[=true]
 [=true]
 </>
 */
