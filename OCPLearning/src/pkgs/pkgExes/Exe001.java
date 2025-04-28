@@ -1,6 +1,8 @@
 package pkgs.pkgExes;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.ArrayList;
 
 class Pessoa {
 	private int codigo;
@@ -46,7 +48,7 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		Collection<Pessoa> collection = null;
+		Collection<Pessoa> collection = new ArrayList<Pessoa>();
 		Pessoa pessoa1A = new Pessoa(1, "PessoaA");
 		Pessoa pessoa2B = new Pessoa(2, "PessoaB");
 		Pessoa pessoa1C = new Pessoa(1, "PessoaC");
@@ -54,12 +56,20 @@ public class Exe001 {
 		collection.add(pessoa2B);
 		collection.add(pessoa1C);
 		System.out.println();
+		List list = ((List)collection);
+		System.out.println("[=" + (list.get(list.indexOf(new Pessoa(1)))) + "]");
 	}
 
 }
 
 /*
+<>
+Exe001.m1()
 
+Pessoa.equals()
+Pessoa.toString()
+[=Pessoa [codigo=1, nome=PessoaA]]
+</>
 */
 
 /*
