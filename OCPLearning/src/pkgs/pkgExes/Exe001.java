@@ -1,19 +1,13 @@
 package pkgs.pkgExes;
 
-import java.util.HashSet;
-import java.util.Objects;
+import java.util.Collection;
 
 class Pessoa {
 	private int codigo;
 	private String nome;
-	public Pessoa() {
-		super();
-	}
-	public Pessoa(int codigo, String nome) {
-		super();
-		this.codigo = codigo;
-		this.nome = nome;
-	}
+	public Pessoa() { super(); }
+	public Pessoa(int codigo, String nome) { super(); this.codigo = codigo; this.nome = nome; }
+	public Pessoa(int codigo) { super(); this.codigo = codigo; }
 	public int getCodigo() {return codigo;}
 	public void setCodigo(int codigo) {this.codigo = codigo;}
 	public String getNome() {return nome;}
@@ -52,23 +46,20 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		HashSet<Pessoa> hashSet = new HashSet<Pessoa>();
-		hashSet.add(new Pessoa(1, "Marcio"));
+		Collection<Pessoa> collection = null;
+		Pessoa pessoa1A = new Pessoa(1, "PessoaA");
+		Pessoa pessoa2B = new Pessoa(2, "PessoaB");
+		Pessoa pessoa1C = new Pessoa(1, "PessoaC");
+		collection.add(pessoa1A);
+		collection.add(pessoa2B);
+		collection.add(pessoa1C);
 		System.out.println();
-		System.out.println("[=" + (hashSet.contains(new Pessoa(1, "Marcio"))) + "]");
 	}
 
 }
 
 /*
-<>
-Exe001.m1()
-Pessoa.hashCode()
 
-Pessoa.hashCode()
-Pessoa.equals()
-[=true]
-</>
 */
 
 /*
