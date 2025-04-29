@@ -46,7 +46,7 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		Collection<Pessoa> collection = new ArrayList<Pessoa>();
+		Collection<Pessoa> collection = new HashSet<Pessoa>();
 		Pessoa pessoa1A = new Pessoa(1, "PessoaA");
 		Pessoa pessoa2B = new Pessoa(2, "PessoaB");
 		Pessoa pessoa1C = new Pessoa(1, "PessoaC");
@@ -55,7 +55,7 @@ public class Exe001 {
 		System.out.println();
 		collection.add(pessoa1C);
 		System.out.println();
-		List impl = ((List)collection);
+		Set impl = ((Set)collection);
 		System.out.println("[=" + (impl.contains(new Pessoa(1))) + "]");
 		System.out.println();
 		impl.forEach(System.out::println);
@@ -66,8 +66,13 @@ public class Exe001 {
 /*
 <>
 Exe001.m1()
+Pessoa.hashCode()
+Pessoa.hashCode()
 
+Pessoa.hashCode()
+Pessoa.equals()
 
+Pessoa.hashCode()
 Pessoa.equals()
 [=true]
 
@@ -75,8 +80,6 @@ Pessoa.toString()
 Pessoa [codigo=1, nome=PessoaA]
 Pessoa.toString()
 Pessoa [codigo=2, nome=PessoaB]
-Pessoa.toString()
-Pessoa [codigo=1, nome=PessoaC]
 </>
 */
 
