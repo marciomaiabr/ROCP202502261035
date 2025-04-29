@@ -1,8 +1,6 @@
 package pkgs.pkgExes;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 class Pessoa {
 	private int codigo;
@@ -54,10 +52,13 @@ public class Exe001 {
 		Pessoa pessoa1C = new Pessoa(1, "PessoaC");
 		collection.add(pessoa1A);
 		collection.add(pessoa2B);
+		System.out.println();
 		collection.add(pessoa1C);
 		System.out.println();
-		List list = ((List)collection);
-		System.out.println("[=" + (list.get(list.indexOf(new Pessoa(1)))) + "]");
+		List impl = ((List)collection);
+		System.out.println("[=" + (impl.contains(new Pessoa(1))) + "]");
+		System.out.println();
+		impl.forEach(System.out::println);
 	}
 
 }
@@ -66,9 +67,16 @@ public class Exe001 {
 <>
 Exe001.m1()
 
+
 Pessoa.equals()
+[=true]
+
 Pessoa.toString()
-[=Pessoa [codigo=1, nome=PessoaA]]
+Pessoa [codigo=1, nome=PessoaA]
+Pessoa.toString()
+Pessoa [codigo=2, nome=PessoaB]
+Pessoa.toString()
+Pessoa [codigo=1, nome=PessoaC]
 </>
 */
 
