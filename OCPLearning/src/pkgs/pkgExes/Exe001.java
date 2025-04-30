@@ -14,13 +14,14 @@ class Pessoa {
 	public void setNome(String nome) {this.nome = nome;}
 	@Override
 	public String toString() {
-		System.out.println("Pessoa.toString()");
 		return "Pessoa [codigo=" + codigo + ", nome=" + nome + "]";
 	}
 	@Override
 	public int hashCode() {
 		System.out.println("Pessoa.hashCode()");
-		return codigo;
+		int hashCode = Objects.hashCode(codigo);
+		System.out.println("[hashCode="+(hashCode)+"]");
+		return hashCode;
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -46,16 +47,19 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		Collection<Pessoa> collection = new HashSet<Pessoa>();
+		Collection<Pessoa> collection = new ArrayList<Pessoa>();
 		Pessoa pessoa1A = new Pessoa(1, "PessoaA");
 		Pessoa pessoa2B = new Pessoa(2, "PessoaB");
 		Pessoa pessoa1C = new Pessoa(1, "PessoaC");
+		Pessoa pessoa2D = new Pessoa(2, "PessoaD");
+		Pessoa pessoa3E = new Pessoa(3, "PessoaE");
 		collection.add(pessoa1A);
 		collection.add(pessoa2B);
-		System.out.println();
 		collection.add(pessoa1C);
+		collection.add(pessoa2D);
+		collection.add(pessoa3E);
 		System.out.println();
-		Set impl = ((Set)collection);
+		List impl = ((List)collection);
 		System.out.println("[=" + (impl.contains(new Pessoa(1))) + "]");
 		System.out.println();
 		impl.forEach(System.out::println);
@@ -66,20 +70,15 @@ public class Exe001 {
 /*
 <>
 Exe001.m1()
-Pessoa.hashCode()
-Pessoa.hashCode()
 
-Pessoa.hashCode()
-Pessoa.equals()
-
-Pessoa.hashCode()
 Pessoa.equals()
 [=true]
 
-Pessoa.toString()
 Pessoa [codigo=1, nome=PessoaA]
-Pessoa.toString()
 Pessoa [codigo=2, nome=PessoaB]
+Pessoa [codigo=1, nome=PessoaC]
+Pessoa [codigo=2, nome=PessoaD]
+Pessoa [codigo=3, nome=PessoaE]
 </>
 */
 
