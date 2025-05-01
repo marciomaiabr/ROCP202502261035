@@ -1,15 +1,17 @@
 package pkgs.pkgExes;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 class Pessoa {
-	private int codigo;
+	private long codigo;
 	private String nome;
 	public Pessoa() { super(); }
-	public Pessoa(int codigo, String nome) { super(); this.codigo = codigo; this.nome = nome; }
-	public Pessoa(int codigo) { super(); this.codigo = codigo; }
-	public int getCodigo() {return codigo;}
-	public void setCodigo(int codigo) {this.codigo = codigo;}
+	public Pessoa(long codigo, String nome) { super(); this.codigo = codigo; this.nome = nome; }
+	public Pessoa(long codigo) { super(); this.codigo = codigo; }
+	public long getCodigo() {return codigo;}
+	public void setCodigo(long codigo) {this.codigo = codigo;}
 	public String getNome() {return nome;}
 	public void setNome(String nome) {this.nome = nome;}
 	@Override
@@ -19,7 +21,8 @@ class Pessoa {
 	@Override
 	public int hashCode() {
 		System.out.println("Pessoa.hashCode()");
-		int hashCode = Objects.hashCode(codigo);
+		try { Thread.sleep(2000); } catch (Exception e) {}
+		int hashCode = Objects.hashCode(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")));//Objects.hashCode(codigo);
 		System.out.println("[hashCode="+(hashCode)+"]");
 		return hashCode;
 	}
@@ -88,45 +91,35 @@ Exe001.m1()
 
 add(pessoa1A)
 Pessoa.hashCode()
-[hashCode=1]
+[hashCode=-1700067538]
 
 add(pessoa2B)
 Pessoa.hashCode()
-[hashCode=2]
+[hashCode=-1700067536]
 
 add(pessoa1C)
 Pessoa.hashCode()
-[hashCode=1]
-Pessoa.equals()[this=Pessoa [codigo=1, nome=PessoaC]][obj=Pessoa [codigo=1, nome=PessoaA]]
-[(obj instanceof Pessoa)=true]
-[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
-[isEquals=true]
+[hashCode=-1700067534]
 
 add(pessoa2D)
 Pessoa.hashCode()
-[hashCode=2]
-Pessoa.equals()[this=Pessoa [codigo=2, nome=PessoaD]][obj=Pessoa [codigo=2, nome=PessoaB]]
-[(obj instanceof Pessoa)=true]
-[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
-[isEquals=true]
+[hashCode=-1700067511]
 
 add(pessoa3E)
 Pessoa.hashCode()
-[hashCode=3]
+[hashCode=-1700067509]
 
 contains
 Pessoa.hashCode()
-[hashCode=2]
-Pessoa.equals()[this=Pessoa [codigo=2, nome=null]][obj=Pessoa [codigo=2, nome=PessoaB]]
-[(obj instanceof Pessoa)=true]
-[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
-[isEquals=true]
-[=true]
+[hashCode=-1700067507]
+[=false]
 
 forEach
-Pessoa [codigo=1, nome=PessoaA]
-Pessoa [codigo=2, nome=PessoaB]
 Pessoa [codigo=3, nome=PessoaE]
+Pessoa [codigo=2, nome=PessoaD]
+Pessoa [codigo=1, nome=PessoaA]
+Pessoa [codigo=1, nome=PessoaC]
+Pessoa [codigo=2, nome=PessoaB]
 </>
 */
 
