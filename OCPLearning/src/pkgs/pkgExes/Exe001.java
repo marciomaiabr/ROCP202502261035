@@ -57,7 +57,7 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		Collection<Pessoa> collection = new ArrayList<Pessoa>();
+		Collection<Pessoa> collection = new HashSet<Pessoa>();
 		Pessoa pessoa1A = new Pessoa(1, "PessoaA");
 		Pessoa pessoa2B = new Pessoa(2, "PessoaB");
 		Pessoa pessoa1C = new Pessoa(1, "PessoaC");
@@ -73,9 +73,9 @@ public class Exe001 {
 		collection.add(pessoa2D);
 		System.out.println("\nadd(pessoa3E)");
 		collection.add(pessoa3E);
-		List impl = ((List)collection);
+		Set impl = ((Set)collection);
 		System.out.println("\ncontains");
-		System.out.println("[=" + (impl.contains(new Pessoa(1))) + "]");
+		System.out.println("[=" + (impl.contains(new Pessoa(2))) + "]");
 		System.out.println("\nforEach");
 		impl.forEach(System.out::println);
 	}
@@ -87,17 +87,37 @@ public class Exe001 {
 Exe001.m1()
 
 add(pessoa1A)
+Pessoa.hashCode()
+[hashCode=1]
 
 add(pessoa2B)
+Pessoa.hashCode()
+[hashCode=2]
 
 add(pessoa1C)
+Pessoa.hashCode()
+[hashCode=1]
+Pessoa.equals()[this=Pessoa [codigo=1, nome=PessoaC]][obj=Pessoa [codigo=1, nome=PessoaA]]
+[(obj instanceof Pessoa)=true]
+[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
+[isEquals=true]
 
 add(pessoa2D)
+Pessoa.hashCode()
+[hashCode=2]
+Pessoa.equals()[this=Pessoa [codigo=2, nome=PessoaD]][obj=Pessoa [codigo=2, nome=PessoaB]]
+[(obj instanceof Pessoa)=true]
+[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
+[isEquals=true]
 
 add(pessoa3E)
+Pessoa.hashCode()
+[hashCode=3]
 
 contains
-Pessoa.equals()[this=Pessoa [codigo=1, nome=null]][obj=Pessoa [codigo=1, nome=PessoaA]]
+Pessoa.hashCode()
+[hashCode=2]
+Pessoa.equals()[this=Pessoa [codigo=2, nome=null]][obj=Pessoa [codigo=2, nome=PessoaB]]
 [(obj instanceof Pessoa)=true]
 [(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
 [isEquals=true]
@@ -106,8 +126,6 @@ Pessoa.equals()[this=Pessoa [codigo=1, nome=null]][obj=Pessoa [codigo=1, nome=Pe
 forEach
 Pessoa [codigo=1, nome=PessoaA]
 Pessoa [codigo=2, nome=PessoaB]
-Pessoa [codigo=1, nome=PessoaC]
-Pessoa [codigo=2, nome=PessoaD]
 Pessoa [codigo=3, nome=PessoaE]
 </>
 */
