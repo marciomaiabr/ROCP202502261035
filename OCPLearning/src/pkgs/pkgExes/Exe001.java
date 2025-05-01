@@ -21,8 +21,7 @@ class Pessoa {
 	@Override
 	public int hashCode() {
 		System.out.println("Pessoa.hashCode()");
-		try { Thread.sleep(2000); } catch (Exception e) {}
-		int hashCode = Objects.hashCode(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")));//Objects.hashCode(codigo);
+		int hashCode = Objects.hashCode(9);//Objects.hashCode(codigo);
 		System.out.println("[hashCode="+(hashCode)+"]");
 		return hashCode;
 	}
@@ -91,35 +90,60 @@ Exe001.m1()
 
 add(pessoa1A)
 Pessoa.hashCode()
-[hashCode=-1700067538]
+[hashCode=9]
 
 add(pessoa2B)
 Pessoa.hashCode()
-[hashCode=-1700067536]
+[hashCode=9]
+Pessoa.equals()[this=Pessoa [codigo=2, nome=PessoaB]][obj=Pessoa [codigo=1, nome=PessoaA]]
+[(obj instanceof Pessoa)=true]
+[isEquals=false]
 
 add(pessoa1C)
 Pessoa.hashCode()
-[hashCode=-1700067534]
+[hashCode=9]
+Pessoa.equals()[this=Pessoa [codigo=1, nome=PessoaC]][obj=Pessoa [codigo=1, nome=PessoaA]]
+[(obj instanceof Pessoa)=true]
+[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
+[isEquals=true]
 
 add(pessoa2D)
 Pessoa.hashCode()
-[hashCode=-1700067511]
+[hashCode=9]
+Pessoa.equals()[this=Pessoa [codigo=2, nome=PessoaD]][obj=Pessoa [codigo=1, nome=PessoaA]]
+[(obj instanceof Pessoa)=true]
+[isEquals=false]
+Pessoa.equals()[this=Pessoa [codigo=2, nome=PessoaD]][obj=Pessoa [codigo=2, nome=PessoaB]]
+[(obj instanceof Pessoa)=true]
+[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
+[isEquals=true]
 
 add(pessoa3E)
 Pessoa.hashCode()
-[hashCode=-1700067509]
+[hashCode=9]
+Pessoa.equals()[this=Pessoa [codigo=3, nome=PessoaE]][obj=Pessoa [codigo=1, nome=PessoaA]]
+[(obj instanceof Pessoa)=true]
+[isEquals=false]
+Pessoa.equals()[this=Pessoa [codigo=3, nome=PessoaE]][obj=Pessoa [codigo=2, nome=PessoaB]]
+[(obj instanceof Pessoa)=true]
+[isEquals=false]
 
 contains
 Pessoa.hashCode()
-[hashCode=-1700067507]
-[=false]
+[hashCode=9]
+Pessoa.equals()[this=Pessoa [codigo=2, nome=null]][obj=Pessoa [codigo=1, nome=PessoaA]]
+[(obj instanceof Pessoa)=true]
+[isEquals=false]
+Pessoa.equals()[this=Pessoa [codigo=2, nome=null]][obj=Pessoa [codigo=2, nome=PessoaB]]
+[(obj instanceof Pessoa)=true]
+[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
+[isEquals=true]
+[=true]
 
 forEach
-Pessoa [codigo=3, nome=PessoaE]
-Pessoa [codigo=2, nome=PessoaD]
 Pessoa [codigo=1, nome=PessoaA]
-Pessoa [codigo=1, nome=PessoaC]
 Pessoa [codigo=2, nome=PessoaB]
+Pessoa [codigo=3, nome=PessoaE]
 </>
 */
 
