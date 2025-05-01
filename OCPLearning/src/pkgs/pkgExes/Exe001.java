@@ -46,7 +46,7 @@ class Pessoa {
 			}
 		}
 		System.out.println("[isEquals="+(isEquals)+"]");
-		return false;//isEquals;
+		return true;//isEquals;
 	}
 }
 
@@ -124,17 +124,11 @@ Pessoa.equals()[this=Pessoa [codigo=2, nome=null]][obj=Pessoa [codigo=2, nome=Pe
 [(obj instanceof Pessoa)=true]
 [(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
 [isEquals=true]
-Pessoa.equals()[this=Pessoa [codigo=2, nome=null]][obj=Pessoa [codigo=2, nome=PessoaD]]
-[(obj instanceof Pessoa)=true]
-[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
-[isEquals=true]
-[=false]
+[=true]
 
 forEach
 Pessoa [codigo=1, nome=PessoaA]
-Pessoa [codigo=1, nome=PessoaC]
 Pessoa [codigo=2, nome=PessoaB]
-Pessoa [codigo=2, nome=PessoaD]
 Pessoa [codigo=3, nome=PessoaE]
 </>
 */
