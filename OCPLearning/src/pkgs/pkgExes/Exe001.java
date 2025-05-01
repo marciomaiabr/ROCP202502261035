@@ -25,15 +25,25 @@ class Pessoa {
 	}
 	@Override
 	public boolean equals(Object obj) {
-		System.out.println("Pessoa.equals()");
-		if (obj == null)
-			return false;
-		if (this == obj)
-			return true;
-		if ((obj instanceof Pessoa) && (((Pessoa) obj).getCodigo() == this.getCodigo()))
-			return true;
-
-		return false;
+		System.out.println("Pessoa.equals()[this="+(this)+"][obj="+(obj)+"]");
+		boolean isEquals = false;
+		if (obj == null) {
+			System.out.println("[(obj == null)="+(true)+"]");
+			isEquals = false;
+		}
+		if (this == obj) {
+			System.out.println("[(this == obj)="+(true)+"]");
+			isEquals = true;
+		}
+		if (obj instanceof Pessoa) {
+			System.out.println("[(obj instanceof Pessoa)="+(true)+"]");
+			if (((Pessoa) obj).getCodigo() == this.getCodigo()) {
+				System.out.println("[(((Pessoa) obj).getCodigo() == this.getCodigo())="+(true)+"]");
+				isEquals = true;
+			}
+		}
+		System.out.println("[isEquals="+(isEquals)+"]");
+		return isEquals;
 	}
 }
 
@@ -53,15 +63,20 @@ public class Exe001 {
 		Pessoa pessoa1C = new Pessoa(1, "PessoaC");
 		Pessoa pessoa2D = new Pessoa(2, "PessoaD");
 		Pessoa pessoa3E = new Pessoa(3, "PessoaE");
+		System.out.println("\nadd(pessoa1A)");
 		collection.add(pessoa1A);
+		System.out.println("\nadd(pessoa2B)");
 		collection.add(pessoa2B);
+		System.out.println("\nadd(pessoa1C)");
 		collection.add(pessoa1C);
+		System.out.println("\nadd(pessoa2D)");
 		collection.add(pessoa2D);
+		System.out.println("\nadd(pessoa3E)");
 		collection.add(pessoa3E);
-		System.out.println();
 		List impl = ((List)collection);
+		System.out.println("\ncontains");
 		System.out.println("[=" + (impl.contains(new Pessoa(1))) + "]");
-		System.out.println();
+		System.out.println("\nforEach");
 		impl.forEach(System.out::println);
 	}
 
@@ -71,9 +86,24 @@ public class Exe001 {
 <>
 Exe001.m1()
 
-Pessoa.equals()
+add(pessoa1A)
+
+add(pessoa2B)
+
+add(pessoa1C)
+
+add(pessoa2D)
+
+add(pessoa3E)
+
+contains
+Pessoa.equals()[this=Pessoa [codigo=1, nome=null]][obj=Pessoa [codigo=1, nome=PessoaA]]
+[(obj instanceof Pessoa)=true]
+[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
+[isEquals=true]
 [=true]
 
+forEach
 Pessoa [codigo=1, nome=PessoaA]
 Pessoa [codigo=2, nome=PessoaB]
 Pessoa [codigo=1, nome=PessoaC]
