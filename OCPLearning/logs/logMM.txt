@@ -1,4 +1,4 @@
-2025-05-03T09:23:47.897
+2025-05-03T09:48:34.125
 <>
 Exe001.m1()
 
@@ -21,40 +21,40 @@ true
 
 Collections.sort
 
-Pessoa.compareTo()[this=[[class=Pessoa][codigo=2][nome=PessoaB]]][obj=[[class=Pessoa][codigo=4][nome=PessoaD]]]
-[(obj instanceof Pessoa)=true]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=2][nome=PessoaB]]][pessoa=[[class=Pessoa][codigo=4][nome=PessoaD]]]
+[else=true]
 [compareToResult=-1]
 
-Pessoa.compareTo()[this=[[class=Pessoa][codigo=3][nome=PessoaC]]][obj=[[class=Pessoa][codigo=2][nome=PessoaB]]]
-[(obj instanceof Pessoa)=true]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=3][nome=PessoaC]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
+[else=true]
 [compareToResult=1]
 
-Pessoa.compareTo()[this=[[class=Pessoa][codigo=3][nome=PessoaC]]][obj=[[class=Pessoa][codigo=4][nome=PessoaD]]]
-[(obj instanceof Pessoa)=true]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=3][nome=PessoaC]]][pessoa=[[class=Pessoa][codigo=4][nome=PessoaD]]]
+[else=true]
 [compareToResult=-1]
 
-Pessoa.compareTo()[this=[[class=Pessoa][codigo=3][nome=PessoaC]]][obj=[[class=Pessoa][codigo=2][nome=PessoaB]]]
-[(obj instanceof Pessoa)=true]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=3][nome=PessoaC]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
+[else=true]
 [compareToResult=1]
 
-Pessoa.compareTo()[this=[[class=Pessoa][codigo=5][nome=PessoaE]]][obj=[[class=Pessoa][codigo=3][nome=PessoaC]]]
-[(obj instanceof Pessoa)=true]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=5][nome=PessoaE]]][pessoa=[[class=Pessoa][codigo=3][nome=PessoaC]]]
+[else=true]
 [compareToResult=1]
 
-Pessoa.compareTo()[this=[[class=Pessoa][codigo=5][nome=PessoaE]]][obj=[[class=Pessoa][codigo=4][nome=PessoaD]]]
-[(obj instanceof Pessoa)=true]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=5][nome=PessoaE]]][pessoa=[[class=Pessoa][codigo=4][nome=PessoaD]]]
+[else=true]
 [compareToResult=1]
 
-Pessoa.compareTo()[this=[[class=Pessoa][codigo=1][nome=PessoaA]]][obj=[[class=Pessoa][codigo=4][nome=PessoaD]]]
-[(obj instanceof Pessoa)=true]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=1][nome=PessoaA]]][pessoa=[[class=Pessoa][codigo=4][nome=PessoaD]]]
+[else=true]
 [compareToResult=-1]
 
-Pessoa.compareTo()[this=[[class=Pessoa][codigo=1][nome=PessoaA]]][obj=[[class=Pessoa][codigo=3][nome=PessoaC]]]
-[(obj instanceof Pessoa)=true]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=1][nome=PessoaA]]][pessoa=[[class=Pessoa][codigo=3][nome=PessoaC]]]
+[else=true]
 [compareToResult=-1]
 
-Pessoa.compareTo()[this=[[class=Pessoa][codigo=1][nome=PessoaA]]][obj=[[class=Pessoa][codigo=2][nome=PessoaB]]]
-[(obj instanceof Pessoa)=true]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=1][nome=PessoaA]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
+[else=true]
 [compareToResult=-1]
 
 

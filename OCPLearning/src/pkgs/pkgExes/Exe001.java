@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-class Pessoa implements Comparable {
+class Pessoa implements Comparable<Pessoa> {
 	private long codigo;
 	private String nome;
 	public Pessoa() { super(); }
@@ -49,18 +49,17 @@ class Pessoa implements Comparable {
 		return isEquals;
 	}
 	@Override
-	public int compareTo(Object obj) {
-		System.out.println("Pessoa.compareTo()[this="+(this)+"][obj="+(obj)+"]");
+	public int compareTo(Pessoa pessoa) {
+		System.out.println("Pessoa.compareTo(Pessoa pessoa)[this="+(this)+"][pessoa="+(pessoa)+"]");
 		int compareToResult = 0;
-		if (obj == null) {
-			System.out.println("[(obj == null)="+(true)+"]");
+		if (pessoa == null) {
+			System.out.println("[(pessoa == null)="+(true)+"]");
 			compareToResult = -1;
-		} else if (this == obj) {
-			System.out.println("[(this == obj)="+(true)+"]");
+		} else if (this == pessoa) {
+			System.out.println("[(this == pessoa)="+(true)+"]");
 			compareToResult = 0;
-		} else if (obj instanceof Pessoa) {
-			System.out.println("[(obj instanceof Pessoa)="+(true)+"]");
-			Pessoa pessoa = (Pessoa) obj;
+		} else {
+			System.out.println("[else="+(true)+"]");
 			compareToResult = new Long(this.getCodigo()).compareTo(pessoa.getCodigo());
 		}
 		System.out.println("[compareToResult="+(compareToResult)+"]");
