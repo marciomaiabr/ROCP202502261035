@@ -51,28 +51,6 @@ class Pessoa {
 	}
 }
 
-class PessoaOrdenacaoCodigo implements Comparator<Pessoa> {
-	@Override
-	public int compare(Pessoa pessoa1, Pessoa pessoa2) {
-		System.out.println("Pessoa.compareTo(Pessoa pessoa)[this="+(this)+"]"+"[pessoa1="+(pessoa1)+"]"+"[pessoa2="+(pessoa2)+"]");
-		int compareResult = new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo());
-		System.out.println("[compareResult="+(compareResult)+"]");
-		System.out.println();
-		return compareResult;
-	}
-}
-
-class PessoaOrdenacaoNome implements Comparator<Pessoa> {
-	@Override
-	public int compare(Pessoa pessoa1, Pessoa pessoa2) {
-		System.out.println("Pessoa.compareTo(Pessoa pessoa)[this="+(this)+"]"+"[pessoa1="+(pessoa1)+"]"+"[pessoa2="+(pessoa2)+"]");
-		int compareResult = pessoa1.getNome().compareTo(pessoa2.getNome());
-		System.out.println("[compareResult="+(compareResult)+"]");
-		System.out.println();
-		return compareResult;
-	}
-}
-
 public class Exe001 {
 
 	static {
@@ -105,14 +83,14 @@ public class Exe001 {
 		System.out.println(list.add(pessoa1E));
 		System.out.println();
 		System.out.println("[ñ ordenado="+(list)+"]");
-		System.out.println("\nCollections.sort(list, new PessoaOrdenacaoCodigo())");
+		System.out.println("\nCollections.sort(list, (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))");
 		System.out.println();
-		Collections.sort(list, new PessoaOrdenacaoCodigo());
+		Collections.sort(list, (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()));
 		System.out.println();
 		System.out.println(list);
-		System.out.println("\nCollections.sort(list, new PessoaOrdenacaoNome())");
+		System.out.println("\nCollections.sort(list, (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))");
 		System.out.println();
-		Collections.sort(list, new PessoaOrdenacaoNome());
+		Collections.sort(list, (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()));
 		System.out.println();
 		System.out.println(list);
 	}
