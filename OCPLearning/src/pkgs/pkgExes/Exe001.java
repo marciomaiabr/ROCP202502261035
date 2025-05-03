@@ -1,12 +1,13 @@
 package pkgs.pkgExes;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-class Pessoa {
+class Pessoa implements Comparable {
 	private long codigo;
 	private String nome;
 	public Pessoa() { super(); }
@@ -34,12 +35,10 @@ class Pessoa {
 		if (obj == null) {
 			System.out.println("[(obj == null)="+(true)+"]");
 			isEquals = false;
-		}
-		if (this == obj) {
+		} else if (this == obj) {
 			System.out.println("[(this == obj)="+(true)+"]");
 			isEquals = true;
-		}
-		if (obj instanceof Pessoa) {
+		} else if (obj instanceof Pessoa) {
 			System.out.println("[(obj instanceof Pessoa)="+(true)+"]");
 			if (((Pessoa) obj).getCodigo() == this.getCodigo()) {
 				System.out.println("[(((Pessoa) obj).getCodigo() == this.getCodigo())="+(true)+"]");
@@ -49,9 +48,32 @@ class Pessoa {
 		System.out.println("[isEquals="+(isEquals)+"]");
 		return isEquals;
 	}
+	@Override
+	public int compareTo(Object obj) {
+		System.out.println("Pessoa.compareTo()[this="+(this)+"][obj="+(obj)+"]");
+		int compareToResult = 0;
+		if (obj == null) {
+			System.out.println("[(obj == null)="+(true)+"]");
+			compareToResult = -1;
+		} else if (this == obj) {
+			System.out.println("[(this == obj)="+(true)+"]");
+			compareToResult = 0;
+		} else if (obj instanceof Pessoa) {
+			System.out.println("[(obj instanceof Pessoa)="+(true)+"]");
+			Pessoa pessoa = (Pessoa) obj;
+			compareToResult = new Long(this.getCodigo()).compareTo(pessoa.getCodigo());
+		}
+		System.out.println("[compareToResult="+(compareToResult)+"]");
+		System.out.println();
+		return compareToResult;
+	}
 }
 
 public class Exe001 {
+
+	static {
+		System.out.println(LocalDateTime.now());
+	}
 
 	public static void main(String[] args) {
 		System.out.println("<>");
@@ -79,24 +101,14 @@ public class Exe001 {
 		System.out.println(list.add(pessoa1A));
 		System.out.println();
 		System.out.println("[ñ ordenado="+(list)+"]");
+		System.out.println("\nCollections.sort");
+		System.out.println();
 		Collections.sort(list);
+		System.out.println();
 		System.out.println("[ordenado="+(list)+"]");
 	}
 
 }
-
-/*
-<>
-Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
-	The method sort(List<T>) in the type Collections is not applicable for the arguments (ArrayList<Pessoa>)
-
-	at pkgs.pkgExes.Exe001.m1(Exe001.java:82)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:58)
-*/
-
-/*
-
-*/
 
 /*
 
