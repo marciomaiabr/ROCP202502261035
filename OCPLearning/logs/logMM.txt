@@ -1,4 +1,4 @@
-2025-05-03T11:05:37.299
+2025-05-03T11:15:32.698
 <>
 Exe001.m1()
 
@@ -19,12 +19,12 @@ true
 
 [ñ ordenado=[[[class=Pessoa][codigo=4][nome=PessoaB]], [[class=Pessoa][codigo=2][nome=PessoaD]], [[class=Pessoa][codigo=3][nome=PessoaC]], [[class=Pessoa][codigo=5][nome=PessoaA]], [[class=Pessoa][codigo=1][nome=PessoaE]]]]
 
-Collections.sort(list, (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))
+list.sort((Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))
 
 
 [[[class=Pessoa][codigo=1][nome=PessoaE]], [[class=Pessoa][codigo=2][nome=PessoaD]], [[class=Pessoa][codigo=3][nome=PessoaC]], [[class=Pessoa][codigo=4][nome=PessoaB]], [[class=Pessoa][codigo=5][nome=PessoaA]]]
 
-Collections.sort(list, (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))
+list.sort((Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))
 
 
 [[[class=Pessoa][codigo=5][nome=PessoaA]], [[class=Pessoa][codigo=4][nome=PessoaB]], [[class=Pessoa][codigo=3][nome=PessoaC]], [[class=Pessoa][codigo=2][nome=PessoaD]], [[class=Pessoa][codigo=1][nome=PessoaE]]]

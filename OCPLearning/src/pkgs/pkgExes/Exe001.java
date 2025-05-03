@@ -2,9 +2,6 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -70,7 +67,7 @@ public class Exe001 {
 		Pessoa pessoa3C = new Pessoa(3, "PessoaC");
 		Pessoa pessoa4B = new Pessoa(4, "PessoaB");
 		Pessoa pessoa5A = new Pessoa(5, "PessoaA");
-		ArrayList<Pessoa> list = new ArrayList<>();
+		List<Pessoa> list = new ArrayList<>();
 		System.out.println("\nadd(pessoa4B)");
 		System.out.println(list.add(pessoa4B));
 		System.out.println("\nadd(pessoa2D)");
@@ -83,14 +80,14 @@ public class Exe001 {
 		System.out.println(list.add(pessoa1E));
 		System.out.println();
 		System.out.println("[ñ ordenado="+(list)+"]");
-		System.out.println("\nCollections.sort(list, (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))");
+		System.out.println("\nlist.sort((Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))");
 		System.out.println();
-		Collections.sort(list, (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()));
+		list.sort((Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()));
 		System.out.println();
 		System.out.println(list);
-		System.out.println("\nCollections.sort(list, (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))");
+		System.out.println("\nlist.sort((Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))");
 		System.out.println();
-		Collections.sort(list, (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()));
+		list.sort((Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()));
 		System.out.println();
 		System.out.println(list);
 	}
