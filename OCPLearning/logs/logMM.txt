@@ -1,62 +1,70 @@
-2025-05-03T09:48:34.125
+2025-05-03T10:38:08.575
 <>
 Exe001.m1()
 
-add(pessoa4D)
+add(pessoa4B)
 true
 
-add(pessoa2B)
+add(pessoa2D)
 true
 
 add(pessoa3C)
 true
 
-add(pessoa5E)
+add(pessoa5A)
 true
 
-add(pessoa1A)
+add(pessoa1E)
 true
 
-[ñ ordenado=[[[class=Pessoa][codigo=4][nome=PessoaD]], [[class=Pessoa][codigo=2][nome=PessoaB]], [[class=Pessoa][codigo=3][nome=PessoaC]], [[class=Pessoa][codigo=5][nome=PessoaE]], [[class=Pessoa][codigo=1][nome=PessoaA]]]]
+[ñ ordenado=[[[class=Pessoa][codigo=4][nome=PessoaB]], [[class=Pessoa][codigo=2][nome=PessoaD]], [[class=Pessoa][codigo=3][nome=PessoaC]], [[class=Pessoa][codigo=5][nome=PessoaA]], [[class=Pessoa][codigo=1][nome=PessoaE]]]]
 
-Collections.sort
+Collections.sort(list, new PessoaOrdenacaoCodigo())
 
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=2][nome=PessoaB]]][pessoa=[[class=Pessoa][codigo=4][nome=PessoaD]]]
-[else=true]
-[compareToResult=-1]
+Pessoa.compareTo(Pessoa pessoa)[this=pkgs.pkgExes.PessoaOrdenacaoCodigo@53d8d10a][pessoa1=[[class=Pessoa][codigo=2][nome=PessoaD]]][pessoa2=[[class=Pessoa][codigo=4][nome=PessoaB]]]
+[compareResult=-1]
 
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=3][nome=PessoaC]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
-[else=true]
-[compareToResult=1]
+Pessoa.compareTo(Pessoa pessoa)[this=pkgs.pkgExes.PessoaOrdenacaoCodigo@53d8d10a][pessoa1=[[class=Pessoa][codigo=3][nome=PessoaC]]][pessoa2=[[class=Pessoa][codigo=2][nome=PessoaD]]]
+[compareResult=1]
 
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=3][nome=PessoaC]]][pessoa=[[class=Pessoa][codigo=4][nome=PessoaD]]]
-[else=true]
-[compareToResult=-1]
+Pessoa.compareTo(Pessoa pessoa)[this=pkgs.pkgExes.PessoaOrdenacaoCodigo@53d8d10a][pessoa1=[[class=Pessoa][codigo=3][nome=PessoaC]]][pessoa2=[[class=Pessoa][codigo=4][nome=PessoaB]]]
+[compareResult=-1]
 
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=3][nome=PessoaC]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
-[else=true]
-[compareToResult=1]
+Pessoa.compareTo(Pessoa pessoa)[this=pkgs.pkgExes.PessoaOrdenacaoCodigo@53d8d10a][pessoa1=[[class=Pessoa][codigo=3][nome=PessoaC]]][pessoa2=[[class=Pessoa][codigo=2][nome=PessoaD]]]
+[compareResult=1]
 
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=5][nome=PessoaE]]][pessoa=[[class=Pessoa][codigo=3][nome=PessoaC]]]
-[else=true]
-[compareToResult=1]
+Pessoa.compareTo(Pessoa pessoa)[this=pkgs.pkgExes.PessoaOrdenacaoCodigo@53d8d10a][pessoa1=[[class=Pessoa][codigo=5][nome=PessoaA]]][pessoa2=[[class=Pessoa][codigo=3][nome=PessoaC]]]
+[compareResult=1]
 
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=5][nome=PessoaE]]][pessoa=[[class=Pessoa][codigo=4][nome=PessoaD]]]
-[else=true]
-[compareToResult=1]
+Pessoa.compareTo(Pessoa pessoa)[this=pkgs.pkgExes.PessoaOrdenacaoCodigo@53d8d10a][pessoa1=[[class=Pessoa][codigo=5][nome=PessoaA]]][pessoa2=[[class=Pessoa][codigo=4][nome=PessoaB]]]
+[compareResult=1]
 
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=1][nome=PessoaA]]][pessoa=[[class=Pessoa][codigo=4][nome=PessoaD]]]
-[else=true]
-[compareToResult=-1]
+Pessoa.compareTo(Pessoa pessoa)[this=pkgs.pkgExes.PessoaOrdenacaoCodigo@53d8d10a][pessoa1=[[class=Pessoa][codigo=1][nome=PessoaE]]][pessoa2=[[class=Pessoa][codigo=4][nome=PessoaB]]]
+[compareResult=-1]
 
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=1][nome=PessoaA]]][pessoa=[[class=Pessoa][codigo=3][nome=PessoaC]]]
-[else=true]
-[compareToResult=-1]
+Pessoa.compareTo(Pessoa pessoa)[this=pkgs.pkgExes.PessoaOrdenacaoCodigo@53d8d10a][pessoa1=[[class=Pessoa][codigo=1][nome=PessoaE]]][pessoa2=[[class=Pessoa][codigo=3][nome=PessoaC]]]
+[compareResult=-1]
 
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=1][nome=PessoaA]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
-[else=true]
-[compareToResult=-1]
+Pessoa.compareTo(Pessoa pessoa)[this=pkgs.pkgExes.PessoaOrdenacaoCodigo@53d8d10a][pessoa1=[[class=Pessoa][codigo=1][nome=PessoaE]]][pessoa2=[[class=Pessoa][codigo=2][nome=PessoaD]]]
+[compareResult=-1]
 
 
-[ordenado=[[[class=Pessoa][codigo=1][nome=PessoaA]], [[class=Pessoa][codigo=2][nome=PessoaB]], [[class=Pessoa][codigo=3][nome=PessoaC]], [[class=Pessoa][codigo=4][nome=PessoaD]], [[class=Pessoa][codigo=5][nome=PessoaE]]]]
+[[[class=Pessoa][codigo=1][nome=PessoaE]], [[class=Pessoa][codigo=2][nome=PessoaD]], [[class=Pessoa][codigo=3][nome=PessoaC]], [[class=Pessoa][codigo=4][nome=PessoaB]], [[class=Pessoa][codigo=5][nome=PessoaA]]]
+
+Collections.sort(list, new PessoaOrdenacaoNome())
+
+Pessoa.compareTo(Pessoa pessoa)[this=pkgs.pkgExes.PessoaOrdenacaoNome@e9e54c2][pessoa1=[[class=Pessoa][codigo=2][nome=PessoaD]]][pessoa2=[[class=Pessoa][codigo=1][nome=PessoaE]]]
+[compareResult=-1]
+
+Pessoa.compareTo(Pessoa pessoa)[this=pkgs.pkgExes.PessoaOrdenacaoNome@e9e54c2][pessoa1=[[class=Pessoa][codigo=3][nome=PessoaC]]][pessoa2=[[class=Pessoa][codigo=2][nome=PessoaD]]]
+[compareResult=-1]
+
+Pessoa.compareTo(Pessoa pessoa)[this=pkgs.pkgExes.PessoaOrdenacaoNome@e9e54c2][pessoa1=[[class=Pessoa][codigo=4][nome=PessoaB]]][pessoa2=[[class=Pessoa][codigo=3][nome=PessoaC]]]
+[compareResult=-1]
+
+Pessoa.compareTo(Pessoa pessoa)[this=pkgs.pkgExes.PessoaOrdenacaoNome@e9e54c2][pessoa1=[[class=Pessoa][codigo=5][nome=PessoaA]]][pessoa2=[[class=Pessoa][codigo=4][nome=PessoaB]]]
+[compareResult=-1]
+
+
+[[[class=Pessoa][codigo=5][nome=PessoaA]], [[class=Pessoa][codigo=4][nome=PessoaB]], [[class=Pessoa][codigo=3][nome=PessoaC]], [[class=Pessoa][codigo=2][nome=PessoaD]], [[class=Pessoa][codigo=1][nome=PessoaE]]]
 </>

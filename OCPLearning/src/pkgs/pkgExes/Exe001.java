@@ -4,10 +4,11 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
-class Pessoa implements Comparable<Pessoa> {
+class Pessoa {
 	private long codigo;
 	private String nome;
 	public Pessoa() { super(); }
@@ -48,23 +49,27 @@ class Pessoa implements Comparable<Pessoa> {
 		System.out.println("[isEquals="+(isEquals)+"]");
 		return isEquals;
 	}
+}
+
+class PessoaOrdenacaoCodigo implements Comparator<Pessoa> {
 	@Override
-	public int compareTo(Pessoa pessoa) {
-		System.out.println("Pessoa.compareTo(Pessoa pessoa)[this="+(this)+"][pessoa="+(pessoa)+"]");
-		int compareToResult = 0;
-		if (pessoa == null) {
-			System.out.println("[(pessoa == null)="+(true)+"]");
-			compareToResult = -1;
-		} else if (this == pessoa) {
-			System.out.println("[(this == pessoa)="+(true)+"]");
-			compareToResult = 0;
-		} else {
-			System.out.println("[else="+(true)+"]");
-			compareToResult = new Long(this.getCodigo()).compareTo(pessoa.getCodigo());
-		}
-		System.out.println("[compareToResult="+(compareToResult)+"]");
+	public int compare(Pessoa pessoa1, Pessoa pessoa2) {
+		System.out.println("Pessoa.compareTo(Pessoa pessoa)[this="+(this)+"]"+"[pessoa1="+(pessoa1)+"]"+"[pessoa2="+(pessoa2)+"]");
+		int compareResult = new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo());
+		System.out.println("[compareResult="+(compareResult)+"]");
 		System.out.println();
-		return compareToResult;
+		return compareResult;
+	}
+}
+
+class PessoaOrdenacaoNome implements Comparator<Pessoa> {
+	@Override
+	public int compare(Pessoa pessoa1, Pessoa pessoa2) {
+		System.out.println("Pessoa.compareTo(Pessoa pessoa)[this="+(this)+"]"+"[pessoa1="+(pessoa1)+"]"+"[pessoa2="+(pessoa2)+"]");
+		int compareResult = pessoa1.getNome().compareTo(pessoa2.getNome());
+		System.out.println("[compareResult="+(compareResult)+"]");
+		System.out.println();
+		return compareResult;
 	}
 }
 
@@ -82,29 +87,34 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		Pessoa pessoa1A = new Pessoa(1, "PessoaA");
-		Pessoa pessoa2B = new Pessoa(2, "PessoaB");
+		Pessoa pessoa1E = new Pessoa(1, "PessoaE");
+		Pessoa pessoa2D = new Pessoa(2, "PessoaD");
 		Pessoa pessoa3C = new Pessoa(3, "PessoaC");
-		Pessoa pessoa4D = new Pessoa(4, "PessoaD");
-		Pessoa pessoa5E = new Pessoa(5, "PessoaE");
+		Pessoa pessoa4B = new Pessoa(4, "PessoaB");
+		Pessoa pessoa5A = new Pessoa(5, "PessoaA");
 		ArrayList<Pessoa> list = new ArrayList<>();
-		System.out.println("\nadd(pessoa4D)");
-		System.out.println(list.add(pessoa4D));
-		System.out.println("\nadd(pessoa2B)");
-		System.out.println(list.add(pessoa2B));
+		System.out.println("\nadd(pessoa4B)");
+		System.out.println(list.add(pessoa4B));
+		System.out.println("\nadd(pessoa2D)");
+		System.out.println(list.add(pessoa2D));
 		System.out.println("\nadd(pessoa3C)");
 		System.out.println(list.add(pessoa3C));
-		System.out.println("\nadd(pessoa5E)");
-		System.out.println(list.add(pessoa5E));
-		System.out.println("\nadd(pessoa1A)");
-		System.out.println(list.add(pessoa1A));
+		System.out.println("\nadd(pessoa5A)");
+		System.out.println(list.add(pessoa5A));
+		System.out.println("\nadd(pessoa1E)");
+		System.out.println(list.add(pessoa1E));
 		System.out.println();
 		System.out.println("[ñ ordenado="+(list)+"]");
-		System.out.println("\nCollections.sort");
+		System.out.println("\nCollections.sort(list, new PessoaOrdenacaoCodigo())");
 		System.out.println();
-		Collections.sort(list);
+		Collections.sort(list, new PessoaOrdenacaoCodigo());
 		System.out.println();
-		System.out.println("[ordenado="+(list)+"]");
+		System.out.println(list);
+		System.out.println("\nCollections.sort(list, new PessoaOrdenacaoNome())");
+		System.out.println();
+		Collections.sort(list, new PessoaOrdenacaoNome());
+		System.out.println();
+		System.out.println(list);
 	}
 
 }
