@@ -2,6 +2,7 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -67,29 +68,21 @@ public class Exe001 {
 		Pessoa pessoa3C = new Pessoa(3, "PessoaC");
 		Pessoa pessoa4B = new Pessoa(4, "PessoaB");
 		Pessoa pessoa5A = new Pessoa(5, "PessoaA");
-		List<Pessoa> list = new ArrayList<>();
-		System.out.println("\nadd(pessoa4B)");
-		System.out.println(list.add(pessoa4B));
-		System.out.println("\nadd(pessoa2D)");
-		System.out.println(list.add(pessoa2D));
-		System.out.println("\nadd(pessoa3C)");
-		System.out.println(list.add(pessoa3C));
-		System.out.println("\nadd(pessoa5A)");
-		System.out.println(list.add(pessoa5A));
-		System.out.println("\nadd(pessoa1E)");
-		System.out.println(list.add(pessoa1E));
+		Pessoa [] arr = new Pessoa [] { pessoa4B , pessoa2D , pessoa3C , pessoa5A , pessoa1E } ;
+		System.out.println("[ñ ordenado="+(arr)+"]");
+		Arrays.asList(arr).forEach(System.out::print);
 		System.out.println();
-		System.out.println("[ñ ordenado="+(list)+"]");
 		System.out.println("\nlist.sort((Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))");
 		System.out.println();
-		list.sort((Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()));
+		Arrays.sort(arr, (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()));
 		System.out.println();
-		System.out.println(list);
+		Arrays.asList(arr).forEach(System.out::print);
+		System.out.println();
 		System.out.println("\nlist.sort((Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))");
 		System.out.println();
-		list.sort((Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()));
+		Arrays.sort(arr, (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()));
 		System.out.println();
-		System.out.println(list);
+		Arrays.asList(arr).forEach(System.out::print);
 	}
 
 }

@@ -1,31 +1,15 @@
-2025-05-03T11:15:32.698
+2025-05-03T11:34:46.170
 <>
 Exe001.m1()
-
-add(pessoa4B)
-true
-
-add(pessoa2D)
-true
-
-add(pessoa3C)
-true
-
-add(pessoa5A)
-true
-
-add(pessoa1E)
-true
-
-[ñ ordenado=[[[class=Pessoa][codigo=4][nome=PessoaB]], [[class=Pessoa][codigo=2][nome=PessoaD]], [[class=Pessoa][codigo=3][nome=PessoaC]], [[class=Pessoa][codigo=5][nome=PessoaA]], [[class=Pessoa][codigo=1][nome=PessoaE]]]]
+[ñ ordenado=[Lpkgs.pkgExes.Pessoa;@53d8d10a]
+[[class=Pessoa][codigo=4][nome=PessoaB]][[class=Pessoa][codigo=2][nome=PessoaD]][[class=Pessoa][codigo=3][nome=PessoaC]][[class=Pessoa][codigo=5][nome=PessoaA]][[class=Pessoa][codigo=1][nome=PessoaE]]
 
 list.sort((Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))
 
 
-[[[class=Pessoa][codigo=1][nome=PessoaE]], [[class=Pessoa][codigo=2][nome=PessoaD]], [[class=Pessoa][codigo=3][nome=PessoaC]], [[class=Pessoa][codigo=4][nome=PessoaB]], [[class=Pessoa][codigo=5][nome=PessoaA]]]
+[[class=Pessoa][codigo=1][nome=PessoaE]][[class=Pessoa][codigo=2][nome=PessoaD]][[class=Pessoa][codigo=3][nome=PessoaC]][[class=Pessoa][codigo=4][nome=PessoaB]][[class=Pessoa][codigo=5][nome=PessoaA]]
 
 list.sort((Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))
 
 
-[[[class=Pessoa][codigo=5][nome=PessoaA]], [[class=Pessoa][codigo=4][nome=PessoaB]], [[class=Pessoa][codigo=3][nome=PessoaC]], [[class=Pessoa][codigo=2][nome=PessoaD]], [[class=Pessoa][codigo=1][nome=PessoaE]]]
-</>
+[[class=Pessoa][codigo=5][nome=PessoaA]][[class=Pessoa][codigo=4][nome=PessoaB]][[class=Pessoa][codigo=3][nome=PessoaC]][[class=Pessoa][codigo=2][nome=PessoaD]][[class=Pessoa][codigo=1][nome=PessoaE]]</>
