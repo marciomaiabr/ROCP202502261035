@@ -1,15 +1,33 @@
-2025-05-03T11:34:46.170
+2025-05-03T12:06:10.229
 <>
 Exe001.m1()
 [ñ ordenado=[Lpkgs.pkgExes.Pessoa;@53d8d10a]
 [[class=Pessoa][codigo=4][nome=PessoaB]][[class=Pessoa][codigo=2][nome=PessoaD]][[class=Pessoa][codigo=3][nome=PessoaC]][[class=Pessoa][codigo=5][nome=PessoaA]][[class=Pessoa][codigo=1][nome=PessoaE]]
 
+Arrays.binarySearch(arr, new Pessoa(2), (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))
+-1
+
+
+Arrays.binarySearch(arr, new Pessoa("PessoaD"), (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))
+-5
+
+
 list.sort((Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))
 
 
-[[class=Pessoa][codigo=1][nome=PessoaE]][[class=Pessoa][codigo=2][nome=PessoaD]][[class=Pessoa][codigo=3][nome=PessoaC]][[class=Pessoa][codigo=4][nome=PessoaB]][[class=Pessoa][codigo=5][nome=PessoaA]]
+Arrays.binarySearch(arr, new Pessoa(2), (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))
+1
+
+Arrays.binarySearch(arr, new Pessoa("PessoaD"), (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))
+-6
+
 
 list.sort((Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))
 
 
-[[class=Pessoa][codigo=5][nome=PessoaA]][[class=Pessoa][codigo=4][nome=PessoaB]][[class=Pessoa][codigo=3][nome=PessoaC]][[class=Pessoa][codigo=2][nome=PessoaD]][[class=Pessoa][codigo=1][nome=PessoaE]]</>
+Arrays.binarySearch(arr, new Pessoa(2), (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))
+-1
+
+Arrays.binarySearch(arr, new Pessoa("PessoaD"), (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))
+3
+</>

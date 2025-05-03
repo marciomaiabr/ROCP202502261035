@@ -12,6 +12,7 @@ class Pessoa {
 	public Pessoa() { super(); }
 	public Pessoa(long codigo, String nome) { super(); this.codigo = codigo; this.nome = nome; }
 	public Pessoa(long codigo) { super(); this.codigo = codigo; }
+	public Pessoa(String nome) { super(); this.nome = nome; }
 	public long getCodigo() {return codigo;}
 	public void setCodigo(long codigo) {this.codigo = codigo;}
 	public String getNome() {return nome;}
@@ -72,17 +73,27 @@ public class Exe001 {
 		System.out.println("[ñ ordenado="+(arr)+"]");
 		Arrays.asList(arr).forEach(System.out::print);
 		System.out.println();
+		System.out.println("\nArrays.binarySearch(arr, new Pessoa(2), (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))");
+		System.out.println(Arrays.binarySearch(arr, new Pessoa(2), (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo())));
+		System.out.println();
+		System.out.println("\nArrays.binarySearch(arr, new Pessoa(\"PessoaD\"), (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))");
+		System.out.println(Arrays.binarySearch(arr, new Pessoa("PessoaD"), (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome())));
+		System.out.println();
 		System.out.println("\nlist.sort((Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))");
 		System.out.println();
 		Arrays.sort(arr, (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()));
-		System.out.println();
-		Arrays.asList(arr).forEach(System.out::print);
+		System.out.println("\nArrays.binarySearch(arr, new Pessoa(2), (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))");
+		System.out.println(Arrays.binarySearch(arr, new Pessoa(2), (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo())));
+		System.out.println("\nArrays.binarySearch(arr, new Pessoa(\"PessoaD\"), (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))");
+		System.out.println(Arrays.binarySearch(arr, new Pessoa("PessoaD"), (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome())));
 		System.out.println();
 		System.out.println("\nlist.sort((Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))");
 		System.out.println();
 		Arrays.sort(arr, (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()));
-		System.out.println();
-		Arrays.asList(arr).forEach(System.out::print);
+		System.out.println("\nArrays.binarySearch(arr, new Pessoa(2), (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo()))");
+		System.out.println(Arrays.binarySearch(arr, new Pessoa(2), (Pessoa pessoa1, Pessoa pessoa2) -> new Long(pessoa1.getCodigo()).compareTo(pessoa2.getCodigo())));
+		System.out.println("\nArrays.binarySearch(arr, new Pessoa(\"PessoaD\"), (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()))");
+		System.out.println(Arrays.binarySearch(arr, new Pessoa("PessoaD"), (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome())));
 	}
 
 }
