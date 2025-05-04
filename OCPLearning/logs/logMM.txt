@@ -1,39 +1,6 @@
-2025-05-04T09:08:14.571
+2025-05-04T09:10:23.530
 <>
 Exe001.m1()
-[[class=Pessoa][codigo=1][nome=PessoaE]]
-[[class=Pessoa][codigo=2][nome=PessoaD]]
-[[class=Pessoa][codigo=3][nome=PessoaC]]
-[[class=Pessoa][codigo=4][nome=PessoaB]]
-[[class=Pessoa][codigo=5][nome=PessoaA]]
-
-[[class=Pessoa][codigo=1][nome=PessoaE]]
-[[class=Pessoa][codigo=2][nome=PessoaD]]
-[[class=Pessoa][codigo=3][nome=PessoaC]]
-[[class=Pessoa][codigo=4][nome=PessoaB]]
-[[class=Pessoa][codigo=5][nome=PessoaA]]
-
-[[class=Pessoa][codigo=1][nome=PessoaE]]
-[[class=Pessoa][codigo=2][nome=PessoaD]]
-[[class=Pessoa][codigo=3][nome=PessoaC]]
-[[class=Pessoa][codigo=4][nome=PessoaB]]
-[[class=Pessoa][codigo=5][nome=PessoaA]]
-
-null
-[[class=Pessoa][codigo=2][nome=PessoaD]]
-[[class=Pessoa][codigo=3][nome=PessoaC]]
-[[class=Pessoa][codigo=4][nome=PessoaB]]
-[[class=Pessoa][codigo=5][nome=PessoaA]]
-
-[[class=Pessoa][codigo=1][nome=PessoaE]]
-[[class=Pessoa][codigo=3][nome=PessoaC]]
-[[class=Pessoa][codigo=4][nome=PessoaB]]
-[[class=Pessoa][codigo=5][nome=PessoaA]]
-
-[[class=Pessoa][codigo=1][nome=PessoaE]]
-[[class=Pessoa][codigo=2][nome=PessoaD]]
-null
-[[class=Pessoa][codigo=4][nome=PessoaB]]
-[[class=Pessoa][codigo=5][nome=PessoaA]]
-
-</>
+Exception in thread "main" java.lang.ClassCastException: [Ljava.lang.Object; cannot be cast to [Lpkgs.pkgExes.Pessoa;
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:74)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:61)

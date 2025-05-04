@@ -71,7 +71,7 @@ public class Exe001 {
 		Pessoa pessoa5A = new Pessoa(5, "PessoaA");
 		Pessoa [] arr = new Pessoa [] { pessoa1E , pessoa2D , pessoa3C , pessoa4B , pessoa5A } ;
 		List<Pessoa> list = new ArrayList<>(Arrays.asList(arr));
-		Object [] arr2 = (Object[]) list.toArray();
+		Pessoa [] arr2 = (Pessoa[]) list.toArray();
 
 		for(Pessoa pessoa : arr) System.out.println(pessoa);
 		System.out.println();
