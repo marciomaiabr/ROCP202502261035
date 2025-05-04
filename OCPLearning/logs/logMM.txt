@@ -1,6 +1,24 @@
-2025-05-04T09:10:23.530
+2025-05-04T09:24:59.106
 <>
 Exe001.m1()
-Exception in thread "main" java.lang.ClassCastException: [Ljava.lang.Object; cannot be cast to [Lpkgs.pkgExes.Pessoa;
-	at pkgs.pkgExes.Exe001.m1(Exe001.java:74)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:61)
+10
+20
+30
+40
+50
+
+System.out.println(list.remove(2));
+30
+
+10
+20
+40
+50
+
+System.out.println(list.remove(new Integer(20)));
+true
+
+10
+40
+50
+</>
