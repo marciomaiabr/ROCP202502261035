@@ -1,24 +1,57 @@
-2025-05-04T09:24:59.106
+2025-05-04T10:00:30.989
 <>
 Exe001.m1()
-10
-20
-30
-40
-50
 
-System.out.println(list.remove(2));
-30
 
-10
-20
-40
-50
-
-System.out.println(list.remove(new Integer(20)));
+collection.add(pessoa1A)
+Pessoa.hashCode()
+[hashCode=1]
 true
 
-10
-40
-50
+collection.add(pessoa2B)
+Pessoa.hashCode()
+[hashCode=2]
+true
+
+collection.add(pessoa1C)
+Pessoa.hashCode()
+[hashCode=1]
+Pessoa.equals()[this=[[class=Pessoa][codigo=1][nome=PessoaC]]][obj=[[class=Pessoa][codigo=1][nome=PessoaA]]]
+[(obj instanceof Pessoa)=true]
+[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
+[isEquals=true]
+false
+
+collection.add(pessoa4D)
+Pessoa.hashCode()
+[hashCode=4]
+true
+
+collection.add(pessoa2E)
+Pessoa.hashCode()
+[hashCode=2]
+Pessoa.equals()[this=[[class=Pessoa][codigo=2][nome=PessoaE]]][obj=[[class=Pessoa][codigo=2][nome=PessoaB]]]
+[(obj instanceof Pessoa)=true]
+[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
+[isEquals=true]
+false
+
+collection.add(pessoa6F)
+Pessoa.hashCode()
+[hashCode=6]
+true
+
+[[class=Pessoa][codigo=1][nome=PessoaA]]
+[[class=Pessoa][codigo=2][nome=PessoaB]]
+[[class=Pessoa][codigo=4][nome=PessoaD]]
+[[class=Pessoa][codigo=6][nome=PessoaF]]
+
+collection.contains(new Pessoa(4, "PessoaD"))
+Pessoa.hashCode()
+[hashCode=4]
+Pessoa.equals()[this=[[class=Pessoa][codigo=4][nome=PessoaD]]][obj=[[class=Pessoa][codigo=4][nome=PessoaD]]]
+[(obj instanceof Pessoa)=true]
+[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
+[isEquals=true]
+true
 </>
