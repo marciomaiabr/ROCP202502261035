@@ -1,57 +1,63 @@
-2025-05-04T10:00:30.989
+2025-05-04T10:17:32.397
 <>
 Exe001.m1()
 
 
 collection.add(pessoa1A)
-Pessoa.hashCode()
-[hashCode=1]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=1][nome=PessoaA]]][pessoa=[[class=Pessoa][codigo=1][nome=PessoaA]]]
+[retornoCompareTo=0]
+true
+
+collection.add(pessoa6F)
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=6][nome=PessoaF]]][pessoa=[[class=Pessoa][codigo=1][nome=PessoaA]]]
+[retornoCompareTo=1]
 true
 
 collection.add(pessoa2B)
-Pessoa.hashCode()
-[hashCode=2]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=2][nome=PessoaB]]][pessoa=[[class=Pessoa][codigo=1][nome=PessoaA]]]
+[retornoCompareTo=1]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=2][nome=PessoaB]]][pessoa=[[class=Pessoa][codigo=6][nome=PessoaF]]]
+[retornoCompareTo=-1]
 true
 
 collection.add(pessoa1C)
-Pessoa.hashCode()
-[hashCode=1]
-Pessoa.equals()[this=[[class=Pessoa][codigo=1][nome=PessoaC]]][obj=[[class=Pessoa][codigo=1][nome=PessoaA]]]
-[(obj instanceof Pessoa)=true]
-[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
-[isEquals=true]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=1][nome=PessoaC]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
+[retornoCompareTo=-1]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=1][nome=PessoaC]]][pessoa=[[class=Pessoa][codigo=1][nome=PessoaA]]]
+[retornoCompareTo=0]
 false
 
 collection.add(pessoa4D)
-Pessoa.hashCode()
-[hashCode=4]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=4][nome=PessoaD]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
+[retornoCompareTo=1]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=4][nome=PessoaD]]][pessoa=[[class=Pessoa][codigo=6][nome=PessoaF]]]
+[retornoCompareTo=-1]
 true
 
 collection.add(pessoa2E)
-Pessoa.hashCode()
-[hashCode=2]
-Pessoa.equals()[this=[[class=Pessoa][codigo=2][nome=PessoaE]]][obj=[[class=Pessoa][codigo=2][nome=PessoaB]]]
-[(obj instanceof Pessoa)=true]
-[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
-[isEquals=true]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=2][nome=PessoaE]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
+[retornoCompareTo=0]
 false
 
-collection.add(pessoa6F)
-Pessoa.hashCode()
-[hashCode=6]
+collection.add(pessoa7G)
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=7][nome=PessoaG]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
+[retornoCompareTo=1]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=7][nome=PessoaG]]][pessoa=[[class=Pessoa][codigo=6][nome=PessoaF]]]
+[retornoCompareTo=1]
 true
 
 [[class=Pessoa][codigo=1][nome=PessoaA]]
 [[class=Pessoa][codigo=2][nome=PessoaB]]
 [[class=Pessoa][codigo=4][nome=PessoaD]]
 [[class=Pessoa][codigo=6][nome=PessoaF]]
+[[class=Pessoa][codigo=7][nome=PessoaG]]
 
 collection.contains(new Pessoa(4, "PessoaD"))
-Pessoa.hashCode()
-[hashCode=4]
-Pessoa.equals()[this=[[class=Pessoa][codigo=4][nome=PessoaD]]][obj=[[class=Pessoa][codigo=4][nome=PessoaD]]]
-[(obj instanceof Pessoa)=true]
-[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
-[isEquals=true]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=4][nome=PessoaD]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
+[retornoCompareTo=1]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=4][nome=PessoaD]]][pessoa=[[class=Pessoa][codigo=6][nome=PessoaF]]]
+[retornoCompareTo=-1]
+Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=4][nome=PessoaD]]][pessoa=[[class=Pessoa][codigo=4][nome=PessoaD]]]
+[retornoCompareTo=0]
 true
 </>

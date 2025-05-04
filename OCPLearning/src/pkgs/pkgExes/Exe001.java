@@ -1,15 +1,9 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.TreeSet;
+import java.util.*;
 
-class Pessoa {
+class Pessoa implements Comparable<Pessoa> {
 	private long codigo;
 	private String nome;
 	public Pessoa() { super(); }
@@ -51,6 +45,13 @@ class Pessoa {
 		System.out.println("[isEquals="+(isEquals)+"]");
 		return isEquals;
 	}
+	@Override
+	public int compareTo(Pessoa pessoa) {
+		System.out.println("Pessoa.compareTo(Pessoa pessoa)"+"[this="+(this)+"]"+"[pessoa="+(pessoa)+"]");
+		int retornoCompareTo = new Long(this.getCodigo()).compareTo(pessoa.getCodigo());
+		System.out.println("[retornoCompareTo="+(retornoCompareTo)+"]");
+		return retornoCompareTo;
+	}
 }
 
 public class Exe001 {
@@ -73,10 +74,13 @@ public class Exe001 {
 		Pessoa pessoa4D = new Pessoa(4, "PessoaD");
 		Pessoa pessoa2E = new Pessoa(2, "PessoaE");
 		Pessoa pessoa6F = new Pessoa(6, "PessoaF");
+		Pessoa pessoa7G = new Pessoa(7, "PessoaG");
 		System.out.println();
-		Collection<Pessoa> collection = new HashSet<>();
+		Collection<Pessoa> collection = new TreeSet<>();
 		System.out.println("\ncollection.add(pessoa1A)");
 		System.out.println(collection.add(pessoa1A));
+		System.out.println("\ncollection.add(pessoa6F)");
+		System.out.println(collection.add(pessoa6F));
 		System.out.println("\ncollection.add(pessoa2B)");
 		System.out.println(collection.add(pessoa2B));
 		System.out.println("\ncollection.add(pessoa1C)");
@@ -85,8 +89,8 @@ public class Exe001 {
 		System.out.println(collection.add(pessoa4D));
 		System.out.println("\ncollection.add(pessoa2E)");
 		System.out.println(collection.add(pessoa2E));
-		System.out.println("\ncollection.add(pessoa6F)");
-		System.out.println(collection.add(pessoa6F));
+		System.out.println("\ncollection.add(pessoa7G)");
+		System.out.println(collection.add(pessoa7G));
 		System.out.println();
 		collection.forEach(System.out::println);
 		System.out.println();
