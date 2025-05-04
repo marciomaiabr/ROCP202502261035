@@ -1,10 +1,25 @@
-2025-05-04T08:27:37.443
+2025-05-04T08:42:43.617
 <>
 Exe001.m1()
+[[class=Pessoa][codigo=1][nome=PessoaE]]
+[[class=Pessoa][codigo=2][nome=PessoaD]]
 [[class=Pessoa][codigo=3][nome=PessoaC]]
+[[class=Pessoa][codigo=4][nome=PessoaB]]
+[[class=Pessoa][codigo=5][nome=PessoaA]]
+
+[[class=Pessoa][codigo=1][nome=PessoaE]]
+[[class=Pessoa][codigo=2][nome=PessoaD]]
 [[class=Pessoa][codigo=3][nome=PessoaC]]
+[[class=Pessoa][codigo=4][nome=PessoaB]]
+[[class=Pessoa][codigo=5][nome=PessoaA]]
+
+[[class=Pessoa][codigo=1][nome=PessoaE]]
+[[class=Pessoa][codigo=2][nome=PessoaD]]
 [[class=Pessoa][codigo=3][nome=PessoaC]]
-[[class=Pessoa][codigo=30][nome=PessoaCALTERADO]]
-[[class=Pessoa][codigo=30][nome=PessoaCALTERADO]]
-[[class=Pessoa][codigo=30][nome=PessoaCALTERADO]]
-</>
+[[class=Pessoa][codigo=4][nome=PessoaB]]
+[[class=Pessoa][codigo=5][nome=PessoaA]]
+
+Exception in thread "main" java.lang.UnsupportedOperationException
+	at java.util.AbstractList.remove(AbstractList.java:161)
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:84)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:61)

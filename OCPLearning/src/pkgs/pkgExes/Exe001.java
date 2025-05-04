@@ -69,21 +69,39 @@ public class Exe001 {
 		Pessoa pessoa3C = new Pessoa(3, "PessoaC");
 		Pessoa pessoa4B = new Pessoa(4, "PessoaB");
 		Pessoa pessoa5A = new Pessoa(5, "PessoaA");
-		Pessoa [] arr = new Pessoa [] { pessoa4B , pessoa2D , pessoa3C , pessoa5A , pessoa1E } ;
+		Pessoa [] arr = new Pessoa [] { pessoa1E , pessoa2D , pessoa3C , pessoa4B , pessoa5A } ;
 		List<Pessoa> list = Arrays.asList(arr);
 		Pessoa [] arr2 = (Pessoa[]) list.toArray();
-		System.out.println(arr[2]);
-		System.out.println(arr2[2]);
-		System.out.println(list.get(2));
-		pessoa3C.setCodigo(pessoa3C.getCodigo()*10);
-		pessoa3C.setNome(pessoa3C.getNome().concat("ALTERADO"));
-		System.out.println(arr[2]);
-		System.out.println(arr2[2]);
-		System.out.println(list.get(2));
+
+		for(Pessoa pessoa : arr) System.out.println(pessoa);
+		System.out.println();
+		list.forEach(System.out::println);
+		System.out.println();
+		for(Pessoa pessoa : arr2) System.out.println(pessoa);
+		System.out.println();
+
+		arr[0] = null;
+		list.remove(1);
+		arr2[2] = null;
+
+		for(Pessoa pessoa : arr) System.out.println(pessoa);
+		System.out.println();
+		list.forEach(System.out::println);
+		System.out.println();
+		for(Pessoa pessoa : arr2) System.out.println(pessoa);
+		System.out.println();
+
 	}
 
 }
 
 /*
+
+https://www.google.com/search?q=java+Arrays.asList+UnsupportedOperationException&oq=java+Arrays.asList+UnsupportedOperationException&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgHGB4yBggCEAAYHjIICAMQABgIGB4yBwgEEAAY7wUyBwgFEAAY7wUyBwgGEAAY7wXSAQkyNDc2N2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8
+
+Visão geral criada por IA
+Saiba mais
+The UnsupportedOperationException in Java when using Arrays.asList() arises because Arrays.asList() returns a fixed-size list backed by the original array. This means that structural modifications, such as adding or removing elements, are not supported. The returned list is an instance of java.util.Arrays.ArrayList, which is a private static class within Arrays and overrides methods like add() and remove() to throw UnsupportedOperationException.
+To avoid this exception, create a new ArrayList from the result of Arrays.asList() if modifications are needed:
 
 */
