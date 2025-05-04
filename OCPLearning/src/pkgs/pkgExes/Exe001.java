@@ -21,7 +21,7 @@ class Pessoa implements Comparable<Pessoa> {
 	@Override
 	public int hashCode() {
 		System.out.println("Pessoa.hashCode()");
-		int hashCode = Objects.hashCode(codigo);
+		int hashCode = 10-((int)codigo);//Objects.hashCode(codigo);
 		System.out.println("[hashCode="+(hashCode)+"]");
 		return hashCode;
 	}
@@ -76,7 +76,7 @@ public class Exe001 {
 		Pessoa pessoa6F = new Pessoa(6, "PessoaF");
 		Pessoa pessoa7G = new Pessoa(7, "PessoaG");
 		System.out.println();
-		Collection<Pessoa> collection = new TreeSet<>();
+		Collection<Pessoa> collection = new HashSet<>();
 		System.out.println("\ncollection.add(pessoa1A)");
 		System.out.println(collection.add(pessoa1A));
 		System.out.println("\ncollection.add(pessoa6F)");
@@ -101,5 +101,5 @@ public class Exe001 {
 }
 
 /*
-
+O HashSet ordena naturalmente pelo hashCode
 */
