@@ -21,10 +21,7 @@ public class Pessoa implements Comparable<Pessoa> {
 	public int hashCode() {
 		System.out.println("Pessoa.hashCode()");
 		int hashCode = 0;
-		//hashCode = this.getNome().substring(this.getNome().length()-1).toLowerCase().toCharArray()[0];
-		String ultimaLetra = this.getNome().substring(this.getNome().length()-1).toLowerCase();
-		hashCode = ("abc".indexOf(ultimaLetra) >= 0) ? 1 : ( ("def".indexOf(ultimaLetra) >= 0) ? 2 : 3) ;
-		//hashCode = Objects.hashCode(codigo);
+		hashCode = Objects.hashCode(codigo);
 		System.out.println("[hashCode="+(hashCode)+"]");
 		return hashCode;
 	}

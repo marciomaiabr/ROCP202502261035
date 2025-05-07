@@ -36,6 +36,5 @@ public class Exe001 {
 }
 
 /*
-Primeiro ordena pelo hashCode
-Segundo, como tem hashCode repetido, dentre os hashCode ordena pela ordem de foi adicionado na implementação da Collection no HashSet
+
 */
