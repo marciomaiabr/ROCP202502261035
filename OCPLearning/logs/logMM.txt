@@ -1,27 +1,84 @@
-2025-05-09T08:36:56.928
+2025-05-09T09:07:11.399
 <>
 Exe001.m1()
+
 m.put("k1", new Dog("aiko"))
 null
+
 m.put("k2", Pets.DOG)
 null
+
 m.put(Pets.CAT, "CAT key")
 null
-m.put(d1, "Dog key")
+
+m.put(d1, "Dog key1")
 Dog.hashCode()
-[hashCode=6]
+[hashCode=7]
 null
+
+m.put(d2, "Dog key2")
+Dog.hashCode()
+[hashCode=7]
+Dog.equals()
+null
+
+m.put(d3, "Dog key3")
+Dog.hashCode()
+[hashCode=7]
+Dog key1
+
 m.put(new Cat(), "Cat key")
 null
 
+
+m.forEach
+
+[k=CAT][v=CAT key]
+Dog.hashCode()
+[hashCode=4]
+
+[k=k1][v=pkgs.pkgExes.Dog@4]
+
+[k=k2][v=DOG]
+Dog.hashCode()
+[hashCode=7]
+
+[k=pkgs.pkgExes.Dog@7][v=Dog key3]
+Dog.hashCode()
+[hashCode=7]
+
+[k=pkgs.pkgExes.Dog@7][v=Dog key2]
+
+[k=pkgs.pkgExes.Cat@e9e54c2][v=Cat key]
+
+
+m.gets
+
+m.get("k1")
 Dog.hashCode()
 [hashCode=4]
 pkgs.pkgExes.Dog@4
+
+m.get(k2)
 DOG
+
+m.get(p)
 CAT key
+
+m.get(d1)
 Dog.hashCode()
-[hashCode=6]
-Dog key
+[hashCode=7]
+Dog key3
+
+m.get(d2)
+Dog.hashCode()
+[hashCode=7]
+Dog.equals()
+Dog key2
+
+m.get(new Cat())
 null
-5
+
+m.size()
+6
 </>
