@@ -1,172 +1,27 @@
-2025-05-07T08:28:59.063
+2025-05-09T08:36:56.928
 <>
 Exe001.m1()
-
-Exe001.criaPessoas()
-Pessoa.hashCode()
+m.put("k1", new Dog("aiko"))
+null
+m.put("k2", Pets.DOG)
+null
+m.put(Pets.CAT, "CAT key")
+null
+m.put(d1, "Dog key")
+Dog.hashCode()
 [hashCode=6]
+null
+m.put(new Cat(), "Cat key")
+null
 
-collection.add([[class=Pessoa][codigo=6][nome=Pessoa6B][this.hashCode()=6]])
-Pessoa.hashCode()
-[hashCode=6]
-true
-Pessoa.hashCode()
-[hashCode=8]
-
-collection.add([[class=Pessoa][codigo=8][nome=Pessoa8K][this.hashCode()=8]])
-Pessoa.hashCode()
-[hashCode=8]
-true
-Pessoa.hashCode()
-[hashCode=7]
-
-collection.add([[class=Pessoa][codigo=7][nome=Pessoa7D][this.hashCode()=7]])
-Pessoa.hashCode()
-[hashCode=7]
-true
-Pessoa.hashCode()
-[hashCode=9]
-
-collection.add([[class=Pessoa][codigo=9][nome=Pessoa9C][this.hashCode()=9]])
-Pessoa.hashCode()
-[hashCode=9]
-true
-Pessoa.hashCode()
-[hashCode=5]
-
-collection.add([[class=Pessoa][codigo=5][nome=Pessoa5E][this.hashCode()=5]])
-Pessoa.hashCode()
-[hashCode=5]
-true
-Pessoa.hashCode()
-[hashCode=1]
-
-collection.add([[class=Pessoa][codigo=1][nome=Pessoa1G][this.hashCode()=1]])
-Pessoa.hashCode()
-[hashCode=1]
-true
-Pessoa.hashCode()
-[hashCode=3]
-
-collection.add([[class=Pessoa][codigo=3][nome=Pessoa3F][this.hashCode()=3]])
-Pessoa.hashCode()
-[hashCode=3]
-true
-Pessoa.hashCode()
-[hashCode=2]
-
-collection.add([[class=Pessoa][codigo=2][nome=Pessoa2A][this.hashCode()=2]])
-Pessoa.hashCode()
-[hashCode=2]
-true
-Pessoa.hashCode()
+Dog.hashCode()
 [hashCode=4]
-
-collection.add([[class=Pessoa][codigo=4][nome=Pessoa4H][this.hashCode()=4]])
-Pessoa.hashCode()
-[hashCode=4]
-true
-Pessoa.hashCode()
+pkgs.pkgExes.Dog@4
+DOG
+CAT key
+Dog.hashCode()
 [hashCode=6]
-
-collection.add([[class=Pessoa][codigo=6][nome=Pessoa6B][this.hashCode()=6]])
-Pessoa.hashCode()
-[hashCode=6]
-Pessoa.hashCode()
-[hashCode=6]
-Pessoa.hashCode()
-[hashCode=6]
-Pessoa.equals()[this=[[class=Pessoa][codigo=6][nome=Pessoa6B][this.hashCode()=6]]][obj=[[class=Pessoa][codigo=6][nome=Pessoa6B][this.hashCode()=6]]]
-[(obj instanceof Pessoa)=true]
-[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
-[isEquals=true]
-false
-Pessoa.hashCode()
-[hashCode=8]
-
-collection.add([[class=Pessoa][codigo=8][nome=Pessoa8K][this.hashCode()=8]])
-Pessoa.hashCode()
-[hashCode=8]
-Pessoa.hashCode()
-[hashCode=8]
-Pessoa.hashCode()
-[hashCode=8]
-Pessoa.equals()[this=[[class=Pessoa][codigo=8][nome=Pessoa8K][this.hashCode()=8]]][obj=[[class=Pessoa][codigo=8][nome=Pessoa8K][this.hashCode()=8]]]
-[(obj instanceof Pessoa)=true]
-[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
-[isEquals=true]
-false
-
-[totalTentadoCriar=11]
-[totalCriado=9]
-
-
-collection.forEach(System.out::println)
-Pessoa.hashCode()
-[hashCode=1]
-[[class=Pessoa][codigo=1][nome=Pessoa1G][this.hashCode()=1]]
-Pessoa.hashCode()
-[hashCode=2]
-[[class=Pessoa][codigo=2][nome=Pessoa2A][this.hashCode()=2]]
-Pessoa.hashCode()
-[hashCode=3]
-[[class=Pessoa][codigo=3][nome=Pessoa3F][this.hashCode()=3]]
-Pessoa.hashCode()
-[hashCode=4]
-[[class=Pessoa][codigo=4][nome=Pessoa4H][this.hashCode()=4]]
-Pessoa.hashCode()
-[hashCode=5]
-[[class=Pessoa][codigo=5][nome=Pessoa5E][this.hashCode()=5]]
-Pessoa.hashCode()
-[hashCode=6]
-[[class=Pessoa][codigo=6][nome=Pessoa6B][this.hashCode()=6]]
-Pessoa.hashCode()
-[hashCode=7]
-[[class=Pessoa][codigo=7][nome=Pessoa7D][this.hashCode()=7]]
-Pessoa.hashCode()
-[hashCode=8]
-[[class=Pessoa][codigo=8][nome=Pessoa8K][this.hashCode()=8]]
-Pessoa.hashCode()
-[hashCode=9]
-[[class=Pessoa][codigo=9][nome=Pessoa9C][this.hashCode()=9]]
-
-
-collection.contains(new Pessoa(9, "Pessoa9C"))
-Pessoa.hashCode()
-[hashCode=9]
-Pessoa.hashCode()
-[hashCode=9]
-Pessoa.hashCode()
-[hashCode=9]
-Pessoa.equals()[this=[[class=Pessoa][codigo=9][nome=Pessoa9C][this.hashCode()=9]]][obj=[[class=Pessoa][codigo=9][nome=Pessoa9C][this.hashCode()=9]]]
-[(obj instanceof Pessoa)=true]
-[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
-[isEquals=true]
-true
-
-collection.contains(new Pessoa(5, "Pessoa5E"))
-Pessoa.hashCode()
-[hashCode=5]
-Pessoa.hashCode()
-[hashCode=5]
-Pessoa.hashCode()
-[hashCode=5]
-Pessoa.equals()[this=[[class=Pessoa][codigo=5][nome=Pessoa5E][this.hashCode()=5]]][obj=[[class=Pessoa][codigo=5][nome=Pessoa5E][this.hashCode()=5]]]
-[(obj instanceof Pessoa)=true]
-[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
-[isEquals=true]
-true
-
-collection.contains(new Pessoa(1, "Pessoa1G"))
-Pessoa.hashCode()
-[hashCode=1]
-Pessoa.hashCode()
-[hashCode=1]
-Pessoa.hashCode()
-[hashCode=1]
-Pessoa.equals()[this=[[class=Pessoa][codigo=1][nome=Pessoa1G][this.hashCode()=1]]][obj=[[class=Pessoa][codigo=1][nome=Pessoa1G][this.hashCode()=1]]]
-[(obj instanceof Pessoa)=true]
-[(((Pessoa) obj).getCodigo() == this.getCodigo())=true]
-[isEquals=true]
-true
+Dog key
+null
+5
 </>
