@@ -23,39 +23,70 @@ public class Exe001 {
 
 		Chave chave1A = new Chave(1l);
 		Chave chave2B = new Chave(2l);
-		Chave chave1C = new Chave(1l);
-		Chave chave2D = new Chave(2l);
+		Chave chave3C = new Chave(3l);
+		Chave chave4D = new Chave(4l);
 		Chave chave6F = new Chave(6l);
 		Chave chave5E = new Chave(5l);
 		Chave chave7G = new Chave(7l);
 
 		Pessoa pessoa1A = new Pessoa(new Id(true), "Pessoa1A");
 		Pessoa pessoa2B = new Pessoa(new Id(true), "Pessoa2B");
-		Pessoa pessoa1C = new Pessoa(new Id(true), "Pessoa1C");
-		Pessoa pessoa2D = new Pessoa(new Id(true), "Pessoa2D");
+		Pessoa pessoa3C = new Pessoa(new Id(true), "Pessoa3C");
+		Pessoa pessoa4D = new Pessoa(new Id(true), "Pessoa4D");
 		Pessoa pessoa6F = new Pessoa(new Id(true), "Pessoa6F");
 		Pessoa pessoa5E = new Pessoa(new Id(true), "Pessoa5E");
 		Pessoa pessoa7G = new Pessoa(new Id(true), "Pessoa7G");
 
 		System.out.println("\n\nm.puts");
+
 		System.out.println("\nm.put(chave1A, pessoa1A)");
 		System.out.println(m.put(chave1A, pessoa1A));
 		System.out.println("\nm.put(chave2B, pessoa2B)");
 		System.out.println(m.put(chave2B, pessoa2B));
-		System.out.println("\nm.put(chave1C, pessoa1C)");
-		System.out.println(m.put(chave1C, pessoa1C));
-		System.out.println("\nm.put(chave2D, pessoa2D)");
-		System.out.println(m.put(chave2D, pessoa2D));
+		System.out.println("\nm.put(chave3C, pessoa3C)");
+		System.out.println(m.put(chave3C, pessoa3C));
+		System.out.println("\nm.put(chave4D, pessoa4D)");
+		System.out.println(m.put(chave4D, pessoa4D));
+		System.out.println("\nm.put(chave5E, pessoa5E)");
+		System.out.println(m.put(chave5E, pessoa5E));
+		System.out.println("\nm.put(chave6F, pessoa6F)");
+		System.out.println(m.put(chave6F, pessoa6F));
+		System.out.println("\nm.put(chave7G, pessoa7G)");
+		System.out.println(m.put(chave7G, pessoa7G));
+
+		/*System.out.println("\nm.put(chave1A, pessoa1A)");
+		System.out.println(m.put(chave1A, pessoa1A));
+		System.out.println("\nm.put(chave2B, pessoa2B)");
+		System.out.println(m.put(chave2B, pessoa2B));
+		System.out.println("\nm.put(chave3C, pessoa3C)");
+		System.out.println(m.put(chave3C, pessoa3C));
+		System.out.println("\nm.put(chave4D, pessoa4D)");
+		System.out.println(m.put(chave4D, pessoa4D));
 		System.out.println("\nm.put(chave6F, pessoa6F)");
 		System.out.println(m.put(chave6F, pessoa6F));
 		System.out.println("\nm.put(chave5E, pessoa5E)");
 		System.out.println(m.put(chave5E, pessoa5E));
 		System.out.println("\nm.put(chave7G, pessoa7G)");
+		System.out.println(m.put(chave7G, pessoa7G));*/
+
+		/*System.out.println("\nm.put(chave7G, pessoa7G)");
 		System.out.println(m.put(chave7G, pessoa7G));
+		System.out.println("\nm.put(chave5E, pessoa5E)");
+		System.out.println(m.put(chave5E, pessoa5E));
+		System.out.println("\nm.put(chave6F, pessoa6F)");
+		System.out.println(m.put(chave6F, pessoa6F));
+		System.out.println("\nm.put(chave4D, pessoa4D)");
+		System.out.println(m.put(chave4D, pessoa4D));
+		System.out.println("\nm.put(chave3C, pessoa3C)");
+		System.out.println(m.put(chave3C, pessoa3C));
+		System.out.println("\nm.put(chave2B, pessoa2B)");
+		System.out.println(m.put(chave2B, pessoa2B));
+		System.out.println("\nm.put(chave1A, pessoa1A)");
+		System.out.println(m.put(chave1A, pessoa1A));*/
 
 		System.out.println();
 		System.out.println("\nm.forEach"+"\n");
-		m.forEach((k,v) -> System.out.println("[k="+(k)+"]"+"[v="+(v)+"]"));
+		m.forEach((k,v) -> System.out.println("[k="+(k)+"]"+"[k.hashCode()="+(k.hashCode())+"]"+"[v="+(v)+"]"));
 
 		System.out.println("\n\nm.gets");
 		System.out.println("\nm.get(chave5E)");
