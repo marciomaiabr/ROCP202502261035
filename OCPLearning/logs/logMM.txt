@@ -1,4 +1,4 @@
-2025-05-10T09:24:14.648
+2025-05-10T09:41:19.264
 <>
 Exe001.m1()
 
@@ -8,46 +8,54 @@ m.puts
 m.put(keyPessoa1A, pessoa1A)
 KeyPessoa.hashCode()
 [hashCode=1]
+null
 
 m.put(keyPessoa2B, pessoa2B)
 KeyPessoa.hashCode()
 [hashCode=2]
+null
 
-m.put(keyPessoa3C, pessoa3C)
+m.put(keyPessoa1C, pessoa1C)
 KeyPessoa.hashCode()
-[hashCode=3]
+[hashCode=1]
+KeyPessoa.equals()[this=[[class=KeyPessoa][codigo=1]]][obj=[[class=KeyPessoa][codigo=1]]]
+[(obj instanceof KeyPessoa)=true]
+[(((KeyPessoa) obj).getCodigo() == this.getCodigo())=true]
+[isEquals=true]
+[[class=Pessoa][id=[[class=Key][codigo=20250510094121]]][nome=Pessoa1A20250510094121]]
 
-m.put(keyPessoa4D, pessoa4D)
+m.put(keyPessoa2D, pessoa2D)
 KeyPessoa.hashCode()
-[hashCode=4]
-
-m.put(keyPessoa5E, pessoa5E)
-KeyPessoa.hashCode()
-[hashCode=5]
+[hashCode=2]
+KeyPessoa.equals()[this=[[class=KeyPessoa][codigo=2]]][obj=[[class=KeyPessoa][codigo=2]]]
+[(obj instanceof KeyPessoa)=true]
+[(((KeyPessoa) obj).getCodigo() == this.getCodigo())=true]
+[isEquals=true]
+[[class=Pessoa][id=[[class=Key][codigo=20250510094123]]][nome=Pessoa2B20250510094123]]
 
 m.put(keyPessoa6F, pessoa6F)
 KeyPessoa.hashCode()
 [hashCode=6]
+null
+
+m.put(keyPessoa5E, pessoa5E)
+KeyPessoa.hashCode()
+[hashCode=5]
+null
 
 
 m.forEach
 
-[k=[[class=KeyPessoa][codigo=1]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510092416]]][nome=Pessoa1A20250510092416]]]
-[k=[[class=KeyPessoa][codigo=2]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510092418]]][nome=Pessoa2B20250510092418]]]
-[k=[[class=KeyPessoa][codigo=3]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510092420]]][nome=Pessoa3C20250510092420]]]
-[k=[[class=KeyPessoa][codigo=4]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510092422]]][nome=Pessoa4D20250510092422]]]
-[k=[[class=KeyPessoa][codigo=5]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510092424]]][nome=Pessoa5E20250510092424]]]
-[k=[[class=KeyPessoa][codigo=6]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510092426]]][nome=Pessoa6F20250510092426]]]
+[k=[[class=KeyPessoa][codigo=1]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510094125]]][nome=Pessoa1C20250510094125]]]
+[k=[[class=KeyPessoa][codigo=2]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510094127]]][nome=Pessoa2D20250510094127]]]
+[k=[[class=KeyPessoa][codigo=5]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510094131]]][nome=Pessoa5E20250510094131]]]
+[k=[[class=KeyPessoa][codigo=6]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510094129]]][nome=Pessoa6F20250510094129]]]
 
 
 m.gets
 
-m.get(new KeyPessoa(4l))
+m.get(keyPessoa5E)
 KeyPessoa.hashCode()
-[hashCode=4]
-KeyPessoa.equals()[this=[[class=KeyPessoa][codigo=4]]][obj=[[class=KeyPessoa][codigo=4]]]
-[(obj instanceof KeyPessoa)=true]
-[(((KeyPessoa) obj).getCodigo() == this.getCodigo())=true]
-[isEquals=true]
-[[class=Pessoa][id=[[class=Key][codigo=20250510092422]]][nome=Pessoa4D20250510092422]]
+[hashCode=5]
+[[class=Pessoa][id=[[class=Key][codigo=20250510094131]]][nome=Pessoa5E20250510094131]]
 </>
