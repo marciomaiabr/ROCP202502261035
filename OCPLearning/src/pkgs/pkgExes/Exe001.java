@@ -19,46 +19,50 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		Map<KeyPessoa, Pessoa> m = new HashMap<>();
+		Map<Chave, Pessoa> m = new HashMap<>();
 
-		KeyPessoa keyPessoa1A = new KeyPessoa(1l);
-		KeyPessoa keyPessoa2B = new KeyPessoa(2l);
-		KeyPessoa keyPessoa1C = new KeyPessoa(1l);
-		KeyPessoa keyPessoa2D = new KeyPessoa(2l);
-		KeyPessoa keyPessoa6F = new KeyPessoa(6l);
-		KeyPessoa keyPessoa5E = new KeyPessoa(5l);
+		Chave chave1A = new Chave(1l);
+		Chave chave2B = new Chave(2l);
+		Chave chave1C = new Chave(1l);
+		Chave chave2D = new Chave(2l);
+		Chave chave6F = new Chave(6l);
+		Chave chave5E = new Chave(5l);
+		Chave chave7G = new Chave(7l);
 
-		Pessoa pessoa1A = new Pessoa(new Key(true), "Pessoa1A");
-		Pessoa pessoa2B = new Pessoa(new Key(true), "Pessoa2B");
-		Pessoa pessoa1C = new Pessoa(new Key(true), "Pessoa1C");
-		Pessoa pessoa2D = new Pessoa(new Key(true), "Pessoa2D");
-		Pessoa pessoa6F = new Pessoa(new Key(true), "Pessoa6F");
-		Pessoa pessoa5E = new Pessoa(new Key(true), "Pessoa5E");
+		Pessoa pessoa1A = new Pessoa(new Id(true), "Pessoa1A");
+		Pessoa pessoa2B = new Pessoa(new Id(true), "Pessoa2B");
+		Pessoa pessoa1C = new Pessoa(new Id(true), "Pessoa1C");
+		Pessoa pessoa2D = new Pessoa(new Id(true), "Pessoa2D");
+		Pessoa pessoa6F = new Pessoa(new Id(true), "Pessoa6F");
+		Pessoa pessoa5E = new Pessoa(new Id(true), "Pessoa5E");
+		Pessoa pessoa7G = new Pessoa(new Id(true), "Pessoa7G");
 
 		System.out.println("\n\nm.puts");
-		System.out.println("\nm.put(keyPessoa1A, pessoa1A)");
-		System.out.println(m.put(keyPessoa1A, pessoa1A));
-		System.out.println("\nm.put(keyPessoa2B, pessoa2B)");
-		System.out.println(m.put(keyPessoa2B, pessoa2B));
-		System.out.println("\nm.put(keyPessoa1C, pessoa1C)");
-		System.out.println(m.put(keyPessoa1C, pessoa1C));
-		System.out.println("\nm.put(keyPessoa2D, pessoa2D)");
-		System.out.println(m.put(keyPessoa2D, pessoa2D));
-		System.out.println("\nm.put(keyPessoa6F, pessoa6F)");
-		System.out.println(m.put(keyPessoa6F, pessoa6F));
-		System.out.println("\nm.put(keyPessoa5E, pessoa5E)");
-		System.out.println(m.put(keyPessoa5E, pessoa5E));
+		System.out.println("\nm.put(chave1A, pessoa1A)");
+		System.out.println(m.put(chave1A, pessoa1A));
+		System.out.println("\nm.put(chave2B, pessoa2B)");
+		System.out.println(m.put(chave2B, pessoa2B));
+		System.out.println("\nm.put(chave1C, pessoa1C)");
+		System.out.println(m.put(chave1C, pessoa1C));
+		System.out.println("\nm.put(chave2D, pessoa2D)");
+		System.out.println(m.put(chave2D, pessoa2D));
+		System.out.println("\nm.put(chave6F, pessoa6F)");
+		System.out.println(m.put(chave6F, pessoa6F));
+		System.out.println("\nm.put(chave5E, pessoa5E)");
+		System.out.println(m.put(chave5E, pessoa5E));
+		System.out.println("\nm.put(chave7G, pessoa7G)");
+		System.out.println(m.put(chave7G, pessoa7G));
 
 		System.out.println();
 		System.out.println("\nm.forEach"+"\n");
 		m.forEach((k,v) -> System.out.println("[k="+(k)+"]"+"[v="+(v)+"]"));
 
 		System.out.println("\n\nm.gets");
-		System.out.println("\nm.get(keyPessoa5E)");
-		System.out.println(m.get(keyPessoa5E));
+		System.out.println("\nm.get(chave5E)");
+		System.out.println(m.get(chave5E));
 	}
 }
 
 /*
-ele ordena pelo generic k(de key)
+
 */

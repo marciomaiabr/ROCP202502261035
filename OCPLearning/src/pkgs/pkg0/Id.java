@@ -4,20 +4,20 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-public class Key {
+public class Id {
 	private Long codigo;
-	private boolean isAutoGenerateKey;
-	public boolean isAutoGenerateKey() {
-		return this.isAutoGenerateKey;
+	private boolean isAutoGenerate;
+	public boolean isAutoGenerate() {
+		return this.isAutoGenerate;
 	}
-	public Key() { super(); }
-	public Key(Long codigo) { super(); this.codigo = codigo; }
-	public Key(boolean autoGenerateKey) {
+	public Id() { super(); }
+	public Id(Long codigo) { super(); this.codigo = codigo; }
+	public Id(boolean autoGenerate) {
 		super();
-		this.isAutoGenerateKey = autoGenerateKey;
-		codigo = autoGenerateKey ? generateKey() : codigo;
+		this.isAutoGenerate = autoGenerate;
+		codigo = autoGenerate ? generate() : codigo;
 	}
-	private static Long generateKey() {
+	private static Long generate() {
 		try { Thread.sleep(2000); } catch (Exception e) {}
 		return new Long(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")));
 	}
@@ -29,7 +29,7 @@ public class Key {
 	}
 	@Override
 	public int hashCode() {
-		System.out.println("Key.hashCode()");
+		System.out.println("Id.hashCode()");
 		int hashCode = 0;
 		hashCode = Objects.hashCode(codigo);
 		System.out.println("[hashCode="+(hashCode)+"]");
@@ -37,7 +37,7 @@ public class Key {
 	}
 	@Override
 	public boolean equals(Object obj) {
-		System.out.println("Key.equals()[this="+(this)+"][obj="+(obj)+"]");
+		System.out.println("Id.equals()[this="+(this)+"][obj="+(obj)+"]");
 		boolean isEquals = false;
 		if (obj == null) {
 			System.out.println("[(obj == null)="+(true)+"]");
@@ -45,10 +45,10 @@ public class Key {
 		} else if (this == obj) {
 			System.out.println("[(this == obj)="+(true)+"]");
 			isEquals = true;
-		} else if (obj instanceof Key) {
-			System.out.println("[(obj instanceof Key)="+(true)+"]");
-			if (((Key) obj).getCodigo().equals(this.getCodigo())) {
-				System.out.println("[(((Key) obj).getCodigo() == this.getCodigo())="+(true)+"]");
+		} else if (obj instanceof Id) {
+			System.out.println("[(obj instanceof Id)="+(true)+"]");
+			if (((Id) obj).getCodigo().equals(this.getCodigo())) {
+				System.out.println("[(((Id) obj).getCodigo() == this.getCodigo())="+(true)+"]");
 				isEquals = true;
 			}
 		}

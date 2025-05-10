@@ -3,14 +3,14 @@ package pkgs.pkg0;
 import java.util.*;
 
 public class Pessoa {
-	private Key id;
+	private Id id;
 	private String nome;
 	public Pessoa() { super(); }
-	public Pessoa(Key id, String nome) { super(); this.id = id; this.nome = id.isAutoGenerateKey() ? nome.concat(id.getCodigo().toString()): nome; }
-	public Pessoa(Key id) { super(); this.id = id; this.nome = id.isAutoGenerateKey() ? "Pessoa".concat(id.getCodigo().toString()): this.nome; }
+	public Pessoa(Id id, String nome) { super(); this.id = id; this.nome = id.isAutoGenerate() ? nome.concat(id.getCodigo().toString()): nome; }
+	public Pessoa(Id id) { super(); this.id = id; this.nome = id.isAutoGenerate() ? "Pessoa".concat(id.getCodigo().toString()): this.nome; }
 	public Pessoa(String nome) { super(); this.nome = nome; }
-	public Key getId() {return id;}
-	public void setId(Key id) {this.id = id;}
+	public Id getId() {return id;}
+	public void setId(Id id) {this.id = id;}
 	public String getNome() {return nome;}
 	public void setNome(String nome) {this.nome = nome;}
 	@Override

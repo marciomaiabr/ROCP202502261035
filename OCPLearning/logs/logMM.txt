@@ -1,61 +1,67 @@
-2025-05-10T09:41:19.264
+2025-05-10T10:19:39.422
 <>
 Exe001.m1()
 
 
 m.puts
 
-m.put(keyPessoa1A, pessoa1A)
-KeyPessoa.hashCode()
+m.put(chave1A, pessoa1A)
+Chave.hashCode()
 [hashCode=1]
 null
 
-m.put(keyPessoa2B, pessoa2B)
-KeyPessoa.hashCode()
+m.put(chave2B, pessoa2B)
+Chave.hashCode()
 [hashCode=2]
 null
 
-m.put(keyPessoa1C, pessoa1C)
-KeyPessoa.hashCode()
+m.put(chave1C, pessoa1C)
+Chave.hashCode()
 [hashCode=1]
-KeyPessoa.equals()[this=[[class=KeyPessoa][codigo=1]]][obj=[[class=KeyPessoa][codigo=1]]]
-[(obj instanceof KeyPessoa)=true]
-[(((KeyPessoa) obj).getCodigo() == this.getCodigo())=true]
+Chave.equals()[this=[[class=Chave][codigo=1]]][obj=[[class=Chave][codigo=1]]]
+[(obj instanceof Chave)=true]
+[(((Chave) obj).getCodigo() == this.getCodigo())=true]
 [isEquals=true]
-[[class=Pessoa][id=[[class=Key][codigo=20250510094121]]][nome=Pessoa1A20250510094121]]
+[[class=Pessoa][id=[[class=Id][codigo=20250510101941]]][nome=Pessoa1A20250510101941]]
 
-m.put(keyPessoa2D, pessoa2D)
-KeyPessoa.hashCode()
+m.put(chave2D, pessoa2D)
+Chave.hashCode()
 [hashCode=2]
-KeyPessoa.equals()[this=[[class=KeyPessoa][codigo=2]]][obj=[[class=KeyPessoa][codigo=2]]]
-[(obj instanceof KeyPessoa)=true]
-[(((KeyPessoa) obj).getCodigo() == this.getCodigo())=true]
+Chave.equals()[this=[[class=Chave][codigo=2]]][obj=[[class=Chave][codigo=2]]]
+[(obj instanceof Chave)=true]
+[(((Chave) obj).getCodigo() == this.getCodigo())=true]
 [isEquals=true]
-[[class=Pessoa][id=[[class=Key][codigo=20250510094123]]][nome=Pessoa2B20250510094123]]
+[[class=Pessoa][id=[[class=Id][codigo=20250510101943]]][nome=Pessoa2B20250510101943]]
 
-m.put(keyPessoa6F, pessoa6F)
-KeyPessoa.hashCode()
+m.put(chave6F, pessoa6F)
+Chave.hashCode()
 [hashCode=6]
 null
 
-m.put(keyPessoa5E, pessoa5E)
-KeyPessoa.hashCode()
+m.put(chave5E, pessoa5E)
+Chave.hashCode()
 [hashCode=5]
+null
+
+m.put(chave7G, pessoa7G)
+Chave.hashCode()
+[hashCode=7]
 null
 
 
 m.forEach
 
-[k=[[class=KeyPessoa][codigo=1]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510094125]]][nome=Pessoa1C20250510094125]]]
-[k=[[class=KeyPessoa][codigo=2]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510094127]]][nome=Pessoa2D20250510094127]]]
-[k=[[class=KeyPessoa][codigo=5]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510094131]]][nome=Pessoa5E20250510094131]]]
-[k=[[class=KeyPessoa][codigo=6]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510094129]]][nome=Pessoa6F20250510094129]]]
+[k=[[class=Chave][codigo=1]]][v=[[class=Pessoa][id=[[class=Id][codigo=20250510101945]]][nome=Pessoa1C20250510101945]]]
+[k=[[class=Chave][codigo=2]]][v=[[class=Pessoa][id=[[class=Id][codigo=20250510101947]]][nome=Pessoa2D20250510101947]]]
+[k=[[class=Chave][codigo=5]]][v=[[class=Pessoa][id=[[class=Id][codigo=20250510101951]]][nome=Pessoa5E20250510101951]]]
+[k=[[class=Chave][codigo=6]]][v=[[class=Pessoa][id=[[class=Id][codigo=20250510101949]]][nome=Pessoa6F20250510101949]]]
+[k=[[class=Chave][codigo=7]]][v=[[class=Pessoa][id=[[class=Id][codigo=20250510101953]]][nome=Pessoa7G20250510101953]]]
 
 
 m.gets
 
-m.get(keyPessoa5E)
-KeyPessoa.hashCode()
+m.get(chave5E)
+Chave.hashCode()
 [hashCode=5]
-[[class=Pessoa][id=[[class=Key][codigo=20250510094131]]][nome=Pessoa5E20250510094131]]
+[[class=Pessoa][id=[[class=Id][codigo=20250510101951]]][nome=Pessoa5E20250510101951]]
 </>
