@@ -1,84 +1,53 @@
-2025-05-09T09:07:11.399
+2025-05-10T09:24:14.648
 <>
 Exe001.m1()
 
-m.put("k1", new Dog("aiko"))
-null
 
-m.put("k2", Pets.DOG)
-null
+m.puts
 
-m.put(Pets.CAT, "CAT key")
-null
+m.put(keyPessoa1A, pessoa1A)
+KeyPessoa.hashCode()
+[hashCode=1]
 
-m.put(d1, "Dog key1")
-Dog.hashCode()
-[hashCode=7]
-null
+m.put(keyPessoa2B, pessoa2B)
+KeyPessoa.hashCode()
+[hashCode=2]
 
-m.put(d2, "Dog key2")
-Dog.hashCode()
-[hashCode=7]
-Dog.equals()
-null
+m.put(keyPessoa3C, pessoa3C)
+KeyPessoa.hashCode()
+[hashCode=3]
 
-m.put(d3, "Dog key3")
-Dog.hashCode()
-[hashCode=7]
-Dog key1
+m.put(keyPessoa4D, pessoa4D)
+KeyPessoa.hashCode()
+[hashCode=4]
 
-m.put(new Cat(), "Cat key")
-null
+m.put(keyPessoa5E, pessoa5E)
+KeyPessoa.hashCode()
+[hashCode=5]
+
+m.put(keyPessoa6F, pessoa6F)
+KeyPessoa.hashCode()
+[hashCode=6]
 
 
 m.forEach
 
-[k=CAT][v=CAT key]
-Dog.hashCode()
-[hashCode=4]
-
-[k=k1][v=pkgs.pkgExes.Dog@4]
-
-[k=k2][v=DOG]
-Dog.hashCode()
-[hashCode=7]
-
-[k=pkgs.pkgExes.Dog@7][v=Dog key3]
-Dog.hashCode()
-[hashCode=7]
-
-[k=pkgs.pkgExes.Dog@7][v=Dog key2]
-
-[k=pkgs.pkgExes.Cat@e9e54c2][v=Cat key]
+[k=[[class=KeyPessoa][codigo=1]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510092416]]][nome=Pessoa1A20250510092416]]]
+[k=[[class=KeyPessoa][codigo=2]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510092418]]][nome=Pessoa2B20250510092418]]]
+[k=[[class=KeyPessoa][codigo=3]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510092420]]][nome=Pessoa3C20250510092420]]]
+[k=[[class=KeyPessoa][codigo=4]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510092422]]][nome=Pessoa4D20250510092422]]]
+[k=[[class=KeyPessoa][codigo=5]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510092424]]][nome=Pessoa5E20250510092424]]]
+[k=[[class=KeyPessoa][codigo=6]]][v=[[class=Pessoa][id=[[class=Key][codigo=20250510092426]]][nome=Pessoa6F20250510092426]]]
 
 
 m.gets
 
-m.get("k1")
-Dog.hashCode()
+m.get(new KeyPessoa(4l))
+KeyPessoa.hashCode()
 [hashCode=4]
-pkgs.pkgExes.Dog@4
-
-m.get(k2)
-DOG
-
-m.get(p)
-CAT key
-
-m.get(d1)
-Dog.hashCode()
-[hashCode=7]
-Dog key3
-
-m.get(d2)
-Dog.hashCode()
-[hashCode=7]
-Dog.equals()
-Dog key2
-
-m.get(new Cat())
-null
-
-m.size()
-6
+KeyPessoa.equals()[this=[[class=KeyPessoa][codigo=4]]][obj=[[class=KeyPessoa][codigo=4]]]
+[(obj instanceof KeyPessoa)=true]
+[(((KeyPessoa) obj).getCodigo() == this.getCodigo())=true]
+[isEquals=true]
+[[class=Pessoa][id=[[class=Key][codigo=20250510092422]]][nome=Pessoa4D20250510092422]]
 </>
