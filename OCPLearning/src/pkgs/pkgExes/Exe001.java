@@ -28,7 +28,15 @@ public class Exe001 {
 		Pessoa pessoa6F16 = new Pessoa(new Id(6l), "Pessoa6F16", 16);
 		Pessoa pessoa7G14 = new Pessoa(new Id(7l), "Pessoa7G14", 14);
 
-		Queue<Pessoa> q = new PriorityQueue<>();
+		Queue<Pessoa> q = new PriorityQueue<>(new Comparator<Pessoa>() {
+			@Override
+			public int compare(Pessoa pessoa1, Pessoa pessoa2) {
+				System.out.println("PessoaComparator.compare()");
+				int intCompare = new Integer(pessoa2.getIdade()).compareTo(pessoa1.getIdade());
+				System.out.println("[intCompare="+(intCompare)+"]");
+				return intCompare;
+			}
+		});
 
 		System.out.println("\n\nq.offer");
 
