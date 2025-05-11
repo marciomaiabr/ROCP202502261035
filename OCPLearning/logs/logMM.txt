@@ -1,4 +1,4 @@
-2025-05-11T10:11:31.300
+2025-05-11T10:13:11.074
 <>
 Exe001.m1()
 
@@ -9,9 +9,72 @@ q.offer(pessoa1A15)
 true
 
 q.offer(pessoa2B18)
-Exception in thread "main" java.lang.ClassCastException: pkgs.pkg0.Pessoa cannot be cast to java.lang.Comparable
-	at java.util.PriorityQueue.siftUpComparable(PriorityQueue.java:652)
-	at java.util.PriorityQueue.siftUp(PriorityQueue.java:647)
-	at java.util.PriorityQueue.offer(PriorityQueue.java:344)
-	at pkgs.pkgExes.Exe001.m1(Exe001.java:38)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:16)
+Pessoa.compareTo()
+[intCompareTo=1]
+true
+
+q.offer(pessoa4D18)
+Pessoa.compareTo()
+[intCompareTo=1]
+true
+
+q.offer(pessoa3C18)
+Pessoa.compareTo()
+[intCompareTo=0]
+true
+
+q.offer(pessoa5E47)
+Pessoa.compareTo()
+[intCompareTo=1]
+true
+
+q.offer(pessoa6F16)
+Pessoa.compareTo()
+[intCompareTo=-1]
+Pessoa.compareTo()
+[intCompareTo=1]
+true
+
+q.offer(pessoa7G14)
+Pessoa.compareTo()
+[intCompareTo=-1]
+Pessoa.compareTo()
+[intCompareTo=-1]
+true
+
+
+q.peek
+[[class=Pessoa][id=[[class=Id][codigo=7]]][nome=Pessoa7G14][idade=14]]
+
+
+q.polls
+Pessoa.compareTo()
+[intCompareTo=1]
+Pessoa.compareTo()
+[intCompareTo=1]
+Pessoa.compareTo()
+[intCompareTo=-1]
+[[class=Pessoa][id=[[class=Id][codigo=7]]][nome=Pessoa7G14][idade=14]]
+Pessoa.compareTo()
+[intCompareTo=1]
+Pessoa.compareTo()
+[intCompareTo=1]
+[[class=Pessoa][id=[[class=Id][codigo=1]]][nome=Pessoa1A15][idade=15]]
+Pessoa.compareTo()
+[intCompareTo=0]
+Pessoa.compareTo()
+[intCompareTo=1]
+Pessoa.compareTo()
+[intCompareTo=1]
+[[class=Pessoa][id=[[class=Id][codigo=6]]][nome=Pessoa6F16][idade=16]]
+Pessoa.compareTo()
+[intCompareTo=0]
+Pessoa.compareTo()
+[intCompareTo=1]
+[[class=Pessoa][id=[[class=Id][codigo=2]]][nome=Pessoa2B18][idade=18]]
+Pessoa.compareTo()
+[intCompareTo=-1]
+[[class=Pessoa][id=[[class=Id][codigo=3]]][nome=Pessoa3C18][idade=18]]
+[[class=Pessoa][id=[[class=Id][codigo=4]]][nome=Pessoa4D18][idade=18]]
+[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E47][idade=47]]
+</>

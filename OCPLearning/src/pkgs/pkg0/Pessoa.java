@@ -2,7 +2,7 @@ package pkgs.pkg0;
 
 import java.util.*;
 
-public class Pessoa {
+public class Pessoa implements Comparable<Pessoa> {
 	private Id id;
 	private String nome;
 	private int idade;
@@ -44,6 +44,13 @@ public class Pessoa {
 		}
 		System.out.println("[isEquals="+(isEquals)+"]");
 		return isEquals;
+	}
+	@Override
+	public int compareTo(Pessoa pessoa) {
+		System.out.println("Pessoa.compareTo()");
+		int intCompareTo = new Integer(this.getIdade()).compareTo(pessoa.getIdade());
+		System.out.println("[intCompareTo="+(intCompareTo)+"]");
+		return intCompareTo;
 	}
 }
 
