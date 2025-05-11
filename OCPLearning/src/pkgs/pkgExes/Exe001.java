@@ -19,7 +19,6 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		Map<Chave, Pessoa> m = new HashMap<>();
 
 		Chave chave1A = new Chave(1l);
 		Chave chave2B = new Chave(2l);
@@ -36,6 +35,8 @@ public class Exe001 {
 		Pessoa pessoa6F = new Pessoa(new Id(true), "Pessoa6F");
 		Pessoa pessoa5E = new Pessoa(new Id(true), "Pessoa5E");
 		Pessoa pessoa7G = new Pessoa(new Id(true), "Pessoa7G");
+
+		Map<Chave, Pessoa> m = new HashMap<>();
 
 		System.out.println("\n\nm.puts");
 
