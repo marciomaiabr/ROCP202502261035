@@ -17,7 +17,6 @@ public class Chave {
 		System.out.println("Chave.hashCode()");
 		int hashCode = 0;
 		hashCode = Objects.hashCode(codigo);
-		hashCode = (int) (99-codigo) ;
 		System.out.println("[hashCode="+(hashCode)+"]");
 		return hashCode;
 	}
