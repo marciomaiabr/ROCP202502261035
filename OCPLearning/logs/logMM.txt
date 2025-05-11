@@ -1,82 +1,13 @@
-2025-05-11T08:42:20.895
+2025-05-11T09:17:20.524
 <>
 Exe001.m1()
+1 3 5 6 7 8 9 
 
 
-m.puts
-
-s.add(pessoa1A)
-Pessoa.hashCode()
-[hashCode=1]
-true
-
-s.add(pessoa2B)
-Pessoa.hashCode()
-[hashCode=1]
-Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=2]]][nome=Pessoa2B]]][obj=[[class=Pessoa][id=[[class=Id][codigo=1]]][nome=Pessoa1A]]]
-[(obj instanceof Pessoa)=true]
-[isEquals=false]
-true
-
-s.add(pessoa1C)
-Pessoa.hashCode()
-[hashCode=1]
-Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=1]]][nome=Pessoa1C]]][obj=[[class=Pessoa][id=[[class=Id][codigo=1]]][nome=Pessoa1A]]]
-[(obj instanceof Pessoa)=true]
-((Pessoa) obj).getId().getCodigo().equals(this.getId().getCodigo())=true]
-[isEquals=true]
-false
-
-s.add(pessoa4D)
-Pessoa.hashCode()
-[hashCode=2]
-true
-
-s.add(pessoa6F)
-Pessoa.hashCode()
-[hashCode=2]
-Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=6]]][nome=Pessoa6F]]][obj=[[class=Pessoa][id=[[class=Id][codigo=4]]][nome=Pessoa4D]]]
-[(obj instanceof Pessoa)=true]
-[isEquals=false]
-true
-
-s.add(pessoa5E)
-Pessoa.hashCode()
-[hashCode=2]
-Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E]]][obj=[[class=Pessoa][id=[[class=Id][codigo=4]]][nome=Pessoa4D]]]
-[(obj instanceof Pessoa)=true]
-[isEquals=false]
-Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E]]][obj=[[class=Pessoa][id=[[class=Id][codigo=6]]][nome=Pessoa6F]]]
-[(obj instanceof Pessoa)=true]
-[isEquals=false]
-true
-
-s.add(pessoa7G)
-Pessoa.hashCode()
-[hashCode=3]
-true
-
-
-s.forEach
-
-[v=[[class=Pessoa][id=[[class=Id][codigo=1]]][nome=Pessoa1A]]]
-[v=[[class=Pessoa][id=[[class=Id][codigo=2]]][nome=Pessoa2B]]]
-[v=[[class=Pessoa][id=[[class=Id][codigo=4]]][nome=Pessoa4D]]]
-[v=[[class=Pessoa][id=[[class=Id][codigo=6]]][nome=Pessoa6F]]]
-[v=[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E]]]
-[v=[[class=Pessoa][id=[[class=Id][codigo=7]]][nome=Pessoa7G]]]
-
-
-s.contains
-
-s.contains(pessoa5E)
-Pessoa.hashCode()
-[hashCode=2]
-Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E]]][obj=[[class=Pessoa][id=[[class=Id][codigo=4]]][nome=Pessoa4D]]]
-[(obj instanceof Pessoa)=true]
-[isEquals=false]
-Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E]]][obj=[[class=Pessoa][id=[[class=Id][codigo=6]]][nome=Pessoa6F]]]
-[(obj instanceof Pessoa)=true]
-[isEquals=false]
-true
-</>
+pq2.offer
+size 7
+peek 9
+size 7
+poll 9
+size 6
+8 7 6 5 3 1 null </>

@@ -11,6 +11,13 @@ public class Exe001 {
 		System.out.println(LocalDateTime.now());
 	}
 
+	static class PQsort implements Comparator<Integer> {
+		@Override
+		public int compare(Integer one, Integer two) {
+			return two-one;
+		}
+	}
+
 	public static void main(String[] args) {
 		System.out.println("<>");
 		m1(args);
@@ -20,40 +27,33 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 
-		Pessoa pessoa1A = new Pessoa(new Id(1l), "Pessoa1A");
-		Pessoa pessoa2B = new Pessoa(new Id(2l), "Pessoa2B");
-		Pessoa pessoa1C = new Pessoa(new Id(1l), "Pessoa1C");
-		Pessoa pessoa4D = new Pessoa(new Id(4l), "Pessoa4D");
-		Pessoa pessoa6F = new Pessoa(new Id(6l), "Pessoa6F");
-		Pessoa pessoa5E = new Pessoa(new Id(5l), "Pessoa5E");
-		Pessoa pessoa7G = new Pessoa(new Id(7l), "Pessoa7G");
+		int [] ia = {1,5,3,7,6,9,8};
 
-		Set<Pessoa> s = new HashSet<>();
+		Queue<Integer> q = new PriorityQueue<>();
 
-		System.out.println("\n\nm.puts");
+		for(int x : ia)
+			q.offer(x);
 
-		System.out.println("\ns.add(pessoa1A)");
-		System.out.println(s.add(pessoa1A));
-		System.out.println("\ns.add(pessoa2B)");
-		System.out.println(s.add(pessoa2B));
-		System.out.println("\ns.add(pessoa1C)");
-		System.out.println(s.add(pessoa1C));
-		System.out.println("\ns.add(pessoa4D)");
-		System.out.println(s.add(pessoa4D));
-		System.out.println("\ns.add(pessoa6F)");
-		System.out.println(s.add(pessoa6F));
-		System.out.println("\ns.add(pessoa5E)");
-		System.out.println(s.add(pessoa5E));
-		System.out.println("\ns.add(pessoa7G)");
-		System.out.println(s.add(pessoa7G));
+		for(int x : ia)
+			System.out.print(q.poll()+" ");
 
 		System.out.println();
-		System.out.println("\ns.forEach"+"\n");
-		s.forEach(v -> System.out.println("[v="+(v)+"]"));
+		PQsort pqs = new PQsort();
+		q = new PriorityQueue<>(10, pqs);
 
-		System.out.println("\n\ns.contains");
-		System.out.println("\ns.contains(pessoa5E)");
-		System.out.println(s.contains(pessoa5E));
+		System.out.println("\n\npq2.offer");
+		for(int x : ia)
+			q.offer(x);
+
+		System.out.println("size "+q.size());
+		System.out.println("peek "+q.peek());
+		System.out.println("size "+q.size());
+		System.out.println("poll "+q.poll());
+		System.out.println("size "+q.size());
+
+		for(int x : ia)
+			System.out.print(q.poll()+" ");
+
 	}
 }
 
