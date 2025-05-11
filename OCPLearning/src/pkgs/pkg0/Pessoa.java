@@ -22,6 +22,7 @@ public class Pessoa {
 		System.out.println("Pessoa.hashCode()");
 		int hashCode = 0;
 		hashCode = Objects.hashCode(id.getCodigo());
+		hashCode = ( (hashCode <= 3) ? 1 : ( ( hashCode <= 6 ) ? 2 : ( ( hashCode <= 9 ) ? 3 : 4 ) ) ) ;
 		System.out.println("[hashCode="+(hashCode)+"]");
 		return hashCode;
 	}

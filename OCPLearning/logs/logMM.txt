@@ -1,75 +1,82 @@
-2025-05-11T08:10:48.174
+2025-05-11T08:42:20.895
 <>
 Exe001.m1()
 
 
 m.puts
 
-m.put(chave1A, pessoa1A)
-Chave.hashCode()
-[hashCode=98]
-null
+s.add(pessoa1A)
+Pessoa.hashCode()
+[hashCode=1]
+true
 
-m.put(chave2B, pessoa2B)
-Chave.hashCode()
-[hashCode=97]
-null
+s.add(pessoa2B)
+Pessoa.hashCode()
+[hashCode=1]
+Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=2]]][nome=Pessoa2B]]][obj=[[class=Pessoa][id=[[class=Id][codigo=1]]][nome=Pessoa1A]]]
+[(obj instanceof Pessoa)=true]
+[isEquals=false]
+true
 
-m.put(chave3C, pessoa3C)
-Chave.hashCode()
-[hashCode=96]
-null
+s.add(pessoa1C)
+Pessoa.hashCode()
+[hashCode=1]
+Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=1]]][nome=Pessoa1C]]][obj=[[class=Pessoa][id=[[class=Id][codigo=1]]][nome=Pessoa1A]]]
+[(obj instanceof Pessoa)=true]
+((Pessoa) obj).getId().getCodigo().equals(this.getId().getCodigo())=true]
+[isEquals=true]
+false
 
-m.put(chave4D, pessoa4D)
-Chave.hashCode()
-[hashCode=95]
-null
+s.add(pessoa4D)
+Pessoa.hashCode()
+[hashCode=2]
+true
 
-m.put(chave5E, pessoa5E)
-Chave.hashCode()
-[hashCode=94]
-null
+s.add(pessoa6F)
+Pessoa.hashCode()
+[hashCode=2]
+Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=6]]][nome=Pessoa6F]]][obj=[[class=Pessoa][id=[[class=Id][codigo=4]]][nome=Pessoa4D]]]
+[(obj instanceof Pessoa)=true]
+[isEquals=false]
+true
 
-m.put(chave6F, pessoa6F)
-Chave.hashCode()
-[hashCode=93]
-null
+s.add(pessoa5E)
+Pessoa.hashCode()
+[hashCode=2]
+Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E]]][obj=[[class=Pessoa][id=[[class=Id][codigo=4]]][nome=Pessoa4D]]]
+[(obj instanceof Pessoa)=true]
+[isEquals=false]
+Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E]]][obj=[[class=Pessoa][id=[[class=Id][codigo=6]]][nome=Pessoa6F]]]
+[(obj instanceof Pessoa)=true]
+[isEquals=false]
+true
 
-m.put(chave7G, pessoa7G)
-Chave.hashCode()
-[hashCode=92]
-null
-
-
-m.forEach
-
-Chave.hashCode()
-[hashCode=96]
-[k=[[class=Chave][codigo=3]]][k.hashCode()=96][v=[[class=Pessoa][id=[[class=Id][codigo=20250511081054]]][nome=Pessoa3C20250511081054]]]
-Chave.hashCode()
-[hashCode=97]
-[k=[[class=Chave][codigo=2]]][k.hashCode()=97][v=[[class=Pessoa][id=[[class=Id][codigo=20250511081052]]][nome=Pessoa2B20250511081052]]]
-Chave.hashCode()
-[hashCode=98]
-[k=[[class=Chave][codigo=1]]][k.hashCode()=98][v=[[class=Pessoa][id=[[class=Id][codigo=20250511081050]]][nome=Pessoa1A20250511081050]]]
-Chave.hashCode()
-[hashCode=92]
-[k=[[class=Chave][codigo=7]]][k.hashCode()=92][v=[[class=Pessoa][id=[[class=Id][codigo=20250511081102]]][nome=Pessoa7G20250511081102]]]
-Chave.hashCode()
-[hashCode=93]
-[k=[[class=Chave][codigo=6]]][k.hashCode()=93][v=[[class=Pessoa][id=[[class=Id][codigo=20250511081058]]][nome=Pessoa6F20250511081058]]]
-Chave.hashCode()
-[hashCode=94]
-[k=[[class=Chave][codigo=5]]][k.hashCode()=94][v=[[class=Pessoa][id=[[class=Id][codigo=20250511081100]]][nome=Pessoa5E20250511081100]]]
-Chave.hashCode()
-[hashCode=95]
-[k=[[class=Chave][codigo=4]]][k.hashCode()=95][v=[[class=Pessoa][id=[[class=Id][codigo=20250511081056]]][nome=Pessoa4D20250511081056]]]
+s.add(pessoa7G)
+Pessoa.hashCode()
+[hashCode=3]
+true
 
 
-m.gets
+s.forEach
 
-m.get(chave5E)
-Chave.hashCode()
-[hashCode=94]
-[[class=Pessoa][id=[[class=Id][codigo=20250511081100]]][nome=Pessoa5E20250511081100]]
+[v=[[class=Pessoa][id=[[class=Id][codigo=1]]][nome=Pessoa1A]]]
+[v=[[class=Pessoa][id=[[class=Id][codigo=2]]][nome=Pessoa2B]]]
+[v=[[class=Pessoa][id=[[class=Id][codigo=4]]][nome=Pessoa4D]]]
+[v=[[class=Pessoa][id=[[class=Id][codigo=6]]][nome=Pessoa6F]]]
+[v=[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E]]]
+[v=[[class=Pessoa][id=[[class=Id][codigo=7]]][nome=Pessoa7G]]]
+
+
+s.contains
+
+s.contains(pessoa5E)
+Pessoa.hashCode()
+[hashCode=2]
+Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E]]][obj=[[class=Pessoa][id=[[class=Id][codigo=4]]][nome=Pessoa4D]]]
+[(obj instanceof Pessoa)=true]
+[isEquals=false]
+Pessoa.equals()[this=[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E]]][obj=[[class=Pessoa][id=[[class=Id][codigo=6]]][nome=Pessoa6F]]]
+[(obj instanceof Pessoa)=true]
+[isEquals=false]
+true
 </>

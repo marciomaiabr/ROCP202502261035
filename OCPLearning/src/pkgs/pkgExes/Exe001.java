@@ -20,78 +20,40 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 
-		Chave chave1A = new Chave(1l);
-		Chave chave2B = new Chave(2l);
-		Chave chave3C = new Chave(3l);
-		Chave chave4D = new Chave(4l);
-		Chave chave6F = new Chave(6l);
-		Chave chave5E = new Chave(5l);
-		Chave chave7G = new Chave(7l);
+		Pessoa pessoa1A = new Pessoa(new Id(1l), "Pessoa1A");
+		Pessoa pessoa2B = new Pessoa(new Id(2l), "Pessoa2B");
+		Pessoa pessoa1C = new Pessoa(new Id(1l), "Pessoa1C");
+		Pessoa pessoa4D = new Pessoa(new Id(4l), "Pessoa4D");
+		Pessoa pessoa6F = new Pessoa(new Id(6l), "Pessoa6F");
+		Pessoa pessoa5E = new Pessoa(new Id(5l), "Pessoa5E");
+		Pessoa pessoa7G = new Pessoa(new Id(7l), "Pessoa7G");
 
-		Pessoa pessoa1A = new Pessoa(new Id(true), "Pessoa1A");
-		Pessoa pessoa2B = new Pessoa(new Id(true), "Pessoa2B");
-		Pessoa pessoa3C = new Pessoa(new Id(true), "Pessoa3C");
-		Pessoa pessoa4D = new Pessoa(new Id(true), "Pessoa4D");
-		Pessoa pessoa6F = new Pessoa(new Id(true), "Pessoa6F");
-		Pessoa pessoa5E = new Pessoa(new Id(true), "Pessoa5E");
-		Pessoa pessoa7G = new Pessoa(new Id(true), "Pessoa7G");
-
-		Map<Chave, Pessoa> m = new HashMap<>();
+		Set<Pessoa> s = new HashSet<>();
 
 		System.out.println("\n\nm.puts");
 
-		System.out.println("\nm.put(chave1A, pessoa1A)");
-		System.out.println(m.put(chave1A, pessoa1A));
-		System.out.println("\nm.put(chave2B, pessoa2B)");
-		System.out.println(m.put(chave2B, pessoa2B));
-		System.out.println("\nm.put(chave3C, pessoa3C)");
-		System.out.println(m.put(chave3C, pessoa3C));
-		System.out.println("\nm.put(chave4D, pessoa4D)");
-		System.out.println(m.put(chave4D, pessoa4D));
-		System.out.println("\nm.put(chave5E, pessoa5E)");
-		System.out.println(m.put(chave5E, pessoa5E));
-		System.out.println("\nm.put(chave6F, pessoa6F)");
-		System.out.println(m.put(chave6F, pessoa6F));
-		System.out.println("\nm.put(chave7G, pessoa7G)");
-		System.out.println(m.put(chave7G, pessoa7G));
-
-		/*System.out.println("\nm.put(chave1A, pessoa1A)");
-		System.out.println(m.put(chave1A, pessoa1A));
-		System.out.println("\nm.put(chave2B, pessoa2B)");
-		System.out.println(m.put(chave2B, pessoa2B));
-		System.out.println("\nm.put(chave3C, pessoa3C)");
-		System.out.println(m.put(chave3C, pessoa3C));
-		System.out.println("\nm.put(chave4D, pessoa4D)");
-		System.out.println(m.put(chave4D, pessoa4D));
-		System.out.println("\nm.put(chave6F, pessoa6F)");
-		System.out.println(m.put(chave6F, pessoa6F));
-		System.out.println("\nm.put(chave5E, pessoa5E)");
-		System.out.println(m.put(chave5E, pessoa5E));
-		System.out.println("\nm.put(chave7G, pessoa7G)");
-		System.out.println(m.put(chave7G, pessoa7G));*/
-
-		/*System.out.println("\nm.put(chave7G, pessoa7G)");
-		System.out.println(m.put(chave7G, pessoa7G));
-		System.out.println("\nm.put(chave5E, pessoa5E)");
-		System.out.println(m.put(chave5E, pessoa5E));
-		System.out.println("\nm.put(chave6F, pessoa6F)");
-		System.out.println(m.put(chave6F, pessoa6F));
-		System.out.println("\nm.put(chave4D, pessoa4D)");
-		System.out.println(m.put(chave4D, pessoa4D));
-		System.out.println("\nm.put(chave3C, pessoa3C)");
-		System.out.println(m.put(chave3C, pessoa3C));
-		System.out.println("\nm.put(chave2B, pessoa2B)");
-		System.out.println(m.put(chave2B, pessoa2B));
-		System.out.println("\nm.put(chave1A, pessoa1A)");
-		System.out.println(m.put(chave1A, pessoa1A));*/
+		System.out.println("\ns.add(pessoa1A)");
+		System.out.println(s.add(pessoa1A));
+		System.out.println("\ns.add(pessoa2B)");
+		System.out.println(s.add(pessoa2B));
+		System.out.println("\ns.add(pessoa1C)");
+		System.out.println(s.add(pessoa1C));
+		System.out.println("\ns.add(pessoa4D)");
+		System.out.println(s.add(pessoa4D));
+		System.out.println("\ns.add(pessoa6F)");
+		System.out.println(s.add(pessoa6F));
+		System.out.println("\ns.add(pessoa5E)");
+		System.out.println(s.add(pessoa5E));
+		System.out.println("\ns.add(pessoa7G)");
+		System.out.println(s.add(pessoa7G));
 
 		System.out.println();
-		System.out.println("\nm.forEach"+"\n");
-		m.forEach((k,v) -> System.out.println("[k="+(k)+"]"+"[k.hashCode()="+(k.hashCode())+"]"+"[v="+(v)+"]"));
+		System.out.println("\ns.forEach"+"\n");
+		s.forEach(v -> System.out.println("[v="+(v)+"]"));
 
-		System.out.println("\n\nm.gets");
-		System.out.println("\nm.get(chave5E)");
-		System.out.println(m.get(chave5E));
+		System.out.println("\n\ns.contains");
+		System.out.println("\ns.contains(pessoa5E)");
+		System.out.println(s.contains(pessoa5E));
 	}
 }
 
