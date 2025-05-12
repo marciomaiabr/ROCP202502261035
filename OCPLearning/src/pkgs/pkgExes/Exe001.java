@@ -32,20 +32,20 @@ public class Exe001 {
 
 		System.out.println("\n\nq.offer");
 
-		System.out.println("\nq.addFirst(pessoa1A15)");
-		q.addFirst(pessoa1A15);
-		System.out.println("\nq.addFirst(pessoa2B18)");
-		q.addFirst(pessoa2B18);
-		System.out.println("\nq.addFirst(pessoa3C18)");
-		q.addFirst(pessoa3C18);
-		System.out.println("\nq.addFirst(pessoa4D18)");
-		q.addFirst(pessoa4D18);
-		System.out.println("\nq.addFirst(pessoa5E47)");
-		q.addFirst(pessoa5E47);
-		System.out.println("\nq.addFirst(pessoa6F16)");
-		q.addFirst(pessoa6F16);
-		System.out.println("\nq.addFirst(pessoa7G14)");
-		q.addFirst(pessoa7G14);
+		System.out.println("\nq.push(pessoa1A15)");
+		q.push(pessoa1A15);
+		System.out.println("\nq.push(pessoa2B18)");
+		q.push(pessoa2B18);
+		System.out.println("\nq.push(pessoa3C18)");
+		q.push(pessoa3C18);
+		System.out.println("\nq.push(pessoa4D18)");
+		q.push(pessoa4D18);
+		System.out.println("\nq.push(pessoa5E47)");
+		q.push(pessoa5E47);
+		System.out.println("\nq.push(pessoa6F16)");
+		q.push(pessoa6F16);
+		System.out.println("\nq.push(pessoa7G14)");
+		q.push(pessoa7G14);
 
 		System.out.println("\n\nq.polls");
 		while(q.size()>0)
