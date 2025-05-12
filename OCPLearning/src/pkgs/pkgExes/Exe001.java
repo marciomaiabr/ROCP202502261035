@@ -32,20 +32,20 @@ public class Exe001 {
 
 		System.out.println("\n\nq.offer");
 
-		System.out.println("\nq.offerFirst(pessoa1A15)");
-		System.out.println(q.offerFirst(pessoa1A15));
-		System.out.println("\nq.offerFirst(pessoa2B18)");
-		System.out.println(q.offerFirst(pessoa2B18));
-		System.out.println("\nq.offerFirst(pessoa3C18)");
-		System.out.println(q.offerFirst(pessoa3C18));
-		System.out.println("\nq.offerFirst(pessoa4D18)");
-		System.out.println(q.offerFirst(pessoa4D18));
-		System.out.println("\nq.offerFirst(pessoa5E47)");
-		System.out.println(q.offerFirst(pessoa5E47));
-		System.out.println("\nq.offerFirst(pessoa6F16)");
-		System.out.println(q.offerFirst(pessoa6F16));
-		System.out.println("\nq.offerFirst(pessoa7G14)");
-		System.out.println(q.offerFirst(pessoa7G14));
+		System.out.println("\nq.add(pessoa1A15)");
+		System.out.println(q.add(pessoa1A15));
+		System.out.println("\nq.add(pessoa2B18)");
+		System.out.println(q.add(pessoa2B18));
+		System.out.println("\nq.add(pessoa3C18)");
+		System.out.println(q.add(pessoa3C18));
+		System.out.println("\nq.add(pessoa4D18)");
+		System.out.println(q.add(pessoa4D18));
+		System.out.println("\nq.add(pessoa5E47)");
+		System.out.println(q.add(pessoa5E47));
+		System.out.println("\nq.add(pessoa6F16)");
+		System.out.println(q.add(pessoa6F16));
+		System.out.println("\nq.add(pessoa7G14)");
+		System.out.println(q.add(pessoa7G14));
 
 		System.out.println("\n\nq.polls");
 		while(q.size()>0)
