@@ -36,19 +36,16 @@ public class Exe001 {
 		System.out.println(q.offer(pessoa1A15));
 		System.out.println("\nq.offer(pessoa2B18)");
 		System.out.println(q.offer(pessoa2B18));
-		System.out.println("\nq.offer(pessoa4D18)");
-		System.out.println(q.offer(pessoa4D18));
 		System.out.println("\nq.offer(pessoa3C18)");
 		System.out.println(q.offer(pessoa3C18));
+		System.out.println("\nq.offer(pessoa4D18)");
+		System.out.println(q.offer(pessoa4D18));
 		System.out.println("\nq.offer(pessoa5E47)");
 		System.out.println(q.offer(pessoa5E47));
 		System.out.println("\nq.offer(pessoa6F16)");
 		System.out.println(q.offer(pessoa6F16));
 		System.out.println("\nq.offer(pessoa7G14)");
 		System.out.println(q.offer(pessoa7G14));
-
-		System.out.println("\n\nq.peek");
-		System.out.println(q.peek());
 
 		System.out.println("\n\nq.polls");
 		while(q.size()>0)
