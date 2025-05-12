@@ -1,9 +1,42 @@
-2025-05-12T07:36:28.042
+2025-05-12T07:40:02.218
 <>
 Exe001.m1()
-[a=[10, 9, 8, 7, 6, 5]]
-[b=[5, 6, 7, 8, 9, 10]]
-[c=[5, 6, 7, 8, 9, 10]]
-[d=[10, 9, 8, 7, 6, 5]]
-[e=[5, 6, 7, 8, 9, 10]]
+
+
+q.offer
+
+q.offer(pessoa1A15)
+true
+
+q.offer(pessoa2B18)
+true
+
+q.offer(pessoa4D18)
+true
+
+q.offer(pessoa3C18)
+true
+
+q.offer(pessoa5E47)
+true
+
+q.offer(pessoa6F16)
+true
+
+q.offer(pessoa7G14)
+true
+
+
+q.peek
+[[class=Pessoa][id=[[class=Id][codigo=1]]][nome=Pessoa1A15][idade=15]]
+
+
+q.polls
+[[class=Pessoa][id=[[class=Id][codigo=1]]][nome=Pessoa1A15][idade=15]]
+[[class=Pessoa][id=[[class=Id][codigo=2]]][nome=Pessoa2B18][idade=18]]
+[[class=Pessoa][id=[[class=Id][codigo=4]]][nome=Pessoa4D18][idade=18]]
+[[class=Pessoa][id=[[class=Id][codigo=3]]][nome=Pessoa3C18][idade=18]]
+[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E47][idade=47]]
+[[class=Pessoa][id=[[class=Id][codigo=6]]][nome=Pessoa6F16][idade=16]]
+[[class=Pessoa][id=[[class=Id][codigo=7]]][nome=Pessoa7G14][idade=14]]
 </>
