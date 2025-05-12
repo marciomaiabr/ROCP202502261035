@@ -20,11 +20,11 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 		List<Integer> nums = Arrays.asList(10,9,8,7,6,5);
-		ArrayDeque<Integer> a = new ArrayDeque<>(2);
-		ArrayDeque<Integer> b = new ArrayDeque<>(2);
-		ArrayDeque<Integer> c = new ArrayDeque<>(2);
-		ArrayDeque<Integer> d = new ArrayDeque<>(2);
-		ArrayDeque<Integer> e = new ArrayDeque<>(2);
+		ArrayDeque<Integer> a = new ArrayDeque<>();
+		ArrayDeque<Integer> b = new ArrayDeque<>();
+		ArrayDeque<Integer> c = new ArrayDeque<>();
+		ArrayDeque<Integer> d = new ArrayDeque<>();
+		ArrayDeque<Integer> e = new ArrayDeque<>();
 		for(Integer n : nums) {
 			a.offer(n);
 			b.offerFirst(n);
