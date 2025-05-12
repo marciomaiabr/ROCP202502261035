@@ -1,38 +1,38 @@
-2025-05-12T07:45:13.887
+2025-05-12T07:46:48.558
 <>
 Exe001.m1()
 
 
 q.offer
 
-q.offer(pessoa1A15)
+q.offerFirst(pessoa1A15)
 true
 
-q.offer(pessoa2B18)
+q.offerFirst(pessoa2B18)
 true
 
-q.offer(pessoa3C18)
+q.offerFirst(pessoa3C18)
 true
 
-q.offer(pessoa4D18)
+q.offerFirst(pessoa4D18)
 true
 
-q.offer(pessoa5E47)
+q.offerFirst(pessoa5E47)
 true
 
-q.offer(pessoa6F16)
+q.offerFirst(pessoa6F16)
 true
 
-q.offer(pessoa7G14)
+q.offerFirst(pessoa7G14)
 true
 
 
 q.polls
-[[class=Pessoa][id=[[class=Id][codigo=1]]][nome=Pessoa1A15][idade=15]]
-[[class=Pessoa][id=[[class=Id][codigo=2]]][nome=Pessoa2B18][idade=18]]
-[[class=Pessoa][id=[[class=Id][codigo=3]]][nome=Pessoa3C18][idade=18]]
-[[class=Pessoa][id=[[class=Id][codigo=4]]][nome=Pessoa4D18][idade=18]]
-[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E47][idade=47]]
-[[class=Pessoa][id=[[class=Id][codigo=6]]][nome=Pessoa6F16][idade=16]]
 [[class=Pessoa][id=[[class=Id][codigo=7]]][nome=Pessoa7G14][idade=14]]
+[[class=Pessoa][id=[[class=Id][codigo=6]]][nome=Pessoa6F16][idade=16]]
+[[class=Pessoa][id=[[class=Id][codigo=5]]][nome=Pessoa5E47][idade=47]]
+[[class=Pessoa][id=[[class=Id][codigo=4]]][nome=Pessoa4D18][idade=18]]
+[[class=Pessoa][id=[[class=Id][codigo=3]]][nome=Pessoa3C18][idade=18]]
+[[class=Pessoa][id=[[class=Id][codigo=2]]][nome=Pessoa2B18][idade=18]]
+[[class=Pessoa][id=[[class=Id][codigo=1]]][nome=Pessoa1A15][idade=15]]
 </>
