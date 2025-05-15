@@ -20,6 +20,78 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 
+		ArrayDeque<Pessoa> q = null;
+
+		q = criaArrayDequeAlimentaComOffer();
+
+		System.out.println("\n[q="+(q)+"]");
+		System.out.println("\n[q.peek()="+(q.peek())+"]");
+		System.out.println("\n[q="+(q)+"]");
+
+		q = criaArrayDequeAlimentaComOffer();
+		System.out.println("\n[q="+(q)+"]");
+		System.out.println("\n[q.poll()="+(q.poll())+"]");
+		System.out.println("\n[q="+(q)+"]");
+
+		q = criaArrayDequeAlimentaComOffer();
+		System.out.println("\n[q="+(q)+"]");
+		System.out.println("\n[q.pop()="+(q.pop())+"]");
+		System.out.println("\n[q="+(q)+"]");
+
+		q = criaArrayDequeAlimentaComOffer();
+		System.out.println("\n[q="+(q)+"]");
+		System.out.println("\n[q.pollLast()="+(q.pollLast())+"]");
+		System.out.println("\n[q="+(q)+"]");
+
+		q = criaArrayDequeAlimentaComOffer();
+		System.out.println("\n[q="+(q)+"]");
+		System.out.println("\n[q.remove()="+(q.remove())+"]");
+		System.out.println("\n[q="+(q)+"]");
+
+		q = criaArrayDequeAlimentaComOffer();
+		System.out.println("\n[q="+(q)+"]");
+		System.out.println("\n[q.removeLast()="+(q.removeLast())+"]");
+		System.out.println("\n[q="+(q)+"]");
+
+		q = criaArrayDequeAlimentaComOffer();
+		System.out.println("\n[q="+(q)+"]");
+		System.out.println("\nremovendo todos com poll()");
+		q.poll();q.poll();q.poll();q.poll();q.poll();q.poll();q.poll();
+		System.out.println("\n[q="+(q)+"]");
+
+		System.out.println("\nq.peek()");
+		System.out.println(q.peek());
+		System.out.println("\nq.poll()");
+		System.out.println(q.poll());
+		System.out.println("\nq.pop()");
+		try {
+			System.out.println(q.pop());
+		} catch (Exception e) {
+			System.out.println("catch (Exception e)");
+			System.out.println("[e="+(e)+"]"+"[e.getMessage()="+(e.getMessage())+"]");
+		}
+		System.out.println("\nq.pollLast()");
+		System.out.println(q.pollLast());
+		System.out.println("\nq.remove()");
+
+		try {
+			System.out.println(q.remove());
+		} catch (Exception e) {
+			System.out.println("catch (Exception e)");
+			System.out.println("[e="+(e)+"]"+"[e.getMessage()="+(e.getMessage())+"]");
+		}
+		System.out.println("\nq.removeLast()");
+		try {
+			System.out.println(q.removeLast());
+		} catch (Exception e) {
+			System.out.println("catch (Exception e)");
+			System.out.println("[e="+(e)+"]"+"[e.getMessage()="+(e.getMessage())+"]");
+		}
+
+	}
+
+	private static ArrayDeque<Pessoa> criaArrayDequeAlimentaComOffer() {
+		System.out.println("\n\nExe001.criaArrayDequeAlimentaComOffer()");
 		Pessoa pessoa1A15 = new Pessoa(new Id(1l), "Pessoa1A15", 15);
 		Pessoa pessoa2B18 = new Pessoa(new Id(2l), "Pessoa2B18", 18);
 		Pessoa pessoa3C18 = new Pessoa(new Id(3l), "Pessoa3C18", 18);
@@ -28,112 +100,17 @@ public class Exe001 {
 		Pessoa pessoa6F16 = new Pessoa(new Id(6l), "Pessoa6F16", 16);
 		Pessoa pessoa7G14 = new Pessoa(new Id(7l), "Pessoa7G14", 14);
 
-		ArrayDeque<Pessoa> q = null;
+		ArrayDeque<Pessoa> q = new ArrayDeque<>();
 
-		System.out.println("\n\nq.offer");
-		q = new ArrayDeque<>();
+		q.offer(pessoa1A15);
+		q.offer(pessoa2B18);
+		q.offer(pessoa3C18);
+		q.offer(pessoa4D18);
+		q.offer(pessoa5E47);
+		q.offer(pessoa6F16);
+		q.offer(pessoa7G14);
 
-		System.out.println("\nq.offer(pessoa1A15)");
-		System.out.println(q.offer(pessoa1A15));
-		System.out.println("\nq.offer(pessoa2B18)");
-		System.out.println(q.offer(pessoa2B18));
-		System.out.println("\nq.offer(pessoa3C18)");
-		System.out.println(q.offer(pessoa3C18));
-		System.out.println("\nq.offer(pessoa4D18)");
-		System.out.println(q.offer(pessoa4D18));
-		System.out.println("\nq.offer(pessoa5E47)");
-		System.out.println(q.offer(pessoa5E47));
-		System.out.println("\nq.offer(pessoa6F16)");
-		System.out.println(q.offer(pessoa6F16));
-		System.out.println("\nq.offer(pessoa7G14)");
-		System.out.println(q.offer(pessoa7G14));
-
-		System.out.println("\n[q="+(q)+"]");
-		System.out.println("\n[q.peek()="+(q.peek())+"]");
-
-		System.out.println("\n\nq.offerFirst");
-		q = new ArrayDeque<>();
-
-		System.out.println("\nq.offerFirst(pessoa1A15)");
-		System.out.println(q.offerFirst(pessoa1A15));
-		System.out.println("\nq.offerFirst(pessoa2B18)");
-		System.out.println(q.offerFirst(pessoa2B18));
-		System.out.println("\nq.offerFirst(pessoa3C18)");
-		System.out.println(q.offerFirst(pessoa3C18));
-		System.out.println("\nq.offerFirst(pessoa4D18)");
-		System.out.println(q.offerFirst(pessoa4D18));
-		System.out.println("\nq.offerFirst(pessoa5E47)");
-		System.out.println(q.offerFirst(pessoa5E47));
-		System.out.println("\nq.offerFirst(pessoa6F16)");
-		System.out.println(q.offerFirst(pessoa6F16));
-		System.out.println("\nq.offerFirst(pessoa7G14)");
-		System.out.println(q.offerFirst(pessoa7G14));
-
-		System.out.println("\n[q="+(q)+"]");
-		System.out.println("\n[q.peek()="+(q.peek())+"]");
-
-		System.out.println("\n\nq.push");
-		q = new ArrayDeque<>();
-
-		System.out.println("\nq.push(pessoa1A15)");
-		q.push(pessoa1A15);
-		System.out.println("\nq.push(pessoa2B18)");
-		q.push(pessoa2B18);
-		System.out.println("\nq.push(pessoa3C18)");
-		q.push(pessoa3C18);
-		System.out.println("\nq.push(pessoa4D18)");
-		q.push(pessoa4D18);
-		System.out.println("\nq.push(pessoa5E47)");
-		q.push(pessoa5E47);
-		System.out.println("\nq.push(pessoa6F16)");
-		q.push(pessoa6F16);
-		System.out.println("\nq.push(pessoa7G14)");
-		q.push(pessoa7G14);
-
-		System.out.println("\n[q="+(q)+"]");
-		System.out.println("\n[q.peek()="+(q.peek())+"]");
-
-		System.out.println("\n\nq.add");
-		q = new ArrayDeque<>();
-
-		System.out.println("\nq.add(pessoa1A15)");
-		System.out.println(q.add(pessoa1A15));
-		System.out.println("\nq.add(pessoa2B18)");
-		System.out.println(q.add(pessoa2B18));
-		System.out.println("\nq.add(pessoa3C18)");
-		System.out.println(q.add(pessoa3C18));
-		System.out.println("\nq.add(pessoa4D18)");
-		System.out.println(q.add(pessoa4D18));
-		System.out.println("\nq.add(pessoa5E47)");
-		System.out.println(q.add(pessoa5E47));
-		System.out.println("\nq.add(pessoa6F16)");
-		System.out.println(q.add(pessoa6F16));
-		System.out.println("\nq.add(pessoa7G14)");
-		System.out.println(q.add(pessoa7G14));
-
-		System.out.println("\n[q="+(q)+"]");
-		System.out.println("\n[q.peek()="+(q.peek())+"]");
-
-		System.out.println("\n\nq.addFirst");
-		q = new ArrayDeque<>();
-
-		System.out.println("\nq.addFirst(pessoa1A15)");
-		q.addFirst(pessoa1A15);
-		System.out.println("\nq.addFirst(pessoa2B18)");
-		q.addFirst(pessoa2B18);
-		System.out.println("\nq.addFirst(pessoa3C18)");
-		q.addFirst(pessoa3C18);
-		System.out.println("\nq.addFirst(pessoa4D18)");
-		q.addFirst(pessoa4D18);
-		System.out.println("\nq.addFirst(pessoa5E47)");
-		q.addFirst(pessoa5E47);
-		System.out.println("\nq.addFirst(pessoa6F16)");
-		q.addFirst(pessoa6F16);
-		System.out.println("\nq.addFirst(pessoa7G14)");
-		q.addFirst(pessoa7G14);
-
-		System.out.println("\n[q="+(q)+"]");
-		System.out.println("\n[q.peek()="+(q.peek())+"]");
+		return q;
 	}
 }
 
