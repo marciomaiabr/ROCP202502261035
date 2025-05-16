@@ -19,41 +19,60 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-
-		//String [] arr = { ">ff<" , "> f<" , ">f <" , null , "> <" , "><" , ">FF<" , };
-		String ff = "ff";
-		String espacof = " f";
-		String fespaco = "f ";
-		String nullo = null;
-		String espaco = " ";
-		String espacoespaco = "  ";
-		String vazio = "";
-		String FF = "FF";
-		String [] arr = { ff , espacof , fespaco , nullo , espacoespaco , espaco , vazio , FF , };
-		PriorityQueue<String> pq = new PriorityQueue<>();
-
-		System.out.println("\npq.offer(s)");
-		for (String s : arr) {
-			System.out.println("pq.offer("+"\""+s+"\""+")");
-			try {
-				pq.offer(s);
-			} catch (Exception e) {
-				System.out.println("catch (Exception e)");
-				System.out.println("[e="+(e)+"]"+"[e.getMessage()="+(e.getMessage())+"]");
-			}
+		{
+			List list = new ArrayList<>();
+			list.add(new Object());
+			list.add("qqc");
+			list.add(10l);
+			mqqc1(list);
+			mqqc2(list);
+			mqqc3(list);
 		}
+		{
+			List<Long> list = new ArrayList<>();
+			//list.add(new Object());//compile error=The method add(Long) in the type List<Long> is not applicable for the arguments (Object)
+			//list.add("qqc");//compile error=The method add(Long) in the type List<Long> is not applicable for the arguments (String)
+			list.add(10l);
+			mqqc1(list);
+			mqqc2(list);
+			//mqqc3(list);//compile error=The method mqqc3(List<String>) in the type Exe001 is not applicable for the arguments (List<Long>)
+		}
+		{
+			List<String> list = new ArrayList<>();
+			//list.add(new Object());//compile error=The method add(String) in the type List<String> is not applicable for the arguments (Object)
+			list.add("qqc");
+			//list.add(10l);//compile error=The method add(String) in the type List<String> is not applicable for the arguments (long)
+			mqqc1(list);
+			//mqqc2(list);//compile error=The method mqqc2(List<Long>) in the type Exe001 is not applicable for the arguments (List<String>)
+			mqqc3(list);
+		}
+	}
 
-		System.out.println("\npq");
-		System.out.println(pq);
+	public static void mqqc1(List pList) {
+		System.out.println("Exe001.mqqc1()");
+		System.out.println("[pList="+(pList)+"]");
+		Object o = pList.get(0);
+		String s = (String) pList.get(1);
+		long l = (long) pList.get(2);
+		System.out.println("[o="+(o)+"]"+"[s="+(s)+"]"+"[l="+(l)+"]");
+	}
 
-		System.out.println("\npq.poll()");
-		while(!pq.isEmpty())
-			System.out.println("[pq.poll()="+(pq.poll())+"]");
+	public static void mqqc2(List<Long> pList) {
+		System.out.println("Exe001.mqqc2()");
+		Object o = pList.get(0);
+		String s = null;//(String) pList.get(1);//compile error=Cannot cast from Long to String
+		long l = (long) pList.get(2);
+		System.out.println("[o="+(o)+"]"+"[s="+(s)+"]"+"[l="+(l)+"]");
+		System.out.println("[pList="+(pList)+"]");
+	}
 
-
-		System.out.println("[FF.compareTo(fespaco)="+(FF.compareTo(fespaco))+"]");
-		System.out.println("[(int)FF.charAt(0)="+((int)FF.charAt(0))+"]"+"[(int)fespaco.charAt(0)="+((int)fespaco.charAt(0))+"]"+"[(((int)FF.charAt(0))-((int)fespaco.charAt(0)))="+(((int)FF.charAt(0))-((int)fespaco.charAt(0)))+"]");
-
+	public static void mqqc3(List<String> pList) {
+		System.out.println("Exe001.mqqc3()");
+		Object o = pList.get(0);
+		String s = (String) pList.get(1);
+		long l = 0;//(long) pList.get(2);;//compile error=Cannot cast from String to long
+		System.out.println("[o="+(o)+"]"+"[s="+(s)+"]"+"[l="+(l)+"]");
+		System.out.println("[pList="+(pList)+"]");
 	}
 
 }
