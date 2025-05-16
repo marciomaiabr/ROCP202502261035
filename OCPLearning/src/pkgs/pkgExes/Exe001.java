@@ -20,98 +20,42 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 
-		ArrayDeque<Pessoa> q = null;
+		//String [] arr = { ">ff<" , "> f<" , ">f <" , null , "> <" , "><" , ">FF<" , };
+		String ff = "ff";
+		String espacof = " f";
+		String fespaco = "f ";
+		String nullo = null;
+		String espaco = " ";
+		String espacoespaco = "  ";
+		String vazio = "";
+		String FF = "FF";
+		String [] arr = { ff , espacof , fespaco , nullo , espacoespaco , espaco , vazio , FF , };
+		PriorityQueue<String> pq = new PriorityQueue<>();
 
-		q = criaArrayDequeAlimentaComOffer();
-
-		System.out.println("\n[q="+(q)+"]");
-		System.out.println("\n[q.peek()="+(q.peek())+"]");
-		System.out.println("\n[q="+(q)+"]");
-
-		q = criaArrayDequeAlimentaComOffer();
-		System.out.println("\n[q="+(q)+"]");
-		System.out.println("\n[q.poll()="+(q.poll())+"]");
-		System.out.println("\n[q="+(q)+"]");
-
-		q = criaArrayDequeAlimentaComOffer();
-		System.out.println("\n[q="+(q)+"]");
-		System.out.println("\n[q.pop()="+(q.pop())+"]");
-		System.out.println("\n[q="+(q)+"]");
-
-		q = criaArrayDequeAlimentaComOffer();
-		System.out.println("\n[q="+(q)+"]");
-		System.out.println("\n[q.pollLast()="+(q.pollLast())+"]");
-		System.out.println("\n[q="+(q)+"]");
-
-		q = criaArrayDequeAlimentaComOffer();
-		System.out.println("\n[q="+(q)+"]");
-		System.out.println("\n[q.remove()="+(q.remove())+"]");
-		System.out.println("\n[q="+(q)+"]");
-
-		q = criaArrayDequeAlimentaComOffer();
-		System.out.println("\n[q="+(q)+"]");
-		System.out.println("\n[q.removeLast()="+(q.removeLast())+"]");
-		System.out.println("\n[q="+(q)+"]");
-
-		q = criaArrayDequeAlimentaComOffer();
-		System.out.println("\n[q="+(q)+"]");
-		System.out.println("\nremovendo todos com poll()");
-		q.poll();q.poll();q.poll();q.poll();q.poll();q.poll();q.poll();
-		System.out.println("\n[q="+(q)+"]");
-
-		System.out.println("\nq.peek()");
-		System.out.println(q.peek());
-		System.out.println("\nq.poll()");
-		System.out.println(q.poll());
-		System.out.println("\nq.pop()");
-		try {
-			System.out.println(q.pop());
-		} catch (Exception e) {
-			System.out.println("catch (Exception e)");
-			System.out.println("[e="+(e)+"]"+"[e.getMessage()="+(e.getMessage())+"]");
+		System.out.println("\npq.offer(s)");
+		for (String s : arr) {
+			System.out.println("pq.offer("+"\""+s+"\""+")");
+			try {
+				pq.offer(s);
+			} catch (Exception e) {
+				System.out.println("catch (Exception e)");
+				System.out.println("[e="+(e)+"]"+"[e.getMessage()="+(e.getMessage())+"]");
+			}
 		}
-		System.out.println("\nq.pollLast()");
-		System.out.println(q.pollLast());
-		System.out.println("\nq.remove()");
 
-		try {
-			System.out.println(q.remove());
-		} catch (Exception e) {
-			System.out.println("catch (Exception e)");
-			System.out.println("[e="+(e)+"]"+"[e.getMessage()="+(e.getMessage())+"]");
-		}
-		System.out.println("\nq.removeLast()");
-		try {
-			System.out.println(q.removeLast());
-		} catch (Exception e) {
-			System.out.println("catch (Exception e)");
-			System.out.println("[e="+(e)+"]"+"[e.getMessage()="+(e.getMessage())+"]");
-		}
+		System.out.println("\npq");
+		System.out.println(pq);
+
+		System.out.println("\npq.poll()");
+		while(!pq.isEmpty())
+			System.out.println("[pq.poll()="+(pq.poll())+"]");
+
+
+		System.out.println("[FF.compareTo(fespaco)="+(FF.compareTo(fespaco))+"]");
+		System.out.println("[(int)FF.charAt(0)="+((int)FF.charAt(0))+"]"+"[(int)fespaco.charAt(0)="+((int)fespaco.charAt(0))+"]"+"[(((int)FF.charAt(0))-((int)fespaco.charAt(0)))="+(((int)FF.charAt(0))-((int)fespaco.charAt(0)))+"]");
 
 	}
 
-	private static ArrayDeque<Pessoa> criaArrayDequeAlimentaComOffer() {
-		System.out.println("\n\nExe001.criaArrayDequeAlimentaComOffer()");
-		Pessoa pessoa1A15 = new Pessoa(new Id(1l), "Pessoa1A15", 15);
-		Pessoa pessoa2B18 = new Pessoa(new Id(2l), "Pessoa2B18", 18);
-		Pessoa pessoa3C18 = new Pessoa(new Id(3l), "Pessoa3C18", 18);
-		Pessoa pessoa4D18 = new Pessoa(new Id(4l), "Pessoa4D18", 18);
-		Pessoa pessoa5E47 = new Pessoa(new Id(5l), "Pessoa5E47", 47);
-		Pessoa pessoa6F16 = new Pessoa(new Id(6l), "Pessoa6F16", 16);
-		Pessoa pessoa7G14 = new Pessoa(new Id(7l), "Pessoa7G14", 14);
-
-		ArrayDeque<Pessoa> q = new ArrayDeque<>();
-
-		q.offer(pessoa1A15);
-		q.offer(pessoa2B18);
-		q.offer(pessoa3C18);
-		q.offer(pessoa4D18);
-		q.offer(pessoa5E47);
-		q.offer(pessoa6F16);
-		q.offer(pessoa7G14);
-
-		return q;
-	}
 }
 
 /*
