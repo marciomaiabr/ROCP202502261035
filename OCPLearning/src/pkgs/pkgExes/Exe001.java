@@ -1,12 +1,14 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
-class Parent {}
+abstract class Animal { public abstract void checkup(); }
 
-class Child extends Parent {}
+class Dog extends Animal { public void checkup() { System.out.println("Dog checkup"); }; }
+class Cat extends Animal { public void checkup() { System.out.println("Cat checkup"); }; }
+class Bird extends Animal { public void checkup() { System.out.println("Bird checkup"); }; }
+
+class AnimalDoctor { public void checkAnimals(Animal [] animals) { for(Animal animal : animals) animal.checkup(); } }
 
 public class Exe001 {
 
@@ -22,10 +24,14 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		//List<Parent> l1 = new ArrayList<Child>();//compile error=Type mismatch: cannot convert from ArrayList<Child> to List<Parent>
-		//List<Child> l2 = new ArrayList<Parent>();//compile error=Type mismatch: cannot convert from ArrayList<Parent> to List<Child>
-		Parent [] l1 = new Child [5];
-		//Child [] l2 = new Parent [5];//compile error=Type mismatch: cannot convert from Parent[] to Child[]
+		Dog [] dogs = { new Dog() , new Dog() };
+		Cat [] cats = { new Cat() , new Cat() , new Cat() };
+		Bird [] birds = { new Bird() };
+
+		AnimalDoctor animalDoctor = new AnimalDoctor();
+		animalDoctor.checkAnimals(dogs);
+		animalDoctor.checkAnimals(cats);
+		animalDoctor.checkAnimals(birds);
 	}
 
 }
