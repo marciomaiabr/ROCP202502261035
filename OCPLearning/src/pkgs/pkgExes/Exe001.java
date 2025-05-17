@@ -1,6 +1,16 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+abstract class Animal { public abstract void checkup(); }
+
+class Dog extends Animal { public void checkup() { System.out.println("Dog checkup"); }; }
+class Cat extends Animal { public void checkup() { System.out.println("Cat checkup"); }; }
+class Bird extends Animal { public void checkup() { System.out.println("Bird checkup"); }; }
+
+class AnimalDoctor { public void checkAnimals(ArrayList<Animal> animals) { for(Animal animal : animals) animal.checkup(); } }
 
 public class Exe001 {
 
@@ -9,17 +19,36 @@ public class Exe001 {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("<>");
-		m1(args);
-		System.out.println("</>");
+
+		try {
+			System.out.println("<>");
+			m1(args);
+			System.out.println("</>");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		try {
 			Runtime.getRuntime().exec("cmd.exe /c C:\\Users\\Administrador\\git\\ROCP202502261035\\OCPLearning\\logs\\logMM.txt");
 		} catch (Exception e) {}
+
 	}
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		//System.out.println("[="+()+"]");
+		List<Dog> dogs = new ArrayList<Dog>();
+		dogs.add(new Dog());
+		dogs.add(new Dog());
+		List<Cat> cats = new ArrayList<Cat>();
+		cats.add(new Cat());
+		cats.add(new Cat());
+		List<Bird> birds = new ArrayList<Bird>();
+		birds.add(new Bird());
+
+		AnimalDoctor animalDoctor = new AnimalDoctor();
+		animalDoctor.checkAnimals(dogs);
+		animalDoctor.checkAnimals(cats); 
+		animalDoctor.checkAnimals(birds); 
 	}
 
 }

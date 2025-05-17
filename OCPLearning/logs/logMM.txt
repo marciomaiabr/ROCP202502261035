@@ -1,4 +1,9 @@
-2025-05-17T10:21:33.761
-<>
-Exe001.m1()
-</>
+2025-05-17T10:35:20.798
+<>Exception in thread "main" 
+java.lang.Error: Unresolved compilation problems: 
+	The method checkAnimals(ArrayList<Animal>) in the type AnimalDoctor is not applicable for the arguments (List<Dog>)
+	The method checkAnimals(ArrayList<Animal>) in the type AnimalDoctor is not applicable for the arguments (List<Cat>)
+	The method checkAnimals(ArrayList<Animal>) in the type AnimalDoctor is not applicable for the arguments (List<Bird>)
+
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:49)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:25)
