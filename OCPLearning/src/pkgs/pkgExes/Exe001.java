@@ -36,13 +36,13 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		List<Animal> dogs = new ArrayList<Dog>();
+		List<Animal> dogs = new ArrayList<Animal>();
 		dogs.add(new Dog());
 		dogs.add(new Dog());
-		List<Animal> cats = new ArrayList<Cat>();
+		List<Animal> cats = new ArrayList<Animal>();
 		cats.add(new Cat());
 		cats.add(new Cat());
-		List<Animal> birds = new ArrayList<Bird>();
+		List<Animal> birds = new ArrayList<Animal>();
 		birds.add(new Bird());
 
 		AnimalDoctor animalDoctor = new AnimalDoctor();
