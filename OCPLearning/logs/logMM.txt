@@ -1,18 +1,4 @@
-Exception in thread "main" java.lang.ClassCastException: java.lang.Long cannot be cast to java.lang.String
-	at pkgs.pkgExes.Exe001.mqqc1(Exe001.java:55)
-	at pkgs.pkgExes.Exe001.m1(Exe001.java:36)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:16)
-2025-05-16T08:11:55.397
+2025-05-17T09:39:43.642
 <>
 Exe001.m1()
-Exe001.mqqc1()
-[pList=[java.lang.Object@53d8d10a, qqc, 10]]
-[o=java.lang.Object@53d8d10a][s=qqc][l=10]
-Exe001.mqqc2()
-[o=java.lang.Object@53d8d10a][s=null][l=10]
-[pList=[java.lang.Object@53d8d10a, qqc, 10]]
-Exe001.mqqc3()
-[o=java.lang.Object@53d8d10a][s=qqc][l=0]
-[pList=[java.lang.Object@53d8d10a, qqc, 10]]
-Exe001.mqqc1()
-[pList=[0, 10]]
+</>
