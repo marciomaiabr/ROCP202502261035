@@ -15,7 +15,11 @@ class AnimalDoctorWithArray {
 }
 
 class AnimalDoctorWithGeneric {
-	public void checkAnimals(ArrayList<Animal> animals) { System.out.println("AnimalDoctorWithGeneric.checkAnimals()"); for(Animal animal : animals) animal.checkup(); }
+	public void checkAnimals(List<Animal> animals) { System.out.println("AnimalDoctorWithGeneric.checkAnimals()"); for(Animal animal : animals) animal.checkup(); }
+}
+
+class AnimalDoctorWithWildcard {
+	public void addAnimal(List<?> animals) { System.out.println("AnimalDoctorWithWildcard.addAnimal()"); /*animals.add(new Dog()); animals.add(new Cat()); animals.add(new Bird());*/ }
 }
 
 public class Exe001 {
@@ -43,13 +47,13 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 
-		{
+		/*{
 			System.out.println("testing with array...");
 			Dog [] dogs = new Dog[5];
 
 			AnimalDoctorWithArray animalDoctor = new AnimalDoctorWithArray();
 			animalDoctor.addCat(dogs);
-		}
+		}*/
 
 		/*{
 			System.out.println("testing with generic...");
@@ -67,6 +71,23 @@ public class Exe001 {
 			animalDoctor.checkAnimals(cats);
 			animalDoctor.checkAnimals(birds);
 		}*/
+
+		{
+			System.out.println("testing with wildcard...");
+			ArrayList<Animal> dogs = new ArrayList<Animal>();
+			dogs.add(new Dog());
+			dogs.add(new Dog());
+			ArrayList<Animal> cats = new ArrayList<Animal>();
+			cats.add(new Cat());
+			cats.add(new Cat());
+			ArrayList<Animal> birds = new ArrayList<Animal>();
+			birds.add(new Bird());
+
+			AnimalDoctorWithWildcard animalDoctor = new AnimalDoctorWithWildcard();
+			animalDoctor.addAnimal(dogs);
+			animalDoctor.addAnimal(cats);
+			animalDoctor.addAnimal(birds);
+		}
 
 	}
 
