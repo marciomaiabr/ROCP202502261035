@@ -92,8 +92,6 @@ public class Exe001 {
 			AnimalDoctorWithWildcard animalDoctor = new AnimalDoctorWithWildcard();
 			animalDoctor.addAnimal(dogs);
 			animalDoctor.addAnimal(pastors);
-			animalDoctor.addAnimal(cats);
-			animalDoctor.addAnimal(birds);
 		}
 
 	}
