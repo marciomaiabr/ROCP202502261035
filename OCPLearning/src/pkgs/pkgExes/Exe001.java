@@ -11,6 +11,8 @@ class Dog extends Animal { public void checkup() { System.out.println("Dog check
 class Cat extends Animal { public void checkup() { System.out.println("Cat checkup"); }; }
 class Bird extends Animal { public void checkup() { System.out.println("Bird checkup"); }; }
 
+class Pastor extends Dog {  }
+
 class AnimalDoctorWithArray {
 	public void checkAnimals(Animal [] animals) { System.out.println("AnimalDoctorWithArray.checkAnimals()"); for(Animal animal : animals) animal.checkup(); }
 	public void addCat(Animal [] animals) { System.out.println("AnimalDoctorWithArray.addCat()"); animals[0] = new Cat(); }
@@ -21,7 +23,7 @@ class AnimalDoctorWithGeneric {
 }
 
 class AnimalDoctorWithWildcard {
-	public void addAnimal(List<? extends IAnimal> animals) { System.out.println("AnimalDoctorWithWildcard.addAnimal()"); /*animals.add(new Dog()); animals.add(new Cat()); animals.add(new Bird());*/ }
+	public void addAnimal(List<? super Pastor> animals) { System.out.println("AnimalDoctorWithWildcard.addAnimal()"); /*animals.add(new Dog()); animals.add(new Cat()); animals.add(new Bird());*/ }
 }
 
 public class Exe001 {
@@ -76,17 +78,20 @@ public class Exe001 {
 
 		{
 			System.out.println("testing with wildcard...");
-			ArrayList<Animal> dogs = new ArrayList<Animal>();
+			ArrayList<Dog> dogs = new ArrayList<Dog>();
 			dogs.add(new Dog());
 			dogs.add(new Dog());
-			ArrayList<Animal> cats = new ArrayList<Animal>();
+			ArrayList<Cat> cats = new ArrayList<Cat>();
 			cats.add(new Cat());
 			cats.add(new Cat());
-			ArrayList<Animal> birds = new ArrayList<Animal>();
+			ArrayList<Bird> birds = new ArrayList<Bird>();
 			birds.add(new Bird());
+			ArrayList<Pastor> pastors = new ArrayList<Pastor>();
+			pastors.add(new Pastor());
 
 			AnimalDoctorWithWildcard animalDoctor = new AnimalDoctorWithWildcard();
 			animalDoctor.addAnimal(dogs);
+			animalDoctor.addAnimal(pastors);
 			animalDoctor.addAnimal(cats);
 			animalDoctor.addAnimal(birds);
 		}
