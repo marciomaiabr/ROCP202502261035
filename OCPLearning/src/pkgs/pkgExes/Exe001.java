@@ -10,7 +10,7 @@ class Dog extends Animal { public void checkup() { System.out.println("Dog check
 class Cat extends Animal { public void checkup() { System.out.println("Cat checkup"); }; }
 class Bird extends Animal { public void checkup() { System.out.println("Bird checkup"); }; }
 
-class AnimalDoctor { public void checkAnimals(ArrayList<Animal> animals) { for(Animal animal : animals) animal.checkup(); } }
+class AnimalDoctor { public void checkAnimals(List<Animal> animals) { for(Animal animal : animals) animal.checkup(); } }
 
 public class Exe001 {
 
