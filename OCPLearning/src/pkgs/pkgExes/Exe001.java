@@ -3,7 +3,9 @@ package pkgs.pkgExes;
 import java.time.LocalDateTime;
 import java.util.*;
 
-abstract class Animal { public abstract void checkup(); }
+interface IAnimal { public abstract void checkup(); }
+
+abstract class Animal implements IAnimal {  }
 
 class Dog extends Animal { public void checkup() { System.out.println("Dog checkup"); }; }
 class Cat extends Animal { public void checkup() { System.out.println("Cat checkup"); }; }
@@ -19,7 +21,7 @@ class AnimalDoctorWithGeneric {
 }
 
 class AnimalDoctorWithWildcard {
-	public void addAnimal(List<? extends Animal> animals) { System.out.println("AnimalDoctorWithWildcard.addAnimal()"); /*animals.add(new Dog()); animals.add(new Cat()); animals.add(new Bird());*/ }
+	public void addAnimal(List<? extends IAnimal> animals) { System.out.println("AnimalDoctorWithWildcard.addAnimal()"); /*animals.add(new Dog()); animals.add(new Cat()); animals.add(new Bird());*/ }
 }
 
 public class Exe001 {
