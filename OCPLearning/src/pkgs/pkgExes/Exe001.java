@@ -19,7 +19,7 @@ class AnimalDoctorWithGeneric {
 }
 
 class AnimalDoctorWithWildcard {
-	public void addAnimal(List<?> animals) { System.out.println("AnimalDoctorWithWildcard.addAnimal()"); /*animals.add(new Dog()); animals.add(new Cat()); animals.add(new Bird());*/ }
+	public void addAnimal(List<? extends Animal> animals) { System.out.println("AnimalDoctorWithWildcard.addAnimal()"); /*animals.add(new Dog()); animals.add(new Cat()); animals.add(new Bird());*/ }
 }
 
 public class Exe001 {
