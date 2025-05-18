@@ -1,7 +1,7 @@
-2025-05-18T09:23:14.832
-<>
-Exe001.m1()
-testing with wildcard...
-AnimalDoctorWithWildcard.addAnimal()
-AnimalDoctorWithWildcard.addAnimal()
-</>
+2025-05-18T09:24:24.402
+Exception in thread "main" <>
+java.lang.Error: Unresolved compilation problem: 
+	The method addAnimal(List<? super Dog>) in the type AnimalDoctorWithWildcard is not applicable for the arguments (ArrayList<Pastor>)
+
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:94)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:39)
