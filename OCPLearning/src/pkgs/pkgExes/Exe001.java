@@ -46,13 +46,16 @@ public class Exe001 {
 		birds.add(new Bird());
 
 		AnimalDoctor animalDoctor = new AnimalDoctor();
-		animalDoctor.checkAnimals((ArrayList) dogs);
-		animalDoctor.checkAnimals((ArrayList) cats); 
-		animalDoctor.checkAnimals((ArrayList) birds); 
+		animalDoctor.checkAnimals((ArrayList<Animal>) dogs);
+		animalDoctor.checkAnimals((ArrayList<Animal>) cats); 
+		animalDoctor.checkAnimals((ArrayList<Animal>) birds); 
 	}
 
 }
 
 /*
-
+without
+Multiple markers at this line
+	- Type safety: The expression of type ArrayList needs unchecked conversion to conform to ArrayList<Animal>
+	- ArrayList is a raw type. References to generic type ArrayList<E> should be parameterized
 */
