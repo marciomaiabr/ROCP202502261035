@@ -10,7 +10,7 @@ class Dog extends Animal { public void checkup() { System.out.println("Dog check
 class Cat extends Animal { public void checkup() { System.out.println("Cat checkup"); }; }
 class Bird extends Animal { public void checkup() { System.out.println("Bird checkup"); }; }
 
-class AnimalDoctor { public void checkAnimals(List<Animal> animals) { for(Animal animal : animals) animal.checkup(); } }
+class AnimalDoctor { public void checkAnimals(ArrayList<Animal> animals) { for(Animal animal : animals) animal.checkup(); } }
 
 public class Exe001 {
 
@@ -36,13 +36,13 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		ArrayList<Animal> dogs = new ArrayList<Animal>();
+		List<Animal> dogs = new ArrayList<Animal>();
 		dogs.add(new Dog());
 		dogs.add(new Dog());
-		ArrayList<Animal> cats = new ArrayList<Animal>();
+		List<Animal> cats = new ArrayList<Animal>();
 		cats.add(new Cat());
 		cats.add(new Cat());
-		ArrayList<Animal> birds = new ArrayList<Animal>();
+		List<Animal> birds = new ArrayList<Animal>();
 		birds.add(new Bird());
 
 		AnimalDoctor animalDoctor = new AnimalDoctor();
