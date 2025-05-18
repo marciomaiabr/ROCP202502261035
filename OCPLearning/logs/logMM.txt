@@ -1,9 +1,9 @@
-2025-05-18T08:10:20.954
+2025-05-18T08:31:48.937
 <>
 Exe001.m1()
-Dog checkup
-Dog checkup
-Cat checkup
-Cat checkup
-Bird checkup
-</>
+testing with array...
+AnimalDoctorWithArray.addCat()
+java.lang.ArrayStoreException: pkgs.pkgExes.Cat
+	at pkgs.pkgExes.AnimalDoctorWithArray.addCat(Exe001.java:14)
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:51)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:31)
