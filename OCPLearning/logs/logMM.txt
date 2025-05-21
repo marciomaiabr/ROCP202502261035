@@ -1,8 +1,9 @@
-Exception in thread "main" 2025-05-21T08:06:54.050
+Exception in thread "main" 2025-05-21T08:22:52.398
 <>
-java.lang.Error: Unresolved compilation problems: 
-	The method mqqcExtendsClasse5(List<? extends Classe5>) in the type Exe001 is not applicable for the arguments (List<Classe3>)
-	The method mqqcSuperClasse5(List<? super Classe5>) in the type Exe001 is not applicable for the arguments (List<Classe7>)
+Exe001.m1()
+java.lang.Error: Unresolved compilation problem: 
+	The method qqcMM1(capture#1-of ? extends Object) in the type ListMM<capture#1-of ? extends Object> is not applicable for the arguments (LocalDateTime)
 
-	at pkgs.pkgExes.Exe001.m1(Exe001.java:64)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:32)
+	at pkgs.pkgExes.Exe001.mqqc1(Exe001.java:131)
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:125)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:111)

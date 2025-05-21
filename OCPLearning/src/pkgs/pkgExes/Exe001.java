@@ -1,23 +1,102 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
+class ListMM<E> {
+	public int size() {
+		return 0;
+	}
 
+	public boolean isEmpty() {
+		return false;
+	}
 
-class Classe1 {}
-class Classe2 extends Classe1 {}
-class Classe3 extends Classe2 {}
-class Classe4 extends Classe3 {}
+	public boolean contains(Object o) {
+		return false;
+	}
 
-class Classe5 extends Classe4 {}
+	public Iterator<E> iterator() {
+		return null;
+	}
 
-class Classe6 extends Classe5 {}
-class Classe7 extends Classe6 {}
-class Classe8 extends Classe7 {}
+	public Object[] toArray() {
+		return null;
+	}
 
+	public <T> T[] toArray(T[] a) {
+		return null;
+	}
 
+	public boolean add(E e) {
+		return false;
+	}
+
+	public void qqcMM1(E e) {
+	}
+
+	public boolean remove(Object o) {
+		return false;
+	}
+
+	public boolean containsAll(Collection<?> c) {
+		return false;
+	}
+
+	public boolean addAll(Collection<? extends E> c) {
+		return false;
+	}
+
+	public boolean addAll(int index, Collection<? extends E> c) {
+		return false;
+	}
+
+	public boolean removeAll(Collection<?> c) {
+		return false;
+	}
+
+	public boolean retainAll(Collection<?> c) {
+		return false;
+	}
+
+	public void clear() {
+	}
+
+	public E get(int index) {
+		return null;
+	}
+
+	public E set(int index, E element) {
+		return null;
+	}
+
+	public void add(int index, E element) {
+	}
+
+	public E remove(int index) {
+		return null;
+	}
+
+	public int indexOf(Object o) {
+		return 0;
+	}
+
+	public int lastIndexOf(Object o) {
+		return 0;
+	}
+
+	public ListIterator<E> listIterator() {
+		return null;
+	}
+
+	public ListIterator<E> listIterator(int index) {
+		return null;
+	}
+
+	public List<E> subList(int fromIndex, int toIndex) {
+		return null;
+	}
+}
 
 public class Exe001 {
 
@@ -43,52 +122,22 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-
-		List list = null;
-		List<Classe5> list5 = null;
-		List<Classe3> list3 = null;
-		List<Classe7> list7 = null;
-
-		mqqc(list);
-		mqqcTudo(list);
-		mqqcExtendsClasse5(list);
-		mqqcSuperClasse5(list);
-
-		mqqc(list5);
-		mqqcTudo(list5);
-		mqqcExtendsClasse5(list5);
-		mqqcSuperClasse5(list5);
-
-		mqqc(list3);
-		mqqcTudo(list3);
-		mqqcExtendsClasse5(list3);//compile error because Classe3 not extends Classe5
-		mqqcSuperClasse5(list3);
-
-		mqqc(list7);
-		mqqcTudo(list7);
-		mqqcExtendsClasse5(list7);
-		mqqcSuperClasse5(list7);;//compile error because Classe7 is not upper to Classe5
-
+		mqqc1(null);
+		mqqc1(null);
 	}
 
-	public static void mqqc(List list) {
-		System.out.println("Exe001.mqqc()");
+	public static void mqqc1(ListMM<? extends Object> list) {
+		System.out.println("Exe001.mqqc1()");
+		list.qqcMM1(LocalDateTime.now());
 	}
 
-	public static void mqqcTudo(List<?> list) {
-		System.out.println("Exe001.mqqcTudo()");
-	}
-
-	public static void mqqcExtendsClasse5(List<? extends Classe5> list) {
-		System.out.println("Exe001.mqqcExtendsClasse5()");
-	}
-
-	public static void mqqcSuperClasse5(List<? super Classe5> list) {
-		System.out.println("Exe001.mqqcSuperClasse5()");
+	public static void mqqc2(ListMM<? super Object> list) {
+		System.out.println("Exe001.mqqc2()");
+		list.qqcMM1(LocalDateTime.now());
 	}
 
 }
 
 /*
-
+eu acho q ele da erro de compilação ao adicionar, pq ele não sabe o que adicionar...
 */
