@@ -1,7 +1,8 @@
-2025-05-18T09:24:24.402
-Exception in thread "main" <>
-java.lang.Error: Unresolved compilation problem: 
-	The method addAnimal(List<? super Dog>) in the type AnimalDoctorWithWildcard is not applicable for the arguments (ArrayList<Pastor>)
+Exception in thread "main" 2025-05-21T08:06:54.050
+<>
+java.lang.Error: Unresolved compilation problems: 
+	The method mqqcExtendsClasse5(List<? extends Classe5>) in the type Exe001 is not applicable for the arguments (List<Classe3>)
+	The method mqqcSuperClasse5(List<? super Classe5>) in the type Exe001 is not applicable for the arguments (List<Classe7>)
 
-	at pkgs.pkgExes.Exe001.m1(Exe001.java:94)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:39)
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:64)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:32)

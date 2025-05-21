@@ -1,30 +1,23 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-interface IAnimal { public abstract void checkup(); }
 
-abstract class Animal implements IAnimal {  }
 
-class Dog extends Animal { public void checkup() { System.out.println("Dog checkup"); }; }
-class Cat extends Animal { public void checkup() { System.out.println("Cat checkup"); }; }
-class Bird extends Animal { public void checkup() { System.out.println("Bird checkup"); }; }
+class Classe1 {}
+class Classe2 extends Classe1 {}
+class Classe3 extends Classe2 {}
+class Classe4 extends Classe3 {}
 
-class Pastor extends Dog {  }
+class Classe5 extends Classe4 {}
 
-class AnimalDoctorWithArray {
-	public void checkAnimals(Animal [] animals) { System.out.println("AnimalDoctorWithArray.checkAnimals()"); for(Animal animal : animals) animal.checkup(); }
-	public void addCat(Animal [] animals) { System.out.println("AnimalDoctorWithArray.addCat()"); animals[0] = new Cat(); }
-}
+class Classe6 extends Classe5 {}
+class Classe7 extends Classe6 {}
+class Classe8 extends Classe7 {}
 
-class AnimalDoctorWithGeneric {
-	public void checkAnimals(List<Animal> animals) { System.out.println("AnimalDoctorWithGeneric.checkAnimals()"); for(Animal animal : animals) animal.checkup(); }
-}
 
-class AnimalDoctorWithWildcard {
-	public void addAnimal(List<? super Dog> animals) { System.out.println("AnimalDoctorWithWildcard.addAnimal()"); /*animals.add(new Dog()); animals.add(new Cat()); animals.add(new Bird());*/ }
-}
 
 public class Exe001 {
 
@@ -51,49 +44,47 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 
-		/*{
-			System.out.println("testing with array...");
-			Dog [] dogs = new Dog[5];
+		List list = null;
+		List<Classe5> list5 = null;
+		List<Classe3> list3 = null;
+		List<Classe7> list7 = null;
 
-			AnimalDoctorWithArray animalDoctor = new AnimalDoctorWithArray();
-			animalDoctor.addCat(dogs);
-		}*/
+		mqqc(list);
+		mqqcTudo(list);
+		mqqcExtendsClasse5(list);
+		mqqcSuperClasse5(list);
 
-		/*{
-			System.out.println("testing with generic...");
-			ArrayList<Animal> dogs = new ArrayList<Animal>();
-			dogs.add(new Dog());
-			dogs.add(new Dog());
-			ArrayList<Animal> cats = new ArrayList<Animal>();
-			cats.add(new Cat());
-			cats.add(new Cat());
-			ArrayList<Animal> birds = new ArrayList<Animal>();
-			birds.add(new Bird());
+		mqqc(list5);
+		mqqcTudo(list5);
+		mqqcExtendsClasse5(list5);
+		mqqcSuperClasse5(list5);
 
-			AnimalDoctorWithGeneric animalDoctor = new AnimalDoctorWithGeneric();
-			animalDoctor.checkAnimals(dogs);
-			animalDoctor.checkAnimals(cats);
-			animalDoctor.checkAnimals(birds);
-		}*/
+		mqqc(list3);
+		mqqcTudo(list3);
+		mqqcExtendsClasse5(list3);//compile error because Classe3 not extends Classe5
+		mqqcSuperClasse5(list3);
 
-		{
-			System.out.println("testing with wildcard...");
-			ArrayList<Dog> dogs = new ArrayList<Dog>();
-			dogs.add(new Dog());
-			dogs.add(new Dog());
-			ArrayList<Cat> cats = new ArrayList<Cat>();
-			cats.add(new Cat());
-			cats.add(new Cat());
-			ArrayList<Bird> birds = new ArrayList<Bird>();
-			birds.add(new Bird());
-			ArrayList<Pastor> pastors = new ArrayList<Pastor>();
-			pastors.add(new Pastor());
+		mqqc(list7);
+		mqqcTudo(list7);
+		mqqcExtendsClasse5(list7);
+		mqqcSuperClasse5(list7);;//compile error because Classe7 is not upper to Classe5
 
-			AnimalDoctorWithWildcard animalDoctor = new AnimalDoctorWithWildcard();
-			animalDoctor.addAnimal(dogs);
-			animalDoctor.addAnimal(pastors);
-		}
+	}
 
+	public static void mqqc(List list) {
+		System.out.println("Exe001.mqqc()");
+	}
+
+	public static void mqqcTudo(List<?> list) {
+		System.out.println("Exe001.mqqcTudo()");
+	}
+
+	public static void mqqcExtendsClasse5(List<? extends Classe5> list) {
+		System.out.println("Exe001.mqqcExtendsClasse5()");
+	}
+
+	public static void mqqcSuperClasse5(List<? super Classe5> list) {
+		System.out.println("Exe001.mqqcSuperClasse5()");
 	}
 
 }
