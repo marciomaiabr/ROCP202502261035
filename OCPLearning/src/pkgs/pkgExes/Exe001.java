@@ -3,55 +3,14 @@ package pkgs.pkgExes;
 import java.time.LocalDateTime;
 import java.util.*;
 
-class Rental {
-	private List rentalPool;
-	private int maxNum;
-	public Rental(int maxNum, List rentalPool) {
-		this.maxNum = maxNum;
-		this.rentalPool = rentalPool;
+class TestGeneric<T> {
+	T anInstance;
+	T [] anArrayOfTs;
+	public TestGeneric(T anInstance) {
+		this.anInstance = anInstance;
 	}
-	public Object getRental() {
-		return rentalPool.get(0);
-	}
-	public void returnRental(Object o) {
-		rentalPool.add(o);
-	}
-}
-
-class Car {
-}
-
-class CarRental extends Rental {
-	public CarRental(int maxNum, List<Car> rentalPool) {
-		super(maxNum, rentalPool);
-	}
-	public Car getRental() {
-		return (Car) super.getRental();
-	}
-	public void returnRental(Car car) {
-		super.returnRental(car);
-	}
-	public void returnRental(Object o) {
-		if(o instanceof Car) {
-			super.returnRental(o);
-		} else {
-			throw new RuntimeException("MM RuntimeException Cannot add a non-Car");
-		}
-	}
-}
-
-class RentalGeneric<T> {
-	private List<T> rentalPool;
-	private int maxNum;
-	public RentalGeneric(int maxNum, List<T> rentalPool) {
-		this.rentalPool = rentalPool;
-		this.maxNum = maxNum;
-	}
-	public T getRental() {
-		return rentalPool.get(0);
-	}
-	public void returnRental(T t) {
-		rentalPool.add(t);
+	T getT() {
+		return anInstance;
 	}
 }
 
@@ -79,20 +38,13 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		Car c1 = new Car();
-		Car c2 = new Car();
-		List<Car> carList = new ArrayList<>();
-		carList.add(c1);
-		carList.add(c2);
-		RentalGeneric<Car> carRental = new RentalGeneric<>(2, carList);
-		Car carToRent = carRental.getRental();
-		carRental.returnRental(carToRent);
-		carList.add(LocalDateTime.now());
-		//System.out.println("[="+()+"]");
+		TestGeneric testGeneric = null;
+		System.out.println("[="+(testGeneric)+"]");
 	}
 
 }
 
 /*
-
+sobre array de generico:
+Obviamente, este é um uso ridículo de genéricos e, na verdade, você raramente os verá fora de coleções.
 */
