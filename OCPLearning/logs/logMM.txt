@@ -1,9 +1,5 @@
-Exception in thread "main" 2025-05-21T08:22:52.398
+2025-05-22T07:59:08.642
 <>
 Exe001.m1()
-java.lang.Error: Unresolved compilation problem: 
-	The method qqcMM1(capture#1-of ? extends Object) in the type ListMM<capture#1-of ? extends Object> is not applicable for the arguments (LocalDateTime)
-
-	at pkgs.pkgExes.Exe001.mqqc1(Exe001.java:131)
-	at pkgs.pkgExes.Exe001.m1(Exe001.java:125)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:111)
+[=null]
+</>
