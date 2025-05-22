@@ -22,7 +22,6 @@ class Car {
 }
 
 class CarRental extends Rental {
-
 	public CarRental(int maxNum, List<Car> rentalPool) {
 		super(maxNum, rentalPool);
 	}
@@ -38,6 +37,21 @@ class CarRental extends Rental {
 		} else {
 			throw new RuntimeException("MM RuntimeException Cannot add a non-Car");
 		}
+	}
+}
+
+class RentalGeneric<T> {
+	private List<T> rentalPool;
+	private int maxNum;
+	public RentalGeneric(int maxNum, List<T> rentalPool) {
+		this.rentalPool = rentalPool;
+		this.maxNum = maxNum;
+	}
+	public T getRental() {
+		return rentalPool.get(0);
+	}
+	public void returnRental(T t) {
+		rentalPool.add(t);
 	}
 }
 
@@ -65,8 +79,15 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		CarRental carRental = null;
-		System.out.println("[="+(carRental)+"]");
+		Car c1 = new Car();
+		Car c2 = new Car();
+		List<Car> carList = new ArrayList<>();
+		carList.add(c1);
+		carList.add(c2);
+		RentalGeneric<Car> carRental = new RentalGeneric<>(2, carList);
+		Car carToRent = carRental.getRental();
+		carRental.returnRental(carToRent);
+		//System.out.println("[="+()+"]");
 	}
 
 }
