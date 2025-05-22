@@ -1,4 +1,7 @@
-2025-05-22T08:18:26.480
-<>
-Exe001.m1()
-</>
+2025-05-22T08:18:57.515
+<>Exception in thread "main" 
+java.lang.Error: Unresolved compilation problem: 
+	The method add(Car) in the type List<Car> is not applicable for the arguments (LocalDateTime)
+
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:90)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:68)

@@ -87,6 +87,7 @@ public class Exe001 {
 		RentalGeneric<Car> carRental = new RentalGeneric<>(2, carList);
 		Car carToRent = carRental.getRental();
 		carRental.returnRental(carToRent);
+		carList.add(LocalDateTime.now());
 		//System.out.println("[="+()+"]");
 	}
 
