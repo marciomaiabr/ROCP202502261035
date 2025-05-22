@@ -5,6 +5,9 @@ import java.util.*;
 
 class UseInformationOfGeneric<T> {
 	T t;
+	public UseInformationOfGeneric(T t) {
+		this.t = t;
+	}
 	T getT() {
 		return t;
 	}
@@ -37,7 +40,7 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		UseInformationOfGeneric<LocalDateTime> useInformationOfGeneric = new UseInformationOfGeneric<>();
+		UseInformationOfGeneric<LocalDateTime> useInformationOfGeneric = new UseInformationOfGeneric<>(LocalDateTime.now());
 		System.out.println("[="+(useInformationOfGeneric.getT())+"]");
 		System.out.println("[="+(useInformationOfGeneric.getTClassName())+"]");
 	}
