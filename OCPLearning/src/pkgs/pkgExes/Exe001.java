@@ -3,14 +3,20 @@ package pkgs.pkgExes;
 import java.time.LocalDateTime;
 import java.util.*;
 
-class TestGeneric<T> {
-	T anInstance;
-	T [] anArrayOfTs;
-	public TestGeneric(T anInstance) {
-		this.anInstance = anInstance;
+class UseTwo<T, U> {
+	T one;
+	U two;
+	public UseTwo(T one, U two) {
+		//this.one = two;//Type mismatch: cannot convert from U to T
+		//this.two = one;//Type mismatch: cannot convert from T to U
+		this.one = one;
+		this.two = two;
 	}
 	T getT() {
-		return anInstance;
+		return one;
+	}
+	U getU() {
+		return two;
 	}
 }
 
@@ -38,13 +44,14 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		TestGeneric testGeneric = null;
-		System.out.println("[="+(testGeneric)+"]");
+		//UseTwo<int, String> useTwo = new UseTwo<>(1, "tst");//Syntax error, insert "Dimensions" to complete TypeArgument
+		UseTwo<Integer, String> useTwo = new UseTwo<>(1, "tst");
+		System.out.println("[="+(useTwo.getT())+"]");
+		System.out.println("[="+(useTwo.getU())+"]");
 	}
 
 }
 
 /*
-sobre array de generico:
-Obviamente, este é um uso ridículo de genéricos e, na verdade, você raramente os verá fora de coleções.
+
 */
