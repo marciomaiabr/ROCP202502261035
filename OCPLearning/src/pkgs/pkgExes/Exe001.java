@@ -3,20 +3,13 @@ package pkgs.pkgExes;
 import java.time.LocalDateTime;
 import java.util.*;
 
-class UseTwo<T, U> {
-	T one;
-	U two;
-	public UseTwo(T one, U two) {
-		//this.one = two;//Type mismatch: cannot convert from U to T
-		//this.two = one;//Type mismatch: cannot convert from T to U
-		this.one = one;
-		this.two = two;
-	}
+class UseInformationOfGeneric<T> {
+	T t;
 	T getT() {
-		return one;
+		return t;
 	}
-	U getU() {
-		return two;
+	String getTClassName() {
+		return getT().getClass().getName();
 	}
 }
 
@@ -44,10 +37,9 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		//UseTwo<int, String> useTwo = new UseTwo<>(1, "tst");//Syntax error, insert "Dimensions" to complete TypeArgument
-		UseTwo<Integer, String> useTwo = new UseTwo<>(1, "tst");
-		System.out.println("[="+(useTwo.getT())+"]");
-		System.out.println("[="+(useTwo.getU())+"]");
+		UseInformationOfGeneric<LocalDateTime> useInformationOfGeneric = new UseInformationOfGeneric<>();
+		System.out.println("[="+(useInformationOfGeneric.getT())+"]");
+		System.out.println("[="+(useInformationOfGeneric.getTClassName())+"]");
 	}
 
 }

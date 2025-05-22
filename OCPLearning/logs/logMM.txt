@@ -1,6 +1,8 @@
-2025-05-22T08:45:47.445
+2025-05-22T08:51:44.226
 <>
 Exe001.m1()
-[=1]
-[=tst]
-</>
+[=null]
+java.lang.NullPointerException
+	at pkgs.pkgExes.UseInformationOfGeneric.getTClassName(Exe001.java:12)
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:42)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:26)
