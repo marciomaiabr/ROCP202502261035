@@ -3,7 +3,7 @@ package pkgs.pkgExes;
 import java.time.LocalDateTime;
 import java.util.*;
 
-class ClassQQ1<T> {
+class ClassQQ1 {
 	void mqq1(T t) {}
 }
 
@@ -31,8 +31,9 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		ClassQQ1 classQQ1 = null;
+		ClassQQ1 classQQ1 = new ClassQQ1();
 		System.out.println(classQQ1);
+		classQQ1.mqq1("");
 	}
 
 }
