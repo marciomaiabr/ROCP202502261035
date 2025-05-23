@@ -1,5 +1,3 @@
-2025-05-23T07:39:40.884
-<>
-Exe001.m1()
-pkgs.pkgExes.ClassQQ1@53d8d10a
-</>
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+
+	at pkgs.pkgExes.Exe001.main(Exe001.java:16)
