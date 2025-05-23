@@ -3,8 +3,8 @@ package pkgs.pkgExes;
 import java.time.LocalDateTime;
 import java.util.*;
 
-class ClassQQ1 {
-	void mqq1() {}
+class ClassQQ1<T> {
+	void mqq1(T t) {}
 }
 
 public class Exe001 {
