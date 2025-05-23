@@ -3,17 +3,8 @@ package pkgs.pkgExes;
 import java.time.LocalDateTime;
 import java.util.*;
 
-class UseInformationOfGeneric<T> {
-	T t;
-	public UseInformationOfGeneric(T t) {
-		this.t = t;
-	}
-	T getT() {
-		return t;
-	}
-	String getTClassName() {
-		return getT().getClass().getName();
-	}
+class ClassQQ1 {
+	void mqq1() {}
 }
 
 public class Exe001 {
@@ -40,9 +31,8 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		UseInformationOfGeneric<LocalDateTime> useInformationOfGeneric = new UseInformationOfGeneric<>(LocalDateTime.now());
-		System.out.println("[="+(useInformationOfGeneric.getT())+"]");
-		System.out.println("[="+(useInformationOfGeneric.getTClassName())+"]");
+		ClassQQ1 classQQ1 = null;
+		System.out.println(classQQ1);
 	}
 
 }
