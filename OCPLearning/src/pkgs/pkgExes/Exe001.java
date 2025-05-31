@@ -44,7 +44,12 @@ public class Exe001 {
 		Pessoa pessoa5E = new Pessoa(new Id(true), "Pessoa5E");
 		Pessoa pessoa7G = new Pessoa(new Id(true), "Pessoa7G");
 
-		Map<Chave, Pessoa> m = new TreeMap<>();
+		Map<Chave, Pessoa> m = new TreeMap<>(new Comparator<Chave>() {
+			@Override
+			public int compare(Chave c1, Chave c2) {
+				System.out.println("Exe001.m1(...).new Comparator() {...}.compare()"+"[this="+(this)+"]"+"[c1="+(c1)+"]"+"[c2="+(c2)+"]");
+				return Long.compare(c1.getCodigo(), c2.getCodigo());
+			}});
 
 		System.out.println("\n\nm.puts");
 
