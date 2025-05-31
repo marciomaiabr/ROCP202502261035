@@ -1,4 +1,4 @@
-2025-05-31T09:57:31.828
+2025-05-31T10:05:27.463
 <>
 Exe001.m1()
 
@@ -6,8 +6,94 @@ Exe001.m1()
 m.puts
 
 m.put(chave1A, pessoa1A)
-java.lang.ClassCastException: pkgs.pkg0.Chave cannot be cast to java.lang.Comparable
-	at java.util.TreeMap.compare(TreeMap.java:1294)
-	at java.util.TreeMap.put(TreeMap.java:538)
-	at pkgs.pkgExes.Exe001.m1(Exe001.java:52)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:17)
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=1]]][chave=[[class=Chave][codigo=1]]]
+[intCompareTo=0]
+null
+
+m.put(chave2B, pessoa2B)
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=2]]][chave=[[class=Chave][codigo=1]]]
+[intCompareTo=1]
+null
+
+m.put(chave3C, pessoa3C)
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=3]]][chave=[[class=Chave][codigo=1]]]
+[intCompareTo=1]
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=3]]][chave=[[class=Chave][codigo=2]]]
+[intCompareTo=1]
+null
+
+m.put(chave4D, pessoa4D)
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=4]]][chave=[[class=Chave][codigo=2]]]
+[intCompareTo=1]
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=4]]][chave=[[class=Chave][codigo=3]]]
+[intCompareTo=1]
+null
+
+m.put(chave5E, pessoa5E)
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=5]]][chave=[[class=Chave][codigo=2]]]
+[intCompareTo=1]
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=5]]][chave=[[class=Chave][codigo=3]]]
+[intCompareTo=1]
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=5]]][chave=[[class=Chave][codigo=4]]]
+[intCompareTo=1]
+null
+
+m.put(chave6F, pessoa6F)
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=6]]][chave=[[class=Chave][codigo=2]]]
+[intCompareTo=1]
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=6]]][chave=[[class=Chave][codigo=4]]]
+[intCompareTo=1]
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=6]]][chave=[[class=Chave][codigo=5]]]
+[intCompareTo=1]
+null
+
+m.put(chave7G, pessoa7G)
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=7]]][chave=[[class=Chave][codigo=2]]]
+[intCompareTo=1]
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=7]]][chave=[[class=Chave][codigo=4]]]
+[intCompareTo=1]
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=7]]][chave=[[class=Chave][codigo=5]]]
+[intCompareTo=1]
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=7]]][chave=[[class=Chave][codigo=6]]]
+[intCompareTo=1]
+null
+
+
+m.forEach
+
+Chave.hashCode()
+[hashCode=1]
+[k=[[class=Chave][codigo=1]]][k.hashCode()=1][v=[[class=Pessoa][id=[[class=Id][codigo=20250531100529]]][nome=Pessoa1A20250531100529]]]
+Chave.hashCode()
+[hashCode=2]
+[k=[[class=Chave][codigo=2]]][k.hashCode()=2][v=[[class=Pessoa][id=[[class=Id][codigo=20250531100531]]][nome=Pessoa2B20250531100531]]]
+Chave.hashCode()
+[hashCode=3]
+[k=[[class=Chave][codigo=3]]][k.hashCode()=3][v=[[class=Pessoa][id=[[class=Id][codigo=20250531100533]]][nome=Pessoa3C20250531100533]]]
+Chave.hashCode()
+[hashCode=4]
+[k=[[class=Chave][codigo=4]]][k.hashCode()=4][v=[[class=Pessoa][id=[[class=Id][codigo=20250531100535]]][nome=Pessoa4D20250531100535]]]
+Chave.hashCode()
+[hashCode=5]
+[k=[[class=Chave][codigo=5]]][k.hashCode()=5][v=[[class=Pessoa][id=[[class=Id][codigo=20250531100539]]][nome=Pessoa5E20250531100539]]]
+Chave.hashCode()
+[hashCode=6]
+[k=[[class=Chave][codigo=6]]][k.hashCode()=6][v=[[class=Pessoa][id=[[class=Id][codigo=20250531100537]]][nome=Pessoa6F20250531100537]]]
+Chave.hashCode()
+[hashCode=7]
+[k=[[class=Chave][codigo=7]]][k.hashCode()=7][v=[[class=Pessoa][id=[[class=Id][codigo=20250531100541]]][nome=Pessoa7G20250531100541]]]
+
+
+m.gets
+
+m.get(chave5E)
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=5]]][chave=[[class=Chave][codigo=2]]]
+[intCompareTo=1]
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=5]]][chave=[[class=Chave][codigo=4]]]
+[intCompareTo=1]
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=5]]][chave=[[class=Chave][codigo=6]]]
+[intCompareTo=-1]
+Chave.compareTo(Chave chave)[this=[[class=Chave][codigo=5]]][chave=[[class=Chave][codigo=5]]]
+[intCompareTo=0]
+[[class=Pessoa][id=[[class=Id][codigo=20250531100539]]][nome=Pessoa5E20250531100539]]
+</>
