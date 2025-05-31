@@ -3,7 +3,7 @@ package pkgs.pkgExes;
 import java.time.LocalDateTime;
 import java.util.*;
 
-class Pessoa {
+class Pessoa implements Comparable<Pessoa> {
 	private long codigo;
 	private String nome;
 	public Pessoa() { super(); }
@@ -44,6 +44,13 @@ class Pessoa {
 		}
 		System.out.println("[isEquals="+(isEquals)+"]");
 		return isEquals;
+	}
+	@Override
+	public int compareTo(Pessoa pessoa) {
+		System.out.println("Pessoa.compareTo(Pessoa pessoa)"+"[this="+(this)+"]"+"[pessoa="+(pessoa)+"]");
+		int retornoCompareTo = new Long(this.getCodigo()).compareTo(pessoa.getCodigo());
+		System.out.println("[retornoCompareTo="+(retornoCompareTo)+"]");
+		return retornoCompareTo;
 	}
 }
 
