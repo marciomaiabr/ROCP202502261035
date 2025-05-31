@@ -1,4 +1,4 @@
-2025-05-31T10:14:09.744
+2025-05-31T10:21:41.446
 <>
 Exe001.m1()
 
@@ -7,73 +7,63 @@ m.puts
 
 m.put(chave1A, pessoa1A)
 Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=1]]][c2=[[class=Chave][codigo=1]]]
+[intCompare=0]
 null
 
 m.put(chave2B, pessoa2B)
 Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=2]]][c2=[[class=Chave][codigo=1]]]
+[intCompare=1]
 null
 
 m.put(chave3C, pessoa3C)
 Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=3]]][c2=[[class=Chave][codigo=1]]]
+[intCompare=1]
 Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=3]]][c2=[[class=Chave][codigo=2]]]
+[intCompare=1]
 null
 
 m.put(chave4D, pessoa4D)
 Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=4]]][c2=[[class=Chave][codigo=2]]]
+[intCompare=1]
 Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=4]]][c2=[[class=Chave][codigo=3]]]
-null
-
-m.put(chave5E, pessoa5E)
-Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=5]]][c2=[[class=Chave][codigo=2]]]
-Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=5]]][c2=[[class=Chave][codigo=3]]]
-Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=5]]][c2=[[class=Chave][codigo=4]]]
+[intCompare=1]
 null
 
 m.put(chave6F, pessoa6F)
 Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=6]]][c2=[[class=Chave][codigo=2]]]
+[intCompare=1]
+Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=6]]][c2=[[class=Chave][codigo=3]]]
+[intCompare=1]
 Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=6]]][c2=[[class=Chave][codigo=4]]]
-Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=6]]][c2=[[class=Chave][codigo=5]]]
+[intCompare=1]
+null
+
+m.put(chave5E, pessoa5E)
+Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=5]]][c2=[[class=Chave][codigo=2]]]
+[intCompare=1]
+Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=5]]][c2=[[class=Chave][codigo=4]]]
+[intCompare=1]
+Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=5]]][c2=[[class=Chave][codigo=6]]]
+[intCompare=-1]
 null
 
 m.put(chave7G, pessoa7G)
 Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=7]]][c2=[[class=Chave][codigo=2]]]
+[intCompare=1]
 Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=7]]][c2=[[class=Chave][codigo=4]]]
-Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=7]]][c2=[[class=Chave][codigo=5]]]
+[intCompare=1]
 Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=7]]][c2=[[class=Chave][codigo=6]]]
+[intCompare=1]
 null
 
 
 m.forEach
 
-Chave.hashCode()
-[hashCode=1]
-[k=[[class=Chave][codigo=1]]][k.hashCode()=1][v=[[class=Pessoa][id=[[class=Id][codigo=20250531101411]]][nome=Pessoa1A20250531101411]]]
-Chave.hashCode()
-[hashCode=2]
-[k=[[class=Chave][codigo=2]]][k.hashCode()=2][v=[[class=Pessoa][id=[[class=Id][codigo=20250531101413]]][nome=Pessoa2B20250531101413]]]
-Chave.hashCode()
-[hashCode=3]
-[k=[[class=Chave][codigo=3]]][k.hashCode()=3][v=[[class=Pessoa][id=[[class=Id][codigo=20250531101415]]][nome=Pessoa3C20250531101415]]]
-Chave.hashCode()
-[hashCode=4]
-[k=[[class=Chave][codigo=4]]][k.hashCode()=4][v=[[class=Pessoa][id=[[class=Id][codigo=20250531101417]]][nome=Pessoa4D20250531101417]]]
-Chave.hashCode()
-[hashCode=5]
-[k=[[class=Chave][codigo=5]]][k.hashCode()=5][v=[[class=Pessoa][id=[[class=Id][codigo=20250531101421]]][nome=Pessoa5E20250531101421]]]
-Chave.hashCode()
-[hashCode=6]
-[k=[[class=Chave][codigo=6]]][k.hashCode()=6][v=[[class=Pessoa][id=[[class=Id][codigo=20250531101419]]][nome=Pessoa6F20250531101419]]]
-Chave.hashCode()
-[hashCode=7]
-[k=[[class=Chave][codigo=7]]][k.hashCode()=7][v=[[class=Pessoa][id=[[class=Id][codigo=20250531101423]]][nome=Pessoa7G20250531101423]]]
-
-
-m.gets
-
-m.get(chave5E)
-Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=5]]][c2=[[class=Chave][codigo=2]]]
-Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=5]]][c2=[[class=Chave][codigo=4]]]
-Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=5]]][c2=[[class=Chave][codigo=6]]]
-Exe001.m1(...).new Comparator() {...}.compare()[this=pkgs.pkgExes.Exe001$1@58372a00][c1=[[class=Chave][codigo=5]]][c2=[[class=Chave][codigo=5]]]
-[[class=Pessoa][id=[[class=Id][codigo=20250531101421]]][nome=Pessoa5E20250531101421]]
+[k=[[class=Chave][codigo=1]]][v=[[class=Pessoa][id=[[class=Id][codigo=20250531102143]]][nome=Pessoa1A20250531102143]]]
+[k=[[class=Chave][codigo=2]]][v=[[class=Pessoa][id=[[class=Id][codigo=20250531102145]]][nome=Pessoa2B20250531102145]]]
+[k=[[class=Chave][codigo=3]]][v=[[class=Pessoa][id=[[class=Id][codigo=20250531102147]]][nome=Pessoa3C20250531102147]]]
+[k=[[class=Chave][codigo=4]]][v=[[class=Pessoa][id=[[class=Id][codigo=20250531102149]]][nome=Pessoa4D20250531102149]]]
+[k=[[class=Chave][codigo=5]]][v=[[class=Pessoa][id=[[class=Id][codigo=20250531102153]]][nome=Pessoa5E20250531102153]]]
+[k=[[class=Chave][codigo=6]]][v=[[class=Pessoa][id=[[class=Id][codigo=20250531102151]]][nome=Pessoa6F20250531102151]]]
+[k=[[class=Chave][codigo=7]]][v=[[class=Pessoa][id=[[class=Id][codigo=20250531102155]]][nome=Pessoa7G20250531102155]]]
 </>

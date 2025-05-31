@@ -48,7 +48,9 @@ public class Exe001 {
 			@Override
 			public int compare(Chave c1, Chave c2) {
 				System.out.println("Exe001.m1(...).new Comparator() {...}.compare()"+"[this="+(this)+"]"+"[c1="+(c1)+"]"+"[c2="+(c2)+"]");
-				return Long.compare(c1.getCodigo(), c2.getCodigo());
+				int intCompare = Long.compare(c1.getCodigo(), c2.getCodigo());
+				System.out.println("[intCompare="+(intCompare)+"]");
+				return intCompare;
 			}});
 
 		System.out.println("\n\nm.puts");
@@ -61,20 +63,16 @@ public class Exe001 {
 		System.out.println(m.put(chave3C, pessoa3C));
 		System.out.println("\nm.put(chave4D, pessoa4D)");
 		System.out.println(m.put(chave4D, pessoa4D));
-		System.out.println("\nm.put(chave5E, pessoa5E)");
-		System.out.println(m.put(chave5E, pessoa5E));
 		System.out.println("\nm.put(chave6F, pessoa6F)");
 		System.out.println(m.put(chave6F, pessoa6F));
+		System.out.println("\nm.put(chave5E, pessoa5E)");
+		System.out.println(m.put(chave5E, pessoa5E));
 		System.out.println("\nm.put(chave7G, pessoa7G)");
 		System.out.println(m.put(chave7G, pessoa7G));
 
 		System.out.println();
 		System.out.println("\nm.forEach"+"\n");
-		m.forEach((k,v) -> System.out.println("[k="+(k)+"]"+"[k.hashCode()="+(k.hashCode())+"]"+"[v="+(v)+"]"));
-
-		System.out.println("\n\nm.gets");
-		System.out.println("\nm.get(chave5E)");
-		System.out.println(m.get(chave5E));
+		m.forEach((k,v) -> System.out.println("[k="+(k)+"]"+"[v="+(v)+"]"));
 	}
 
 }
