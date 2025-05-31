@@ -1,49 +1,38 @@
-2025-05-31T09:08:21.621
+2025-05-31T09:10:31.746
 <>
 Exe001.m1()
 
 
 collection.add(pessoa1A)
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=1][nome=PessoaA]]][pessoa=[[class=Pessoa][codigo=1][nome=PessoaA]]]
-[retornoCompareTo=0]
+Exe001.m1(...).new Comparator() {...}.compare()
 true
 
 collection.add(pessoa6F)
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=6][nome=PessoaF]]][pessoa=[[class=Pessoa][codigo=1][nome=PessoaA]]]
-[retornoCompareTo=1]
+Exe001.m1(...).new Comparator() {...}.compare()
 true
 
 collection.add(pessoa2B)
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=2][nome=PessoaB]]][pessoa=[[class=Pessoa][codigo=1][nome=PessoaA]]]
-[retornoCompareTo=1]
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=2][nome=PessoaB]]][pessoa=[[class=Pessoa][codigo=6][nome=PessoaF]]]
-[retornoCompareTo=-1]
+Exe001.m1(...).new Comparator() {...}.compare()
+Exe001.m1(...).new Comparator() {...}.compare()
 true
 
 collection.add(pessoa1C)
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=1][nome=PessoaC]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
-[retornoCompareTo=-1]
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=1][nome=PessoaC]]][pessoa=[[class=Pessoa][codigo=1][nome=PessoaA]]]
-[retornoCompareTo=0]
+Exe001.m1(...).new Comparator() {...}.compare()
+Exe001.m1(...).new Comparator() {...}.compare()
 false
 
 collection.add(pessoa4D)
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=4][nome=PessoaD]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
-[retornoCompareTo=1]
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=4][nome=PessoaD]]][pessoa=[[class=Pessoa][codigo=6][nome=PessoaF]]]
-[retornoCompareTo=-1]
+Exe001.m1(...).new Comparator() {...}.compare()
+Exe001.m1(...).new Comparator() {...}.compare()
 true
 
 collection.add(pessoa2E)
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=2][nome=PessoaE]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
-[retornoCompareTo=0]
+Exe001.m1(...).new Comparator() {...}.compare()
 false
 
 collection.add(pessoa7G)
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=7][nome=PessoaG]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
-[retornoCompareTo=1]
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=7][nome=PessoaG]]][pessoa=[[class=Pessoa][codigo=6][nome=PessoaF]]]
-[retornoCompareTo=1]
+Exe001.m1(...).new Comparator() {...}.compare()
+Exe001.m1(...).new Comparator() {...}.compare()
 true
 
 [[class=Pessoa][codigo=1][nome=PessoaA]]
@@ -53,11 +42,8 @@ true
 [[class=Pessoa][codigo=7][nome=PessoaG]]
 
 collection.contains(new Pessoa(4, "PessoaD"))
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=4][nome=PessoaD]]][pessoa=[[class=Pessoa][codigo=2][nome=PessoaB]]]
-[retornoCompareTo=1]
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=4][nome=PessoaD]]][pessoa=[[class=Pessoa][codigo=6][nome=PessoaF]]]
-[retornoCompareTo=-1]
-Pessoa.compareTo(Pessoa pessoa)[this=[[class=Pessoa][codigo=4][nome=PessoaD]]][pessoa=[[class=Pessoa][codigo=4][nome=PessoaD]]]
-[retornoCompareTo=0]
+Exe001.m1(...).new Comparator() {...}.compare()
+Exe001.m1(...).new Comparator() {...}.compare()
+Exe001.m1(...).new Comparator() {...}.compare()
 true
 </>

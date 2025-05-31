@@ -85,7 +85,12 @@ public class Exe001 {
 		Pessoa pessoa7G = new Pessoa(7, "PessoaG");
 		System.out.println();
 
-		Collection<Pessoa> collection = new TreeSet<>();
+		Collection<Pessoa> collection = new TreeSet<>(new Comparator<Pessoa>() {
+			@Override
+			public int compare(Pessoa p1, Pessoa p2) {
+				System.out.println("Exe001.m1(...).new Comparator() {...}.compare()");
+				return Long.compare(p1.getCodigo(), p2.getCodigo());
+			}});
 
 		System.out.println("\ncollection.add(pessoa1A)");
 		System.out.println(collection.add(pessoa1A));
