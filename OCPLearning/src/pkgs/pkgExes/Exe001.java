@@ -63,10 +63,10 @@ public class Exe001 {
 		System.out.println(m.put(chave3, pessoa3C));
 		System.out.println("\nm.put(chave4, pessoa4D)");
 		System.out.println(m.put(chave4, pessoa4D));
-		System.out.println("\nm.put(chave5, pessoa5E)");
-		System.out.println(m.put(chave5, pessoa5E));
 		System.out.println("\nm.put(chave6, pessoa6F)");
 		System.out.println(m.put(chave6, pessoa6F));
+		System.out.println("\nm.put(chave5, pessoa5E)");
+		System.out.println(m.put(chave5, pessoa5E));
 		System.out.println("\nm.put(chave7, pessoa7G)");
 		System.out.println(m.put(chave7, pessoa7G));
 
