@@ -28,20 +28,20 @@ public class Exe001 {
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
 
-		Chave chave1A = new Chave(1l);
-		Chave chave2B = new Chave(2l);
-		Chave chave3C = new Chave(3l);
-		Chave chave4D = new Chave(4l);
-		Chave chave6F = new Chave(6l);
-		Chave chave5E = new Chave(5l);
-		Chave chave7G = new Chave(7l);
+		Chave chave1 = new Chave(1l);
+		Chave chave2 = new Chave(2l);
+		Chave chave3 = new Chave(3l);
+		Chave chave4 = new Chave(4l);
+		Chave chave5 = new Chave(5l);
+		Chave chave6 = new Chave(6l);
+		Chave chave7 = new Chave(7l);
 
 		Pessoa pessoa1A = new Pessoa(new Id(true), "Pessoa1A");
 		Pessoa pessoa2B = new Pessoa(new Id(true), "Pessoa2B");
 		Pessoa pessoa3C = new Pessoa(new Id(true), "Pessoa3C");
 		Pessoa pessoa4D = new Pessoa(new Id(true), "Pessoa4D");
-		Pessoa pessoa6F = new Pessoa(new Id(true), "Pessoa6F");
 		Pessoa pessoa5E = new Pessoa(new Id(true), "Pessoa5E");
+		Pessoa pessoa6F = new Pessoa(new Id(true), "Pessoa6F");
 		Pessoa pessoa7G = new Pessoa(new Id(true), "Pessoa7G");
 
 		Map<Chave, Pessoa> m = new TreeMap<>(new Comparator<Chave>() {
@@ -55,20 +55,20 @@ public class Exe001 {
 
 		System.out.println("\n\nm.puts");
 
-		System.out.println("\nm.put(chave1A, pessoa1A)");
-		System.out.println(m.put(chave1A, pessoa1A));
-		System.out.println("\nm.put(chave2B, pessoa2B)");
-		System.out.println(m.put(chave2B, pessoa2B));
-		System.out.println("\nm.put(chave3C, pessoa3C)");
-		System.out.println(m.put(chave3C, pessoa3C));
-		System.out.println("\nm.put(chave4D, pessoa4D)");
-		System.out.println(m.put(chave4D, pessoa4D));
-		System.out.println("\nm.put(chave6F, pessoa6F)");
-		System.out.println(m.put(chave6F, pessoa6F));
-		System.out.println("\nm.put(chave5E, pessoa5E)");
-		System.out.println(m.put(chave5E, pessoa5E));
-		System.out.println("\nm.put(chave7G, pessoa7G)");
-		System.out.println(m.put(chave7G, pessoa7G));
+		System.out.println("\nm.put(chave1, pessoa1A)");
+		System.out.println(m.put(chave1, pessoa1A));
+		System.out.println("\nm.put(chave2, pessoa2B)");
+		System.out.println(m.put(chave2, pessoa2B));
+		System.out.println("\nm.put(chave3, pessoa3C)");
+		System.out.println(m.put(chave3, pessoa3C));
+		System.out.println("\nm.put(chave4, pessoa4D)");
+		System.out.println(m.put(chave4, pessoa4D));
+		System.out.println("\nm.put(chave5, pessoa5E)");
+		System.out.println(m.put(chave5, pessoa5E));
+		System.out.println("\nm.put(chave6, pessoa6F)");
+		System.out.println(m.put(chave6, pessoa6F));
+		System.out.println("\nm.put(chave7, pessoa7G)");
+		System.out.println(m.put(chave7, pessoa7G));
 
 		System.out.println();
 		System.out.println("\nm.forEach"+"\n");
