@@ -2,7 +2,7 @@ package pkgs.pkg0;
 
 import java.util.*;
 
-public class Chave implements Comparable<Chave> {
+public class Chave {
 	private Long codigo;
 	public Chave() { super(); }
 	public Chave(Long codigo) { super(); this.codigo = codigo; }
@@ -39,13 +39,6 @@ public class Chave implements Comparable<Chave> {
 		}
 		System.out.println("[isEquals="+(isEquals)+"]");
 		return isEquals;
-	}
-	@Override
-	public int compareTo(Chave chave) {
-		System.out.println("Chave.compareTo(Chave chave)[this="+(this)+"][chave="+(chave)+"]");
-		int intCompareTo = Long.compare(this.getCodigo(), chave.getCodigo());
-		System.out.println("[intCompareTo="+(intCompareTo)+"]");
-		return intCompareTo;
 	}
 }
 
