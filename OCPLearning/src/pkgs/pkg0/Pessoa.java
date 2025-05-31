@@ -5,17 +5,17 @@ import java.util.*;
 public class Pessoa {
 	private Id id;
 	private String nome;
-	private int idade;
-	public Pessoa(Id id, String nome, int idade) { super(); this.id = id; this.nome = id.isAutoGenerate() ? nome.concat(id.getCodigo().toString()): nome; this.idade = idade; }
+	public Pessoa() { super(); }
+	public Pessoa(Id id, String nome) { super(); this.id = id; this.nome = id.isAutoGenerate() ? nome.concat(id.getCodigo().toString()): nome; }
+	public Pessoa(Id id) { super(); this.id = id; this.nome = id.isAutoGenerate() ? "Pessoa".concat(id.getCodigo().toString()): this.nome; }
+	public Pessoa(String nome) { super(); this.nome = nome; }
 	public Id getId() {return id;}
 	public void setId(Id id) {this.id = id;}
 	public String getNome() {return nome;}
 	public void setNome(String nome) {this.nome = nome;}
-	public int getIdade() {return idade;}
-	public void setIdade(int idade) {this.idade = idade;}
 	@Override
 	public String toString() {
-		return "["+"[class="+(this.getClass().getSimpleName())+"]"+"[id="+(id)+"]"+"[nome="+(nome)+"]"+"[idade="+(idade)+"]"+"]";
+		return "["+"[class="+(this.getClass().getSimpleName())+"]"+"[id="+(id)+"]"+"[nome="+(nome)+"]"+"]";
 	}
 	@Override
 	public int hashCode() {

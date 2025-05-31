@@ -1,49 +1,13 @@
-2025-05-31T09:12:10.133
+2025-05-31T09:57:31.828
 <>
 Exe001.m1()
 
 
-collection.add(pessoa1A)
-Exe001.m1(...).new Comparator() {...}.compare()
-true
+m.puts
 
-collection.add(pessoa6F)
-Exe001.m1(...).new Comparator() {...}.compare()
-true
-
-collection.add(pessoa2B)
-Exe001.m1(...).new Comparator() {...}.compare()
-Exe001.m1(...).new Comparator() {...}.compare()
-true
-
-collection.add(pessoa1C)
-Exe001.m1(...).new Comparator() {...}.compare()
-Exe001.m1(...).new Comparator() {...}.compare()
-false
-
-collection.add(pessoa4D)
-Exe001.m1(...).new Comparator() {...}.compare()
-Exe001.m1(...).new Comparator() {...}.compare()
-true
-
-collection.add(pessoa2E)
-Exe001.m1(...).new Comparator() {...}.compare()
-false
-
-collection.add(pessoa7G)
-Exe001.m1(...).new Comparator() {...}.compare()
-Exe001.m1(...).new Comparator() {...}.compare()
-true
-
-[[class=Pessoa][codigo=1][nome=PessoaA]]
-[[class=Pessoa][codigo=2][nome=PessoaB]]
-[[class=Pessoa][codigo=4][nome=PessoaD]]
-[[class=Pessoa][codigo=6][nome=PessoaF]]
-[[class=Pessoa][codigo=7][nome=PessoaG]]
-
-collection.contains(new Pessoa(4, "PessoaD"))
-Exe001.m1(...).new Comparator() {...}.compare()
-Exe001.m1(...).new Comparator() {...}.compare()
-Exe001.m1(...).new Comparator() {...}.compare()
-true
-</>
+m.put(chave1A, pessoa1A)
+java.lang.ClassCastException: pkgs.pkg0.Chave cannot be cast to java.lang.Comparable
+	at java.util.TreeMap.compare(TreeMap.java:1294)
+	at java.util.TreeMap.put(TreeMap.java:538)
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:52)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:17)
