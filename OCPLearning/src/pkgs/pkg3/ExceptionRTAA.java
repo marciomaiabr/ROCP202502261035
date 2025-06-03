@@ -1,5 +1,9 @@
 package pkgs.pkg3;
 
-public class ExceptionRTAA extends ExceptionRTA{
+import java.io.Serializable;
+
+public class ExceptionRTAA extends ExceptionRTA implements Serializable {
+
+	private static final long serialVersionUID = 202506030750L;
 
 }

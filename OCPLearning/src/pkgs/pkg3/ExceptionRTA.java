@@ -1,5 +1,9 @@
 package pkgs.pkg3;
 
-public class ExceptionRTA extends RuntimeException{
+import java.io.Serializable;
+
+public class ExceptionRTA extends RuntimeException implements Serializable {
+
+	private static final long serialVersionUID = 202506030750L;
 
 }

@@ -1,5 +1,9 @@
 package pkgs.pkg3;
 
-public class ExceptionRTCCC extends ExceptionRTCC{
+import java.io.Serializable;
+
+public class ExceptionRTCCC extends ExceptionRTCC implements Serializable {
+
+	private static final long serialVersionUID = 202506030750L;
 
 }

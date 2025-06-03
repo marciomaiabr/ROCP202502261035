@@ -1,5 +1,9 @@
 package pkgs.pkg3;
 
-public class ExceptionRTBB extends ExceptionRTB{
+import java.io.Serializable;
+
+public class ExceptionRTBB extends ExceptionRTB implements Serializable {
+
+	private static final long serialVersionUID = 202506030750L;
 
 }

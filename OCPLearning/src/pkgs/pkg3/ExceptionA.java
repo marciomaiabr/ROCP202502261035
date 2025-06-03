@@ -1,5 +1,9 @@
 package pkgs.pkg3;
 
-public class ExceptionA extends Exception{
+import java.io.Serializable;
+
+public class ExceptionA extends Exception implements Serializable {
+
+	private static final long serialVersionUID = 202506030750L;
 
 }
