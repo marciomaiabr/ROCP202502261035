@@ -8,6 +8,14 @@ public class Exe001 {
 		System.out.println(LocalDateTime.now());
 	}
 
+	private int x = 7;
+
+	class MyInner {
+		public void mQqc() {
+			System.out.println("[x="+(x)+"]");
+		}
+	}
+
 	public static void main(String[] args) {
 
 		try {
