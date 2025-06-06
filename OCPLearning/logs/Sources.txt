@@ -1,0 +1,11 @@
+ O volume na unidade C n∆o tem nome.
+ O N£mero de SÇrie do Volume Ç AE6E-CC14
+
+ Pasta de C:\Users\Administrador\git\ROCP202502261035\OCPLearning\src\pkgs\pkgExes
+
+06/06/2025  08:11               661 Exe001.java
+               1 arquivo(s)            661 bytes
+
+     Total de Arquivos na Lista:
+               1 arquivo(s)            661 bytes
+               0 pasta(s)   73.419.542.528 bytes dispon°veis
