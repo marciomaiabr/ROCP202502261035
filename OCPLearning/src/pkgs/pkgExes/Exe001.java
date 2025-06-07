@@ -8,17 +8,18 @@ public class Exe001 {
 		System.out.println(LocalDateTime.now());
 	}
 
-	private int x = 7;
-
-	class MyInner {
+	class MyInner1 {
 		public void mQqc() {
-			System.out.println("[x="+(x)+"]");
+			MyInner2 myInner2 = new MyInner2();
+			System.out.println(myInner2);
 		}
 	}
 
-	public void criaMyInner() {
-		MyInner myInner = new MyInner();
-		myInner.mQqc();
+	class MyInner2 {
+		public void mQqc() {
+			MyInner1 myInner1 = new MyInner1();
+			System.out.println(myInner1);
+		}
 	}
 
 	public static void main(String[] args) {
