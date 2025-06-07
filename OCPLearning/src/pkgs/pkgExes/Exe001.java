@@ -2,17 +2,7 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
-class MyOuterClass {
-
-	private Integer integerX = 7;
-
-	class MyInnerrClass1 {
-		public void mQqc() {
-			System.out.println("[integerX="+(integerX)+"]");
-		}
-	}
-
-}
+import pkgs.pkg1.MyOuterClass;
 
 public class Exe001 {
 

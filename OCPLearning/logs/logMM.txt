@@ -1,5 +1,9 @@
-2025-06-07T09:17:01.089
+Exception in thread "main" 2025-06-07T09:22:31.035
 <>
-Exe001.m1()
-[integerX=7]
-</>
+java.lang.Error: Unresolved compilation problems: 
+	The type MyOuterClass.MyInnerrClass1 is not visible
+	The type MyOuterClass.MyInnerrClass1 is not visible
+	The type MyOuterClass.MyInnerrClass1 is not visible
+
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:32)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:17)
