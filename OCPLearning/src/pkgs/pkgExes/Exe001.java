@@ -2,24 +2,22 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
+class MyOuterClass {
+
+	private Integer integerX = 7;
+
+	class MyInnerrClass1 {
+		public void mQqc() {
+			System.out.println("[integerX="+(integerX)+"]");
+		}
+	}
+
+}
+
 public class Exe001 {
 
 	static {
 		System.out.println(LocalDateTime.now());
-	}
-
-	class MyInner1 {
-		public void mQqc() {
-			MyInner2 myInner2 = new MyInner2();
-			System.out.println(myInner2);
-		}
-	}
-
-	class MyInner2 {
-		public void mQqc() {
-			MyInner1 myInner1 = new MyInner1();
-			System.out.println(myInner1);
-		}
 	}
 
 	public static void main(String[] args) {
@@ -40,7 +38,9 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		//System.out.println("[="+()+"]");
+		MyOuterClass myOuterClass = new MyOuterClass();
+		MyOuterClass.MyInnerrClass1 myInnerrClass1 = myOuterClass.new MyInnerrClass1();
+		myInnerrClass1.mQqc();
 	}
 
 }
