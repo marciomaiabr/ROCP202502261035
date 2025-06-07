@@ -16,6 +16,11 @@ public class Exe001 {
 		}
 	}
 
+	public void criaMyInner() {
+		MyInner myInner = new MyInner();
+		myInner.mQqc();
+	}
+
 	public static void main(String[] args) {
 
 		try {
