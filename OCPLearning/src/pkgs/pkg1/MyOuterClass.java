@@ -9,10 +9,10 @@ public class MyOuterClass {
 		public void mQqc() {
 			System.out.println("[integerX="+(integerX)+"]");
 		}
-	}
 
-	public static MyInnerrClass1 criaMyInnerrClass1() {
-		return new MyInnerrClass1();
+		public static MyInnerrClass1 criaMyInnerrClass1() {
+			return new MyInnerrClass1();
+		}
 	}
 
 }

@@ -3,14 +3,14 @@
 
  Pasta de C:\Users\Administrador\git\ROCP202502261035\OCPLearning\src\pkgs\pkg1
 
-10/06/2025  07:58               333 MyOuterClass.java
-               1 arquivo(s)            333 bytes
+10/06/2025  08:05               336 MyOuterClass.java
+               1 arquivo(s)            336 bytes
 
  Pasta de C:\Users\Administrador\git\ROCP202502261035\OCPLearning\src\pkgs\pkgExes
 
-10/06/2025  08:01               745 Exe001.java
-               1 arquivo(s)            745 bytes
+10/06/2025  08:05               689 Exe001.java
+               1 arquivo(s)            689 bytes
 
      Total de Arquivos na Lista:
-               2 arquivo(s)          1.078 bytes
-               0 pasta(s)   73.543.487.488 bytes dispon¡veis
+               2 arquivo(s)          1.025 bytes
+               0 pasta(s)   73.541.885.952 bytes dispon¡veis
