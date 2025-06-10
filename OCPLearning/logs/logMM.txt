@@ -1,5 +1,9 @@
-2025-06-10T07:57:33.572
+2025-06-10T08:02:36.332
 <>
 Exe001.m1()
-[integerX=7]
-</>
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	No enclosing instance of type MyOuterClass is accessible. Must qualify the allocation with an enclosing instance of type MyOuterClass (e.g. x.new A() where x is an instance of MyOuterClass).
+
+	at pkgs.pkg1.MyOuterClass.criaMyInnerrClass1(MyOuterClass.java:15)
+	at pkgs.pkgExes.Exe001.m1(Exe001.java:31)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:17)

@@ -11,7 +11,7 @@ public class MyOuterClass {
 		}
 	}
 
-	public MyInnerrClass1 criaMyInnerrClass1() {
+	public static MyInnerrClass1 criaMyInnerrClass1() {
 		return new MyInnerrClass1();
 	}
 
