@@ -5,9 +5,14 @@ public class MyOuterClass {
 	private Integer integerX = 7;
 
 	public class MyInnerrClass1 {
+		private MyInnerrClass1() {}
 		public void mQqc() {
 			System.out.println("[integerX="+(integerX)+"]");
 		}
+	}
+
+	public MyInnerrClass1 criaMyInnerrClass1() {
+		return new MyInnerrClass1();
 	}
 
 }

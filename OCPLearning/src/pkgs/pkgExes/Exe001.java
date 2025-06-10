@@ -28,7 +28,8 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		MyOuterClass.MyInnerrClass1 myInnerrClass1 = new MyOuterClass().new MyInnerrClass1();
+		MyOuterClass myOuterClass = new MyOuterClass();
+		MyOuterClass.MyInnerrClass1 myInnerrClass1 = myOuterClass.criaMyInnerrClass1();
 		myInnerrClass1.mQqc();
 	}
 
