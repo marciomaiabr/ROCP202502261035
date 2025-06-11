@@ -15,7 +15,7 @@ class MyOuterClass {
 		public Integer integerX = 2;
 		@Override
 		public String toString() {
-			return "[this.getClass().getCanonicalName()="+(this.getClass().getCanonicalName())+"]"+"[integerX="+(integerX)+"]";
+			return "[this.getClass().getCanonicalName()="+(this.getClass().getCanonicalName())+"]"+"[integerX="+(integerX)+"]"+"[MyOuterClass.this.integerX="+(MyOuterClass.this.integerX)+"]"+"[MyOuterClass.this="+(MyOuterClass.this)+"]";
 		}
 
 	}

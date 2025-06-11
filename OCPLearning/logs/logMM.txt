@@ -1,6 +1,6 @@
-2025-06-11T08:03:20.423
+2025-06-11T08:07:22.874
 <>
 Exe001.m1()
 [myOuterClass][this.getClass().getCanonicalName()=pkgs.pkgExes.MyOuterClass][integerX=1]
-[myInnerClass][this.getClass().getCanonicalName()=pkgs.pkgExes.MyOuterClass.MyInnerClass][integerX=2]
+[myInnerClass][this.getClass().getCanonicalName()=pkgs.pkgExes.MyOuterClass.MyInnerClass][integerX=2][MyOuterClass.this.integerX=1][MyOuterClass.this=[this.getClass().getCanonicalName()=pkgs.pkgExes.MyOuterClass][integerX=1]]
 </>
