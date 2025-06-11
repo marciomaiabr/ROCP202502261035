@@ -2,7 +2,25 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
-import pkgs.pkg1.MyOuterClass;
+class MyOuterClass {
+
+	public Integer integerX = 1;
+	@Override
+	public String toString() {
+		return "[this.getClass().getCanonicalName()="+(this.getClass().getCanonicalName())+"]"+"[integerX="+(integerX)+"]";
+	}
+
+	public class MyInnerClass {
+
+		public Integer integerX = 2;
+		@Override
+		public String toString() {
+			return "[this.getClass().getCanonicalName()="+(this.getClass().getCanonicalName())+"]"+"[integerX="+(integerX)+"]";
+		}
+
+	}
+
+}
 
 public class Exe001 {
 
@@ -28,7 +46,10 @@ public class Exe001 {
 
 	public static void m1(String[] args) {
 		System.out.println("Exe001.m1()");
-		MyOuterClass.MyInnerrClass1.criaMyInnerrClass1();
+		MyOuterClass myOuterClass = new MyOuterClass();
+		MyOuterClass.MyInnerClass myInnerClass = myOuterClass.new MyInnerClass();
+		System.out.println("[myOuterClass]"+myOuterClass);
+		System.out.println("[myInnerClass]"+myInnerClass);
 	}
 
 }

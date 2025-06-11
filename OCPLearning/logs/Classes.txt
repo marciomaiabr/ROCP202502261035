@@ -1,17 +1,13 @@
  O volume na unidade C n∆o tem nome.
  O N£mero de SÇrie do Volume Ç AE6E-CC14
 
- Pasta de C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkg1
-
-10/06/2025  08:07             1.318 MyOuterClass$MyInnerrClass1.class
-10/06/2025  08:07               618 MyOuterClass.class
-               2 arquivo(s)          1.936 bytes
-
  Pasta de C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes
 
-10/06/2025  08:07             1.444 Exe001.class
-               1 arquivo(s)          1.444 bytes
+11/06/2025  08:04             1.849 Exe001.class
+11/06/2025  08:04             1.105 MyOuterClass$MyInnerClass.class
+11/06/2025  08:04               997 MyOuterClass.class
+               3 arquivo(s)          3.951 bytes
 
      Total de Arquivos na Lista:
-               3 arquivo(s)          3.380 bytes
-               0 pasta(s)   73.541.885.952 bytes dispon°veis
+               3 arquivo(s)          3.951 bytes
+               0 pasta(s)   73.160.359.936 bytes dispon°veis

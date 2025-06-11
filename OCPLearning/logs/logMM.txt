@@ -1,9 +1,6 @@
-2025-06-10T08:07:18.403
+2025-06-11T08:03:20.423
 <>
 Exe001.m1()
-Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
-	The method criaMyInnerrClass1 cannot be declared static; static methods can only be declared in a static or top level type
-
-	at pkgs.pkg1.MyOuterClass$MyInnerrClass1.criaMyInnerrClass1(MyOuterClass.java:13)
-	at pkgs.pkgExes.Exe001.m1(Exe001.java:31)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:17)
+[myOuterClass][this.getClass().getCanonicalName()=pkgs.pkgExes.MyOuterClass][integerX=1]
+[myInnerClass][this.getClass().getCanonicalName()=pkgs.pkgExes.MyOuterClass.MyInnerClass][integerX=2]
+</>
