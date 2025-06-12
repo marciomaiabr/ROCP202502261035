@@ -1,6 +1,94 @@
-2025-06-11T08:07:22.874
+2025-06-12T08:20:46.185
 <>
-Exe001.m1()
-[myOuterClass][this.getClass().getCanonicalName()=pkgs.pkgExes.MyOuterClass][integerX=1]
-[myInnerClass][this.getClass().getCanonicalName()=pkgs.pkgExes.MyOuterClass.MyInnerClass][integerX=2][MyOuterClass.this.integerX=1][MyOuterClass.this=[this.getClass().getCanonicalName()=pkgs.pkgExes.MyOuterClass][integerX=1]]
+Exe001.sm1()
+Exe001.im1()
+[myLevel3Class1]
+	[
+	[this.getClass().getCanonicalName()=pkgs.pkgExes.MyLevel1Class1.MyLevel2Class1.MyLevel3Class1]
+	[getClass().getCanonicalName()=pkgs.pkgExes.MyLevel1Class1.MyLevel2Class1.MyLevel3Class1]
+	[MyLevel1Class1.this.getClass().getCanonicalName()=pkgs.pkgExes.MyLevel1Class1]
+	[MyLevel2Class1.this.getClass().getCanonicalName()=pkgs.pkgExes.MyLevel1Class1.MyLevel2Class1]
+	[this.integerX=3]
+	[integerX=3]
+	[MyLevel1Class1.this.integerX=1]
+	[MyLevel2Class1.this.integerX=2]
+	[MyLevel1Class1.this=
+	
+	[
+	
+	[this.getClass().getCanonicalName()=pkgs.pkgExes.MyLevel1Class1]
+	
+	[getClass().getCanonicalName()=pkgs.pkgExes.MyLevel1Class1]
+	
+	[this.integerX=1]
+	
+	[integerX=1]
+	
+	[this.mqqc1()=MyLevel1Class1.mqqc1]
+	
+	[mqqc1()=MyLevel1Class1.mqqc1]
+	
+	[super.mqqc1()=ClassA.mqqc1]
+]]
+	[MyLevel2Class1.this=
+	
+	[
+	
+	[this.getClass().getCanonicalName()=pkgs.pkgExes.MyLevel1Class1.MyLevel2Class1]
+	
+	[getClass().getCanonicalName()=pkgs.pkgExes.MyLevel1Class1.MyLevel2Class1]
+	
+	[MyLevel1Class1.this.getClass().getCanonicalName()=pkgs.pkgExes.MyLevel1Class1]
+	
+	[this.integerX=2]
+	
+	[integerX=2]
+	
+	[MyLevel1Class1.this.integerX=1]
+	
+	[MyLevel1Class1.this=
+	
+	
+	[
+	
+	
+	[this.getClass().getCanonicalName()=pkgs.pkgExes.MyLevel1Class1]
+	
+	
+	[getClass().getCanonicalName()=pkgs.pkgExes.MyLevel1Class1]
+	
+	
+	[this.integerX=1]
+	
+	
+	[integerX=1]
+	
+	
+	[this.mqqc1()=MyLevel1Class1.mqqc1]
+	
+	
+	[mqqc1()=MyLevel1Class1.mqqc1]
+	
+	
+	[super.mqqc1()=ClassA.mqqc1]
+]]
+	
+	[this.mqqc1()=MyLevel2Class1.mqqc1]
+	
+	[mqqc1()=MyLevel2Class1.mqqc1]
+	
+	[MyLevel1Class1.this.mqqc1()=MyLevel1Class1.mqqc1]
+	
+	[super.mqqc1()=ClassB.mqqc1]
+	
+	[MyLevel1Class1.super.mqqc1()=ClassA.mqqc1]
+]]
+	[this.mqqc1()=MyLevel3Class1.mqqc1]
+	[mqqc1()=MyLevel3Class1.mqqc1]
+	[MyLevel1Class1.this.mqqc1()=MyLevel1Class1.mqqc1]
+	[MyLevel2Class1.this.mqqc1()=MyLevel2Class1.mqqc1]
+	[super.mqqc1()=ClassC.mqqc1]
+	[MyLevel1Class1.super.mqqc1()=ClassA.mqqc1]
+	[MyLevel2Class1.super.mqqc1()=ClassB.mqqc1]
+]
 </>

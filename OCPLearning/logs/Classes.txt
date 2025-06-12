@@ -3,11 +3,15 @@
 
  Pasta de C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes
 
-11/06/2025  08:04             1.849 Exe001.class
-11/06/2025  08:04             1.105 MyOuterClass$MyInnerClass.class
-11/06/2025  08:04               997 MyOuterClass.class
-               3 arquivo(s)          3.951 bytes
+12/06/2025  08:21               377 ClassA.class
+12/06/2025  08:21               377 ClassB.class
+12/06/2025  08:21               377 ClassC.class
+12/06/2025  08:21             2.217 Exe001.class
+12/06/2025  08:21             2.873 MyLevel1Class1$MyLevel2Class1$MyLevel3Class1.class
+12/06/2025  08:21             2.620 MyLevel1Class1$MyLevel2Class1.class
+12/06/2025  08:21             1.807 MyLevel1Class1.class
+               7 arquivo(s)         10.648 bytes
 
      Total de Arquivos na Lista:
-               3 arquivo(s)          3.951 bytes
-               0 pasta(s)   73.160.359.936 bytes dispon¡veis
+               7 arquivo(s)         10.648 bytes
+               0 pasta(s)   72.408.883.200 bytes dispon¡veis
