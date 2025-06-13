@@ -5,6 +5,9 @@ import java.time.LocalDateTime;
 class ClassA { public String mqqc1() { return "ClassA.mqqc1"; } }
 class ClassB { public String mqqc1() { return "ClassB.mqqc1"; } }
 class ClassC { public String mqqc1() { return "ClassC.mqqc1"; } }
+class ClassD { public String mqqc1() { return "ClassD.mqqc1"; } }
+class ClassE { public String mqqc1() { return "ClassE.mqqc1"; } }
+class ClassF { public String mqqc1() { return "ClassF.mqqc1"; } }
 
 class MyLevel1Class1 extends ClassA {
 	private Integer integerX = 1;
@@ -60,6 +63,7 @@ class MyLevel1Class1 extends ClassA {
 						+"[getClass().getCanonicalName()="+(getClass().getCanonicalName())+"]"
 						+"[MyLevel1Class1.this.getClass().getCanonicalName()="+(MyLevel1Class1.this.getClass().getCanonicalName())+"]"
 						+"[MyLevel2Class1.this.getClass().getCanonicalName()="+(MyLevel2Class1.this.getClass().getCanonicalName())+"]"
+						+"[MyLevel2Class1.this.getClass().getCanonicalName()="+(MyLevel2Class2.this.getClass().getCanonicalName())+"]"
 						+"[this.integerX="+(this.integerX)+"]"
 						+"[integerX="+(integerX)+"]"
 						+"[MyLevel1Class1.this.integerX="+(MyLevel1Class1.this.integerX)+"]"
@@ -77,11 +81,33 @@ class MyLevel1Class1 extends ClassA {
 				retorno = retorno.replaceAll("\\[", "\n\t"+"\\[");
 				return retorno;
 			}
-
 		}
-
 	}
 
+	class MyLevel2Class2 extends ClassE {
+		private Integer integerX = 5;
+		@Override
+		public String mqqc1() { return "MyLevel2Class2.mqqc1"; }
+		@Override
+		public String toString() {
+			String retorno = "["
+					+"[this.getClass().getCanonicalName()="+(this.getClass().getCanonicalName())+"]"
+					+"[getClass().getCanonicalName()="+(getClass().getCanonicalName())+"]"
+					+"[MyLevel1Class1.this.getClass().getCanonicalName()="+(MyLevel1Class1.this.getClass().getCanonicalName())+"]"
+					+"[this.integerX="+(this.integerX)+"]"
+					+"[integerX="+(integerX)+"]"
+					+"[MyLevel1Class1.this.integerX="+(MyLevel1Class1.this.integerX)+"]"
+					+"[MyLevel1Class1.this="+(MyLevel1Class1.this)+"]"
+					+"[this.mqqc1()="+(this.mqqc1())+"]"
+					+"[mqqc1()="+(mqqc1())+"]"
+					+"[MyLevel1Class1.this.mqqc1()="+(MyLevel1Class1.this.mqqc1())+"]"
+					+"[super.mqqc1()="+(super.mqqc1())+"]"
+					+"[MyLevel1Class1.super.mqqc1()="+(MyLevel1Class1.super.mqqc1())+"]"
+					+"\n"+"]";
+			retorno = retorno.replaceAll("\\[", "\n\t"+"\\[");
+			return retorno;
+		}
+	}
 }
 
 public class Exe001 {

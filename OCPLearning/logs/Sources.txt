@@ -3,9 +3,9 @@
 
  Pasta de C:\Users\Administrador\git\ROCP202502261035\OCPLearning\src\pkgs\pkgExes
 
-12/06/2025  08:20             4.593 Exe001.java
-               1 arquivo(s)          4.593 bytes
+13/06/2025  08:14             5.985 Exe001.java
+               1 arquivo(s)          5.985 bytes
 
      Total de Arquivos na Lista:
-               1 arquivo(s)          4.593 bytes
-               0 pasta(s)   72.408.887.296 bytes dispon¡veis
+               1 arquivo(s)          5.985 bytes
+               0 pasta(s)   70.974.836.736 bytes dispon¡veis
