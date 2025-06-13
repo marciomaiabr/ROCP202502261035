@@ -3,112 +3,6 @@ package pkgs.pkgExes;
 import java.time.LocalDateTime;
 
 class ClassA { public String mqqc1() { return "ClassA.mqqc1"; } }
-class ClassB { public String mqqc1() { return "ClassB.mqqc1"; } }
-class ClassC { public String mqqc1() { return "ClassC.mqqc1"; } }
-class ClassD { public String mqqc1() { return "ClassD.mqqc1"; } }
-class ClassE { public String mqqc1() { return "ClassE.mqqc1"; } }
-class ClassF { public String mqqc1() { return "ClassF.mqqc1"; } }
-
-class MyLevel1Class1 extends ClassA {
-	private Integer integerX = 1;
-	@Override
-	public String mqqc1() { return "MyLevel1Class1.mqqc1"; }
-	@Override
-	public String toString() {
-		String retorno = "["
-				+"[this.getClass().getCanonicalName()="+(this.getClass().getCanonicalName())+"]"
-				+"[getClass().getCanonicalName()="+(getClass().getCanonicalName())+"]"
-				+"[this.integerX="+(this.integerX)+"]"
-				+"[integerX="+(integerX)+"]"
-				+"[this.mqqc1()="+(this.mqqc1())+"]"
-				+"[mqqc1()="+(mqqc1())+"]"
-				+"[super.mqqc1()="+(super.mqqc1())+"]"
-				+"\n"+"]";
-		retorno = retorno.replaceAll("\\[", "\n\t"+"\\[");
-		return retorno;
-	}
-
-	class MyLevel2Class1 extends ClassB {
-		private Integer integerX = 2;
-		@Override
-		public String mqqc1() { return "MyLevel2Class1.mqqc1"; }
-		@Override
-		public String toString() {
-			String retorno = "["
-					+"[this.getClass().getCanonicalName()="+(this.getClass().getCanonicalName())+"]"
-					+"[getClass().getCanonicalName()="+(getClass().getCanonicalName())+"]"
-					+"[MyLevel1Class1.this.getClass().getCanonicalName()="+(MyLevel1Class1.this.getClass().getCanonicalName())+"]"
-					+"[this.integerX="+(this.integerX)+"]"
-					+"[integerX="+(integerX)+"]"
-					+"[MyLevel1Class1.this.integerX="+(MyLevel1Class1.this.integerX)+"]"
-					+"[MyLevel1Class1.this="+(MyLevel1Class1.this)+"]"
-					+"[this.mqqc1()="+(this.mqqc1())+"]"
-					+"[mqqc1()="+(mqqc1())+"]"
-					+"[MyLevel1Class1.this.mqqc1()="+(MyLevel1Class1.this.mqqc1())+"]"
-					+"[super.mqqc1()="+(super.mqqc1())+"]"
-					+"[MyLevel1Class1.super.mqqc1()="+(MyLevel1Class1.super.mqqc1())+"]"
-					+"\n"+"]";
-			retorno = retorno.replaceAll("\\[", "\n\t"+"\\[");
-			return retorno;
-		}
-
-		class MyLevel3Class1 extends ClassC {
-			private Integer integerX = 3;
-			@Override
-			public String mqqc1() { return "MyLevel3Class1.mqqc1"; }
-			@Override
-			public String toString() {
-				String retorno = "["
-						+"[this.getClass().getCanonicalName()="+(this.getClass().getCanonicalName())+"]"
-						+"[getClass().getCanonicalName()="+(getClass().getCanonicalName())+"]"
-						+"[MyLevel1Class1.this.getClass().getCanonicalName()="+(MyLevel1Class1.this.getClass().getCanonicalName())+"]"
-						+"[MyLevel2Class1.this.getClass().getCanonicalName()="+(MyLevel2Class1.this.getClass().getCanonicalName())+"]"
-						+"[MyLevel2Class1.this.getClass().getCanonicalName()="+(MyLevel2Class2.this.getClass().getCanonicalName())+"]"
-						+"[this.integerX="+(this.integerX)+"]"
-						+"[integerX="+(integerX)+"]"
-						+"[MyLevel1Class1.this.integerX="+(MyLevel1Class1.this.integerX)+"]"
-						+"[MyLevel2Class1.this.integerX="+(MyLevel2Class1.this.integerX)+"]"
-						+"[MyLevel1Class1.this="+(MyLevel1Class1.this)+"]"
-						+"[MyLevel2Class1.this="+(MyLevel2Class1.this)+"]"
-						+"[this.mqqc1()="+(this.mqqc1())+"]"
-						+"[mqqc1()="+(mqqc1())+"]"
-						+"[MyLevel1Class1.this.mqqc1()="+(MyLevel1Class1.this.mqqc1())+"]"
-						+"[MyLevel2Class1.this.mqqc1()="+(MyLevel2Class1.this.mqqc1())+"]"
-						+"[super.mqqc1()="+(super.mqqc1())+"]"
-						+"[MyLevel1Class1.super.mqqc1()="+(MyLevel1Class1.super.mqqc1())+"]"
-						+"[MyLevel2Class1.super.mqqc1()="+(MyLevel2Class1.super.mqqc1())+"]"
-						+"\n"+"]";
-				retorno = retorno.replaceAll("\\[", "\n\t"+"\\[");
-				return retorno;
-			}
-		}
-	}
-
-	class MyLevel2Class2 extends ClassE {
-		private Integer integerX = 5;
-		@Override
-		public String mqqc1() { return "MyLevel2Class2.mqqc1"; }
-		@Override
-		public String toString() {
-			String retorno = "["
-					+"[this.getClass().getCanonicalName()="+(this.getClass().getCanonicalName())+"]"
-					+"[getClass().getCanonicalName()="+(getClass().getCanonicalName())+"]"
-					+"[MyLevel1Class1.this.getClass().getCanonicalName()="+(MyLevel1Class1.this.getClass().getCanonicalName())+"]"
-					+"[this.integerX="+(this.integerX)+"]"
-					+"[integerX="+(integerX)+"]"
-					+"[MyLevel1Class1.this.integerX="+(MyLevel1Class1.this.integerX)+"]"
-					+"[MyLevel1Class1.this="+(MyLevel1Class1.this)+"]"
-					+"[this.mqqc1()="+(this.mqqc1())+"]"
-					+"[mqqc1()="+(mqqc1())+"]"
-					+"[MyLevel1Class1.this.mqqc1()="+(MyLevel1Class1.this.mqqc1())+"]"
-					+"[super.mqqc1()="+(super.mqqc1())+"]"
-					+"[MyLevel1Class1.super.mqqc1()="+(MyLevel1Class1.super.mqqc1())+"]"
-					+"\n"+"]";
-			retorno = retorno.replaceAll("\\[", "\n\t"+"\\[");
-			return retorno;
-		}
-	}
-}
 
 public class Exe001 {
 
@@ -139,12 +33,66 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
+		qqc1(args);
+		qqc2(args);
+	}
+
+	public void qqc1(String[] args) {
+		System.out.println("Exe001.qqc1()");
+
+		class MyLevel1Class1 extends ClassA {
+			private Integer integerX = 1;
+			@Override
+			public String mqqc1() { return "MyLevel1Class1.mqqc1"; }
+			@Override
+			public String toString() {
+				String retorno = "["
+						+"[this.getClass().getCanonicalName()="+(this.getClass().getCanonicalName())+"]"
+						+"[getClass().getCanonicalName()="+(getClass().getCanonicalName())+"]"
+						+"[this.integerX="+(this.integerX)+"]"
+						+"[integerX="+(integerX)+"]"
+						+"[this.mqqc1()="+(this.mqqc1())+"]"
+						+"[mqqc1()="+(mqqc1())+"]"
+						+"[super.mqqc1()="+(super.mqqc1())+"]"
+						+"\n"+"]";
+				retorno = retorno.replaceAll("\\[", "\n\t"+"\\[");
+				return retorno;
+			}
+
+		}
+
 		MyLevel1Class1 myLevel1Class1 = new MyLevel1Class1();
-		//System.out.println("[myLevel1Class1]"+myLevel1Class1);
-		MyLevel1Class1.MyLevel2Class1 myLevel2Class1 = myLevel1Class1.new MyLevel2Class1();
-		//System.out.println("[myLevel2Class1]"+myLevel2Class1);
-		MyLevel1Class1.MyLevel2Class1.MyLevel3Class1 myLevel3Class1 = myLevel2Class1.new MyLevel3Class1();
-		System.out.println("[myLevel3Class1]"+myLevel3Class1);
+		System.out.println("[myLevel1Class1]"+myLevel1Class1);
+
+	}
+
+	public void qqc2(String[] args) {
+		System.out.println("Exe001.qqc2()");
+
+		class MyLevel1Class1 extends ClassA {
+			private Integer integerX = 1;
+			@Override
+			public String mqqc1() { return "MyLevel1Class1.mqqc1"; }
+			@Override
+			public String toString() {
+				String retorno = "["
+						+"[this.getClass().getCanonicalName()="+(this.getClass().getCanonicalName())+"]"
+						+"[getClass().getCanonicalName()="+(getClass().getCanonicalName())+"]"
+						+"[this.integerX="+(this.integerX)+"]"
+						+"[integerX="+(integerX)+"]"
+						+"[this.mqqc1()="+(this.mqqc1())+"]"
+						+"[mqqc1()="+(mqqc1())+"]"
+						+"[super.mqqc1()="+(super.mqqc1())+"]"
+						+"\n"+"]";
+				retorno = retorno.replaceAll("\\[", "\n\t"+"\\[");
+				return retorno;
+			}
+
+		}
+
+		MyLevel1Class1 myLevel1Class1 = new MyLevel1Class1();
+		System.out.println("[myLevel1Class1]"+myLevel1Class1);
+
 	}
 
 }

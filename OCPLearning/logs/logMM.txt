@@ -1,12 +1,27 @@
-2025-06-13T08:15:16.159
+2025-06-13T08:26:42.509
 <>
 Exe001.sm1()
 Exe001.im1()
-Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
-	No enclosing instance of the type MyLevel1Class1.MyLevel2Class2 is accessible in scope
-
-	at pkgs.pkgExes.MyLevel1Class1$MyLevel2Class1$MyLevel3Class1.toString(Exe001.java:66)
-	at java.lang.String.valueOf(String.java:2994)
-	at java.lang.StringBuilder.append(StringBuilder.java:137)
-	at pkgs.pkgExes.Exe001.im1(Exe001.java:147)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:124)
+Exe001.qqc1()
+[myLevel1Class1]
+	[
+	[this.getClass().getCanonicalName()=null]
+	[getClass().getCanonicalName()=null]
+	[this.integerX=1]
+	[integerX=1]
+	[this.mqqc1()=MyLevel1Class1.mqqc1]
+	[mqqc1()=MyLevel1Class1.mqqc1]
+	[super.mqqc1()=ClassA.mqqc1]
+]
+Exe001.qqc2()
+[myLevel1Class1]
+	[
+	[this.getClass().getCanonicalName()=null]
+	[getClass().getCanonicalName()=null]
+	[this.integerX=1]
+	[integerX=1]
+	[this.mqqc1()=MyLevel1Class1.mqqc1]
+	[mqqc1()=MyLevel1Class1.mqqc1]
+	[super.mqqc1()=ClassA.mqqc1]
+]
+</>
