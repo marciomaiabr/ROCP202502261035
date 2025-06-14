@@ -29,9 +29,12 @@ public class Exe001 {
 		System.out.println("Exe001.sm1()");
 	}
 
+	interface InterfaceA {};
+
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		interface interfaceA {};
+		InterfaceA interfaceA = new InterfaceA() {};
+		System.out.println(interfaceA);
 	}
 
 }
