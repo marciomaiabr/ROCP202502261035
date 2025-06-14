@@ -47,6 +47,7 @@ public class Exe001 {
 			public String mqqc1() { return "MyLevel1Class1.mqqc1"; }
 			@Override
 			public String toString() {
+				str = "z";
 				String retorno = "["
 						+"[this.getClass().getCanonicalName()="+(this.getClass().getCanonicalName())+"]"
 						+"[getClass().getCanonicalName()="+(getClass().getCanonicalName())+"]"
