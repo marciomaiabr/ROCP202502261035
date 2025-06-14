@@ -38,6 +38,7 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 		mqqc(new InterfaceA() {
+			public InterfaceA() {}//An anonymous class cannot have an explicitly declared constructor.//https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.9.5.1
 			@Override public String toString() {
 				return "[Anonymous class][from InterfaceA]";
 			}
