@@ -37,8 +37,14 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
+		Integer qqc = 7;
 		mqqc(new InterfaceA() {
-			public InterfaceA() {}//An anonymous class cannot have an explicitly declared constructor.//https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.9.5.1
+			//public InterfaceA() {}//An anonymous class cannot have an explicitly declared constructor.//https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.9.5.1
+			private Integer pqqc;
+			{
+				pqqc = qqc;
+				System.out.println("using initialization blocks as fake constructor receiving parameter [pqqc="+(pqqc)+"]");
+			}
 			@Override public String toString() {
 				return "[Anonymous class][from InterfaceA]";
 			}
