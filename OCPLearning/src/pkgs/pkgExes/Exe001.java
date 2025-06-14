@@ -36,10 +36,10 @@ public class Exe001 {
 		qqc1(args);
 	}
 
+	String str = "s";
+
 	public void qqc1(String[] args) {
 		System.out.println("Exe001.qqc1()");
-
-		String str = "s";
 
 		class MyLevel1Class1 extends ClassA {
 			private Integer integerX = 1;
