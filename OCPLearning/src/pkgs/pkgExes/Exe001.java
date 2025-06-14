@@ -31,7 +31,8 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		//System.out.println("[="+()+"]");
+		Object classeA = new Object() { @Override public String toString() { return "[Anonymous class][from Object][qqc()]"; } };
+		System.out.println(classeA);
 	}
 
 }
