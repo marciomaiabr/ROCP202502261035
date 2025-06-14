@@ -1,6 +1,8 @@
-2025-06-14T09:30:46.813
+2025-06-14T10:12:26.222
 <>
 Exe001.sm1()
-Exe001.im1()
-[Anonymous class][from Object][qqc()]
-</>
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	The member interface interfaceA can only be defined inside a top-level class or interface or in a static context
+
+	at pkgs.pkgExes.Exe001.im1(Exe001.java:34)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:16)
