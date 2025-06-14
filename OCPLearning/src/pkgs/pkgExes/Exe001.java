@@ -31,10 +31,17 @@ public class Exe001 {
 
 	interface InterfaceA {};
 
+	public void mqqc(InterfaceA pInterfaceA) {
+		System.out.println(pInterfaceA);
+	}
+
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		InterfaceA interfaceA = new InterfaceA() {};
-		System.out.println(interfaceA);
+		mqqc(new InterfaceA() {
+			@Override public String toString() {
+				return "[Anonymous class][from InterfaceA]";
+			}
+		});
 	}
 
 }
