@@ -1,17 +1,5 @@
-2025-06-14T08:44:51.636
+2025-06-14T09:16:34.537
 <>
 Exe001.sm1()
 Exe001.im1()
-Exe001.qqc1()
-[myLevel1Class1]
-	[
-	[this.getClass().getCanonicalName()=null]
-	[getClass().getCanonicalName()=null]
-	[this.integerX=1]
-	[integerX=1]
-	[this.mqqc1()=MyLevel1Class1.mqqc1]
-	[mqqc1()=MyLevel1Class1.mqqc1]
-	[super.mqqc1()=ClassA.mqqc1]
-	[str=z]
-]
 </>
