@@ -1,7 +1,5 @@
-2025-06-14T11:11:46.622
+2025-06-15T09:21:14.530
 <>
 Exe001.sm1()
 Exe001.im1()
-using initialization blocks as fake constructor receiving parameter [pqqc=7]
-[Anonymous class][from InterfaceA]
 </>
