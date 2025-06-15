@@ -1,6 +1,1 @@
-C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001$MyLevel2InstanceClass2.class
-C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001$MyLevel2StaticClass2.class
 C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001.class
-C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\MyLevel1Class1$MyLevel2InstanceClass1.class
-C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\MyLevel1Class1$MyLevel2StaticClass1.class
-C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\MyLevel1Class1.class
