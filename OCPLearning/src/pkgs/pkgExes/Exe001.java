@@ -2,6 +2,8 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
+interface ICalculadora { int calcula(int p1, int p2); }
+
 public class Exe001 {
 
 	static {
@@ -31,7 +33,27 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		//System.out.println("[="+()+"]");
+
+		ICalculadora calculadora = null;
+
+		calculadora = (n1, n2) -> n1 + n2;
+		System.out.println(calculadora.calcula(6,2));
+
+		calculadora = (n1, n2) -> n1 - n2;
+		System.out.println(calculadora.calcula(6,2));
+
+		System.out.println(multiplica((n1, n2) -> n1 * n2));
+
+		System.out.println(divide((n1, n2) -> n1 / n2));
+
+	}
+
+	private int multiplica(ICalculadora calculadora) {
+		return calculadora.calcula(6,2);
+	}
+
+	private int divide(ICalculadora calculadora) {
+		return calculadora.calcula(6,2);
 	}
 
 }
