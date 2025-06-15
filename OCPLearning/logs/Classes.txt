@@ -1,11 +1,6 @@
- O volume na unidade C n∆o tem nome.
- O N£mero de SÇrie do Volume Ç AE6E-CC14
-
- Pasta de C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes
-
-15/06/2025  09:21             1.377 Exe001.class
-               1 arquivo(s)          1.377 bytes
-
-     Total de Arquivos na Lista:
-               1 arquivo(s)          1.377 bytes
-               0 pasta(s)   71.846.170.624 bytes dispon°veis
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001$MyLevel2InstanceClass2.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001$MyLevel2StaticClass2.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\MyLevel1Class1$MyLevel2InstanceClass1.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\MyLevel1Class1$MyLevel2StaticClass1.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\MyLevel1Class1.class
