@@ -2,7 +2,7 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
-abstract class ICalculadora { abstract int calcula(int p1, int p2); }
+interface ICalculadora { int calcula(int p1, int p2); }
 
 public class Exe001 {
 
