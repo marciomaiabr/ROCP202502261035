@@ -1,9 +1,13 @@
-2025-06-16T07:50:40.579
+2025-06-16T07:53:37.166
 <>
 Exe001.sm1()
-Exe001.im1()
-8
-4
-12
-3
-</>
+Exception in thread "main" java.lang.Error: Unresolved compilation problems: 
+	The target type of this expression must be a functional interface
+	The target type of this expression must be a functional interface
+	The method multiplica(ICalculadora) in the type Exe001 is not applicable for the arguments ((<no type> n1, <no type> n2) -> {})
+	The target type of this expression must be a functional interface
+	The method divide(ICalculadora) in the type Exe001 is not applicable for the arguments ((<no type> n1, <no type> n2) -> {})
+	The target type of this expression must be a functional interface
+
+	at pkgs.pkgExes.Exe001.im1(Exe001.java:39)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:18)
