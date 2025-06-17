@@ -2,7 +2,14 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
-interface ICalculadora { int calcula(int p1, int p2); }
+interface IQqc1 {  }
+//@FunctionalInterface interface IQqc2 {  }//compile error//Invalid '@FunctionalInterface' annotation; IQqc2 is not a functional interface
+@FunctionalInterface interface IQqc3 { void mQqc(); }
+//@FunctionalInterface interface IQqc4 { default void mQqc() {}; }//compile error//Invalid '@FunctionalInterface' annotation; IQqc4 is not a functional interface
+//@FunctionalInterface interface IQqc5 { default void mQqc() {}; static void mQqc2() {}; }//compile error//Invalid '@FunctionalInterface' annotation; IQqc5 is not a functional interface
+@FunctionalInterface interface IQqc6 { default void mQqc() {}; static void mQqc2() {}; void mQqc3(); }
+//@FunctionalInterface interface IQqc7 { boolean equals2(Object obj); void mQqc(); }//compile error//Invalid '@FunctionalInterface' annotation; IQqc7 is not a functional interface
+@FunctionalInterface interface IQqc8 { boolean equals(Object obj); void mQqc(); }
 
 public class Exe001 {
 
@@ -33,27 +40,7 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-
-		ICalculadora calculadora = null;
-
-		calculadora = (n1, n2) -> n1 + n2;
-		System.out.println(calculadora.calcula(6,2));
-
-		calculadora = (n1, n2) -> n1 - n2;
-		System.out.println(calculadora.calcula(6,2));
-
-		System.out.println(multiplica((n1, n2) -> n1 * n2));
-
-		System.out.println(divide((n1, n2) -> n1 / n2));
-
-	}
-
-	private int multiplica(ICalculadora calculadora) {
-		return calculadora.calcula(6,2);
-	}
-
-	private int divide(ICalculadora calculadora) {
-		return calculadora.calcula(6,2);
+		//System.out.println("[="+()+"]");
 	}
 
 }

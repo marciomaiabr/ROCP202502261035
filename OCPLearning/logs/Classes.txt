@@ -1,2 +1,5 @@
 C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001.class
-C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\ICalculadora.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\IQqc1.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\IQqc3.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\IQqc6.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\IQqc8.class
