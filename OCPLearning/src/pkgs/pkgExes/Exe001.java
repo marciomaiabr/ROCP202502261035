@@ -36,13 +36,20 @@ public class Exe001 {
 		System.out.println("Exe001.im1()");
 		Supplier<Connection> fornecedorDeConnection = () -> {
 			try {
-				Class.forName("").newInstance();
+				Class.forName("sun.jdbc.odbc.JdbcOdbcDriver").newInstance();
 				return DriverManager.getConnection("");
 			} catch (Exception e) {}
 			return null;
 		};
-		System.out.println("[fornecedorDeConnection="+(fornecedorDeConnection)+"]");
-		System.out.println("[fornecedorDeConnection.get()="+(fornecedorDeConnection.get())+"]");
+
+		Consumer<Connection> consumidorDeConnection = (Connection connection) -> {
+			if(connection == null)
+				System.out.println("Connection not initialized");
+			else
+				System.out.println("Connection initialized");
+		};
+		System.out.println("[consumidorDeConnection="+(consumidorDeConnection)+"]");
+		consumidorDeConnection.accept(fornecedorDeConnection.get());
 	}
 
 }
