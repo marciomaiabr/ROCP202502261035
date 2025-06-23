@@ -1,15 +1,9 @@
 package pkgs.pkgExes;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.time.LocalDateTime;
-
-interface IQqc1 {  }
-//@FunctionalInterface interface IQqc2 {  }//compile error//Invalid '@FunctionalInterface' annotation; IQqc2 is not a functional interface
-@FunctionalInterface interface IQqc3 { void mQqc(); }
-//@FunctionalInterface interface IQqc4 { default void mQqc() {}; }//compile error//Invalid '@FunctionalInterface' annotation; IQqc4 is not a functional interface
-//@FunctionalInterface interface IQqc5 { default void mQqc() {}; static void mQqc2() {}; }//compile error//Invalid '@FunctionalInterface' annotation; IQqc5 is not a functional interface
-@FunctionalInterface interface IQqc6 { default void mQqc() {}; static void mQqc2() {}; void mQqc3(); }
-//@FunctionalInterface interface IQqc7 { boolean equals2(Object obj); void mQqc(); }//compile error//Invalid '@FunctionalInterface' annotation; IQqc7 is not a functional interface
-@FunctionalInterface interface IQqc8 { boolean equals(Object obj); void mQqc(); }
+import java.util.function.*;
 
 public class Exe001 {
 
@@ -40,7 +34,15 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		//System.out.println("[="+()+"]");
+		Supplier<Connection> fornecedorDeConnection = () -> {
+			try {
+				Class.forName("").newInstance();
+				return DriverManager.getConnection("");
+			} catch (Exception e) {}
+			return null;
+		};
+		System.out.println("[fornecedorDeConnection="+(fornecedorDeConnection)+"]");
+		System.out.println("[fornecedorDeConnection.get()="+(fornecedorDeConnection.get())+"]");
 	}
 
 }
