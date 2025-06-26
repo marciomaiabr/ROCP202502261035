@@ -2,6 +2,8 @@ package pkgs.pkgExes;
 
 import java.sql.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.*;
 
 public class Exe001 {
@@ -33,22 +35,36 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		Supplier<Connection> fornecedorDeConnection = () -> {
-			try {
-				Class.forName("sun.jdbc.odbc.JdbcOdbcDriver").newInstance();
-				return DriverManager.getConnection("");
-			} catch (Exception e) {}
-			return null;
-		};
 
-		Consumer<Connection> consumidorDeConnection = (Connection connection) -> {
+		Consumer<Connection> consumidorDeConnection1 = (Connection connection) -> {
+			System.out.println("consumidorDeConnection1...");
 			if(connection == null)
 				System.out.println("Connection not initialized");
 			else
 				System.out.println("Connection initialized");
 		};
-		System.out.println("[consumidorDeConnection="+(consumidorDeConnection)+"]");
-		consumidorDeConnection.accept(fornecedorDeConnection.get());
+
+		Consumer<Connection> consumidorDeConnection2 = (Connection connection) -> {
+			System.out.println("consumidorDeConnection2...");
+			if(connection == null)
+				System.out.println("Connection not initialized");
+			else
+				System.out.println("Connection initialized");
+		};
+
+		Consumer<Connection> consumidorDeConnection3 = (Connection connection) -> {
+			System.out.println("consumidorDeConnection3...");
+			if(connection == null)
+				System.out.println("Connection not initialized");
+			else
+				System.out.println("Connection initialized");
+		};
+
+		List<Connection> list = new ArrayList<>();
+		Connection connection = null;
+		list.add(connection);
+		list.forEach(consumidorDeConnection1.andThen(consumidorDeConnection2).andThen(consumidorDeConnection3));
+
 	}
 
 }

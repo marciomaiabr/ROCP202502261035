@@ -1,7 +1,11 @@
-2025-06-23T08:44:07.691
+2025-06-26T08:40:26.281
 <>
 Exe001.sm1()
 Exe001.im1()
-[consumidorDeConnection=pkgs.pkgExes.Exe001$$Lambda$5/1747585824@3d075dc0]
+consumidorDeConnection1...
+Connection not initialized
+consumidorDeConnection2...
+Connection not initialized
+consumidorDeConnection3...
 Connection not initialized
 </>
