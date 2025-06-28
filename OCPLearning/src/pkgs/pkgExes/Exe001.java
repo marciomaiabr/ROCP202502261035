@@ -1,10 +1,11 @@
 package pkgs.pkgExes;
 
-import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.*;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class Exe001 {
 
@@ -36,34 +37,29 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		Consumer<Connection> consumidorDeConnection1 = (Connection connection) -> {
-			System.out.println("consumidorDeConnection1...");
-			if(connection == null)
-				System.out.println("Connection not initialized");
-			else
-				System.out.println("Connection initialized");
-		};
+		List<Integer> numeros = new ArrayList<>();
+		for (int i = 0; i <= 15; i++)
+			numeros.add(i);
 
-		Consumer<Connection> consumidorDeConnection2 = (Connection connection) -> {
-			System.out.println("consumidorDeConnection2...");
-			if(connection == null)
-				System.out.println("Connection not initialized");
-			else
-				System.out.println("Connection initialized");
-		};
+		System.out.println("Listagem completa\n\t"+numeros);
 
-		Consumer<Connection> consumidorDeConnection3 = (Connection connection) -> {
-			System.out.println("consumidorDeConnection3...");
-			if(connection == null)
-				System.out.println("Connection not initialized");
-			else
-				System.out.println("Connection initialized");
-		};
+		Predicate<Integer> predicateMenorIgualTres = numero -> numero <= 2;
+		numeros.removeIf(predicateMenorIgualTres);
+		System.out.println("Exemplo usando Predicate\n\t"+numeros);
 
-		List<Connection> list = new ArrayList<>();
-		Connection connection = null;
-		list.add(connection);
-		list.forEach(consumidorDeConnection1.andThen(consumidorDeConnection2).andThen(consumidorDeConnection3));
+		Predicate<Integer> predicateMenorIgualCinco = numero -> numero <= 5;
+		Predicate<Integer> predicateMaiorQueDez = numero -> numero > 10;
+		numeros.removeIf(predicateMenorIgualCinco.or(predicateMaiorQueDez));
+		System.out.println("Exemplo usando Predicate com \"or\" \n\t"+numeros);
+
+		Predicate<Integer> predicateMenorIgualNove = numero -> numero <= 9;
+		Predicate<Integer> predicateMaiorQueSeis = numero -> numero > 6;
+		numeros.removeIf(predicateMaiorQueSeis.and(predicateMenorIgualNove));
+		System.out.println("Exemplo usando Predicate com \"and\" \n\t"+numeros);
+
+		Predicate<Integer> predicateIgualDez = numero -> numero == 10;
+		numeros.removeIf(predicateIgualDez.negate());
+		System.out.println("Exemplo usando Predicate com \"negate\" \n\t"+numeros);
 
 	}
 

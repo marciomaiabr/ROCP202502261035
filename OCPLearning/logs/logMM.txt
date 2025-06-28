@@ -1,11 +1,15 @@
-2025-06-26T08:40:26.281
+2025-06-28T09:53:05.348
 <>
 Exe001.sm1()
 Exe001.im1()
-consumidorDeConnection1...
-Connection not initialized
-consumidorDeConnection2...
-Connection not initialized
-consumidorDeConnection3...
-Connection not initialized
+Listagem completa
+	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+Exemplo usando Predicate
+	[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+Exemplo usando Predicate com "or" 
+	[6, 7, 8, 9, 10]
+Exemplo usando Predicate com "and" 
+	[6, 10]
+Exemplo usando Predicate com "negate" 
+	[10]
 </>
