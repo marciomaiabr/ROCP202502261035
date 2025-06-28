@@ -37,29 +37,37 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		List<Integer> numeros = new ArrayList<>();
-		for (int i = 0; i <= 15; i++)
-			numeros.add(i);
+		Supplier<List<String[]>> fornecePessoas = () -> {
+			List<String[]> pessoas = new ArrayList<>();
+			pessoas.add("Adriana Fatima Dos Santos Goncalves De Souza;F;15".split(";"));
+			pessoas.add("Brenda Cruz Ribeiro;F;18".split(";"));
+			pessoas.add("Cristiane Barros;F;21".split(";"));
+			pessoas.add("Karla Gomes Alvares Dias;F;17".split(";"));
+			pessoas.add("Laianny Carvalho Varao;F;31".split(";"));
+			pessoas.add("Manuella Castro;F;18".split(";"));
+			pessoas.add("David Ferreira;M;14".split(";"));
+			pessoas.add("Eduardo Garcia;M;21".split(";"));
+			pessoas.add("Reinaldo Reis;M;40".split(";"));
+			pessoas.add("Wander Rodrigues;M;19".split(";"));
+			return pessoas;
+		};
 
-		System.out.println("Listagem completa\n\t"+numeros);
+		Consumer<String[]> printNames = pessoa -> {
+			System.out.println('\t'+pessoa[0]);
+		};
 
-		Predicate<Integer> predicateMenorIgualTres = numero -> numero <= 2;
-		numeros.removeIf(predicateMenorIgualTres);
-		System.out.println("Exemplo usando Predicate\n\t"+numeros);
+		System.out.println("\nListagem completa:");
+		fornecePessoas.get().forEach(printNames);
 
-		Predicate<Integer> predicateMenorIgualCinco = numero -> numero <= 5;
-		Predicate<Integer> predicateMaiorQueDez = numero -> numero > 10;
-		numeros.removeIf(predicateMenorIgualCinco.or(predicateMaiorQueDez));
-		System.out.println("Exemplo usando Predicate com \"or\" \n\t"+numeros);
+		Supplier<List<String[]>> forneceMulheres = () -> {
+			Predicate<String[]> predicateMasculino = pessoa -> pessoa[1].equals("M");
+			List<String[]> pessoas = fornecePessoas.get();
+			pessoas.removeIf(predicateMasculino);
+			return pessoas;
+		};
 
-		Predicate<Integer> predicateMenorIgualNove = numero -> numero <= 9;
-		Predicate<Integer> predicateMaiorQueSeis = numero -> numero > 6;
-		numeros.removeIf(predicateMaiorQueSeis.and(predicateMenorIgualNove));
-		System.out.println("Exemplo usando Predicate com \"and\" \n\t"+numeros);
-
-		Predicate<Integer> predicateIgualDez = numero -> numero == 10;
-		numeros.removeIf(predicateIgualDez.negate());
-		System.out.println("Exemplo usando Predicate com \"negate\" \n\t"+numeros);
+		System.out.println("\nSomente sexo feminino:");
+		forneceMulheres.get().forEach(printNames);
 
 	}
 
