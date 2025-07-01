@@ -7,6 +7,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 public class Exe001 {
 
@@ -38,7 +39,7 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		Function<Integer,Integer> elevaAoQuadrado = numero -> numero*numero;
+		UnaryOperator<Integer> elevaAoQuadrado = numero -> numero*numero;
 
 		System.out.println(elevaAoQuadrado.apply(2));
 
