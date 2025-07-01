@@ -39,8 +39,12 @@ public class Exe001 {
 		nomes.add("Andréa Anchieta");
 		nomes.add("Diana Campos");
 
-		nomes.forEach(System.out::println);
+		nomes.forEach(Exe001::myPrintln);
 
+	}
+
+	private static void myPrintln(String str) {
+		System.out.println("Meu nome é: "+str);
 	}
 
 }
