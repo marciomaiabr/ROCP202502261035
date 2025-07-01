@@ -3,11 +3,6 @@ package pkgs.pkgExes;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-import java.util.function.UnaryOperator;
 
 public class Exe001 {
 
@@ -39,9 +34,12 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		UnaryOperator<Integer> elevaAoQuadrado = numero -> numero*numero;
+		List<String> nomes = new ArrayList<>();
+		nomes.add("Amanda Dorneles");
+		nomes.add("Andréa Anchieta");
+		nomes.add("Diana Campos");
 
-		System.out.println(elevaAoQuadrado.apply(2));
+		nomes.forEach(System.out::println);
 
 	}
 
