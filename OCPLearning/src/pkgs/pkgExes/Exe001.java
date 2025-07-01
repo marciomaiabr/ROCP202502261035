@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
@@ -37,37 +38,9 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		Supplier<List<String[]>> fornecePessoas = () -> {
-			List<String[]> pessoas = new ArrayList<>();
-			pessoas.add("Adriana Fatima Dos Santos Goncalves De Souza;F;15".split(";"));
-			pessoas.add("Brenda Cruz Ribeiro;F;18".split(";"));
-			pessoas.add("Cristiane Barros;F;21".split(";"));
-			pessoas.add("Karla Gomes Alvares Dias;F;17".split(";"));
-			pessoas.add("Laianny Carvalho Varao;F;31".split(";"));
-			pessoas.add("Manuella Castro;F;18".split(";"));
-			pessoas.add("David Ferreira;M;14".split(";"));
-			pessoas.add("Eduardo Garcia;M;21".split(";"));
-			pessoas.add("Reinaldo Reis;M;40".split(";"));
-			pessoas.add("Wander Rodrigues;M;19".split(";"));
-			return pessoas;
-		};
+		Function<Integer,Integer> elevaAoQuadrado = numero -> numero*numero;
 
-		Consumer<String[]> printNames = pessoa -> {
-			System.out.println('\t'+pessoa[0]);
-		};
-
-		System.out.println("\nListagem completa:");
-		fornecePessoas.get().forEach(printNames);
-
-		Supplier<List<String[]>> forneceMulheres = () -> {
-			Predicate<String[]> predicateMasculino = pessoa -> pessoa[1].equals("M");
-			List<String[]> pessoas = fornecePessoas.get();
-			pessoas.removeIf(predicateMasculino);
-			return pessoas;
-		};
-
-		System.out.println("\nSomente sexo feminino:");
-		forneceMulheres.get().forEach(printNames);
+		System.out.println(elevaAoQuadrado.apply(2));
 
 	}
 

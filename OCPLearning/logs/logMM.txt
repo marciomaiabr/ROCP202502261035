@@ -1,25 +1,6 @@
-2025-06-28T10:43:51.640
+2025-07-01T07:42:54.942
 <>
 Exe001.sm1()
 Exe001.im1()
-
-Listagem completa:
-	Adriana Fatima Dos Santos Goncalves De Souza
-	Brenda Cruz Ribeiro
-	Cristiane Barros
-	Karla Gomes Alvares Dias
-	Laianny Carvalho Varao
-	Manuella Castro
-	David Ferreira
-	Eduardo Garcia
-	Reinaldo Reis
-	Wander Rodrigues
-
-Somente sexo feminino:
-	Adriana Fatima Dos Santos Goncalves De Souza
-	Brenda Cruz Ribeiro
-	Cristiane Barros
-	Karla Gomes Alvares Dias
-	Laianny Carvalho Varao
-	Manuella Castro
+4
 </>
