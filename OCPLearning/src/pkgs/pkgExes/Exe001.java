@@ -2,6 +2,7 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 public class Exe001 {
@@ -34,11 +35,12 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 		Integer [] myNums = {1,2,3};
-		Stream<Integer> myStream = Arrays.stream(myNums);
+		Supplier<Stream<Integer>> forneceStream1 = () -> Arrays.stream(myNums);
+		Stream<Integer> myStream = forneceStream1.get();
 		System.out.println(myStream);
 		Stream<Integer> myStream2 = myStream.filter(i -> i > 1);
 		System.out.println(myStream2);
-		myStream = Arrays.stream(myNums);
+		myStream = forneceStream1.get();
 		System.out.println(myStream);
 		Stream<Integer> myStream3 = myStream.filter(i -> i > 2);
 		System.out.println(myStream3);
