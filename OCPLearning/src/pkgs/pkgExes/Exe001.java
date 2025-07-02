@@ -1,8 +1,7 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Exe001 {
 
@@ -33,18 +32,6 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-
-		List<String> nomes = new ArrayList<>();
-		nomes.add("Amanda Dorneles");
-		nomes.add("Andréa Anchieta");
-		nomes.add("Diana Campos");
-
-		nomes.forEach(Exe001::myPrintln);
-
-	}
-
-	private static void myPrintln(String str) {
-		System.out.println("Meu nome é: "+str);
 	}
 
 }
