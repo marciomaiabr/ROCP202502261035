@@ -2,6 +2,7 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Stream;
 
 public class Exe001 {
 
@@ -32,6 +33,10 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
+		Integer [] myNums = {1,2,3};
+		Stream<Integer> myStream = Arrays.stream(myNums);
+		System.out.println(myStream);
+		System.out.println(myStream.count());
 	}
 
 }
