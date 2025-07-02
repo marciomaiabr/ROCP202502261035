@@ -1,7 +1,14 @@
-2025-07-02T08:21:41.967
+2025-07-02T08:22:49.817
 <>
 Exe001.sm1()
 Exe001.im1()
 java.util.stream.ReferencePipeline$Head@e9e54c2
 3
-</>
+java.lang.IllegalStateException: stream has already been operated upon or closed
+	at java.util.stream.AbstractPipeline.<init>(AbstractPipeline.java:203)
+	at java.util.stream.ReferencePipeline.<init>(ReferencePipeline.java:94)
+	at java.util.stream.ReferencePipeline$StatelessOp.<init>(ReferencePipeline.java:618)
+	at java.util.stream.ReferencePipeline$2.<init>(ReferencePipeline.java:163)
+	at java.util.stream.ReferencePipeline.filter(ReferencePipeline.java:162)
+	at pkgs.pkgExes.Exe001.im1(Exe001.java:40)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:18)
