@@ -36,7 +36,7 @@ public class Exe001 {
 		Integer [] myNums = {1,2,3};
 		Stream<Integer> myStream = Arrays.stream(myNums);
 		System.out.println(myStream);
-		System.out.println(myStream.count());
+		//System.out.println(myStream.count());
 		System.out.println(myStream.filter(i -> i >1).count());
 	}
 
