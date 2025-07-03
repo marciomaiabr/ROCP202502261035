@@ -34,8 +34,7 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		Integer [] myNums = {1,2,3};
-		Supplier<Stream<Integer>> forneceStream1 = () -> Arrays.stream(myNums);
+		Supplier<Stream<Integer>> forneceStream1 = () -> Arrays.asList(1,2,3).stream();
 		Stream<Integer> myStream = forneceStream1.get();
 		System.out.println(myStream);
 		Stream<Integer> myStream2 = myStream.filter(i -> i > 1);
