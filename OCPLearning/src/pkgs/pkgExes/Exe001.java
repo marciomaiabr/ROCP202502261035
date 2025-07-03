@@ -35,14 +35,7 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		Map<String, Integer> maps = new HashMap<>();
-		maps.put("Ana", 17);
-		maps.put("Paula", 18);
-		maps.put("Karina", 19);
-		Set<Entry<String, Integer>> set = maps.entrySet();
-		Supplier<Stream<Entry<String, Integer>>> forneceStream = () -> set.stream();
-		System.out.println(forneceStream.get().filter(d -> d.getValue() >= 18).count());
-		System.out.println(forneceStream.get().filter(d -> d.getKey().toLowerCase().startsWith("a")).count());
+		System.out.println(Stream.of("Ana","Paula","Karina").filter(str -> str.toLowerCase().startsWith("a")).count());
 	}
 
 }
