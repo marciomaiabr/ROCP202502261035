@@ -2,6 +2,7 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.Map.Entry;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -34,16 +35,11 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		Supplier<Stream<Integer>> forneceStream1 = () -> Arrays.asList(1,2,3).stream();
-		Stream<Integer> myStream = forneceStream1.get();
-		System.out.println(myStream);
-		Stream<Integer> myStream2 = myStream.filter(i -> i > 1);
-		System.out.println(myStream2);
-		myStream = forneceStream1.get();
-		System.out.println(myStream);
-		Stream<Integer> myStream3 = myStream.filter(i -> i > 2);
-		System.out.println(myStream3);
-		System.out.println(myStream3.count());
+		Map<String, Integer> maps = new HashMap<>();
+		maps.put("Ana", 17);
+		maps.put("Paula", 18);
+		maps.put("Karina", 19);
+		System.out.println(maps.entrySet().stream().filter(d -> d.getValue() >= 18).count());
 	}
 
 }
