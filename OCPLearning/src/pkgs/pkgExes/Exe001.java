@@ -39,7 +39,8 @@ public class Exe001 {
 		maps.put("Ana", 17);
 		maps.put("Paula", 18);
 		maps.put("Karina", 19);
-		System.out.println(maps.entrySet().stream().filter(d -> d.getValue() >= 18).count());
+		Set<Entry<String, Integer>> set = maps.entrySet();
+		System.out.println(set.stream().filter(d -> d.getValue() >= 18).count());
 	}
 
 }
