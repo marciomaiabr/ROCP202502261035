@@ -40,7 +40,9 @@ public class Exe001 {
 		maps.put("Paula", 18);
 		maps.put("Karina", 19);
 		Set<Entry<String, Integer>> set = maps.entrySet();
-		System.out.println(set.stream().filter(d -> d.getValue() >= 18).count());
+		Supplier<Stream<Entry<String, Integer>>> forneceStream = () -> set.stream();
+		System.out.println(forneceStream.get().filter(d -> d.getValue() >= 18).count());
+		System.out.println(forneceStream.get().filter(d -> d.getKey().toLowerCase().startsWith("a")).count());
 	}
 
 }
