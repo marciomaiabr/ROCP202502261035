@@ -1,0 +1,12 @@
+1;Aline Sharlon Ramos;F;15
+2;Ana Paula Soares Fernandes Lamha;F;17
+3;Andréa Anchieta;F;21
+4;Carla Mendes;F;17
+5;Cristiane Barros;F;23
+6;Edjane Gonçalves;F;18
+7;Alerrandro Guimaraes;M;17
+8;André Furtado;M;18
+9;Antônio Neto;M;41
+10;Carlos Eduardo Borges da Silva;M;14
+11;Chris Coper;M;38
+12;Eduardo Garcia;M;18

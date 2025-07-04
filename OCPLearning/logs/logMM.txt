@@ -1,6 +1,18 @@
-2025-07-04T07:01:02.140
+2025-07-04T08:16:40.089
 <>
 Exe001.sm1()
 Exe001.im1()
-file:/C:/Users/Administrador/git/ROCP202502261035/OCPLearning/bin/
+Exe001.loadPessoas()
+Pessoa [id=1, nome=Aline Sharlon Ramos, sexo=F, idade=15]
+Pessoa [id=2, nome=Ana Paula Soares Fernandes Lamha, sexo=F, idade=17]
+Pessoa [id=3, nome=Andréa Anchieta, sexo=F, idade=21]
+Pessoa [id=4, nome=Carla Mendes, sexo=F, idade=17]
+Pessoa [id=5, nome=Cristiane Barros, sexo=F, idade=23]
+Pessoa [id=6, nome=Edjane Gonçalves, sexo=F, idade=18]
+Pessoa [id=7, nome=Alerrandro Guimaraes, sexo=M, idade=17]
+Pessoa [id=8, nome=André Furtado, sexo=M, idade=18]
+Pessoa [id=9, nome=Antônio Neto, sexo=M, idade=41]
+Pessoa [id=10, nome=Carlos Eduardo Borges da Silva, sexo=M, idade=14]
+Pessoa [id=11, nome=Chris Coper, sexo=M, idade=38]
+Pessoa [id=12, nome=Eduardo Garcia, sexo=M, idade=18]
 </>
