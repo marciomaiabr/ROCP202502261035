@@ -1,5 +1,8 @@
 package pkgs.pkgExes;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.Map.Entry;
@@ -35,7 +38,11 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		System.out.println(Stream.of("Ana","Paula","Karina").filter(str -> str.toLowerCase().startsWith("a")).count());
+		try {
+			System.out.println(getClass().getResource("/").toURI());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
