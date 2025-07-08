@@ -1,18 +1,10 @@
-2025-07-04T08:27:07.323
+2025-07-08T07:34:28.292
 <>
 Exe001.sm1()
 Exe001.im1()
-Exe001.loadPessoas()
-Pessoa [id=1, nome=Aline Sharlon Ramos, sexo=F, idade=15]
-Pessoa [id=2, nome=Ana Paula Soares Fernandes Lamha, sexo=F, idade=17]
-Pessoa [id=3, nome=Andréa Anchieta, sexo=F, idade=21]
-Pessoa [id=4, nome=Carla Mendes, sexo=F, idade=17]
-Pessoa [id=5, nome=Cristiane Barros, sexo=F, idade=23]
-Pessoa [id=6, nome=Edjane Gonçalves, sexo=F, idade=18]
-Pessoa [id=7, nome=Alerrandro Guimaraes, sexo=M, idade=17]
-Pessoa [id=8, nome=André Furtado, sexo=M, idade=18]
-Pessoa [id=9, nome=Antônio Neto, sexo=M, idade=41]
-Pessoa [id=10, nome=Carlos Eduardo Borges da Silva, sexo=M, idade=14]
-Pessoa [id=11, nome=Chris Coper, sexo=M, idade=38]
-Pessoa [id=12, nome=Eduardo Garcia, sexo=M, idade=18]
+0.0
+0.5
+1.0
+1.5
+2.0
 </>
