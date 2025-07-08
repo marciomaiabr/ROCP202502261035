@@ -2,6 +2,7 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 import java.util.stream.DoubleStream;
+import java.util.stream.Stream;
 
 public class Exe001 {
 
@@ -34,6 +35,9 @@ public class Exe001 {
 		System.out.println("Exe001.im1()");
 		DoubleStream ds = DoubleStream.of(0,0.5,1,1.5,2);
 		ds.forEach(System.out::println);
+		Stream<Double> sd = Stream.of(new Double(0d),new Double(0.5),null,new Double(1),new Double(1.5),new Double(2));
+		sd.forEach(System.out::println);
+		//ds = sd;//compile error:Type mismatch: cannot convert from Stream<Double> to DoubleStream
 	}
 
 }
