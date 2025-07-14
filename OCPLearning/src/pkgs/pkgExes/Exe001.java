@@ -72,7 +72,8 @@ public class Exe001 {
 		//System.out.println("[="+(avg.getAsDouble())+"]");
 		//System.out.println("[="+(avg.isPresent())+"]");
 
-		System.out.println(Stream.of(1,2,3,4,5).reduce((a,b)->a+b).get());
+		Integer i = Stream.of(1,2,3,4,5).reduce(new Integer(100), (a,b)->a+b);
+		System.out.println(i);
 		//Stream<Integer> stream = Arrays.stream(1,2,3,4,5).asList();
 
 	}
