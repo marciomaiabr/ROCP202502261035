@@ -1,15 +1,6 @@
-2025-07-14T07:55:16.929
+2025-07-14T08:09:10.758
 <>
 Exe001.sm1()
 Exe001.im1()
-Reading [year=2017, month=1, day=1, value=405.91]
-Reading [year=2017, month=1, day=8, value=405.98]
-Reading [year=2017, month=1, day=15, value=406.14]
-Reading [year=2017, month=1, day=22, value=406.48]
-Reading [year=2017, month=1, day=29, value=406.2]
-Reading [year=2017, month=2, day=5, value=407.12]
-Reading [year=2017, month=2, day=12, value=406.03]
-[=OptionalDouble[406.2125]]
-[=406.2125]
-[=true]
+15
 </>

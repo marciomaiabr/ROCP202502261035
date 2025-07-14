@@ -67,10 +67,14 @@ public class Exe001 {
 		);
 		//readings.stream().map(r -> r.value).filter(v -> v >= 406 && v <= 407).average();//compile error//The method average() is undefined for the type Stream<Double>
 		//System.out.println(readings.stream().mapToDouble(r -> r.value).filter(v -> v >= 1000).average().getAsDouble());//java.util.NoSuchElementException: No value present
-		OptionalDouble avg = readings.stream().peek(v -> System.out.println(v)).mapToDouble(r -> r.value).filter(v -> v >= 406 && v <= 407).average();
-		System.out.println("[="+(avg)+"]");
-		System.out.println("[="+(avg.getAsDouble())+"]");
-		System.out.println("[="+(avg.isPresent())+"]");
+		//OptionalDouble avg = readings.stream().peek(v -> System.out.println(v)).mapToDouble(r -> r.value).filter(v -> v >= 406 && v <= 407).average();
+		//System.out.println("[="+(avg)+"]");
+		//System.out.println("[="+(avg.getAsDouble())+"]");
+		//System.out.println("[="+(avg.isPresent())+"]");
+
+		System.out.println(Stream.of(1,2,3,4,5).reduce((a,b)->a+b).get());
+		//Stream<Integer> stream = Arrays.stream(1,2,3,4,5).asList();
+
 	}
 
 }
