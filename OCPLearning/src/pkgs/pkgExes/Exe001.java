@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.function.Supplier;
 import java.util.stream.DoubleStream;
@@ -65,17 +66,12 @@ public class Exe001 {
 				new Reading(2017, 2, 5, 407.12),
 				new Reading(2017, 2, 12, 406.03)
 		);
-		//readings.stream().map(r -> r.value).filter(v -> v >= 406 && v <= 407).average();//compile error//The method average() is undefined for the type Stream<Double>
-		//System.out.println(readings.stream().mapToDouble(r -> r.value).filter(v -> v >= 1000).average().getAsDouble());//java.util.NoSuchElementException: No value present
-		//OptionalDouble avg = readings.stream().peek(v -> System.out.println(v)).mapToDouble(r -> r.value).filter(v -> v >= 406 && v <= 407).average();
-		//System.out.println("[="+(avg)+"]");
-		//System.out.println("[="+(avg.getAsDouble())+"]");
-		//System.out.println("[="+(avg.isPresent())+"]");
-
-		Integer i = Stream.of(1,2,3,4,5).reduce(new Integer(100), (a,b)->a+b);
-		System.out.println(i);
-		//Stream<Integer> stream = Arrays.stream(1,2,3,4,5).asList();
-
+		Optional<Reading> optional1 = Optional.of(new Reading(2025, 7, 10, 7.39));
+		optional1.ifPresent(optional1V -> System.out.println("[optional1V="+(optional1V)+"]"));
+		//Optional<Reading> optional2 = Optional.of(null);//NullPointerException
+		//optional2.ifPresent(optional2V -> System.out.println("[optional2V="+(optional2V)+"]"));
+		Optional<Reading> optional3 = Optional.ofNullable(null);
+		optional3.ifPresent(optional3V -> System.out.println("[optional3V="+(optional3V)+"]"));
 	}
 
 }
