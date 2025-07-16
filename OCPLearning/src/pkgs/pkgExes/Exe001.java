@@ -11,22 +11,45 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-class Reading {
-	int year;
-	int month;
-	int day;
-	double value;
-	public Reading() {
-		super();
+class Dog {
+    private String name;
+    private int age;
+    private int weight;
+
+    public Dog(String name, int weight, int age) {
+        this.name = name; this.weight = weight; this.age = age;
+    }
+
+    public String getName() {
+		return name;
 	}
-	public Reading(int year, int month, int day, double value) {
-		super();this.year = year;this.month = month;this.day = day;this.value = value;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	@Override
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
 	public String toString() {
-		return "Reading [year=" + year + ", month=" + month + ", day=" + day + ", value=" + value + "]";
-	}
+        return this.name + " is " + this.age + " years old and weighs "
+            + this.weight + " pounds";
+    }
 }
+
 
 public class Exe001 {
 
@@ -57,25 +80,14 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		List<Reading> readings = Arrays.asList (
-				new Reading(2017, 1, 1, 405.91),
-				new Reading(2017, 1, 8, 405.98),
-				new Reading(2017, 1, 15, 406.14),
-				new Reading(2017, 1, 22, 406.48),
-				new Reading(2017, 1, 29, 406.20),
-				new Reading(2017, 2, 5, 407.12),
-				new Reading(2017, 2, 12, 406.03)
-		);
-		Optional<Reading> optional1 = Optional.of(new Reading(2025, 7, 10, 7.39));
-		optional1.ifPresent(optional1V -> System.out.println("[optional1V="+(optional1V)+"]"));
-		//Optional<Reading> optional2 = Optional.of(null);//NullPointerException
-		//optional2.ifPresent(optional2V -> System.out.println("[optional2V="+(optional2V)+"]"));
-		Optional<Reading> optional3 = Optional.ofNullable(null);
-		optional3.ifPresent(optional3V -> System.out.println("[optional3V="+(optional3V)+"]"));
+		Integer [] arr = new Integer [100];
+		System.out.println(Stream.of(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15).filter(v -> {System.out.println("[filter1][v="+(v)+"]"); return v >=3;}).filter(v -> {System.out.println("[filter2][v="+(v)+"]"); return v >=7;}).anyMatch(v -> {System.out.println("[anyMatch][v="+(v)+"]"); return v >=10;}));
 	}
 
 }
 
 /*
-
+Interessantemente Stream não "espera" uma etapa ser concluida para executar a outra,
+a medida que os elemento está apto a passar por aquela etapa já vai para a seguinte
+Interessantemente anyMatch quando "OK" já finaliza o fluxo, mesmo todos os elementos ainda não terem sido processados
 */
