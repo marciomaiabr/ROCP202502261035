@@ -41,39 +41,11 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		System.out.println("no sorted");
-		Stream.of(9,0,8,1,7,2,6,3,5,4).forEach(System.out::println);
-		System.out.println("\nsorted");
-		Stream.of(9,0,8,1,7,2,6,3,5,4).sorted().forEach(System.out::println);
-
-		class Pessoa {
-			private String nome;
-			private Integer idade;
-			public Pessoa(String nome, Integer idade) { super(); this.nome = nome; this.idade = idade; }
-			@Override
-			public String toString() { return "Pessoa [idade=" + idade + ", nome=" + nome + "]"; }
-		}
-		/*Stream.of(
-				new Pessoa("Aline Sharlon Ramos",39), new Pessoa("Brenda Cruz Ribeiro",15), new Pessoa("Cristiane Barros",18)
-				).sorted().forEach(System.out::println);//java.lang.ClassCastException: pkgs.pkgExes.Exe001$1Pessoa cannot be cast to java.lang.Comparable*/
-
-		class PessoaComparable implements Comparable<PessoaComparable> {
-			private String nome;
-			private Integer idade;
-			public PessoaComparable(String nome, Integer idade) { super(); this.nome = nome; this.idade = idade; }
-			@Override
-			public String toString() { return "PessoaComparable [idade=" + idade + ", nome=" + nome + "]"; }
-			@Override
-			public int compareTo(PessoaComparable pessoaComparable) {
-				return this.idade.compareTo(pessoaComparable.idade);
-			}
-		}
-		Stream.of(new PessoaComparable("Aline Sharlon Ramos",39), new PessoaComparable("Brenda Cruz Ribeiro",15), new PessoaComparable("Cristiane Barros",18)).sorted().forEach(System.out::println);
-
-		Stream.of(
-				new Pessoa("Aline Sharlon Ramos",39), new Pessoa("Brenda Cruz Ribeiro",15), new Pessoa("Cristiane Barros",18)
-				).sorted((Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.idade.compareTo(pessoa2.idade)).forEach(System.out::println);
-
+		Stream.of(9,0,8,1,7,2,6,3,5,4).sorted((v1,v2)->{System.out.println("[sorted][v1="+(v1)+"]"+"[v2="+(v2)+"]"); return v1.compareTo(v2);}).forEach(v->System.out.println("[forEach][v="+(v)+"]"));
+		System.out.println();
+		Stream.of(9,0,8,1,7,2,6,3,5,4).sorted((v1,v2)->{System.out.println("[sorted][v1="+(v1)+"]"+"[v2="+(v2)+"]"); return v1.compareTo(v2);}).peek(v->System.out.println("[peek][v="+(v)+"]")).forEach(v->System.out.println("[forEach][v="+(v)+"]"));
+		System.out.println();
+		Stream.of(9,0,8,1,7,2,6,3,5,4).sorted((v1,v2)->{System.out.println("[sorted][v1="+(v1)+"]"+"[v2="+(v2)+"]"); return v1.compareTo(v2);}).peek(v->System.out.println("[peek][v="+(v)+"]")).forEach(v->{System.out.println("[forEach][v="+(v)+"]");try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }});
 	}
 
 }
