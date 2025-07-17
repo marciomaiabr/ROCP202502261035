@@ -1,2 +1,3 @@
-C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Dog.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001$1Pessoa.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001$1PessoaComparable.class
 C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001.class

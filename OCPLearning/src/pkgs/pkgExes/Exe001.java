@@ -3,6 +3,7 @@ package pkgs.pkgExes;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalDouble;
@@ -10,46 +11,6 @@ import java.util.function.Supplier;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-
-class Dog {
-    private String name;
-    private int age;
-    private int weight;
-
-    public Dog(String name, int weight, int age) {
-        this.name = name; this.weight = weight; this.age = age;
-    }
-
-    public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	public int getWeight() {
-		return weight;
-	}
-
-	public void setWeight(int weight) {
-		this.weight = weight;
-	}
-
-	public String toString() {
-        return this.name + " is " + this.age + " years old and weighs "
-            + this.weight + " pounds";
-    }
-}
-
 
 public class Exe001 {
 
@@ -80,14 +41,43 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		Integer [] arr = new Integer [100];
-		System.out.println(Stream.of(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15).filter(v -> {System.out.println("[filter1][v="+(v)+"]"); return v >=3;}).filter(v -> {System.out.println("[filter2][v="+(v)+"]"); return v >=7;}).anyMatch(v -> {System.out.println("[anyMatch][v="+(v)+"]"); return v >=10;}));
+		System.out.println("no sorted");
+		Stream.of(9,0,8,1,7,2,6,3,5,4).forEach(System.out::println);
+		System.out.println("\nsorted");
+		Stream.of(9,0,8,1,7,2,6,3,5,4).sorted().forEach(System.out::println);
+
+		class Pessoa {
+			private String nome;
+			private Integer idade;
+			public Pessoa(String nome, Integer idade) { super(); this.nome = nome; this.idade = idade; }
+			@Override
+			public String toString() { return "Pessoa [idade=" + idade + ", nome=" + nome + "]"; }
+		}
+		/*Stream.of(
+				new Pessoa("Aline Sharlon Ramos",39), new Pessoa("Brenda Cruz Ribeiro",15), new Pessoa("Cristiane Barros",18)
+				).sorted().forEach(System.out::println);//java.lang.ClassCastException: pkgs.pkgExes.Exe001$1Pessoa cannot be cast to java.lang.Comparable*/
+
+		class PessoaComparable implements Comparable<PessoaComparable> {
+			private String nome;
+			private Integer idade;
+			public PessoaComparable(String nome, Integer idade) { super(); this.nome = nome; this.idade = idade; }
+			@Override
+			public String toString() { return "PessoaComparable [idade=" + idade + ", nome=" + nome + "]"; }
+			@Override
+			public int compareTo(PessoaComparable pessoaComparable) {
+				return this.idade.compareTo(pessoaComparable.idade);
+			}
+		}
+		Stream.of(new PessoaComparable("Aline Sharlon Ramos",39), new PessoaComparable("Brenda Cruz Ribeiro",15), new PessoaComparable("Cristiane Barros",18)).sorted().forEach(System.out::println);
+
+		Stream.of(
+				new Pessoa("Aline Sharlon Ramos",39), new Pessoa("Brenda Cruz Ribeiro",15), new Pessoa("Cristiane Barros",18)
+				).sorted((Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.idade.compareTo(pessoa2.idade)).forEach(System.out::println);
+
 	}
 
 }
 
 /*
-Interessantemente Stream não "espera" uma etapa ser concluida para executar a outra,
-a medida que os elemento está apto a passar por aquela etapa já vai para a seguinte
-Interessantemente anyMatch quando "OK" já finaliza o fluxo, mesmo todos os elementos ainda não terem sido processados
+
 */
