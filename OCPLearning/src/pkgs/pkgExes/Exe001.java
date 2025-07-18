@@ -8,9 +8,28 @@ import java.util.List;
 import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+
+class Person {
+	public String name;
+	public Integer age;
+	public Person(String name, Integer age) {
+		this.name = name;
+		this.age = age;
+	}
+	public String getName() {
+		return this.name;
+	}
+	public Integer getAge() {
+		return this.age;
+	}
+	public String toString() {
+		return this.name + " is " + this.age + " years old";
+	}
+}
 
 public class Exe001 {
 
@@ -41,11 +60,26 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		Stream.of(9,0,8,1,7,2,6,3,5,4).sorted((v1,v2)->{System.out.println("[sorted][v1="+(v1)+"]"+"[v2="+(v2)+"]"); return v1.compareTo(v2);}).forEach(v->System.out.println("[forEach][v="+(v)+"]"));
-		System.out.println();
-		Stream.of(9,0,8,1,7,2,6,3,5,4).sorted((v1,v2)->{System.out.println("[sorted][v1="+(v1)+"]"+"[v2="+(v2)+"]"); return v1.compareTo(v2);}).peek(v->System.out.println("[peek][v="+(v)+"]")).forEach(v->System.out.println("[forEach][v="+(v)+"]"));
-		System.out.println();
-		Stream.of(9,0,8,1,7,2,6,3,5,4).sorted((v1,v2)->{System.out.println("[sorted][v1="+(v1)+"]"+"[v2="+(v2)+"]"); return v1.compareTo(v2);}).peek(v->System.out.println("[peek][v="+(v)+"]")).forEach(v->{System.out.println("[forEach][v="+(v)+"]");try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }});
+
+		Person beth = new Person("Beth", 30);
+		Person eric = new Person("Eric", 31);
+		Person deb = new Person("Deb", 31);
+
+		Person liz = new Person("Liz", 30);
+		Person wendi = new Person("Wendi", 34);
+		Person kathy = new Person("Kathy", 35);
+		Person bert = new Person("Bert", 32);
+		Person bill = new Person("Bill", 34);
+		Person robert = new Person("Robert", 38);
+
+		List<Person> people = new ArrayList<Person>();
+		people.add(beth); people.add(eric); people.add(deb);
+		people.add(liz); people.add(wendi); people.add(kathy);
+		people.add(bert); people.add(bill); people.add(robert);
+
+		List<Person> peopleAge34 = people.stream().filter(v -> v.getAge().equals(34)).collect(Collectors.toList());
+		System.out.println("People aged 34:" + peopleAge34);
+
 	}
 
 }
