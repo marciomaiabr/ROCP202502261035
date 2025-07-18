@@ -1,5 +1,7 @@
 package pkgs.pkgExes;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -61,24 +63,12 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		Person beth = new Person("Beth", 30);
-		Person eric = new Person("Eric", 31);
-		Person deb = new Person("Deb", 31);
-
-		Person liz = new Person("Liz", 30);
-		Person wendi = new Person("Wendi", 34);
-		Person kathy = new Person("Kathy", 35);
-		Person bert = new Person("Bert", 32);
-		Person bill = new Person("Bill", 34);
-		Person robert = new Person("Robert", 38);
-
-		List<Person> people = new ArrayList<Person>();
-		people.add(beth); people.add(eric); people.add(deb);
-		people.add(liz); people.add(wendi); people.add(kathy);
-		people.add(bert); people.add(bill); people.add(robert);
-
-		List<Person> peopleAge34 = people.stream().filter(v -> v.getAge().equals(34)).collect(Collectors.toCollection(()->new ArrayList<>()));
-		System.out.println("People aged 34:" + peopleAge34);
+		try (Stream<String> stream = Files.lines(Paths.get(getClass().getResource("/txts/filePessoas.txt").toURI()))) {
+			List<String> data = stream.collect(Collectors.toList());
+			data.forEach(System.out::println);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 
