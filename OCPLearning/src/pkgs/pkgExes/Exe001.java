@@ -77,7 +77,7 @@ public class Exe001 {
 		people.add(liz); people.add(wendi); people.add(kathy);
 		people.add(bert); people.add(bill); people.add(robert);
 
-		List<Person> peopleAge34 = people.stream().filter(v -> v.getAge().equals(34)).collect(Collectors.toCollection(ArrayList::new));
+		List<Person> peopleAge34 = people.stream().filter(v -> v.getAge().equals(34)).collect(Collectors.toCollection(()->new ArrayList<>()));
 		System.out.println("People aged 34:" + peopleAge34);
 
 	}
