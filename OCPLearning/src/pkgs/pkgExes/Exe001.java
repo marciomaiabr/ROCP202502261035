@@ -63,12 +63,8 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		try (Stream<String> stream = Files.lines(Paths.get(getClass().getResource("/txts/filePessoas.txt").toURI()))) {
-			List<String> data = stream.collect(Collectors.toList());
-			data.forEach(System.out::println);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		Person [] arr = {new Person("Bert", 32),new Person("Wendi", 34),new Person("Bill", 34),new Person("Kathy", 35),new Person("Robert", 38),new Person("Beth", 30),new Person("Liz", 30),new Person("Eric", 31),new Person("Deb", 31)};
+		System.out.println(Stream.of(arr).collect(Collectors.groupingBy(Person::getAge)));
 
 	}
 

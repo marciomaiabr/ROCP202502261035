@@ -1,12 +1,6 @@
-2025-07-18T08:25:18.256
+2025-07-20T08:25:12.562
 <>
 Exe001.sm1()
 Exe001.im1()
-Jerry  
-George  
-Kramer  
-Elaine  
-Huey  
-Louie  
-Dewey
+{32=[Bert is 32 years old], 34=[Wendi is 34 years old, Bill is 34 years old], 35=[Kathy is 35 years old], 38=[Robert is 38 years old], 30=[Beth is 30 years old, Liz is 30 years old], 31=[Eric is 31 years old, Deb is 31 years old]}
 </>
