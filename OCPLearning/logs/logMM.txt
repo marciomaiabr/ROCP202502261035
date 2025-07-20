@@ -1,6 +1,9 @@
-2025-07-20T09:11:53.542
+2025-07-20T09:21:02.017
 <>
 Exe001.sm1()
 Exe001.im1()
-{32=[Person [name=Bert, age=32, state=, city=]], 34=[Person [name=Wendi, age=34, state=, city=], Person [name=Bill, age=34, state=, city=]], 35=[Person [name=Kathy, age=35, state=, city=]], 38=[Person [name=Robert, age=38, state=, city=]], 30=[Person [name=Beth, age=30, state=, city=], Person [name=Liz, age=30, state=, city=]], 31=[Person [name=Eric, age=31, state=, city=], Person [name=Deb, age=31, state=, city=]]}
+{32=[Person [name=Bert, age=32, state=MT, city=CBA]], 34=[Person [name=Wendi, age=34, state=MT, city=CBA], Person [name=Bill, age=34, state=MT, city=SINOP]], 35=[Person [name=Kathy, age=35, state=MT, city=VG]], 38=[Person [name=Robert, age=38, state=MT, city=VG]], 30=[Person [name=Beth, age=30, state=MG, city=OUP], Person [name=Liz, age=30, state=MG, city=OUP]], 31=[Person [name=Eric, age=31, state=MG, city=BELO], Person [name=Deb, age=31, state=MG, city=BELO]]}
+{32=[Person [name=Bert, age=32, state=MT, city=CBA]], 34=[Person [name=Wendi, age=34, state=MT, city=CBA], Person [name=Bill, age=34, state=MT, city=SINOP]], 35=[Person [name=Kathy, age=35, state=MT, city=VG]], 38=[Person [name=Robert, age=38, state=MT, city=VG]], 30=[Person [name=Beth, age=30, state=MG, city=OUP], Person [name=Liz, age=30, state=MG, city=OUP]], 31=[Person [name=Eric, age=31, state=MG, city=BELO], Person [name=Deb, age=31, state=MG, city=BELO]]}
+{MT=5, MG=4}
+{MT={VG=2, CBA=2, SINOP=1}, MG={BELO=2, OUP=2}}
 </>
