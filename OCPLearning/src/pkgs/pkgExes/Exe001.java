@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.function.Supplier;
@@ -18,9 +19,13 @@ import java.util.stream.Stream;
 class Person {
 	public String name;
 	public Integer age;
-	public Person(String name, Integer age) {
+	public String state;
+	public String city;
+	public Person(String name, Integer age, String state, String city) {
 		this.name = name;
 		this.age = age;
+		this.state = state;
+		this.city = city;
 	}
 	public String getName() {
 		return this.name;
@@ -28,8 +33,15 @@ class Person {
 	public Integer getAge() {
 		return this.age;
 	}
+	public String getState() {
+		return state;
+	}
+	public String getCity() {
+		return city;
+	}
+	@Override
 	public String toString() {
-		return this.name + " is " + this.age + " years old";
+		return "Person [name=" + name + ", age=" + age + ", state=" + state + ", city=" + city + "]";
 	}
 }
 
@@ -63,8 +75,9 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		Person [] arr = {new Person("Bert", 32),new Person("Wendi", 34),new Person("Bill", 34),new Person("Kathy", 35),new Person("Robert", 38),new Person("Beth", 30),new Person("Liz", 30),new Person("Eric", 31),new Person("Deb", 31)};
-		System.out.println(Stream.of(arr).collect(Collectors.groupingBy(Person::getAge)));
+		Person [] arr = {new Person("Bert", 32, "", ""),new Person("Wendi", 34, "", ""),new Person("Bill", 34, "", ""),new Person("Kathy", 35, "", ""),new Person("Robert", 38, "", ""),new Person("Beth", 30, "", ""),new Person("Liz", 30, "", ""),new Person("Eric", 31, "", ""),new Person("Deb", 31, "", "")};
+		Map<Integer, List<Person>> map = Stream.of(arr).collect(Collectors.groupingBy(Person::getAge));
+		System.out.println(map);
 
 	}
 
