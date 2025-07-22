@@ -76,8 +76,8 @@ public class Exe001 {
 		System.out.println("Exe001.im1()");
 
 		Person [] arr = {
-				new Person("Bert", 32, "MT", "CBA"),new Person("Wendi", 34, "MT", "CBA"),new Person("Bill", 34, "MT", "SINOP"),new Person("Kathy", 35, "MT", "VG"),new Person("Robert", 38, "MT", "VG"),new Person("Beth", 30, "MG", "OUP"),new Person("Liz", 30, "MG", "OUP"),new Person("Eric", 31, "MG", "BELO"),new Person("Deb", 31, "MG", "BELO"),
-				new Person("Bill", 40, "", ""), new Person("Beth", 45, "", ""), new Person("Bert", 38, "", "")
+				new Person("Bert", 32, "MT", "CBA"),new Person("Wendi", 34, "MT", "CBA"),new Person("Bill", 34, "MT", "SINOP"),new Person("Kathy", 35, "MT", "VG"),new Person("Robert", 38, "MT", "VG"),new Person("Beth", 30, "MG", "OUP"),new Person("Liz", 30, "MG", "OUP"),new Person("Eric", 31, "MG", "BELO"),new Person("Deb", 31, "MG", "BELO")
+				//,new Person("Bill", 40, "", ""), new Person("Beth", 45, "", ""), new Person("Bert", 38, "", "")
 				};
 		Map<Integer, List<Person>> map = Stream.of(arr).collect(Collectors.groupingBy(Person::getAge));
 		/*System.out.println(map);
@@ -87,8 +87,9 @@ public class Exe001 {
 		System.out.println(Stream.of(arr).collect(Collectors.groupingBy(Person::getState, Collectors.groupingBy(Person::getCity, Collectors.toList()))));
 		System.out.println(Stream.of(arr).collect(Collectors.groupingBy(Person::getState, Collectors.groupingBy(Person::getCity, Collectors.mapping(Person::getName, Collectors.toList())))));
 		System.out.println(Stream.of(arr).collect(Collectors.partitioningBy(p->p.getCity().equals("CBA"))));
-		System.out.println(Stream.of(arr).filter(v -> v.getName().startsWith("B")).collect(Collectors.groupingBy(Person::getName, Collectors.averagingInt(Person::getAge))));*/
-		System.out.println(Stream.of(arr).collect(Collectors.counting()));
+		System.out.println(Stream.of(arr).filter(v -> v.getName().startsWith("B")).collect(Collectors.groupingBy(Person::getName, Collectors.averagingInt(Person::getAge))));
+		System.out.println(Stream.of(arr).collect(Collectors.counting()));*/
+		System.out.println(Stream.of(arr).filter(v->v.getAge()>34).map(v->v.getName()).collect(Collectors.joining(" ; ")));
 	}
 
 }
