@@ -88,8 +88,9 @@ public class Exe001 {
 		System.out.println(Stream.of(arr).collect(Collectors.groupingBy(Person::getState, Collectors.groupingBy(Person::getCity, Collectors.mapping(Person::getName, Collectors.toList())))));
 		System.out.println(Stream.of(arr).collect(Collectors.partitioningBy(p->p.getCity().equals("CBA"))));
 		System.out.println(Stream.of(arr).filter(v -> v.getName().startsWith("B")).collect(Collectors.groupingBy(Person::getName, Collectors.averagingInt(Person::getAge))));
-		System.out.println(Stream.of(arr).collect(Collectors.counting()));*/
-		System.out.println(Stream.of(arr).filter(v->v.getAge()>34).map(v->v.getName()).collect(Collectors.joining(" ; ")));
+		System.out.println(Stream.of(arr).collect(Collectors.counting()));
+		System.out.println(Stream.of(arr).filter(v->v.getAge()>34).map(v->v.getName()).collect(Collectors.joining(" ; ")));*/
+		System.out.println(Stream.of(arr).collect(Collectors.maxBy((v1,v2)->v1.getAge()-v2.getAge())).get());
 	}
 
 }
