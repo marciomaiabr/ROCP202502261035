@@ -86,8 +86,9 @@ public class Exe001 {
 		System.out.println(Stream.of(arr).collect(Collectors.groupingBy(Person::getState, Collectors.groupingBy(Person::getCity, Collectors.counting()))));
 		System.out.println(Stream.of(arr).collect(Collectors.groupingBy(Person::getState, Collectors.groupingBy(Person::getCity, Collectors.toList()))));
 		System.out.println(Stream.of(arr).collect(Collectors.groupingBy(Person::getState, Collectors.groupingBy(Person::getCity, Collectors.mapping(Person::getName, Collectors.toList())))));
-		System.out.println(Stream.of(arr).collect(Collectors.partitioningBy(p->p.getCity().equals("CBA"))));*/
-		System.out.println(Stream.of(arr).filter(v -> v.getName().startsWith("B")).collect(Collectors.groupingBy(Person::getName, Collectors.averagingInt(Person::getAge))));
+		System.out.println(Stream.of(arr).collect(Collectors.partitioningBy(p->p.getCity().equals("CBA"))));
+		System.out.println(Stream.of(arr).filter(v -> v.getName().startsWith("B")).collect(Collectors.groupingBy(Person::getName, Collectors.averagingInt(Person::getAge))));*/
+		System.out.println(Stream.of(arr).collect(Collectors.counting()));
 	}
 
 }
