@@ -46,12 +46,7 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-
-		try {
-			Files.lines(Paths.get(getClass().getResource("/txts/filePessoas.txt").toURI())).map(line -> line.split(" ")).flatMap(array -> Arrays.stream(array)).forEach(System.out::println);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		Stream.iterate(0, s -> s + 1).limit(4).forEach(System.out::println);
 	}
 
 }
