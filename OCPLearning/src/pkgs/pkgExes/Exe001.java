@@ -1,6 +1,7 @@
 package pkgs.pkgExes;
 
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -15,35 +16,6 @@ import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-
-class Person {
-	public String name;
-	public Integer age;
-	public String state;
-	public String city;
-	public Person(String name, Integer age, String state, String city) {
-		this.name = name;
-		this.age = age;
-		this.state = state;
-		this.city = city;
-	}
-	public String getName() {
-		return this.name;
-	}
-	public Integer getAge() {
-		return this.age;
-	}
-	public String getState() {
-		return state;
-	}
-	public String getCity() {
-		return city;
-	}
-	@Override
-	public String toString() {
-		return "Person [name=" + name + ", age=" + age + ", state=" + state + ", city=" + city + "]";
-	}
-}
 
 public class Exe001 {
 
@@ -75,22 +47,21 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		Person [] arr = {
-				new Person("Bert", 32, "MT", "CBA"),new Person("Wendi", 34, "MT", "CBA"),new Person("Bill", 34, "MT", "SINOP"),new Person("Kathy", 35, "MT", "VG"),new Person("Robert", 38, "MT", "VG"),new Person("Beth", 30, "MG", "OUP"),new Person("Liz", 30, "MG", "OUP"),new Person("Eric", 31, "MG", "BELO"),new Person("Deb", 31, "MG", "BELO")
-				//,new Person("Bill", 40, "", ""), new Person("Beth", 45, "", ""), new Person("Bert", 38, "", "")
-				};
-		Map<Integer, List<Person>> map = Stream.of(arr).collect(Collectors.groupingBy(Person::getAge));
-		/*System.out.println(map);
-		System.out.println(Stream.of(arr).collect(Collectors.groupingBy(Person::getAge)));
-		System.out.println(Stream.of(arr).collect(Collectors.groupingBy(Person::getState, Collectors.counting())));
-		System.out.println(Stream.of(arr).collect(Collectors.groupingBy(Person::getState, Collectors.groupingBy(Person::getCity, Collectors.counting()))));
-		System.out.println(Stream.of(arr).collect(Collectors.groupingBy(Person::getState, Collectors.groupingBy(Person::getCity, Collectors.toList()))));
-		System.out.println(Stream.of(arr).collect(Collectors.groupingBy(Person::getState, Collectors.groupingBy(Person::getCity, Collectors.mapping(Person::getName, Collectors.toList())))));
-		System.out.println(Stream.of(arr).collect(Collectors.partitioningBy(p->p.getCity().equals("CBA"))));
-		System.out.println(Stream.of(arr).filter(v -> v.getName().startsWith("B")).collect(Collectors.groupingBy(Person::getName, Collectors.averagingInt(Person::getAge))));
-		System.out.println(Stream.of(arr).collect(Collectors.counting()));
-		System.out.println(Stream.of(arr).filter(v->v.getAge()>34).map(v->v.getName()).collect(Collectors.joining(" ; ")));*/
-		System.out.println(Stream.of(arr).collect(Collectors.maxBy((v1,v2)->v1.getAge()-v2.getAge())).get());
+		System.out.println("\nexemplo com map()\n");
+		try (Stream<String> input = Files.lines(Paths.get(getClass().getResource("/txts/filePessoas.txt").toURI()))) {
+			Stream<String[]> inputStream = input.map(line -> line.split(" "));
+			inputStream.map(array -> {System.out.println("[array="+(array)+"]"); return Arrays.stream(array);}).forEach(v->System.out.println("[v="+(v)+"]"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("\nexemplo com flatMap()\n");
+		try (Stream<String> input = Files.lines(Paths.get(getClass().getResource("/txts/filePessoas.txt").toURI()))) {
+			Stream<String[]> inputStream = input.map(line -> line.split(" "));
+			inputStream.flatMap(array -> {System.out.println("[array="+(array)+"]"); return Arrays.stream(array);}).forEach(v->System.out.println("[v="+(v)+"]"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
