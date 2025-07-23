@@ -47,18 +47,8 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		System.out.println("\nexemplo com map()\n");
-		try (Stream<String> input = Files.lines(Paths.get(getClass().getResource("/txts/filePessoas.txt").toURI()))) {
-			Stream<String[]> inputStream = input.map(line -> line.split(" "));
-			inputStream.map(array -> {System.out.println("[array="+(array)+"]"); return Arrays.stream(array);}).forEach(v->System.out.println("[v="+(v)+"]"));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		System.out.println("\nexemplo com flatMap()\n");
-		try (Stream<String> input = Files.lines(Paths.get(getClass().getResource("/txts/filePessoas.txt").toURI()))) {
-			Stream<String[]> inputStream = input.map(line -> line.split(" "));
-			inputStream.flatMap(array -> {System.out.println("[array="+(array)+"]"); return Arrays.stream(array);}).forEach(v->System.out.println("[v="+(v)+"]"));
+		try {
+			Files.lines(Paths.get(getClass().getResource("/txts/filePessoas.txt").toURI())).map(line -> line.split(" ")).flatMap(array -> Arrays.stream(array)).forEach(System.out::println);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
