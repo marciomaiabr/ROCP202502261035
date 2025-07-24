@@ -1,21 +1,6 @@
 package pkgs.pkgExes;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.OptionalDouble;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
-import java.util.stream.DoubleStream;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Exe001 {
 
@@ -46,14 +31,6 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		System.out.println("\nserial\n");
-		Arrays.asList("boi", "charis", "zooey", "aiko").stream().forEach(System.out::println);
-		System.out.println("\nparallel 1\n");
-		Arrays.asList("boi", "charis", "zooey", "aiko").stream().parallel().forEach(System.out::println);
-		System.out.println("\nparallel 2\n");
-		Arrays.asList("boi", "charis", "zooey", "aiko").stream().parallel().forEach(System.out::println);
-		System.out.println("\nparallel 3\n");
-		Arrays.asList("boi", "charis", "zooey", "aiko").stream().parallel().forEach(System.out::println);
 	}
 
 }
