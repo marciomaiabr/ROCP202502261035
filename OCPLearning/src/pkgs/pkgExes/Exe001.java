@@ -17,16 +17,6 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-class Sensor {
-	String value = "up";
-	int i = 0;
-	public Sensor() {}
-	public String next() {
-		i = i + 1;
-		return i > 10 ? "down" : "up";
-	}
-}
-
 public class Exe001 {
 
 	static {
@@ -56,8 +46,9 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		Sensor sensor = new Sensor();
-		System.out.println(Stream.generate(sensor::next).filter(v -> v.equals("down")).findAny().get());
+		Integer [] integers = {1,2,3,4,5,6,7,8,9,10};
+		System.out.println(Stream.of(integers).mapToInt(n->n).sum());
+		System.out.println(Stream.of(integers).parallel().mapToInt(n->n).sum());
 	}
 
 }
