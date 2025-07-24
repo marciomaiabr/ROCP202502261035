@@ -1,7 +1,33 @@
-2025-07-24T09:17:43.890
+2025-07-24T09:28:21.023
 <>
 Exe001.sm1()
 Exe001.im1()
-55
-55
+
+serial
+
+boi
+charis
+zooey
+aiko
+
+parallel 1
+
+zooey
+aiko
+charis
+boi
+
+parallel 2
+
+zooey
+boi
+charis
+aiko
+
+parallel 3
+
+zooey
+aiko
+boi
+charis
 </>

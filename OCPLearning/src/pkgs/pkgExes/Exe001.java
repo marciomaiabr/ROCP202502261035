@@ -46,9 +46,14 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		Integer [] integers = {1,2,3,4,5,6,7,8,9,10};
-		System.out.println(Stream.of(integers).mapToInt(n->n).sum());
-		System.out.println(Stream.of(integers).parallel().mapToInt(n->n).sum());
+		System.out.println("\nserial\n");
+		Arrays.asList("boi", "charis", "zooey", "aiko").stream().forEach(System.out::println);
+		System.out.println("\nparallel 1\n");
+		Arrays.asList("boi", "charis", "zooey", "aiko").stream().parallel().forEach(System.out::println);
+		System.out.println("\nparallel 2\n");
+		Arrays.asList("boi", "charis", "zooey", "aiko").stream().parallel().forEach(System.out::println);
+		System.out.println("\nparallel 3\n");
+		Arrays.asList("boi", "charis", "zooey", "aiko").stream().parallel().forEach(System.out::println);
 	}
 
 }
