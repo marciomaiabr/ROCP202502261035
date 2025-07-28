@@ -1,14 +1,9 @@
-2025-07-28T09:11:07.898
+2025-07-28T09:20:55.454
 <>
 Exe001.sm1()
 Exe001.im1()
-</>
-[Thread.currentThread().getName()=Volinraba][x=1]
-[Thread.currentThread().getName()=Volinraba][x=2]
-[Thread.currentThread().getName()=Volinraba][x=3]
-[Thread.currentThread().getName()=Jalinrabei][x=1]
-[Thread.currentThread().getName()=Jalinrabei][x=2]
-[Thread.currentThread().getName()=Jalinrabei][x=3]
-[Thread.currentThread().getName()=Tolinrabano][x=1]
-[Thread.currentThread().getName()=Tolinrabano][x=2]
-[Thread.currentThread().getName()=Tolinrabano][x=3]
+[Thread.currentThread().getName()=Jalinrabei]
+java.lang.IllegalThreadStateException
+	at java.lang.Thread.start(Thread.java:710)
+	at pkgs.pkgExes.Exe001.im1(Exe001.java:47)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:16)
