@@ -32,6 +32,7 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 		Runnable r = () -> {
+			System.out.println("My name is "+Thread.currentThread().getName());
 			for (int x = 1; x < 6; x++) {
 				System.out.println("Runnable running " + x);
 			}
