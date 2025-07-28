@@ -1,8 +1,14 @@
-2025-07-28T08:33:12.015
+2025-07-28T09:02:32.875
 <>
 Exe001.sm1()
 Exe001.im1()
 </>
-aki... 1...
-aki... 3...
-aki... 2...
+[Thread.currentThread().getName()=Tolinrabano][x=1]
+[Thread.currentThread().getName()=Tolinrabano][x=2]
+[Thread.currentThread().getName()=Tolinrabano][x=3]
+[Thread.currentThread().getName()=Jalinrabei][x=1]
+[Thread.currentThread().getName()=Jalinrabei][x=2]
+[Thread.currentThread().getName()=Jalinrabei][x=3]
+[Thread.currentThread().getName()=Volinraba][x=1]
+[Thread.currentThread().getName()=Volinraba][x=2]
+[Thread.currentThread().getName()=Volinraba][x=3]

@@ -31,15 +31,20 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		new Thread(()->{
-			System.out.println("aki... 1...");
-			new Thread(()->{
-				System.out.println("aki... 2...");
-			}).start();
-		}).start();
-		new Thread(()->{
-			System.out.println("aki... 3...");
-		}).start();
+		Runnable runnable = () -> {
+			for (int x = 1; x <= 3; x++) {
+				System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[x="+(x)+"]");
+			}
+		};
+		Thread thread1 = new Thread(runnable);
+		Thread thread2 = new Thread(runnable);
+		Thread thread3 = new Thread(runnable);
+		thread1.setName("Jalinrabei");
+		thread2.setName("Volinraba");
+		thread3.setName("Tolinrabano");
+		thread1.start();
+		thread2.start();
+		thread3.start();
 	}
 
 }
