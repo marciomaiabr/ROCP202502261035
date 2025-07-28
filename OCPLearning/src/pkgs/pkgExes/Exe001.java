@@ -38,6 +38,7 @@ public class Exe001 {
 			}
 		};
 		Thread t = new Thread(r);
+		t.setName("Tadeus...");
 		t.start();
 	}
 
