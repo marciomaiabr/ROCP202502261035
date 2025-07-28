@@ -31,7 +31,15 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		System.out.println("My name is "+Thread.currentThread().getName());
+		new Thread(()->{
+			System.out.println("aki... 1...");
+			new Thread(()->{
+				System.out.println("aki... 2...");
+			}).start();
+		}).start();
+		new Thread(()->{
+			System.out.println("aki... 3...");
+		}).start();
 	}
 
 }
