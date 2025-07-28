@@ -1,11 +1,6 @@
-2025-07-28T08:11:00.803
+2025-07-28T08:14:27.068
 <>
 Exe001.sm1()
 Exe001.im1()
+My name is main
 </>
-My name is Tadeus...
-Runnable running 1
-Runnable running 2
-Runnable running 3
-Runnable running 4
-Runnable running 5
