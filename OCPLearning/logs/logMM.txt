@@ -1,7 +1,9 @@
-2025-07-29T08:37:55.755
+2025-07-29T08:39:12.777
 <>
 Exe001.sm1()
 Exe001.im1()
 [Thread.currentThread().getName()=main][Thread.currentThread().getPriority()=5]
-[Thread.currentThread().getName()=main][Thread.currentThread().getPriority()=10]
-</>
+java.lang.IllegalArgumentException
+	at java.lang.Thread.setPriority(Thread.java:1094)
+	at pkgs.pkgExes.Exe001.im1(Exe001.java:35)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:16)
