@@ -32,8 +32,14 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 		System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[Thread.currentThread().getPriority()="+(Thread.currentThread().getPriority())+"]");
-		Thread.currentThread().setPriority(100);
+		new Thread(()->{
+			System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[Thread.currentThread().getPriority()="+(Thread.currentThread().getPriority())+"]");
+		}).start();
+		Thread.currentThread().setPriority(10);
 		System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[Thread.currentThread().getPriority()="+(Thread.currentThread().getPriority())+"]");
+		new Thread(()->{
+			System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[Thread.currentThread().getPriority()="+(Thread.currentThread().getPriority())+"]");
+		}).start();
 	}
 
 }
