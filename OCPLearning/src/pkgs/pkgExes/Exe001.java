@@ -31,21 +31,15 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		Runnable runnable = () -> {
-			System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
-		};
-		Thread thread1 = new Thread(runnable);
-		thread1.setName("Jalinrabei");
-		thread1.start();
-
-		try {
-			Thread.sleep(5*1000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		thread1.start();
-
+		System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[Thread.currentThread().getId()="+(Thread.currentThread().getId())+"]");
+		new Thread(()->{
+			System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[Thread.currentThread().getId()="+(Thread.currentThread().getId())+"]");
+			try {
+				Thread.sleep(60*1000);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}).start();
 	}
 
 }
