@@ -1,9 +1,9 @@
-2025-07-29T08:44:54.283
+2025-07-31T08:18:09.901
 <>
 Exe001.sm1()
 Exe001.im1()
-[Thread.currentThread().getName()=main][Thread.currentThread().getPriority()=5]
-[Thread.currentThread().getName()=main][Thread.currentThread().getPriority()=10]
-[Thread.currentThread().getName()=Thread-0][Thread.currentThread().getPriority()=5]
+[aki][1]
+[Thread.currentThread().getName()=threadAA][inicio]
+[Thread.currentThread().getName()=threadAA][fim]
+[aki][2]
 </>
-[Thread.currentThread().getName()=Thread-1][Thread.currentThread().getPriority()=10]

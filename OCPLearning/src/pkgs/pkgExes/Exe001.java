@@ -31,15 +31,27 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[Thread.currentThread().getPriority()="+(Thread.currentThread().getPriority())+"]");
-		new Thread(()->{
-			System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[Thread.currentThread().getPriority()="+(Thread.currentThread().getPriority())+"]");
-		}).start();
-		Thread.currentThread().setPriority(10);
-		System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[Thread.currentThread().getPriority()="+(Thread.currentThread().getPriority())+"]");
-		new Thread(()->{
-			System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[Thread.currentThread().getPriority()="+(Thread.currentThread().getPriority())+"]");
-		}).start();
+
+		System.out.println("[aki][1]");
+
+		Thread threadAA = new Thread(()->{
+			System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"][inicio]");
+			try {
+				Thread.sleep(3*1000);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"][fim]");
+		}, "threadAA");
+		threadAA.start();
+		try {
+			threadAA.join();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("[aki][2]");
+
 	}
 
 }
