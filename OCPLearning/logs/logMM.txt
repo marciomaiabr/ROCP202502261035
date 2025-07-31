@@ -1,9 +1,21 @@
-2025-07-31T08:18:09.901
+2025-07-31T09:14:06.159
 <>
 Exe001.sm1()
 Exe001.im1()
-[aki][1]
-[Thread.currentThread().getName()=threadAA][inicio]
-[Thread.currentThread().getName()=threadAA][fim]
-[aki][2]
 </>
+Lucy is going to withdraw
+Fred is going to withdraw
+Lucy completes the withdrawal
+Lucy is going to withdraw
+Fred completes the withdrawal
+Fred is going to withdraw
+Lucy completes the withdrawal
+Lucy is going to withdraw
+Fred completes the withdrawal
+Fred is going to withdraw
+Lucy completes the withdrawal
+Not enough in account for Lucy to withdraw 0
+Not enough in account for Lucy to withdraw 0
+Fred completes the withdrawal
+Not enough in account for Fred to withdraw 0
+Not enough in account for Fred to withdraw 0
