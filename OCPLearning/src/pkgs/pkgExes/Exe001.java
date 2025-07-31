@@ -36,7 +36,7 @@ class AccountDanger implements Runnable {
         }
     }
 
-    private void makeWithdrawal(int amt) {
+    private synchronized void makeWithdrawal(int amt) {
         if (acct.getBalance() >= amt) {
             System.out.println(Thread.currentThread().getName()
                 + " is going to withdraw");
