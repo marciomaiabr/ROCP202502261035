@@ -1,29 +1,12 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
-class ClasseQqc{
-	public synchronized void doStuff1() {
-		System.out.println("Exe001.im1(...).ClasseQqc.doStuff1()");
-	}
-	public void doStuff2() {
-		synchronized(this) {
-			System.out.println("Exe001.im1(...).ClasseQqc.doStuff2()");
-		}
-	}
-	public synchronized static int getCount1() {
-		return 0;
-	}
-	public static int getCount2() {
-		synchronized(ClasseQqc.class) {
-			return 0;
-		}
-	}
-	public static int getCount3() throws ClassNotFoundException {
-		Class c1 = Class.forName("ClasseQqc");
-		synchronized(c1) {
-			return 0;
-		}
+class Printer{
+	public static void print(String s) {
+		System.out.println("[s="+(s)+"]");
 	}
 }
 
@@ -56,7 +39,11 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-
+		List<String> nome = new ArrayList<>();
+		nome.add("Tadeu");
+		nome.add("Tadando");
+		nome.add("Jadeu");
+		nome.forEach(Printer::print);
 	}
 
 }
