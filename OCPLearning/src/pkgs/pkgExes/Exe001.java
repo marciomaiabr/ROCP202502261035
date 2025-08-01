@@ -2,6 +2,31 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
+class ClasseQqc{
+	public synchronized void doStuff1() {
+		System.out.println("Exe001.im1(...).ClasseQqc.doStuff1()");
+	}
+	public void doStuff2() {
+		synchronized(this) {
+			System.out.println("Exe001.im1(...).ClasseQqc.doStuff2()");
+		}
+	}
+	public synchronized static int getCount1() {
+		return 0;
+	}
+	public static int getCount2() {
+		synchronized(ClasseQqc.class) {
+			return 0;
+		}
+	}
+	public static int getCount3() throws ClassNotFoundException {
+		Class c1 = Class.forName("ClasseQqc");
+		synchronized(c1) {
+			return 0;
+		}
+	}
+}
+
 public class Exe001 {
 
 	static {
@@ -31,6 +56,7 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
+
 	}
 
 }
