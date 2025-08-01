@@ -1,20 +1,5 @@
-2025-07-31T09:17:14.481
+2025-08-01T08:01:10.640
 <>
 Exe001.sm1()
 Exe001.im1()
 </>
-Fred is going to withdraw
-Fred completes the withdrawal
-Fred is going to withdraw
-Fred completes the withdrawal
-Fred is going to withdraw
-Fred completes the withdrawal
-Fred is going to withdraw
-Fred completes the withdrawal
-Fred is going to withdraw
-Fred completes the withdrawal
-Not enough in account for Lucy to withdraw 0
-Not enough in account for Lucy to withdraw 0
-Not enough in account for Lucy to withdraw 0
-Not enough in account for Lucy to withdraw 0
-Not enough in account for Lucy to withdraw 0
