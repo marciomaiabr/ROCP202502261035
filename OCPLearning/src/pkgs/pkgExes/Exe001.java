@@ -1,12 +1,52 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
-class Printer{
-	public static void print(String s) {
-		System.out.println("[s="+(s)+"]");
+class InstancePrinter{
+	private String instanceName;
+	InstancePrinter(String instanceName){
+		this.instanceName = instanceName;
+	}
+	public synchronized void print() {
+		System.out.println("[InstancePrinter][instanceName="+(instanceName)+"][start]");
+		try {
+			Thread.sleep(5*1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("[InstancePrinter][instanceName="+(instanceName)+"][end]");
+	}
+}
+
+class StaticPrinter{
+	public synchronized static void print() {
+		System.out.println("[StaticPrinter][start]");
+		try {
+			Thread.sleep(5*1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("[StaticPrinter][end]");
+	}
+}
+
+class ThreadMM extends Thread {
+	private InstancePrinter instancePrinter;
+	private String name;
+	public ThreadMM(String name, InstancePrinter instancePrinter) {
+		super(name);
+		this.name = name;
+		this.instancePrinter = instancePrinter;
+	}
+	@Override
+	public void run() {
+		System.out.println("["+(name)+"][run][start]");
+		if(instancePrinter == null){
+			StaticPrinter.print();
+		}else{
+			instancePrinter.print();
+		}
+		System.out.println("["+(name)+"][run][end]");
 	}
 }
 
@@ -39,11 +79,13 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		List<String> nome = new ArrayList<>();
-		nome.add("Tadeu");
-		nome.add("Tadando");
-		nome.add("Jadeu");
-		nome.forEach(Printer::print);
+		/*testar com instancias diferente de impressoras e mesma Thread
+		testar com instancias diferente de impressoras e instancias diferente de Thread
+		testar com mesma instancias de impressoras e diferente Thread*/
+		InstancePrinter ip = new InstancePrinter("ip");
+		Thread t = new Thread(()->{
+			ip.print();
+		}, "t");
 	}
 
 }
