@@ -1,4 +1,4 @@
-2025-08-03T09:35:57.307
+2025-08-03T09:37:41.386
 <>
 Exe001.sm1()
 Exe001.im1()
@@ -6,17 +6,17 @@ Exe001.im1()
 [Reader][main(String [] args)][aki][2]
 [Reader][main(String [] args)][aki][3]
 [Reader][main(String [] args)][aki][4]
-[Reader][R1][run()][aki][1]
-[Reader][R1][run()][aki][2]
-[Reader][main(String [] args)][aki][5]
-[Reader][R1][run()][aki][3]
-[Reader][main(String [] args)][aki][6]
-[Reader][R3][run()][aki][1]
-[Reader][R3][run()][aki][2]
-[Reader][R3][run()][aki][3]
 [Reader][R2][run()][aki][1]
 [Reader][R2][run()][aki][2]
 [Reader][R2][run()][aki][3]
+[Reader][R3][run()][aki][1]
+[Reader][R3][run()][aki][2]
+[Reader][R3][run()][aki][3]
+[Reader][R1][run()][aki][1]
+[Reader][R1][run()][aki][2]
+[Reader][R1][run()][aki][3]
+[Reader][main(String [] args)][aki][5]
+[Reader][main(String [] args)][aki][6]
 </>
 [Calculator][T3][run()][aki][1]
 [Calculator][T3][run()][aki][2]
@@ -25,3 +25,7 @@ Exe001.im1()
 [Calculator][T3][run()][aki][5]
 [Reader][R1][run()][aki][4]
 [Reader][R1][run()][aki][5]
+[Reader][R3][run()][aki][4]
+[Reader][R3][run()][aki][5]
+[Reader][R2][run()][aki][4]
+[Reader][R2][run()][aki][5]

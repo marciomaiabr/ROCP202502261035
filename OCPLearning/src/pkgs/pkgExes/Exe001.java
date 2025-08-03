@@ -14,7 +14,7 @@ class Calculator implements Runnable {
                 total += i;
             }
     		System.out.println("[Calculator]"+"["+(Thread.currentThread().getName())+"]"+"[run()][aki][3]");
-            notify();
+            notifyAll();
     		System.out.println("[Calculator]"+"["+(Thread.currentThread().getName())+"]"+"[run()][aki][4]");
         }
 		System.out.println("[Calculator]"+"["+(Thread.currentThread().getName())+"]"+"[run()][aki][5]");
