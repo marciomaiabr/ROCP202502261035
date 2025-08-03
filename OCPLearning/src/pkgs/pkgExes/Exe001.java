@@ -2,6 +2,23 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
+class ThreadMM extends Thread{
+	@Override
+	public void run() {
+		System.out.println("[ThreadMM][run()][aki][1]");
+		try {
+			System.out.println("[ThreadMM][run()][aki][2]");
+			Thread.sleep(5*1000);
+			System.out.println("[ThreadMM][run()][aki][3]");
+			notify();
+			System.out.println("[ThreadMM][run()][aki][4]");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("[ThreadMM][run()][aki][5]");
+	}
+}
+
 public class Exe001 {
 
 	static {
@@ -31,6 +48,13 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
+		try {
+			ThreadMM threadMM = new ThreadMM();
+			threadMM.start();
+			threadMM.wait();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
