@@ -10,7 +10,11 @@ class ThreadMM extends Thread{
 			System.out.println("[ThreadMM][run()][aki][2]");
 			Thread.sleep(5*1000);
 			System.out.println("[ThreadMM][run()][aki][3]");
-			notify();
+			synchronized(this) {
+				System.out.println("[ThreadMM][run()][aki][3][1]");
+				notify();
+				System.out.println("[ThreadMM][run()][aki][3][2]");
+			}
 			System.out.println("[ThreadMM][run()][aki][4]");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -49,9 +53,17 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 		try {
+			System.out.println("[Exe001][im1(String[] args)][aki][1]");
 			ThreadMM threadMM = new ThreadMM();
+			System.out.println("[Exe001][im1(String[] args)][aki][2]");
 			threadMM.start();
-			threadMM.wait();
+			System.out.println("[Exe001][im1(String[] args)][aki][3]");
+			synchronized(threadMM) {
+				System.out.println("[Exe001][im1(String[] args)][aki][4]");
+				threadMM.wait();
+				System.out.println("[Exe001][im1(String[] args)][aki][5]");
+			}
+			System.out.println("[Exe001][im1(String[] args)][aki][6]");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,17 +1,18 @@
-2025-08-03T08:50:36.218
+2025-08-03T09:03:28.158
 <>
 Exe001.sm1()
 Exe001.im1()
+[Exe001][im1(String[] args)][aki][1]
+[Exe001][im1(String[] args)][aki][2]
+[Exe001][im1(String[] args)][aki][3]
+[Exe001][im1(String[] args)][aki][4]
 [ThreadMM][run()][aki][1]
 [ThreadMM][run()][aki][2]
-java.lang.IllegalMonitorStateException
-	at java.lang.Object.wait(Native Method)
-	at java.lang.Object.wait(Object.java:502)
-	at pkgs.pkgExes.Exe001.im1(Exe001.java:54)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:33)
-</>
 [ThreadMM][run()][aki][3]
+[ThreadMM][run()][aki][3][1]
+[ThreadMM][run()][aki][3][2]
+[ThreadMM][run()][aki][4]
 [ThreadMM][run()][aki][5]
-java.lang.IllegalMonitorStateException
-	at java.lang.Object.notify(Native Method)
-	at pkgs.pkgExes.ThreadMM.run(Exe001.java:13)
+[Exe001][im1(String[] args)][aki][5]
+[Exe001][im1(String[] args)][aki][6]
+</>
