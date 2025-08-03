@@ -2,25 +2,62 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
-class ThreadMM extends Thread{
+class Calculator implements Runnable {
+    int total;
+
 	@Override
 	public void run() {
-		System.out.println("[ThreadMM][run()][aki][1]");
-		try {
-			System.out.println("[ThreadMM][run()][aki][2]");
-			Thread.sleep(5*1000);
-			System.out.println("[ThreadMM][run()][aki][3]");
-			synchronized(this) {
-				System.out.println("[ThreadMM][run()][aki][3][1]");
-				notify();
-				System.out.println("[ThreadMM][run()][aki][3][2]");
-			}
-			System.out.println("[ThreadMM][run()][aki][4]");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println("[ThreadMM][run()][aki][5]");
-	}
+		System.out.println("[Calculator]"+"["+(Thread.currentThread().getName())+"]"+"[run()][aki][1]");
+        synchronized(this) {
+    		System.out.println("[Calculator]"+"["+(Thread.currentThread().getName())+"]"+"[run()][aki][2]");
+            for(int i = 0; i < 100; i++) {
+                total += i;
+            }
+    		System.out.println("[Calculator]"+"["+(Thread.currentThread().getName())+"]"+"[run()][aki][3]");
+            notify();
+    		System.out.println("[Calculator]"+"["+(Thread.currentThread().getName())+"]"+"[run()][aki][4]");
+        }
+		System.out.println("[Calculator]"+"["+(Thread.currentThread().getName())+"]"+"[run()][aki][5]");
+    }
+}
+
+class Reader extends Thread {
+	Calculator calculator2;
+
+    public Reader(Calculator pCalculator, String name) {
+    	this.calculator2 = pCalculator;
+    	setName(name);
+    }
+
+	@Override
+	public void run() {
+		System.out.println("[Reader]"+"["+(Thread.currentThread().getName())+"]"+"[run()][aki][1]");
+        synchronized(calculator2) {
+    		System.out.println("[Reader]"+"["+(Thread.currentThread().getName())+"]"+"[run()][aki][2]");
+            try {
+        		System.out.println("[Reader]"+"["+(Thread.currentThread().getName())+"]"+"[run()][aki][3]");
+        		calculator2.wait();
+        		System.out.println("[Reader]"+"["+(Thread.currentThread().getName())+"]"+"[run()][aki][4]");
+            } catch (Exception e) {
+            	e.printStackTrace();
+            }
+    		System.out.println("[Reader]"+"["+(Thread.currentThread().getName())+"]"+"[run()][aki][5]");
+        }
+    }
+
+    public static void main(String [] args) {
+		System.out.println("[Reader][main(String [] args)][aki][1]");
+        Calculator calculator1 = new Calculator();
+		System.out.println("[Reader][main(String [] args)][aki][2]");
+        new Reader(calculator1, "R1").start();
+		System.out.println("[Reader][main(String [] args)][aki][3]");
+        new Reader(calculator1, "R2").start();
+		System.out.println("[Reader][main(String [] args)][aki][4]");
+        new Reader(calculator1, "R3").start();
+		System.out.println("[Reader][main(String [] args)][aki][5]");
+        new Thread(calculator1, "T3").start();
+		System.out.println("[Reader][main(String [] args)][aki][6]");
+    }
 }
 
 public class Exe001 {
@@ -52,21 +89,7 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		try {
-			System.out.println("[Exe001][im1(String[] args)][aki][1]");
-			ThreadMM threadMM = new ThreadMM();
-			System.out.println("[Exe001][im1(String[] args)][aki][2]");
-			threadMM.start();
-			System.out.println("[Exe001][im1(String[] args)][aki][3]");
-			synchronized(threadMM) {
-				System.out.println("[Exe001][im1(String[] args)][aki][4]");
-				threadMM.wait();
-				System.out.println("[Exe001][im1(String[] args)][aki][5]");
-			}
-			System.out.println("[Exe001][im1(String[] args)][aki][6]");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		Reader.main(args);
 	}
 
 }
