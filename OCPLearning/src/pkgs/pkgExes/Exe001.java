@@ -41,6 +41,8 @@ public class Exe001 {
 
 		Object object1 = new Object();
 		Object object2 = new Object();
+		Object object3 = new Object();
+		Object object4 = new Object();
 
 		new Thread(()->{
 			log(1);
@@ -51,6 +53,14 @@ public class Exe001 {
 	            synchronized (object2) {
 	            	log(3);
 	    			sleep(1000);
+		            synchronized (object3) {
+		            	log(4);
+		    			sleep(1000);
+			            synchronized (object4) {
+			            	log(5);
+			    			sleep(1000);
+			            }
+		            }
 	            }
 	        }
 	    }).start();
@@ -58,12 +68,20 @@ public class Exe001 {
 		new Thread(()->{
 			log(1);
 			sleep(1000);
-	        synchronized (object2) {
+	        synchronized (object4) {
 	        	log(2);
 				sleep(1000);
-	            synchronized (object1) {
+	            synchronized (object3) {
 	            	log(3);
 	    			sleep(1000);
+		            synchronized (object2) {
+		            	log(4);
+		    			sleep(1000);
+			            synchronized (object1) {
+			            	log(5);
+			    			sleep(1000);
+			            }
+		            }
 	            }
 	        }
 	    }).start();
@@ -84,29 +102,21 @@ public class Exe001 {
 }
 
 /*
-Found one Java-level deadlock:
-=============================
-"Thread-1":
-  waiting to lock monitor 0x00000285fae35308 (object 0x00000000e08d1898, a java.lang.Object),
-  which is held by "Thread-0"
-"Thread-0":
-  waiting to lock monitor 0x00000285fae35468 (object 0x00000000e08d18a8, a java.lang.Object),
-  which is held by "Thread-1"
-
-Java stack information for the threads listed above:
-===================================================
-"Thread-1":
-        at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:65)
-        - waiting to lock <0x00000000e08d1898> (a java.lang.Object)
-        - locked <0x00000000e08d18a8> (a java.lang.Object)
+"Thread-1" #15 prio=5 os_prio=0 tid=0x0000026ebf6be800 nid=0x1948 waiting for monitor entry [0x00000087672ff000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+        at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:78)
+        - waiting to lock <0x00000000e08d32c8> (a java.lang.Object)
+        - locked <0x00000000e08d32d8> (a java.lang.Object)
+        - locked <0x00000000e08d32e8> (a java.lang.Object)
         at pkgs.pkgExes.Exe001$$Lambda$5/1864350231.run(Unknown Source)
         at java.lang.Thread.run(Thread.java:750)
-"Thread-0":
-        at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:52)
-        - waiting to lock <0x00000000e08d18a8> (a java.lang.Object)
-        - locked <0x00000000e08d1898> (a java.lang.Object)
+
+"Thread-0" #14 prio=5 os_prio=0 tid=0x0000026ebf6be000 nid=0x1868 waiting for monitor entry [0x00000087671ff000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+        at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:57)
+        - waiting to lock <0x00000000e08d32d8> (a java.lang.Object)
+        - locked <0x00000000e08d32c8> (a java.lang.Object)
+        - locked <0x00000000e08d32b8> (a java.lang.Object)
         at pkgs.pkgExes.Exe001$$Lambda$4/1050349584.run(Unknown Source)
         at java.lang.Thread.run(Thread.java:750)
-
-Found 1 deadlock.
 */
