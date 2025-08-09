@@ -1,9 +1,9 @@
-2025-08-04T08:43:21.358
+2025-08-09T10:55:54.766
 <>
 Exe001.sm1()
 Exe001.im1()
+[Thread.currentThread().getName()=Thread-0][point=1]
 </>
-Thread 1: Segurando lock1...
-Thread 2: Segurando lock2...
-Thread 1: Esperando lock2...
-Thread 2: Esperando lock1...
+[Thread.currentThread().getName()=Thread-1][point=1]
+[Thread.currentThread().getName()=Thread-1][point=2]
+[Thread.currentThread().getName()=Thread-0][point=2]
