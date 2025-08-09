@@ -84,23 +84,29 @@ public class Exe001 {
 }
 
 /*
-jps
-https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jps.html
-jconsole
-https://docs.oracle.com/javase/8/docs/technotes/guides/management/jconsole.html
-jstack
-https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstack.html
-*/
+Found one Java-level deadlock:
+=============================
+"Thread-1":
+  waiting to lock monitor 0x00000285fae35308 (object 0x00000000e08d1898, a java.lang.Object),
+  which is held by "Thread-0"
+"Thread-0":
+  waiting to lock monitor 0x00000285fae35468 (object 0x00000000e08d18a8, a java.lang.Object),
+  which is held by "Thread-1"
 
-/*
-https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstack.html
-https://www.baeldung.com/java-thread-dump
-https://docs.oracle.com/en/java/javase/11/tools/jps.html
-https://docs.oracle.com/javacomponents/jmc-5-5/jmc-user-guide/intro.htm#JMCCI109
-https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jvisualvm.html
-https://docs.oracle.com/en/java/javase/11/tools/jcmd.html
-https://docs.oracle.com/en/java/javase/11/management/using-jconsole.html#GUID-BC433FB0-51AD-4DF9-9BAF-FF6449509245
-https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/LockInfo.html
-https://www.baeldung.com/java-management-extensions
-https://atitudereflexiva.wordpress.com/2016/02/10/extracao-do-stack-trace-de-processos-java-com-jstack/
+Java stack information for the threads listed above:
+===================================================
+"Thread-1":
+        at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:65)
+        - waiting to lock <0x00000000e08d1898> (a java.lang.Object)
+        - locked <0x00000000e08d18a8> (a java.lang.Object)
+        at pkgs.pkgExes.Exe001$$Lambda$5/1864350231.run(Unknown Source)
+        at java.lang.Thread.run(Thread.java:750)
+"Thread-0":
+        at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:52)
+        - waiting to lock <0x00000000e08d18a8> (a java.lang.Object)
+        - locked <0x00000000e08d1898> (a java.lang.Object)
+        at pkgs.pkgExes.Exe001$$Lambda$4/1050349584.run(Unknown Source)
+        at java.lang.Thread.run(Thread.java:750)
+
+Found 1 deadlock.
 */
