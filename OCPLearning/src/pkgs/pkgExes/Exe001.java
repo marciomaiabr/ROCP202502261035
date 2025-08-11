@@ -69,14 +69,42 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-        RecursoA recursoA = new RecursoA();
-        RecursoB recursoB = new RecursoB();
+        /*RecursoA recursoA = new RecursoA();
+        RecursoB recursoB = new RecursoB();*/
 
-        new Thread(() -> {
+        /*new Thread(() -> {
         	recursoA.mA1(recursoB);
         }).start();
         new Thread(() -> {
         	recursoB.mB2(recursoA);
+        }).start();*/
+
+        /*new Thread(() -> {
+        	synchronized (recursoA) {
+        		try { Thread.sleep(1*1000); } catch (Exception e) {}
+        			synchronized (recursoB) {}
+        	}
+        }).start();
+
+        new Thread(() -> {
+        	synchronized (recursoB) {
+        		try { Thread.sleep(1*1000); } catch (Exception e) {}
+        			synchronized (recursoA) {}
+        	}
+        }).start();*/
+
+        new Thread(() -> {
+        	synchronized (RecursoA.class) {
+        		try { Thread.sleep(1*1000); } catch (Exception e) {}
+        			synchronized (RecursoB.class) {}
+        	}
+        }).start();
+
+        new Thread(() -> {
+        	synchronized (RecursoB.class) {
+        		try { Thread.sleep(1*1000); } catch (Exception e) {}
+        			synchronized (RecursoA.class) {}
+        	}
         }).start();
 
 	}
