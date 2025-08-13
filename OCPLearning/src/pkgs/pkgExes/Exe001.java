@@ -4,6 +4,51 @@ import java.time.LocalDateTime;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+class ClassA {
+	Lock lockA = new ReentrantLock();
+	Lock lockB = new ReentrantLock();
+
+    public void metodo1() {
+    	lockA.lock();
+        try {
+        	Thread.sleep(1*1000);
+            metodoComLockB();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            lockA.unlock();
+        }
+    }
+
+    public void metodo2() {
+        lockB.lock();
+        try {
+        	Thread.sleep(1*1000);
+            metodoComLockA();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            lockB.unlock();
+        }
+    }
+
+    private void metodoComLockA() {
+        lockA.lock();
+        try {
+        } finally {
+            lockA.unlock();
+        }
+    }
+
+    private void metodoComLockB() {
+        lockB.lock();
+        try {
+        } finally {
+            lockB.unlock();
+        }
+    }
+}
+
 public class Exe001 {
 
 	static {
@@ -41,40 +86,10 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		Lock lockA = new ReentrantLock();
-		Lock lockB = new ReentrantLock();
+		ClassA classA = new ClassA();
 
-        Thread t1 = new Thread(() -> {
-        	lockA.lock();
-            try {
-            	Thread.sleep(1*1000);
-                lockB.lock();
-                try {
-                } finally {
-                    lockB.unlock();
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } finally {
-                lockA.unlock();
-            }
-        },"t1");
-
-        Thread t2 = new Thread(() -> {
-            lockB.lock();
-            try {
-            	Thread.sleep(1*1000);
-                lockA.lock();
-                try {
-                } finally {
-                    lockA.unlock();
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } finally {
-                lockB.unlock();
-            }
-        },"t2");
+        Thread t1 = new Thread(() -> classA.metodo1(),"t1");
+        Thread t2 = new Thread(() -> classA.metodo2(),"t2");
 
         t1.start();
         t2.start();

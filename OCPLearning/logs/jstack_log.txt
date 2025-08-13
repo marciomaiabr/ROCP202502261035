@@ -1,68 +1,72 @@
-2025-08-13 08:16:41
+2025-08-13 08:21:38
 Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 
-"DestroyJavaVM" #16 prio=5 os_prio=0 tid=0x000001e447af8800 nid=0x14ac waiting on condition [0x0000000000000000]
+"DestroyJavaVM" #16 prio=5 os_prio=0 tid=0x0000025c662f8800 nid=0x2194 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"t2" #15 prio=5 os_prio=0 tid=0x000001e45edde000 nid=0x1c3c waiting on condition [0x0000005ed49fe000]
+"t2" #15 prio=5 os_prio=0 tid=0x0000025c7d718000 nid=0x3b4 waiting on condition [0x0000008bfc7fe000]
    java.lang.Thread.State: WAITING (parking)
 	at sun.misc.Unsafe.park(Native Method)
-	- parking to wait for  <0x00000000e08d1ec0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+	- parking to wait for  <0x00000000e08d78c0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:870)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1199)
 	at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(ReentrantLock.java:209)
 	at java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:285)
-	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:67)
-	at pkgs.pkgExes.Exe001$$Lambda$5/1050349584.run(Unknown Source)
+	at pkgs.pkgExes.ClassA.metodoComLockA(Exe001.java:36)
+	at pkgs.pkgExes.ClassA.metodo2(Exe001.java:27)
+	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:92)
+	at pkgs.pkgExes.Exe001$$Lambda$5/1815546035.run(Unknown Source)
 	at java.lang.Thread.run(Thread.java:750)
 
-"t1" #14 prio=5 os_prio=0 tid=0x000001e45eddd800 nid=0x17b0 waiting on condition [0x0000005ed48fe000]
+"t1" #14 prio=5 os_prio=0 tid=0x0000025c7d722800 nid=0x1cbc waiting on condition [0x0000008bfc6fe000]
    java.lang.Thread.State: WAITING (parking)
 	at sun.misc.Unsafe.park(Native Method)
-	- parking to wait for  <0x00000000e08d1ef0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+	- parking to wait for  <0x00000000e08d78f0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:870)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1199)
 	at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(ReentrantLock.java:209)
 	at java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:285)
-	at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:51)
-	at pkgs.pkgExes.Exe001$$Lambda$4/1376400422.run(Unknown Source)
+	at pkgs.pkgExes.ClassA.metodoComLockB(Exe001.java:44)
+	at pkgs.pkgExes.ClassA.metodo1(Exe001.java:15)
+	at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:91)
+	at pkgs.pkgExes.Exe001$$Lambda$4/418304857.run(Unknown Source)
 	at java.lang.Thread.run(Thread.java:750)
 
-"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x000001e45ece1000 nid=0x2588 runnable [0x0000000000000000]
+"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x0000025c7d61c800 nid=0xae0 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x000001e45ec4a000 nid=0x1334 waiting on condition [0x0000000000000000]
+"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x0000025c7d580800 nid=0x2370 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x000001e45ec47800 nid=0x1afc waiting on condition [0x0000000000000000]
+"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x0000025c7d57d800 nid=0x980 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x000001e45ec2f800 nid=0x14a8 waiting on condition [0x0000000000000000]
+"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x0000025c7d57d000 nid=0x3e8 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x000001e45ec2f000 nid=0x148c waiting on condition [0x0000000000000000]
+"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x0000025c7d563800 nid=0x1f68 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x000001e45d4a5800 nid=0x183c runnable [0x0000000000000000]
+"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x0000025c7be11000 nid=0xa00 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x000001e45d4a3000 nid=0x203c runnable [0x0000000000000000]
+"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x0000025c7be10000 nid=0x8bc runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x000001e45d49c800 nid=0x24cc runnable [0x0000000000000000]
+"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x0000025c7be04000 nid=0xc14 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x000001e45d479000 nid=0xf8 waiting on condition [0x0000000000000000]
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x0000025c7bddd800 nid=0x2230 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x000001e45d477000 nid=0x100 runnable [0x0000000000000000]
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x0000025c7bddb800 nid=0x418 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x000001e45c85d800 nid=0x1348 in Object.wait() [0x0000005ed3cff000]
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x0000025c7bdb8000 nid=0x1370 in Object.wait() [0x0000008bfbafe000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0008f08> (a java.lang.ref.ReferenceQueue$Lock)
@@ -71,7 +75,7 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:171)
 	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:188)
 
-"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x000001e45d44c800 nid=0x4e0 in Object.wait() [0x0000005ed3bff000]
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x0000025c7bdaa800 nid=0x61c in Object.wait() [0x0000008bfb9fe000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
@@ -80,63 +84,67 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	- locked <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
 	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
 
-"VM Thread" os_prio=2 tid=0x000001e45d423000 nid=0x2458 runnable 
+"VM Thread" os_prio=2 tid=0x0000025c7bd80800 nid=0x2074 runnable 
 
-"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x000001e447b0f800 nid=0x12dc runnable 
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x0000025c6630f800 nid=0xe5c runnable 
 
-"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x000001e447b11000 nid=0x11d8 runnable 
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000025c66311000 nid=0x1180 runnable 
 
-"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x000001e447b12000 nid=0x1b94 runnable 
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x0000025c66312000 nid=0x1c0c runnable 
 
-"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x000001e447b15800 nid=0x1708 runnable 
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x0000025c66315800 nid=0x20b0 runnable 
 
-"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x000001e447b18000 nid=0x2084 runnable 
+"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x0000025c66317800 nid=0xf2c runnable 
 
-"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x000001e447b1a000 nid=0x16d8 runnable 
+"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x0000025c66319800 nid=0x2460 runnable 
 
-"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x000001e447b1d800 nid=0x2700 runnable 
+"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x0000025c6631c800 nid=0x1d2c runnable 
 
-"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x000001e447b1e800 nid=0x2768 runnable 
+"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x0000025c6631d800 nid=0x4a0 runnable 
 
-"VM Periodic Task Thread" os_prio=2 tid=0x000001e45d4fe800 nid=0x1a2c waiting on condition 
+"VM Periodic Task Thread" os_prio=2 tid=0x0000025c7d5a0800 nid=0xc3c waiting on condition 
 
-JNI global references: 1443
+JNI global references: 1444
 
 
 Found one Java-level deadlock:
 =============================
 "t2":
-  waiting for ownable synchronizer 0x00000000e08d1ec0, (a java.util.concurrent.locks.ReentrantLock$NonfairSync),
+  waiting for ownable synchronizer 0x00000000e08d78c0, (a java.util.concurrent.locks.ReentrantLock$NonfairSync),
   which is held by "t1"
 "t1":
-  waiting for ownable synchronizer 0x00000000e08d1ef0, (a java.util.concurrent.locks.ReentrantLock$NonfairSync),
+  waiting for ownable synchronizer 0x00000000e08d78f0, (a java.util.concurrent.locks.ReentrantLock$NonfairSync),
   which is held by "t2"
 
 Java stack information for the threads listed above:
 ===================================================
 "t2":
 	at sun.misc.Unsafe.park(Native Method)
-	- parking to wait for  <0x00000000e08d1ec0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+	- parking to wait for  <0x00000000e08d78c0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:870)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1199)
 	at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(ReentrantLock.java:209)
 	at java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:285)
-	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:67)
-	at pkgs.pkgExes.Exe001$$Lambda$5/1050349584.run(Unknown Source)
+	at pkgs.pkgExes.ClassA.metodoComLockA(Exe001.java:36)
+	at pkgs.pkgExes.ClassA.metodo2(Exe001.java:27)
+	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:92)
+	at pkgs.pkgExes.Exe001$$Lambda$5/1815546035.run(Unknown Source)
 	at java.lang.Thread.run(Thread.java:750)
 "t1":
 	at sun.misc.Unsafe.park(Native Method)
-	- parking to wait for  <0x00000000e08d1ef0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+	- parking to wait for  <0x00000000e08d78f0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:870)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1199)
 	at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(ReentrantLock.java:209)
 	at java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:285)
-	at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:51)
-	at pkgs.pkgExes.Exe001$$Lambda$4/1376400422.run(Unknown Source)
+	at pkgs.pkgExes.ClassA.metodoComLockB(Exe001.java:44)
+	at pkgs.pkgExes.ClassA.metodo1(Exe001.java:15)
+	at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:91)
+	at pkgs.pkgExes.Exe001$$Lambda$4/418304857.run(Unknown Source)
 	at java.lang.Thread.run(Thread.java:750)
 
 Found 1 deadlock.
