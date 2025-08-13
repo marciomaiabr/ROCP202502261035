@@ -9,7 +9,7 @@ class ClassA {
 	Lock lockB = new ReentrantLock();
 
     public void metodo1() {
-    	lockA.lock();
+    	lockA.tryLock();
         try {
         	Thread.sleep(1*1000);
             metodoComLockB();
@@ -21,7 +21,7 @@ class ClassA {
     }
 
     public void metodo2() {
-        lockB.lock();
+        lockB.tryLock();
         try {
         	Thread.sleep(1*1000);
             metodoComLockA();
@@ -33,7 +33,7 @@ class ClassA {
     }
 
     private void metodoComLockA() {
-        lockA.lock();
+        lockA.tryLock();
         try {
         } finally {
             lockA.unlock();
@@ -41,7 +41,7 @@ class ClassA {
     }
 
     private void metodoComLockB() {
-        lockB.lock();
+        lockB.tryLock();
         try {
         } finally {
             lockB.unlock();

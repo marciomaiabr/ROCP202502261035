@@ -1,5 +1,21 @@
-2025-08-13T08:06:22.622
+2025-08-13T08:43:05.728
 <>
 Exe001.sm1()
 Exe001.im1()
 </>
+Exception in thread "t1" java.lang.IllegalMonitorStateException
+	at java.util.concurrent.locks.ReentrantLock$Sync.tryRelease(ReentrantLock.java:151)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1261)
+	at java.util.concurrent.locks.ReentrantLock.unlock(ReentrantLock.java:457)
+	at pkgs.pkgExes.ClassA.metodoComLockB(Exe001.java:47)
+	at pkgs.pkgExes.ClassA.metodo1(Exe001.java:15)
+	at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:91)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "t2" java.lang.IllegalMonitorStateException
+	at java.util.concurrent.locks.ReentrantLock$Sync.tryRelease(ReentrantLock.java:151)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1261)
+	at java.util.concurrent.locks.ReentrantLock.unlock(ReentrantLock.java:457)
+	at pkgs.pkgExes.ClassA.metodoComLockA(Exe001.java:39)
+	at pkgs.pkgExes.ClassA.metodo2(Exe001.java:27)
+	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:92)
+	at java.lang.Thread.run(Thread.java:750)
