@@ -1,37 +1,8 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
-
-class RecursoA {
-	public synchronized void mA1(RecursoB b) {
-		try {
-			Thread.sleep(1*1000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		b.mB1();
-	}
-	public synchronized void mA2() {}
-}
-
-class RecursoB {
-	public synchronized void mB1() {
-		try {
-			Thread.sleep(1*1000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public synchronized void mB2(RecursoA a) {
-		try {
-			Thread.sleep(1*1000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		a.mA2();
-	}
-}
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Exe001 {
 
@@ -69,44 +40,44 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-        /*RecursoA recursoA = new RecursoA();
-        RecursoB recursoB = new RecursoB();*/
 
-        /*new Thread(() -> {
-        	recursoA.mA1(recursoB);
-        }).start();
-        new Thread(() -> {
-        	recursoB.mB2(recursoA);
-        }).start();*/
+		Lock lockA = new ReentrantLock();
+		Lock lockB = new ReentrantLock();
 
-        /*new Thread(() -> {
-        	synchronized (recursoA) {
-        		try { Thread.sleep(1*1000); } catch (Exception e) {}
-        			synchronized (recursoB) {}
-        	}
-        }).start();
+        Thread t1 = new Thread(() -> {
+        	lockA.lock();
+            try {
+            	Thread.sleep(1*1000);
+                lockB.lock();
+                try {
+                } finally {
+                    lockB.unlock();
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                lockA.unlock();
+            }
+        },"t1");
 
-        new Thread(() -> {
-        	synchronized (recursoB) {
-        		try { Thread.sleep(1*1000); } catch (Exception e) {}
-        			synchronized (recursoA) {}
-        	}
-        }).start();*/
+        Thread t2 = new Thread(() -> {
+            lockB.lock();
+            try {
+            	Thread.sleep(1*1000);
+                lockA.lock();
+                try {
+                } finally {
+                    lockA.unlock();
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                lockB.unlock();
+            }
+        },"t2");
 
-        new Thread(() -> {
-        	synchronized (RecursoA.class) {
-        		try { Thread.sleep(1*1000); } catch (Exception e) {}
-        			synchronized (RecursoB.class) {}
-        	}
-        }).start();
-
-        new Thread(() -> {
-        	synchronized (RecursoB.class) {
-        		try { Thread.sleep(1*1000); } catch (Exception e) {}
-        			synchronized (RecursoA.class) {}
-        	}
-        }).start();
-
+        t1.start();
+        t2.start();
 	}
 
 }

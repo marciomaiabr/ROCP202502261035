@@ -1,11 +1,5 @@
-2025-08-09T11:06:44.563
+2025-08-13T08:06:22.622
 <>
 Exe001.sm1()
 Exe001.im1()
-[Thread.currentThread().getName()=Thread-0][point=1]
 </>
-[Thread.currentThread().getName()=Thread-1][point=1]
-[Thread.currentThread().getName()=Thread-0][point=2]
-[Thread.currentThread().getName()=Thread-1][point=2]
-[Thread.currentThread().getName()=Thread-0][point=3]
-[Thread.currentThread().getName()=Thread-1][point=3]
