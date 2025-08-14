@@ -10,8 +10,10 @@ class ClassA {
 
     public void metodo1() {
     	System.out.println("[1][ClassA][metodo1]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
-    	lockA.lock();
-    	System.out.println("[2][ClassA][metodo1]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
+    	boolean locked = lockA.tryLock();
+    	if(!locked)
+    		return;
+    	System.out.println("[2][ClassA][metodo1]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[locked="+(locked)+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
         try {
         	Thread.sleep(1*1000);
             metodoComLockB();
@@ -24,8 +26,10 @@ class ClassA {
 
     public void metodo2() {
     	System.out.println("[1][ClassA][metodo2]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
-    	lockB.lock();
-    	System.out.println("[2][ClassA][metodo2]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
+    	boolean locked = lockB.tryLock();
+    	if(!locked)
+    		return;
+    	System.out.println("[2][ClassA][metodo2]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[locked="+(locked)+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
         try {
         	Thread.sleep(1*1000);
             metodoComLockA();
@@ -38,8 +42,10 @@ class ClassA {
 
     private void metodoComLockA() {
     	System.out.println("[1][ClassA][metodoComLockA]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
-    	lockA.lock();
-    	System.out.println("[2][ClassA][metodoComLockA]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
+    	boolean locked = lockA.tryLock();
+    	if(!locked)
+    		return;
+    	System.out.println("[2][ClassA][metodoComLockA]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[locked="+(locked)+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
         try {
         } finally {
             lockA.unlock();
@@ -48,8 +54,10 @@ class ClassA {
 
     private void metodoComLockB() {
     	System.out.println("[1][ClassA][metodoComLockB]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
-    	lockB.lock();
-    	System.out.println("[2][ClassA][metodoComLockB]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
+    	boolean locked = lockB.tryLock();
+    	if(!locked)
+    		return;
+    	System.out.println("[2][ClassA][metodoComLockB]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[locked="+(locked)+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
         try {
         } finally {
             lockB.unlock();
