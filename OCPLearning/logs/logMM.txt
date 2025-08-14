@@ -1,5 +1,11 @@
-2025-08-13T08:49:12.438
+2025-08-14T07:24:26.297
 <>
 Exe001.sm1()
 Exe001.im1()
 </>
+[1][ClassA][metodo2][Thread.currentThread().getName()=t2][lockA=java.util.concurrent.locks.ReentrantLock@1f448bd5[Unlocked]][lockB=java.util.concurrent.locks.ReentrantLock@1183764d[Unlocked]]
+[2][ClassA][metodo2][Thread.currentThread().getName()=t2][lockA=java.util.concurrent.locks.ReentrantLock@1f448bd5[Unlocked]][lockB=java.util.concurrent.locks.ReentrantLock@1183764d[Locked by thread t2]]
+[1][ClassA][metodo1][Thread.currentThread().getName()=t1][lockA=java.util.concurrent.locks.ReentrantLock@1f448bd5[Unlocked]][lockB=java.util.concurrent.locks.ReentrantLock@1183764d[Locked by thread t2]]
+[2][ClassA][metodo1][Thread.currentThread().getName()=t1][lockA=java.util.concurrent.locks.ReentrantLock@1f448bd5[Locked by thread t1]][lockB=java.util.concurrent.locks.ReentrantLock@1183764d[Locked by thread t2]]
+[1][ClassA][metodoComLockA][Thread.currentThread().getName()=t2][lockA=java.util.concurrent.locks.ReentrantLock@1f448bd5[Locked by thread t1]][lockB=java.util.concurrent.locks.ReentrantLock@1183764d[Locked by thread t2]]
+[1][ClassA][metodoComLockB][Thread.currentThread().getName()=t1][lockA=java.util.concurrent.locks.ReentrantLock@1f448bd5[Locked by thread t1]][lockB=java.util.concurrent.locks.ReentrantLock@1183764d[Locked by thread t2]]

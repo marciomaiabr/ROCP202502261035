@@ -9,9 +9,9 @@ class ClassA {
 	Lock lockB = new ReentrantLock();
 
     public void metodo1() {
-    	boolean locked = lockA.tryLock();
-    	if(!locked)
-    		return;
+    	System.out.println("[1][ClassA][metodo1]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
+    	lockA.lock();
+    	System.out.println("[2][ClassA][metodo1]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
         try {
         	Thread.sleep(1*1000);
             metodoComLockB();
@@ -23,9 +23,9 @@ class ClassA {
     }
 
     public void metodo2() {
-    	boolean locked = lockB.tryLock();
-    	if(!locked)
-    		return;
+    	System.out.println("[1][ClassA][metodo2]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
+    	lockB.lock();
+    	System.out.println("[2][ClassA][metodo2]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
         try {
         	Thread.sleep(1*1000);
             metodoComLockA();
@@ -37,9 +37,9 @@ class ClassA {
     }
 
     private void metodoComLockA() {
-    	boolean locked = lockA.tryLock();
-    	if(!locked)
-    		return;
+    	System.out.println("[1][ClassA][metodoComLockA]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
+    	lockA.lock();
+    	System.out.println("[2][ClassA][metodoComLockA]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
         try {
         } finally {
             lockA.unlock();
@@ -47,9 +47,9 @@ class ClassA {
     }
 
     private void metodoComLockB() {
-    	boolean locked = lockB.tryLock();
-    	if(!locked)
-    		return;
+    	System.out.println("[1][ClassA][metodoComLockB]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
+    	lockB.lock();
+    	System.out.println("[2][ClassA][metodoComLockB]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lockA="+(lockA)+"]"+"[lockB="+(lockB)+"]");
         try {
         } finally {
             lockB.unlock();
