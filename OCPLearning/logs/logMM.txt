@@ -1,12 +1,21 @@
-2025-08-14T07:30:47.180
+2025-08-14T07:40:20.120
 <>
 Exe001.sm1()
 Exe001.im1()
 </>
-[1][ClassA][metodo1][Thread.currentThread().getName()=t1][lockA=java.util.concurrent.locks.ReentrantLock@571e7c0e[Unlocked]][lockB=java.util.concurrent.locks.ReentrantLock@59d9989d[Unlocked]]
-[2][ClassA][metodo1][Thread.currentThread().getName()=t1][locked=true][lockA=java.util.concurrent.locks.ReentrantLock@571e7c0e[Locked by thread t1]][lockB=java.util.concurrent.locks.ReentrantLock@59d9989d[Unlocked]]
-[1][ClassA][metodo2][Thread.currentThread().getName()=t2][lockA=java.util.concurrent.locks.ReentrantLock@571e7c0e[Locked by thread t1]][lockB=java.util.concurrent.locks.ReentrantLock@59d9989d[Unlocked]]
-[2][ClassA][metodo2][Thread.currentThread().getName()=t2][locked=true][lockA=java.util.concurrent.locks.ReentrantLock@571e7c0e[Locked by thread t1]][lockB=java.util.concurrent.locks.ReentrantLock@59d9989d[Locked by thread t2]]
-[1][ClassA][metodoComLockB][Thread.currentThread().getName()=t1][lockA=java.util.concurrent.locks.ReentrantLock@571e7c0e[Locked by thread t1]][lockB=java.util.concurrent.locks.ReentrantLock@59d9989d[Locked by thread t2]]
-[1][ClassA][metodoComLockA][Thread.currentThread().getName()=t2][lockA=java.util.concurrent.locks.ReentrantLock@571e7c0e[Unlocked]][lockB=java.util.concurrent.locks.ReentrantLock@59d9989d[Locked by thread t2]]
-[2][ClassA][metodoComLockA][Thread.currentThread().getName()=t2][locked=true][lockA=java.util.concurrent.locks.ReentrantLock@571e7c0e[Locked by thread t2]][lockB=java.util.concurrent.locks.ReentrantLock@59d9989d[Locked by thread t2]]
+[1][ClassA][metodo1][Thread.currentThread().getName()=t1][lockA=java.util.concurrent.locks.ReentrantLock@6114463a[Unlocked]][lockB=java.util.concurrent.locks.ReentrantLock@6fd3a468[Unlocked]]
+[1][ClassA][metodo2][Thread.currentThread().getName()=t2][lockA=java.util.concurrent.locks.ReentrantLock@6114463a[Unlocked]][lockB=java.util.concurrent.locks.ReentrantLock@6fd3a468[Unlocked]]
+[2][ClassA][metodo2][Thread.currentThread().getName()=t2][locked=true][lockA=java.util.concurrent.locks.ReentrantLock@6114463a[Locked by thread t1]][lockB=java.util.concurrent.locks.ReentrantLock@6fd3a468[Locked by thread t2]]
+[2][ClassA][metodo1][Thread.currentThread().getName()=t1][locked=true][lockA=java.util.concurrent.locks.ReentrantLock@6114463a[Locked by thread t1]][lockB=java.util.concurrent.locks.ReentrantLock@6fd3a468[Locked by thread t2]]
+[1][ClassA][metodoComLockA][Thread.currentThread().getName()=t2][lockA=java.util.concurrent.locks.ReentrantLock@6114463a[Locked by thread t1]][lockB=java.util.concurrent.locks.ReentrantLock@6fd3a468[Locked by thread t2]]
+[1][ClassA][metodoComLockB][Thread.currentThread().getName()=t1][lockA=java.util.concurrent.locks.ReentrantLock@6114463a[Locked by thread t1]][lockB=java.util.concurrent.locks.ReentrantLock@6fd3a468[Locked by thread t2]]
+[2][ClassA][metodoComLockA][Thread.currentThread().getName()=t2][locked=false][lockA=java.util.concurrent.locks.ReentrantLock@6114463a[Locked by thread t1]][lockB=java.util.concurrent.locks.ReentrantLock@6fd3a468[Locked by thread t2]]
+[2][ClassA][metodoComLockB][Thread.currentThread().getName()=t1][locked=true][lockA=java.util.concurrent.locks.ReentrantLock@6114463a[Locked by thread t1]][lockB=java.util.concurrent.locks.ReentrantLock@6fd3a468[Locked by thread t1]]
+Exception in thread "t2" java.lang.IllegalMonitorStateException
+	at java.util.concurrent.locks.ReentrantLock$Sync.tryRelease(ReentrantLock.java:151)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1261)
+	at java.util.concurrent.locks.ReentrantLock.unlock(ReentrantLock.java:457)
+	at pkgs.pkgExes.ClassA.metodoComLockA(Exe001.java:61)
+	at pkgs.pkgExes.ClassA.metodo2(Exe001.java:42)
+	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:121)
+	at java.lang.Thread.run(Thread.java:750)
