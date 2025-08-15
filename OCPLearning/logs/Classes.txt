@@ -1,3 +1,8 @@
 C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001$1.class
 C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001$2.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001$3.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001$4.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001$5.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001$6.class
 C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\Exe001.class
+C:\Users\Administrador\git\ROCP202502261035\OCPLearning\bin\pkgs\pkgExes\MaxValueCollection.class

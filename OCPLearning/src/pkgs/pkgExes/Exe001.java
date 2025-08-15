@@ -1,9 +1,52 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
-import java.util.concurrent.locks.Condition;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+class MaxValueCollection {
+	private List<Integer> list = new ArrayList<>();
+	private ReentrantReadWriteLock rrwl = new ReentrantReadWriteLock();
+	public MaxValueCollection() {
+		list.add(0);list.add(1);list.add(5);list.add(10);
+	}
+	public void add(int i) {
+		Lock lock = rrwl.writeLock();
+		System.out.println("[1][MaxValueCollection][add(int i)][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]");
+		lock.lock();
+		System.out.println("[2][MaxValueCollection][add(int i)][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]");
+		try {
+			list.add(i);
+        	try {
+				Thread.sleep(1*1000);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} finally {
+			lock.unlock();
+		}
+	}
+	public int findMax() {
+		Lock lock = rrwl.readLock();
+		System.out.println("[1][MaxValueCollection][findMax()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]");
+		lock.lock();
+		System.out.println("[2][MaxValueCollection][findMax()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]");
+		try {
+			int i = Collections.max(list);
+        	try {
+				Thread.sleep(1*1000);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return i;
+		} finally {
+			lock.unlock();
+		}
+	}
+}
 
 public class Exe001 {
 
@@ -39,61 +82,50 @@ public class Exe001 {
 		System.out.println("Exe001.sm1()");
 	}
 
-    private static Lock lock = new ReentrantLock();
-    private static Condition c1 = lock.newCondition();
-    private static Condition c2 = lock.newCondition();
-    private static boolean b = true;
-
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-        new Thread(new Runnable() {
+		MaxValueCollection mvc = new MaxValueCollection();
+
+		new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 1; i <= 3; i++) {
-                    try {
-                    	lock.lock();
-                        while (!b) {
-                            try {
-                            	c1.await();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
-                        b = false;
-                        c2.signal();
-                    } catch(Exception e) {
-                        e.printStackTrace();
-                    } finally {
-                        lock.unlock();
-                    }
-                }
+            	mvc.add(11);
             }
         }).start();
 
-        new Thread(new Runnable() {
+		new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 1; i <= 3; i++) {
-                    try {
-                    	lock.lock();
-                        while (b) {
-                            try {
-                            	c2.await();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
-                        b = true;
-                        c1.signal();
-                    } catch(Exception e) {
-                        e.printStackTrace();
-                    } finally {
-                        lock.unlock();
-                    }
-                }
+            	mvc.add(12);
+            }
+        }).start();
+
+		new Thread(new Runnable() {
+            @Override
+            public void run() {
+            	mvc.add(13);
+            }
+        }).start();
+
+		new Thread(new Runnable() {
+            @Override
+            public void run() {
+            	System.out.println(mvc.findMax());
+            }
+        }).start();
+
+		new Thread(new Runnable() {
+            @Override
+            public void run() {
+            	System.out.println(mvc.findMax());
+            }
+        }).start();
+
+		new Thread(new Runnable() {
+            @Override
+            public void run() {
+            	System.out.println(mvc.findMax());
             }
         }).start();
 
