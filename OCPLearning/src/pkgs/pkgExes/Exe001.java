@@ -38,21 +38,52 @@ public class Exe001 {
 		System.out.println("Exe001.sm1()");
 	}
 
+    private static final Object obj = new Object();
+    private static boolean b = true;
+
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		Lock lock = null;
-		System.out.println(lock);
-		lock = new ReentrantLock();
-		System.out.println(lock);
-		lock.lock();
-		System.out.println(lock);
-		lock.lock();
-		System.out.println(lock);
-		lock.unlock();
-		System.out.println(lock);
-		lock.unlock();
-		System.out.println(lock);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 1; i <= 3; i++) {
+                    synchronized (obj) {
+                        while (!b) {
+                            try {
+                            	obj.wait();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
+                        b = false;
+                        obj.notify();
+                    }
+                }
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+            	for (int i = 1; i <= 3; i++) {
+                    synchronized (obj) {
+                        while (b) {
+                            try {
+                            	obj.wait();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
+                        b = true;
+                        obj.notify();
+                    }
+                }
+            }
+        }).start();
+
 	}
 
 }

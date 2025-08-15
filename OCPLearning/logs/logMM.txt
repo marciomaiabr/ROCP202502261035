@@ -1,11 +1,11 @@
-2025-08-14T08:24:57.990
+2025-08-15T07:50:20.047
 <>
 Exe001.sm1()
 Exe001.im1()
-null
-java.util.concurrent.locks.ReentrantLock@78c03f1f[Unlocked]
-java.util.concurrent.locks.ReentrantLock@78c03f1f[Locked by thread main]
-java.util.concurrent.locks.ReentrantLock@78c03f1f[Locked by thread main]
-java.util.concurrent.locks.ReentrantLock@78c03f1f[Locked by thread main]
-java.util.concurrent.locks.ReentrantLock@78c03f1f[Unlocked]
+[Thread.currentThread().getName()=Thread-0]
 </>
+[Thread.currentThread().getName()=Thread-1]
+[Thread.currentThread().getName()=Thread-0]
+[Thread.currentThread().getName()=Thread-1]
+[Thread.currentThread().getName()=Thread-0]
+[Thread.currentThread().getName()=Thread-1]
