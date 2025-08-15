@@ -15,9 +15,9 @@ class MaxValueCollection {
 	}
 	public void add(int i) {
 		Lock lock = rrwl.writeLock();
-		System.out.println("[1][MaxValueCollection][add(int i)][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]");
+		System.out.println("[1][MaxValueCollection][add(int i)][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]"+"["+(LocalDateTime.now())+"]");
 		lock.lock();
-		System.out.println("[2][MaxValueCollection][add(int i)][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]");
+		System.out.println("[2][MaxValueCollection][add(int i)][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]"+"["+(LocalDateTime.now())+"]");
 		try {
 			list.add(i);
         	try {
@@ -27,13 +27,14 @@ class MaxValueCollection {
 			}
 		} finally {
 			lock.unlock();
+			System.out.println("[3][MaxValueCollection][add(int i)][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]"+"["+(LocalDateTime.now())+"]");
 		}
 	}
 	public int findMax() {
 		Lock lock = rrwl.readLock();
-		System.out.println("[1][MaxValueCollection][findMax()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]");
+		System.out.println("[1][MaxValueCollection][findMax()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]"+"["+(LocalDateTime.now())+"]");
 		lock.lock();
-		System.out.println("[2][MaxValueCollection][findMax()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]");
+		System.out.println("[2][MaxValueCollection][findMax()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]"+"["+(LocalDateTime.now())+"]");
 		try {
 			int i = Collections.max(list);
         	try {
@@ -44,6 +45,7 @@ class MaxValueCollection {
 			return i;
 		} finally {
 			lock.unlock();
+			System.out.println("[3][MaxValueCollection][findMax()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[lock="+(lock)+"]"+"["+(LocalDateTime.now())+"]");
 		}
 	}
 }

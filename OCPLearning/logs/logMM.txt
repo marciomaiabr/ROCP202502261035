@@ -1,20 +1,26 @@
-2025-08-15T08:43:09.917
+2025-08-15T08:52:48.664
 <>
 Exe001.sm1()
 Exe001.im1()
-[1][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-0][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@ea2c4c9[Unlocked]]
-[2][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-0][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@ea2c4c9[Locked by thread Thread-0]]
-[1][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-1][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@ea2c4c9[Locked by thread Thread-0]]
-[1][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-2][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@ea2c4c9[Locked by thread Thread-0]]
-[1][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-3][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@463c9885[Read locks = 0]]
-[1][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-4][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@463c9885[Read locks = 0]]
+[1][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-0][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@67f7db33[Unlocked]][2025-08-15T08:52:48.666]
+[2][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-0][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@67f7db33[Locked by thread Thread-0]][2025-08-15T08:52:48.666]
+[1][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-1][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@67f7db33[Locked by thread Thread-0]][2025-08-15T08:52:48.667]
+[1][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-2][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@67f7db33[Locked by thread Thread-0]][2025-08-15T08:52:48.669]
+[1][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-3][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@841b2e3[Read locks = 0]][2025-08-15T08:52:48.670]
+[1][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-4][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@841b2e3[Read locks = 0]][2025-08-15T08:52:48.670]
 </>
-[1][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-5][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@463c9885[Read locks = 0]]
-[2][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-1][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@ea2c4c9[Locked by thread Thread-1]]
-[2][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-2][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@ea2c4c9[Locked by thread Thread-2]]
-[2][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-3][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@463c9885[Read locks = 1]]
-[2][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-4][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@463c9885[Read locks = 2]]
-[2][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-5][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@463c9885[Read locks = 3]]
+[1][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-5][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@841b2e3[Read locks = 0]][2025-08-15T08:52:48.671]
+[3][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-0][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@67f7db33[Unlocked]][2025-08-15T08:52:49.668]
+[2][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-1][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@67f7db33[Locked by thread Thread-1]][2025-08-15T08:52:49.670]
+[3][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-1][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@67f7db33[Unlocked]][2025-08-15T08:52:50.671]
+[2][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-2][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@67f7db33[Locked by thread Thread-2]][2025-08-15T08:52:50.671]
+[3][MaxValueCollection][add(int i)][Thread.currentThread().getName()=Thread-2][lock=java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@67f7db33[Unlocked]][2025-08-15T08:52:51.674]
+[2][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-3][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@841b2e3[Read locks = 1]][2025-08-15T08:52:51.674]
+[2][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-4][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@841b2e3[Read locks = 2]][2025-08-15T08:52:51.674]
+[2][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-5][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@841b2e3[Read locks = 3]][2025-08-15T08:52:51.676]
+[3][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-5][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@841b2e3[Read locks = 2]][2025-08-15T08:52:52.680]
 13
+[3][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-3][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@841b2e3[Read locks = 1]][2025-08-15T08:52:52.680]
 13
+[3][MaxValueCollection][findMax()][Thread.currentThread().getName()=Thread-4][lock=java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@841b2e3[Read locks = 0]][2025-08-15T08:52:52.680]
 13
