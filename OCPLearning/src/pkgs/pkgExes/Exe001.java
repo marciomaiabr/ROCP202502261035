@@ -1,6 +1,7 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
+import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -38,7 +39,9 @@ public class Exe001 {
 		System.out.println("Exe001.sm1()");
 	}
 
-    private static final Object obj = new Object();
+    private static Lock lock = new ReentrantLock();
+    private static Condition c1 = lock.newCondition();
+    private static Condition c2 = lock.newCondition();
     private static boolean b = true;
 
 	public void im1(String[] args) {
@@ -48,17 +51,22 @@ public class Exe001 {
             @Override
             public void run() {
                 for (int i = 1; i <= 3; i++) {
-                    synchronized (obj) {
+                    try {
+                    	lock.lock();
                         while (!b) {
                             try {
-                            	obj.wait();
+                            	c1.await();
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
                         }
                         System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
                         b = false;
-                        obj.notify();
+                        c2.signal();
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        lock.unlock();
                     }
                 }
             }
@@ -67,18 +75,23 @@ public class Exe001 {
         new Thread(new Runnable() {
             @Override
             public void run() {
-            	for (int i = 1; i <= 3; i++) {
-                    synchronized (obj) {
+                for (int i = 1; i <= 3; i++) {
+                    try {
+                    	lock.lock();
                         while (b) {
                             try {
-                            	obj.wait();
+                            	c2.await();
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
                         }
                         System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
                         b = true;
-                        obj.notify();
+                        c1.signal();
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        lock.unlock();
                     }
                 }
             }
