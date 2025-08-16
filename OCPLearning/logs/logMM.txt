@@ -1,5 +1,8 @@
-2025-08-16T09:16:58.224
+2025-08-16T09:22:19.427
 <>
 Exe001.sm1()
 Exe001.im1()
 </>
+Exception in thread "Thread-0" java.lang.NullPointerException
+	at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:47)
+	at java.lang.Thread.run(Thread.java:750)

@@ -36,8 +36,19 @@ public class Exe001 {
 		System.out.println("Exe001.sm1()");
 	}
 
+
+
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
+
+		Object object1 = null;
+
+		new Thread(()->{
+			synchronized (object1) {
+				
+			}
+		}).start();
+
 	}
 
 }
