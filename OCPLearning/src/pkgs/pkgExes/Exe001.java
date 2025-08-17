@@ -1,10 +1,9 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
-import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
-public class Exe001 extends Thread {
+public class Exe001 {
 
 	static {
 		System.out.println(LocalDateTime.now());
@@ -14,7 +13,7 @@ public class Exe001 extends Thread {
 
 	public Exe001(String label) { this.label = label; }
 	@Override
-	public String toString() { return ("[Exe001][toString()]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[label="+(label)+"]"+"[super.toString()="+(super.toString())+"]"); }
+	public String toString() { return ("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[label="+(label)+"]"+"[super.toString()="+(super.toString())+"]"); }
 
 	public static void main(String[] args) {
 
@@ -38,47 +37,42 @@ public class Exe001 extends Thread {
 		System.out.println("Exe001.sm1()");
 	}
 
-	private static final int N = 3;
-	public static final CyclicBarrier barrier = new CyclicBarrier(N, () -> {
-		System.out.println("[CyclicBarrier][1]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
-    });
+
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		System.out.println("[Exe001][im1][1]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
+		System.out.println("[Exe001][im1][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"][1]");
 
-		new Exe001("exe001_1").start();
-		new Exe001("exe001_2").start();
-		new Exe001("exe001_3").start();
+		CyclicBarrier barrier = new CyclicBarrier(3, () -> {
+            System.out.println("[CyclicBarrier][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
+        });
 
-		System.out.println("[Exe001][im1][2]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
+		System.out.println("[Exe001][im1][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"][2]");
 
-	}
+		Runnable runnable = ()->{
+			System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"][1]");
+			try {
+				Thread.sleep(1*1000);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"][2]");
+			try {
+				barrier.await();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"][3]");
+		};
 
-	@Override
-	public void run() {
-		System.out.println("[Exe001][run][1]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
-		sleep();
-		System.out.println("[Exe001][run][2]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
-		try {
-			Exe001.barrier.await();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println("[Exe001][run][3]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
-	}
+		System.out.println("[Exe001][im1][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"][3]");
 
-	public static void sleep() {
-		sleep(null);
-	}
+		new Thread(runnable,"t1").start();
+		new Thread(runnable,"t2").start();
+		new Thread(runnable,"t3").start();
 
-	public static void sleep(Integer i) {
-		try {
-			Thread.sleep((i == null ? 1 : i)*1000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		System.out.println("[Exe001][im1][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"][4]");
 	}
 
 }
