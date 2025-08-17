@@ -1,6 +1,10 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Exe001 {
 
@@ -40,15 +44,46 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-
-		Object object1 = null;
-
-		new Thread(()->{
-			synchronized (object1) {
-				
-			}
-		}).start();
-
+		{
+			List<String> strings = new ArrayList<>();
+			strings.add("a");
+			strings.add("e");
+			strings.add("i");
+			strings.add("o");
+			strings.add("u");
+			List<String> strings2 = strings;
+			System.out.println("[strings="+(strings)+"]"+"[strings="+(strings)+"]"+"[strings2 == strings="+(strings2 == strings)+"]");
+			strings.add("b");
+			System.out.println("[strings="+(strings)+"]"+"[strings="+(strings)+"]"+"[strings2 == strings="+(strings2 == strings)+"]");
+			Iterator<String> iterator = strings.iterator();
+			strings.add("c");
+			//while (iterator.hasNext()) System.out.print("[iterator.next()="+(iterator.next())+"]");//java.util.ConcurrentModificationException
+			iterator = strings.iterator();
+			System.out.println();
+			while (iterator.hasNext()) System.out.print("[iterator.next()="+(iterator.next())+"]");
+			System.out.println();
+			iterator = strings.iterator();
+			//iterator.next();
+			//iterator.remove();//java.lang.IllegalStateException
+			iterator.next();
+			iterator.remove();
+		}
+		{
+			CopyOnWriteArrayList<String> strings = new CopyOnWriteArrayList<>("a,e,i,o,u".split(","));
+			CopyOnWriteArrayList<String> strings2 = strings;
+			System.out.println("[strings="+(strings)+"]"+"[strings="+(strings)+"]"+"[strings2 == strings="+(strings2 == strings)+"]");
+			strings.add("b");
+			System.out.println("[strings="+(strings)+"]"+"[strings="+(strings)+"]"+"[strings2 == strings="+(strings2 == strings)+"]");
+			Iterator<String> iterator = strings.iterator();
+			strings.add("c");
+			while (iterator.hasNext()) System.out.print("[iterator.next()="+(iterator.next())+"]");
+			iterator = strings.iterator();
+			System.out.println();
+			while (iterator.hasNext()) System.out.print("[iterator.next()="+(iterator.next())+"]");
+			System.out.println();
+			iterator = strings.iterator();
+			//iterator.remove();//java.lang.UnsupportedOperationException
+		}
 	}
 
 }
