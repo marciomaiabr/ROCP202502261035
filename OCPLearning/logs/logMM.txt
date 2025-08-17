@@ -1,13 +1,17 @@
-2025-08-17T10:27:58.876
+2025-08-17T11:35:05.170
 <>
 Exe001.sm1()
 Exe001.im1()
-[strings=[a, e, i, o, u]][strings=[a, e, i, o, u]][strings2 == strings=true]
-[strings=[a, e, i, o, u, b]][strings=[a, e, i, o, u, b]][strings2 == strings=true]
-
-[iterator.next()=a][iterator.next()=e][iterator.next()=i][iterator.next()=o][iterator.next()=u][iterator.next()=b][iterator.next()=c]
-[strings=[a, e, i, o, u]][strings=[a, e, i, o, u]][strings2 == strings=true]
-[strings=[a, e, i, o, u, b]][strings=[a, e, i, o, u, b]][strings2 == strings=true]
-[iterator.next()=a][iterator.next()=e][iterator.next()=i][iterator.next()=o][iterator.next()=u][iterator.next()=b]
-[iterator.next()=a][iterator.next()=e][iterator.next()=i][iterator.next()=o][iterator.next()=u][iterator.next()=b][iterator.next()=c]
+[Exe001][im1][1][Thread.currentThread().getName()=main]
+[Exe001][run][1][Thread.currentThread().getName()=Thread-1]
+[Exe001][run][1][Thread.currentThread().getName()=Thread-2]
+[Exe001][im1][2][Thread.currentThread().getName()=main]
+[Exe001][run][1][Thread.currentThread().getName()=Thread-3]
 </>
+[Exe001][run][2][Thread.currentThread().getName()=Thread-2]
+[Exe001][run][2][Thread.currentThread().getName()=Thread-1]
+[Exe001][run][2][Thread.currentThread().getName()=Thread-3]
+[CyclicBarrier][1][Thread.currentThread().getName()=Thread-3]
+[Exe001][run][3][Thread.currentThread().getName()=Thread-3]
+[Exe001][run][3][Thread.currentThread().getName()=Thread-2]
+[Exe001][run][3][Thread.currentThread().getName()=Thread-1]

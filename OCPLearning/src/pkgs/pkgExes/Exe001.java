@@ -1,12 +1,10 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
 
-public class Exe001 {
+public class Exe001 extends Thread {
 
 	static {
 		System.out.println(LocalDateTime.now());
@@ -16,7 +14,7 @@ public class Exe001 {
 
 	public Exe001(String label) { this.label = label; }
 	@Override
-	public String toString() { return ("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[label="+(label)+"]"+"[super.toString()="+(super.toString())+"]"); }
+	public String toString() { return ("[Exe001][toString()]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[label="+(label)+"]"+"[super.toString()="+(super.toString())+"]"); }
 
 	public static void main(String[] args) {
 
@@ -40,49 +38,46 @@ public class Exe001 {
 		System.out.println("Exe001.sm1()");
 	}
 
-
+	private static final int N = 3;
+	public static final CyclicBarrier barrier = new CyclicBarrier(N, () -> {
+		System.out.println("[CyclicBarrier][1]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
+    });
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		{
-			List<String> strings = new ArrayList<>();
-			strings.add("a");
-			strings.add("e");
-			strings.add("i");
-			strings.add("o");
-			strings.add("u");
-			List<String> strings2 = strings;
-			System.out.println("[strings="+(strings)+"]"+"[strings="+(strings)+"]"+"[strings2 == strings="+(strings2 == strings)+"]");
-			strings.add("b");
-			System.out.println("[strings="+(strings)+"]"+"[strings="+(strings)+"]"+"[strings2 == strings="+(strings2 == strings)+"]");
-			Iterator<String> iterator = strings.iterator();
-			strings.add("c");
-			//while (iterator.hasNext()) System.out.print("[iterator.next()="+(iterator.next())+"]");//java.util.ConcurrentModificationException
-			iterator = strings.iterator();
-			System.out.println();
-			while (iterator.hasNext()) System.out.print("[iterator.next()="+(iterator.next())+"]");
-			System.out.println();
-			iterator = strings.iterator();
-			//iterator.next();
-			//iterator.remove();//java.lang.IllegalStateException
-			iterator.next();
-			iterator.remove();
+
+		System.out.println("[Exe001][im1][1]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
+
+		new Exe001("exe001_1").start();
+		new Exe001("exe001_2").start();
+		new Exe001("exe001_3").start();
+
+		System.out.println("[Exe001][im1][2]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
+
+	}
+
+	@Override
+	public void run() {
+		System.out.println("[Exe001][run][1]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
+		sleep();
+		System.out.println("[Exe001][run][2]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
+		try {
+			Exe001.barrier.await();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		{
-			CopyOnWriteArrayList<String> strings = new CopyOnWriteArrayList<>("a,e,i,o,u".split(","));
-			CopyOnWriteArrayList<String> strings2 = strings;
-			System.out.println("[strings="+(strings)+"]"+"[strings="+(strings)+"]"+"[strings2 == strings="+(strings2 == strings)+"]");
-			strings.add("b");
-			System.out.println("[strings="+(strings)+"]"+"[strings="+(strings)+"]"+"[strings2 == strings="+(strings2 == strings)+"]");
-			Iterator<String> iterator = strings.iterator();
-			strings.add("c");
-			while (iterator.hasNext()) System.out.print("[iterator.next()="+(iterator.next())+"]");
-			iterator = strings.iterator();
-			System.out.println();
-			while (iterator.hasNext()) System.out.print("[iterator.next()="+(iterator.next())+"]");
-			System.out.println();
-			iterator = strings.iterator();
-			//iterator.remove();//java.lang.UnsupportedOperationException
+		System.out.println("[Exe001][run][3]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
+	}
+
+	public static void sleep() {
+		sleep(null);
+	}
+
+	public static void sleep(Integer i) {
+		try {
+			Thread.sleep((i == null ? 1 : i)*1000);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
