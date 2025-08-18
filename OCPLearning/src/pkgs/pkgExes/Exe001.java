@@ -43,17 +43,15 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		Runnable r = ()->{
-			System.out.println("[Runnable][r][run()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[super.toString()="+(super.toString())+"]");
-		};
-
 		Executor executor = new Executor() {
 			@Override
 			public void execute(Runnable pRunnable) {
 				new Thread(pRunnable).start();
 			}};
 
-		executor.execute(r);
+		executor.execute(()->{
+			System.out.println("[Runnable][r][run()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[super.toString()="+(super.toString())+"]");
+		});
 
 	}
 
