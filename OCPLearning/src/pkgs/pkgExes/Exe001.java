@@ -50,7 +50,7 @@ public class Exe001 {
 		Executor executor = new Executor() {
 			@Override
 			public void execute(Runnable pRunnable) {
-				pRunnable.run();
+				new Thread(pRunnable).start();
 			}};
 
 		executor.execute(r);
