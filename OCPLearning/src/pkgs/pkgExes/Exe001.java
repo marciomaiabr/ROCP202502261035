@@ -1,6 +1,7 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
+import java.util.concurrent.Executor;
 
 public class Exe001 {
 
@@ -45,7 +46,14 @@ public class Exe001 {
 		Runnable r = ()->{
 			System.out.println("[Runnable][r][run()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[super.toString()="+(super.toString())+"]");
 		};
-		r.run();
+
+		Executor executor = new Executor() {
+			@Override
+			public void execute(Runnable pRunnable) {
+				pRunnable.run();
+			}};
+
+		executor.execute(r);
 
 	}
 
