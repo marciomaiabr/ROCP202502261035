@@ -15,7 +15,7 @@ public class Exe001 {
 	public Exe001(String stringExe001Name) { this.stringExe001Name = stringExe001Name; }
 
 	@Override
-	public String toString() { return ("[Exe001][toString()][stringExe001Name="+(stringExe001Name)+"][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[super.toString()="+(super.toString())+"]"); }
+	public String toString() { return ("[Exe001]"+"[stringExe001Name="+(stringExe001Name)+"][toString()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[super.toString()="+(super.toString())+"]"); }
 
 	public static void main(String[] args) {
 
@@ -41,6 +41,12 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
+
+		Runnable r = ()->{
+			System.out.println("[Runnable][r][run()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[super.toString()="+(super.toString())+"]");
+		};
+		r.run();
+
 	}
 
 }
