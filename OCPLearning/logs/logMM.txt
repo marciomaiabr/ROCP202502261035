@@ -1,6 +1,8 @@
-2025-08-18T14:46:42.351
+2025-08-20T07:17:21.447
 <>
 Exe001.sm1()
 Exe001.im1()
+[Exe001][im1][1][Thread.currentThread().getName()=main][executorService=java.util.concurrent.ThreadPoolExecutor@e9e54c2[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]]
+[Exe001][im1][2][Thread.currentThread().getName()=main][executorService=java.util.concurrent.ThreadPoolExecutor@e9e54c2[Running, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]]
 </>
-[Runnable][r][run()][Thread.currentThread().getName()=Thread-0][super.toString()=pkgs.pkgExes.Exe001@e44640b]
+[ExecutorService][executorService][Thread.currentThread().getName()=pool-1-thread-1]

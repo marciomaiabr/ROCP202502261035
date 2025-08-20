@@ -1,7 +1,8 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
-import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Exe001 {
 
@@ -16,7 +17,7 @@ public class Exe001 {
 	public Exe001(String stringExe001Name) { this.stringExe001Name = stringExe001Name; }
 
 	@Override
-	public String toString() { return ("[Exe001]"+"[stringExe001Name="+(stringExe001Name)+"][toString()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[super.toString()="+(super.toString())+"]"); }
+	public String toString() { return ("[Exe001][stringExe001Name="+(stringExe001Name)+"][toString()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[super.toString()="+(super.toString())+"]"); }
 
 	public static void main(String[] args) {
 
@@ -43,13 +44,16 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
-		Executor executor = (Runnable pRunnable) -> {
-			new Thread(pRunnable).start();
-		};
+		ExecutorService executorService = null;
 
-		executor.execute(()->{
-			System.out.println("[Runnable][r][run()][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[super.toString()="+(super.toString())+"]");
+		executorService = Executors.newCachedThreadPool();
+		System.out.println("[Exe001][im1][1][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[executorService="+(executorService)+"]");
+
+		executorService.execute(()->{
+			System.out.println("[ExecutorService][executorService][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
 		});
+
+		System.out.println("[Exe001][im1][2][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[executorService="+(executorService)+"]");
 
 	}
 
