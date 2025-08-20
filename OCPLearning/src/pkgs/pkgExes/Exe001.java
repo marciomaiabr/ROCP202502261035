@@ -55,6 +55,14 @@ public class Exe001 {
 
 		System.out.println("[Exe001][im1][2][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[executorService="+(executorService)+"]");
 
+		try {
+			Thread.sleep(60*1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("[Exe001][im1][3][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[executorService="+(executorService)+"]");
+
 	}
 
 }
