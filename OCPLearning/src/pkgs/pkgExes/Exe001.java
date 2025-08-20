@@ -41,6 +41,9 @@ public class Exe001 {
 		System.out.println("Exe001.sm1()");
 	}
 
+    private static final Object lock1 = new Object();
+    private static final Object lock2 = new Object();
+
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 
@@ -50,18 +53,50 @@ public class Exe001 {
 		System.out.println("[Exe001][im1][1][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[executorService="+(executorService)+"]");
 
 		executorService.execute(()->{
-			System.out.println("[ExecutorService][executorService][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
+            synchronized (lock1) {
+                System.out.println("Thread 1: Segurando lock1...");
+
+				try {
+					Thread.sleep(1 * 1000);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+                System.out.println("Thread 1: Esperando lock2...");
+                synchronized (lock2) {
+                    System.out.println("Thread 1: Segurando lock1 e lock2.");
+                }
+            }
 		});
 
 		System.out.println("[Exe001][im1][2][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[executorService="+(executorService)+"]");
 
+		executorService.execute(()->{
+            synchronized (lock2) {
+                System.out.println("Thread 2: Segurando lock2...");
+
+				try {
+					Thread.sleep(1 * 1000);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+                System.out.println("Thread 2: Esperando lock1...");
+                synchronized (lock1) {
+                    System.out.println("Thread 2: Segurando lock2 e lock1.");
+                }
+            }
+		});
+
+		System.out.println("[Exe001][im1][3][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[executorService="+(executorService)+"]");
+
 		try {
-			Thread.sleep(60*1000);
+			Thread.sleep(65 * 1000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		System.out.println("[Exe001][im1][3][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[executorService="+(executorService)+"]");
+		System.out.println("[Exe001][im1][4][Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[executorService="+(executorService)+"]");
 
 	}
 

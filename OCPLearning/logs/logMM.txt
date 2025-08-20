@@ -1,9 +1,13 @@
-2025-08-20T07:35:23.264
+2025-08-20T07:44:02.116
 <>
 Exe001.sm1()
 Exe001.im1()
 [Exe001][im1][1][Thread.currentThread().getName()=main][executorService=java.util.concurrent.ThreadPoolExecutor@210366b4[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]]
 [Exe001][im1][2][Thread.currentThread().getName()=main][executorService=java.util.concurrent.ThreadPoolExecutor@210366b4[Running, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]]
-[ExecutorService][executorService][Thread.currentThread().getName()=pool-1-thread-1]
-[Exe001][im1][3][Thread.currentThread().getName()=main][executorService=java.util.concurrent.ThreadPoolExecutor@210366b4[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]]
+Thread 1: Segurando lock1...
+[Exe001][im1][3][Thread.currentThread().getName()=main][executorService=java.util.concurrent.ThreadPoolExecutor@210366b4[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]]
+Thread 2: Segurando lock2...
+Thread 2: Esperando lock1...
+Thread 1: Esperando lock2...
+[Exe001][im1][4][Thread.currentThread().getName()=main][executorService=java.util.concurrent.ThreadPoolExecutor@210366b4[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]]
 </>
