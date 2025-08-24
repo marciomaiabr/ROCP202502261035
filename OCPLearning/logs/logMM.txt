@@ -1,6 +1,6 @@
-2025-08-24T09:48:35.107
+2025-08-24T09:55:05.220
 <>
 Exe001.sm1()
 Exe001.im1()
-[Executors.newCachedThreadPool().submit(callable).get()=hello world]
+[future=java.util.concurrent.FutureTask@eec5a4a][future.get()=hello world]
 </>
