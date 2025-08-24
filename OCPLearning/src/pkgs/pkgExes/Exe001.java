@@ -2,6 +2,8 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Exe001 {
 
@@ -34,13 +36,13 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		Callable<String> callable = new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				return "hello world";
-		}};
 		try {
-			System.out.println("[callable="+(callable)+"]"+"[callable="+(callable.call())+"]");
+			Callable<String> callable = new Callable<String>() {
+				@Override
+				public String call() throws Exception {
+					return "hello world";
+			}};
+			System.out.println("[Executors.newCachedThreadPool().submit(callable).get()="+(Executors.newCachedThreadPool().submit(callable).get())+"]");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,6 +1,6 @@
-2025-08-24T09:31:49.671
+2025-08-24T09:48:35.107
 <>
 Exe001.sm1()
 Exe001.im1()
-[callable=pkgs.pkgExes.Exe001$1@4fe3c938][callable=hello world]
+[Executors.newCachedThreadPool().submit(callable).get()=hello world]
 </>
