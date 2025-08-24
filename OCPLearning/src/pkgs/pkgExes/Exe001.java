@@ -1,6 +1,7 @@
 package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
+import java.util.concurrent.Callable;
 
 public class Exe001 {
 
@@ -33,7 +34,16 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		//System.out.println("[="+()+"]"+"");
+		Callable<String> callable = new Callable<String>() {
+			@Override
+			public String call() throws Exception {
+				return "hello world";
+		}};
+		try {
+			System.out.println("[callable="+(callable)+"]"+"[callable="+(callable.call())+"]");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
  	}
 
 }
