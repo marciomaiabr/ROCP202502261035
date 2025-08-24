@@ -38,12 +38,14 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 		try {
+			ExecutorService executorService = Executors.newCachedThreadPool();
+			System.out.println("[executorService="+(executorService)+"]");
 			Callable<String> callable = new Callable<String>() {
 				@Override
 				public String call() throws Exception {
 					return "hello world";
 			}};
-			Future<String> future = Executors.newCachedThreadPool().submit(callable);
+			Future<String> future = executorService.submit(callable);
 			System.out.println("[future="+(future)+"]"+"[future.get()="+(future.get())+"]");
 		} catch (Exception e) {
 			e.printStackTrace();
