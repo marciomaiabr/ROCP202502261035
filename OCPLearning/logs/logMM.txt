@@ -1,9 +1,9 @@
-2025-08-24T11:20:23.545
+2025-08-24T11:55:02.448
 <>
 Exe001.sm1()
 Exe001.im1()
-[executorService=java.util.concurrent.ThreadPoolExecutor@3701eaf6[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]]
-[future=java.util.concurrent.FutureTask@131276c2][future.get()=hello world]
-[executorService=java.util.concurrent.ThreadPoolExecutor@3701eaf6[Shutting down, pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1]]
-[executorService=java.util.concurrent.ThreadPoolExecutor@3701eaf6[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]]
+[executorService=java.util.concurrent.ThreadPoolExecutor@551aa95a[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]]
+[executorService=java.util.concurrent.ThreadPoolExecutor@551aa95a[Shutting down, pool size = 3, active threads = 3, queued tasks = 0, completed tasks = 0]]
+[Thread.currentThread().getName()=pool-1-thread-2][future=java.util.concurrent.FutureTask@5d6bce23][future.get()=[Thread.currentThread().getName()=pool-1-thread-1][hello world]]
+[executorService=java.util.concurrent.ThreadPoolExecutor@551aa95a[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 3]]
 </>
