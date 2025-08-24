@@ -43,12 +43,14 @@ public class Exe001 {
 			Callable<String> callable = new Callable<String>() {
 				@Override
 				public String call() throws Exception {
+					Thread.sleep(5*1000);
 					return "hello world";
 			}};
 			Future<String> future = executorService.submit(callable);
-			System.out.println("[future="+(future)+"]"+"[future.get()="+(future.get())+"]");
+			Thread.sleep(1*1000);
+			System.out.println("[LocalDateTime.now()="+(LocalDateTime.now())+"]"+"[future="+(future)+"]"+"[future.get()="+(future.get())+"]"+"[LocalDateTime.now()="+(LocalDateTime.now())+"]");
+			Thread.sleep(1*1000);
 			executorService.shutdown();
-			executorService.submit(callable);
 			System.out.println("[executorService="+(executorService)+"]");
 			Thread.sleep(1*1000);
 			System.out.println("[executorService="+(executorService)+"]");
