@@ -1,5 +1,8 @@
 package pkgs.pkgExes;
 
+import java.lang.management.ManagementFactory;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -38,6 +41,7 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 		try {
+			Files.deleteIfExists(Paths.get("C:\\Users\\Administrador\\git\\ROCP202502261035\\OCPLearning\\logs\\jstack_log.txt"));
 			ExecutorService executorService = Executors.newCachedThreadPool();
 			System.out.println("[executorService="+(executorService)+"]");
 			Callable<String> callable = new Callable<String>() {
@@ -48,7 +52,8 @@ public class Exe001 {
 			}};
 			Future<String> future = executorService.submit(callable);
 			Thread.sleep(1*1000);
-			System.out.println("[LocalDateTime.now()="+(LocalDateTime.now())+"]"+"[future="+(future)+"]"+"[future.get()="+(future.get())+"]"+"[LocalDateTime.now()="+(LocalDateTime.now())+"]");
+			Runtime.getRuntime().exec("cmd /c \"jstack "+(ManagementFactory.getRuntimeMXBean().getName().split("@")[0])+" >> C:\\Users\\Administrador\\git\\ROCP202502261035\\OCPLearning\\logs\\jstack_log.txt\"");
+			System.out.println("[future="+(future)+"]"+"[future.get()="+(future.get())+"]");
 			Thread.sleep(1*1000);
 			executorService.shutdown();
 			System.out.println("[executorService="+(executorService)+"]");
