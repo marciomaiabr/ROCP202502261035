@@ -1,80 +1,195 @@
-2025-08-24 11:55:03
+2025-08-25 07:37:37
 Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 
-"pool-1-thread-3" #16 prio=5 os_prio=0 tid=0x0000026a113b8800 nid=0x2de4 runnable [0x0000009fd22fe000]
+"pool-1-thread-3" #16 prio=5 os_prio=0 tid=0x000001de93cc5800 nid=0x3568 runnable [0x000000141affe000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.Thread.sleep(Native Method)
+	at pkgs.pkgExes.Exe001.lambda$3(Exe001.java:74)
+	at pkgs.pkgExes.Exe001$$Lambda$8/961419791.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+"pool-1-thread-2" #15 prio=5 os_prio=0 tid=0x000001de93c97000 nid=0xf4c waiting on condition [0x000000141aeff000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000e0990640> (a java.util.concurrent.FutureTask)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.FutureTask.awaitDone(FutureTask.java:429)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at pkgs.pkgExes.Exe001.lambda$2(Exe001.java:65)
+	at pkgs.pkgExes.Exe001$$Lambda$7/527446182.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+"pool-1-thread-1" #14 prio=5 os_prio=0 tid=0x000001de93c95800 nid=0x1cb4 waiting on condition [0x000000141adff000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:61)
+	at pkgs.pkgExes.Exe001$$Lambda$6/1685232414.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x000001de939a1800 nid=0xf28 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x000001de93914800 nid=0x1dd8 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x000001de9390a000 nid=0x13dc waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x000001de93908000 nid=0x38b0 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x000001de9391e000 nid=0x1ff0 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x000001de921af800 nid=0x2740 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x000001de921a2800 nid=0xadc runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x000001de9219e000 nid=0x3ab0 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x000001de9217c800 nid=0x2fb8 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x000001de92179800 nid=0x1268 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x000001de92152800 nid=0x754 in Object.wait() [0x000000141a0ff000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000000e0008f08> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:150)
+	- locked <0x00000000e0008f08> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:171)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:188)
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x000001de9214b800 nid=0x3428 in Object.wait() [0x0000001419fff000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	- locked <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+"main" #1 prio=5 os_prio=0 tid=0x000001defc589000 nid=0x2938 waiting on condition [0x00000014195ff000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at pkgs.pkgExes.Exe001.im1(Exe001.java:80)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:39)
+
+"VM Thread" os_prio=2 tid=0x000001de92121800 nid=0x2510 runnable 
+
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x000001defc59f800 nid=0x21b0 runnable 
+
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x000001defc5a1000 nid=0x1ae4 runnable 
+
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x000001defc5a2800 nid=0x1f48 runnable 
+
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x000001defc5a4000 nid=0x2fa4 runnable 
+
+"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x000001defc5a6000 nid=0x2a08 runnable 
+
+"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x000001defc5a8000 nid=0x2b98 runnable 
+
+"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x000001defc5ab000 nid=0x2604 runnable 
+
+"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x000001defc5ac000 nid=0x1584 runnable 
+
+"VM Periodic Task Thread" os_prio=2 tid=0x000001de939d2800 nid=0x2840 waiting on condition 
+
+JNI global references: 1589
+
+2025-08-25 07:37:37
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
+
+"pool-1-thread-3" #16 prio=5 os_prio=0 tid=0x000001de93cc5800 nid=0x3568 runnable [0x000000141affe000]
    java.lang.Thread.State: RUNNABLE
 	at java.lang.ProcessImpl.create(Native Method)
-	- locked <0x00000000e0a48278> (a java.lang.Class for java.lang.ProcessImpl)
+	- locked <0x00000000e0a43f78> (a java.lang.Class for java.lang.ProcessImpl)
 	at java.lang.ProcessImpl.<init>(ProcessImpl.java:458)
 	at java.lang.ProcessImpl.start(ProcessImpl.java:139)
 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
 	at java.lang.Runtime.exec(Runtime.java:593)
 	at java.lang.Runtime.exec(Runtime.java:423)
 	at java.lang.Runtime.exec(Runtime.java:320)
-	at pkgs.pkgExes.Exe001.lambda$2(Exe001.java:59)
-	at pkgs.pkgExes.Exe001$$Lambda$6/2083117811.run(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$3(Exe001.java:73)
+	at pkgs.pkgExes.Exe001$$Lambda$8/961419791.run(Unknown Source)
 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"pool-1-thread-2" #15 prio=5 os_prio=0 tid=0x0000026a115bf000 nid=0x3bfc waiting on condition [0x0000009fd21fe000]
+"pool-1-thread-2" #15 prio=5 os_prio=0 tid=0x000001de93c97000 nid=0xf4c waiting on condition [0x000000141aeff000]
    java.lang.Thread.State: WAITING (parking)
 	at sun.misc.Unsafe.park(Native Method)
-	- parking to wait for  <0x00000000e0967510> (a java.util.concurrent.FutureTask)
+	- parking to wait for  <0x00000000e0990640> (a java.util.concurrent.FutureTask)
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.FutureTask.awaitDone(FutureTask.java:429)
 	at java.util.concurrent.FutureTask.get(FutureTask.java:191)
-	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:51)
-	at pkgs.pkgExes.Exe001$$Lambda$5/1757143877.run(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$2(Exe001.java:65)
+	at pkgs.pkgExes.Exe001$$Lambda$7/527446182.run(Unknown Source)
 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"pool-1-thread-1" #14 prio=5 os_prio=0 tid=0x0000026a115be800 nid=0x39cc waiting on condition [0x0000009fd20fe000]
+"pool-1-thread-1" #14 prio=5 os_prio=0 tid=0x000001de93c95800 nid=0x1cb4 waiting on condition [0x000000141adff000]
    java.lang.Thread.State: TIMED_WAITING (sleeping)
 	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:47)
-	at pkgs.pkgExes.Exe001$$Lambda$4/841283083.call(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:61)
+	at pkgs.pkgExes.Exe001$$Lambda$6/1685232414.call(Unknown Source)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x0000026a111a5000 nid=0x2ebc runnable [0x0000000000000000]
+"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x000001de939a1800 nid=0xf28 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x0000026a111a4000 nid=0x23f8 waiting on condition [0x0000000000000000]
+"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x000001de93914800 nid=0x1dd8 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x0000026a1119f800 nid=0x2ac4 waiting on condition [0x0000000000000000]
+"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x000001de9390a000 nid=0x13dc waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x0000026a1119e800 nid=0x3684 waiting on condition [0x0000000000000000]
+"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x000001de93908000 nid=0x38b0 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x0000026a11196000 nid=0x38b0 waiting on condition [0x0000000000000000]
+"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x000001de9391e000 nid=0x1ff0 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x0000026a0fa41800 nid=0x25a8 runnable [0x0000000000000000]
+"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x000001de921af800 nid=0x2740 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x0000026a0fa33000 nid=0x52c runnable [0x0000000000000000]
+"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x000001de921a2800 nid=0xadc runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x0000026a0fa2d800 nid=0x1914 runnable [0x0000000000000000]
+"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x000001de9219e000 nid=0x3ab0 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x0000026a0fa0c800 nid=0x2318 waiting on condition [0x0000000000000000]
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x000001de9217c800 nid=0x2fb8 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x0000026a0fa0a800 nid=0x3248 runnable [0x0000000000000000]
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x000001de92179800 nid=0x1268 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x0000026a0f9e6000 nid=0x2b80 in Object.wait() [0x0000009fd14ff000]
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x000001de92152800 nid=0x754 in Object.wait() [0x000000141a0ff000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0008f08> (a java.lang.ref.ReferenceQueue$Lock)
@@ -83,7 +198,7 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:171)
 	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:188)
 
-"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x0000026a0f9df000 nid=0x1b04 in Object.wait() [0x0000009fd13fe000]
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x000001de9214b800 nid=0x3428 in Object.wait() [0x0000001419fff000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
@@ -92,111 +207,111 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	- locked <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
 	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
 
-"main" #1 prio=5 os_prio=0 tid=0x0000026a79ee8800 nid=0x331c waiting on condition [0x0000009fd09ff000]
+"main" #1 prio=5 os_prio=0 tid=0x000001defc589000 nid=0x2938 waiting on condition [0x00000014195ff000]
    java.lang.Thread.State: TIMED_WAITING (sleeping)
 	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.im1(Exe001.java:66)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:24)
+	at pkgs.pkgExes.Exe001.im1(Exe001.java:80)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:39)
 
-"VM Thread" os_prio=2 tid=0x0000026a0f9b0800 nid=0xe6c runnable 
+"VM Thread" os_prio=2 tid=0x000001de92121800 nid=0x2510 runnable 
 
-"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x0000026a79eff000 nid=0x1318 runnable 
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x000001defc59f800 nid=0x21b0 runnable 
 
-"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000026a79f00800 nid=0x3260 runnable 
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x000001defc5a1000 nid=0x1ae4 runnable 
 
-"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x0000026a79f02000 nid=0x3780 runnable 
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x000001defc5a2800 nid=0x1f48 runnable 
 
-"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x0000026a79f05000 nid=0x3018 runnable 
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x000001defc5a4000 nid=0x2fa4 runnable 
 
-"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x0000026a79f07800 nid=0x3358 runnable 
+"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x000001defc5a6000 nid=0x2a08 runnable 
 
-"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x0000026a79f09800 nid=0x29d4 runnable 
+"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x000001defc5a8000 nid=0x2b98 runnable 
 
-"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x0000026a79f0c800 nid=0x500 runnable 
+"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x000001defc5ab000 nid=0x2604 runnable 
 
-"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x0000026a79f0e000 nid=0x35ac runnable 
+"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x000001defc5ac000 nid=0x1584 runnable 
 
-"VM Periodic Task Thread" os_prio=2 tid=0x0000026a1126f800 nid=0x23f4 waiting on condition 
+"VM Periodic Task Thread" os_prio=2 tid=0x000001de939d2800 nid=0x2840 waiting on condition 
 
-JNI global references: 1549
+JNI global references: 1589
 
-2025-08-24 11:55:03
+2025-08-25 07:37:37
 Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 
-"pool-1-thread-3" #16 prio=5 os_prio=0 tid=0x0000026a113b8800 nid=0x2de4 runnable [0x0000009fd22fe000]
+"pool-1-thread-3" #16 prio=5 os_prio=0 tid=0x000001de93cc5800 nid=0x3568 runnable [0x000000141affe000]
    java.lang.Thread.State: RUNNABLE
 	at java.lang.ProcessImpl.create(Native Method)
-	- locked <0x00000000e0a48278> (a java.lang.Class for java.lang.ProcessImpl)
+	- locked <0x00000000e0a43f78> (a java.lang.Class for java.lang.ProcessImpl)
 	at java.lang.ProcessImpl.<init>(ProcessImpl.java:458)
 	at java.lang.ProcessImpl.start(ProcessImpl.java:139)
 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
 	at java.lang.Runtime.exec(Runtime.java:593)
 	at java.lang.Runtime.exec(Runtime.java:423)
 	at java.lang.Runtime.exec(Runtime.java:320)
-	at pkgs.pkgExes.Exe001.lambda$2(Exe001.java:59)
-	at pkgs.pkgExes.Exe001$$Lambda$6/2083117811.run(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$3(Exe001.java:73)
+	at pkgs.pkgExes.Exe001$$Lambda$8/961419791.run(Unknown Source)
 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"pool-1-thread-2" #15 prio=5 os_prio=0 tid=0x0000026a115bf000 nid=0x3bfc waiting on condition [0x0000009fd21fe000]
+"pool-1-thread-2" #15 prio=5 os_prio=0 tid=0x000001de93c97000 nid=0xf4c waiting on condition [0x000000141aeff000]
    java.lang.Thread.State: WAITING (parking)
 	at sun.misc.Unsafe.park(Native Method)
-	- parking to wait for  <0x00000000e0967510> (a java.util.concurrent.FutureTask)
+	- parking to wait for  <0x00000000e0990640> (a java.util.concurrent.FutureTask)
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.FutureTask.awaitDone(FutureTask.java:429)
 	at java.util.concurrent.FutureTask.get(FutureTask.java:191)
-	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:51)
-	at pkgs.pkgExes.Exe001$$Lambda$5/1757143877.run(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$2(Exe001.java:65)
+	at pkgs.pkgExes.Exe001$$Lambda$7/527446182.run(Unknown Source)
 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"pool-1-thread-1" #14 prio=5 os_prio=0 tid=0x0000026a115be800 nid=0x39cc waiting on condition [0x0000009fd20fe000]
+"pool-1-thread-1" #14 prio=5 os_prio=0 tid=0x000001de93c95800 nid=0x1cb4 waiting on condition [0x000000141adff000]
    java.lang.Thread.State: TIMED_WAITING (sleeping)
 	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:47)
-	at pkgs.pkgExes.Exe001$$Lambda$4/841283083.call(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:61)
+	at pkgs.pkgExes.Exe001$$Lambda$6/1685232414.call(Unknown Source)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x0000026a111a5000 nid=0x2ebc runnable [0x0000000000000000]
+"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x000001de939a1800 nid=0xf28 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x0000026a111a4000 nid=0x23f8 waiting on condition [0x0000000000000000]
+"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x000001de93914800 nid=0x1dd8 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x0000026a1119f800 nid=0x2ac4 waiting on condition [0x0000000000000000]
+"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x000001de9390a000 nid=0x13dc waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x0000026a1119e800 nid=0x3684 waiting on condition [0x0000000000000000]
+"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x000001de93908000 nid=0x38b0 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x0000026a11196000 nid=0x38b0 waiting on condition [0x0000000000000000]
+"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x000001de9391e000 nid=0x1ff0 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x0000026a0fa41800 nid=0x25a8 runnable [0x0000000000000000]
+"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x000001de921af800 nid=0x2740 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x0000026a0fa33000 nid=0x52c runnable [0x0000000000000000]
+"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x000001de921a2800 nid=0xadc runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x0000026a0fa2d800 nid=0x1914 runnable [0x0000000000000000]
+"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x000001de9219e000 nid=0x3ab0 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x0000026a0fa0c800 nid=0x2318 waiting on condition [0x0000000000000000]
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x000001de9217c800 nid=0x2fb8 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x0000026a0fa0a800 nid=0x3248 runnable [0x0000000000000000]
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x000001de92179800 nid=0x1268 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x0000026a0f9e6000 nid=0x2b80 in Object.wait() [0x0000009fd14ff000]
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x000001de92152800 nid=0x754 in Object.wait() [0x000000141a0ff000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0008f08> (a java.lang.ref.ReferenceQueue$Lock)
@@ -205,7 +320,7 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:171)
 	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:188)
 
-"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x0000026a0f9df000 nid=0x1b04 in Object.wait() [0x0000009fd13fe000]
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x000001de9214b800 nid=0x3428 in Object.wait() [0x0000001419fff000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
@@ -214,111 +329,111 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	- locked <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
 	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
 
-"main" #1 prio=5 os_prio=0 tid=0x0000026a79ee8800 nid=0x331c waiting on condition [0x0000009fd09ff000]
+"main" #1 prio=5 os_prio=0 tid=0x000001defc589000 nid=0x2938 waiting on condition [0x00000014195ff000]
    java.lang.Thread.State: TIMED_WAITING (sleeping)
 	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.im1(Exe001.java:66)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:24)
+	at pkgs.pkgExes.Exe001.im1(Exe001.java:80)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:39)
 
-"VM Thread" os_prio=2 tid=0x0000026a0f9b0800 nid=0xe6c runnable 
+"VM Thread" os_prio=2 tid=0x000001de92121800 nid=0x2510 runnable 
 
-"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x0000026a79eff000 nid=0x1318 runnable 
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x000001defc59f800 nid=0x21b0 runnable 
 
-"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000026a79f00800 nid=0x3260 runnable 
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x000001defc5a1000 nid=0x1ae4 runnable 
 
-"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x0000026a79f02000 nid=0x3780 runnable 
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x000001defc5a2800 nid=0x1f48 runnable 
 
-"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x0000026a79f05000 nid=0x3018 runnable 
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x000001defc5a4000 nid=0x2fa4 runnable 
 
-"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x0000026a79f07800 nid=0x3358 runnable 
+"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x000001defc5a6000 nid=0x2a08 runnable 
 
-"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x0000026a79f09800 nid=0x29d4 runnable 
+"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x000001defc5a8000 nid=0x2b98 runnable 
 
-"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x0000026a79f0c800 nid=0x500 runnable 
+"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x000001defc5ab000 nid=0x2604 runnable 
 
-"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x0000026a79f0e000 nid=0x35ac runnable 
+"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x000001defc5ac000 nid=0x1584 runnable 
 
-"VM Periodic Task Thread" os_prio=2 tid=0x0000026a1126f800 nid=0x23f4 waiting on condition 
+"VM Periodic Task Thread" os_prio=2 tid=0x000001de939d2800 nid=0x2840 waiting on condition 
 
-JNI global references: 1549
+JNI global references: 1589
 
-2025-08-24 11:55:04
+2025-08-25 07:37:38
 Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 
-"pool-1-thread-3" #16 prio=5 os_prio=0 tid=0x0000026a113b8800 nid=0x2de4 runnable [0x0000009fd22fe000]
+"pool-1-thread-3" #16 prio=5 os_prio=0 tid=0x000001de93cc5800 nid=0x3568 runnable [0x000000141affe000]
    java.lang.Thread.State: RUNNABLE
 	at java.lang.ProcessImpl.create(Native Method)
-	- locked <0x00000000e0a48278> (a java.lang.Class for java.lang.ProcessImpl)
+	- locked <0x00000000e0a43f78> (a java.lang.Class for java.lang.ProcessImpl)
 	at java.lang.ProcessImpl.<init>(ProcessImpl.java:458)
 	at java.lang.ProcessImpl.start(ProcessImpl.java:139)
 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
 	at java.lang.Runtime.exec(Runtime.java:593)
 	at java.lang.Runtime.exec(Runtime.java:423)
 	at java.lang.Runtime.exec(Runtime.java:320)
-	at pkgs.pkgExes.Exe001.lambda$2(Exe001.java:59)
-	at pkgs.pkgExes.Exe001$$Lambda$6/2083117811.run(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$3(Exe001.java:73)
+	at pkgs.pkgExes.Exe001$$Lambda$8/961419791.run(Unknown Source)
 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"pool-1-thread-2" #15 prio=5 os_prio=0 tid=0x0000026a115bf000 nid=0x3bfc waiting on condition [0x0000009fd21fe000]
+"pool-1-thread-2" #15 prio=5 os_prio=0 tid=0x000001de93c97000 nid=0xf4c waiting on condition [0x000000141aeff000]
    java.lang.Thread.State: WAITING (parking)
 	at sun.misc.Unsafe.park(Native Method)
-	- parking to wait for  <0x00000000e0967510> (a java.util.concurrent.FutureTask)
+	- parking to wait for  <0x00000000e0990640> (a java.util.concurrent.FutureTask)
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.FutureTask.awaitDone(FutureTask.java:429)
 	at java.util.concurrent.FutureTask.get(FutureTask.java:191)
-	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:51)
-	at pkgs.pkgExes.Exe001$$Lambda$5/1757143877.run(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$2(Exe001.java:65)
+	at pkgs.pkgExes.Exe001$$Lambda$7/527446182.run(Unknown Source)
 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"pool-1-thread-1" #14 prio=5 os_prio=0 tid=0x0000026a115be800 nid=0x39cc waiting on condition [0x0000009fd20fe000]
+"pool-1-thread-1" #14 prio=5 os_prio=0 tid=0x000001de93c95800 nid=0x1cb4 waiting on condition [0x000000141adff000]
    java.lang.Thread.State: TIMED_WAITING (sleeping)
 	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:47)
-	at pkgs.pkgExes.Exe001$$Lambda$4/841283083.call(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:61)
+	at pkgs.pkgExes.Exe001$$Lambda$6/1685232414.call(Unknown Source)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x0000026a111a5000 nid=0x2ebc runnable [0x0000000000000000]
+"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x000001de939a1800 nid=0xf28 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x0000026a111a4000 nid=0x23f8 waiting on condition [0x0000000000000000]
+"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x000001de93914800 nid=0x1dd8 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x0000026a1119f800 nid=0x2ac4 waiting on condition [0x0000000000000000]
+"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x000001de9390a000 nid=0x13dc waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x0000026a1119e800 nid=0x3684 waiting on condition [0x0000000000000000]
+"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x000001de93908000 nid=0x38b0 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x0000026a11196000 nid=0x38b0 waiting on condition [0x0000000000000000]
+"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x000001de9391e000 nid=0x1ff0 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x0000026a0fa41800 nid=0x25a8 runnable [0x0000000000000000]
+"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x000001de921af800 nid=0x2740 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x0000026a0fa33000 nid=0x52c runnable [0x0000000000000000]
+"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x000001de921a2800 nid=0xadc runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x0000026a0fa2d800 nid=0x1914 runnable [0x0000000000000000]
+"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x000001de9219e000 nid=0x3ab0 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x0000026a0fa0c800 nid=0x2318 waiting on condition [0x0000000000000000]
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x000001de9217c800 nid=0x2fb8 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x0000026a0fa0a800 nid=0x3248 runnable [0x0000000000000000]
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x000001de92179800 nid=0x1268 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x0000026a0f9e6000 nid=0x2b80 in Object.wait() [0x0000009fd14ff000]
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x000001de92152800 nid=0x754 in Object.wait() [0x000000141a0ff000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0008f08> (a java.lang.ref.ReferenceQueue$Lock)
@@ -327,7 +442,7 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:171)
 	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:188)
 
-"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x0000026a0f9df000 nid=0x1b04 in Object.wait() [0x0000009fd13fe000]
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x000001de9214b800 nid=0x3428 in Object.wait() [0x0000001419fff000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
@@ -336,111 +451,111 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	- locked <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
 	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
 
-"main" #1 prio=5 os_prio=0 tid=0x0000026a79ee8800 nid=0x331c waiting on condition [0x0000009fd09ff000]
+"main" #1 prio=5 os_prio=0 tid=0x000001defc589000 nid=0x2938 waiting on condition [0x00000014195ff000]
    java.lang.Thread.State: TIMED_WAITING (sleeping)
 	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.im1(Exe001.java:66)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:24)
+	at pkgs.pkgExes.Exe001.im1(Exe001.java:83)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:39)
 
-"VM Thread" os_prio=2 tid=0x0000026a0f9b0800 nid=0xe6c runnable 
+"VM Thread" os_prio=2 tid=0x000001de92121800 nid=0x2510 runnable 
 
-"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x0000026a79eff000 nid=0x1318 runnable 
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x000001defc59f800 nid=0x21b0 runnable 
 
-"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000026a79f00800 nid=0x3260 runnable 
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x000001defc5a1000 nid=0x1ae4 runnable 
 
-"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x0000026a79f02000 nid=0x3780 runnable 
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x000001defc5a2800 nid=0x1f48 runnable 
 
-"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x0000026a79f05000 nid=0x3018 runnable 
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x000001defc5a4000 nid=0x2fa4 runnable 
 
-"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x0000026a79f07800 nid=0x3358 runnable 
+"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x000001defc5a6000 nid=0x2a08 runnable 
 
-"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x0000026a79f09800 nid=0x29d4 runnable 
+"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x000001defc5a8000 nid=0x2b98 runnable 
 
-"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x0000026a79f0c800 nid=0x500 runnable 
+"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x000001defc5ab000 nid=0x2604 runnable 
 
-"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x0000026a79f0e000 nid=0x35ac runnable 
+"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x000001defc5ac000 nid=0x1584 runnable 
 
-"VM Periodic Task Thread" os_prio=2 tid=0x0000026a1126f800 nid=0x23f4 waiting on condition 
+"VM Periodic Task Thread" os_prio=2 tid=0x000001de939d2800 nid=0x2840 waiting on condition 
 
-JNI global references: 1549
+JNI global references: 1589
 
-2025-08-24 11:55:04
+2025-08-25 07:37:38
 Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 
-"pool-1-thread-3" #16 prio=5 os_prio=0 tid=0x0000026a113b8800 nid=0x2de4 runnable [0x0000009fd22fe000]
+"pool-1-thread-3" #16 prio=5 os_prio=0 tid=0x000001de93cc5800 nid=0x3568 runnable [0x000000141affe000]
    java.lang.Thread.State: RUNNABLE
 	at java.lang.ProcessImpl.create(Native Method)
-	- locked <0x00000000e0a48278> (a java.lang.Class for java.lang.ProcessImpl)
+	- locked <0x00000000e0a43f78> (a java.lang.Class for java.lang.ProcessImpl)
 	at java.lang.ProcessImpl.<init>(ProcessImpl.java:458)
 	at java.lang.ProcessImpl.start(ProcessImpl.java:139)
 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
 	at java.lang.Runtime.exec(Runtime.java:593)
 	at java.lang.Runtime.exec(Runtime.java:423)
 	at java.lang.Runtime.exec(Runtime.java:320)
-	at pkgs.pkgExes.Exe001.lambda$2(Exe001.java:59)
-	at pkgs.pkgExes.Exe001$$Lambda$6/2083117811.run(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$3(Exe001.java:73)
+	at pkgs.pkgExes.Exe001$$Lambda$8/961419791.run(Unknown Source)
 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"pool-1-thread-2" #15 prio=5 os_prio=0 tid=0x0000026a115bf000 nid=0x3bfc waiting on condition [0x0000009fd21fe000]
+"pool-1-thread-2" #15 prio=5 os_prio=0 tid=0x000001de93c97000 nid=0xf4c waiting on condition [0x000000141aeff000]
    java.lang.Thread.State: WAITING (parking)
 	at sun.misc.Unsafe.park(Native Method)
-	- parking to wait for  <0x00000000e0967510> (a java.util.concurrent.FutureTask)
+	- parking to wait for  <0x00000000e0990640> (a java.util.concurrent.FutureTask)
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.FutureTask.awaitDone(FutureTask.java:429)
 	at java.util.concurrent.FutureTask.get(FutureTask.java:191)
-	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:51)
-	at pkgs.pkgExes.Exe001$$Lambda$5/1757143877.run(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$2(Exe001.java:65)
+	at pkgs.pkgExes.Exe001$$Lambda$7/527446182.run(Unknown Source)
 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"pool-1-thread-1" #14 prio=5 os_prio=0 tid=0x0000026a115be800 nid=0x39cc waiting on condition [0x0000009fd20fe000]
+"pool-1-thread-1" #14 prio=5 os_prio=0 tid=0x000001de93c95800 nid=0x1cb4 waiting on condition [0x000000141adff000]
    java.lang.Thread.State: TIMED_WAITING (sleeping)
 	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:47)
-	at pkgs.pkgExes.Exe001$$Lambda$4/841283083.call(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:61)
+	at pkgs.pkgExes.Exe001$$Lambda$6/1685232414.call(Unknown Source)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x0000026a111a5000 nid=0x2ebc runnable [0x0000000000000000]
+"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x000001de939a1800 nid=0xf28 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x0000026a111a4000 nid=0x23f8 waiting on condition [0x0000000000000000]
+"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x000001de93914800 nid=0x1dd8 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x0000026a1119f800 nid=0x2ac4 waiting on condition [0x0000000000000000]
+"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x000001de9390a000 nid=0x13dc waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x0000026a1119e800 nid=0x3684 waiting on condition [0x0000000000000000]
+"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x000001de93908000 nid=0x38b0 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x0000026a11196000 nid=0x38b0 waiting on condition [0x0000000000000000]
+"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x000001de9391e000 nid=0x1ff0 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x0000026a0fa41800 nid=0x25a8 runnable [0x0000000000000000]
+"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x000001de921af800 nid=0x2740 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x0000026a0fa33000 nid=0x52c runnable [0x0000000000000000]
+"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x000001de921a2800 nid=0xadc runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x0000026a0fa2d800 nid=0x1914 runnable [0x0000000000000000]
+"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x000001de9219e000 nid=0x3ab0 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x0000026a0fa0c800 nid=0x2318 waiting on condition [0x0000000000000000]
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x000001de9217c800 nid=0x2fb8 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x0000026a0fa0a800 nid=0x3248 runnable [0x0000000000000000]
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x000001de92179800 nid=0x1268 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x0000026a0f9e6000 nid=0x2b80 in Object.wait() [0x0000009fd14ff000]
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x000001de92152800 nid=0x754 in Object.wait() [0x000000141a0ff000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0008f08> (a java.lang.ref.ReferenceQueue$Lock)
@@ -449,7 +564,7 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:171)
 	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:188)
 
-"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x0000026a0f9df000 nid=0x1b04 in Object.wait() [0x0000009fd13fe000]
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x000001de9214b800 nid=0x3428 in Object.wait() [0x0000001419fff000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
@@ -458,111 +573,111 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	- locked <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
 	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
 
-"main" #1 prio=5 os_prio=0 tid=0x0000026a79ee8800 nid=0x331c waiting on condition [0x0000009fd09ff000]
+"main" #1 prio=5 os_prio=0 tid=0x000001defc589000 nid=0x2938 waiting on condition [0x00000014195ff000]
    java.lang.Thread.State: TIMED_WAITING (sleeping)
 	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.im1(Exe001.java:66)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:24)
+	at pkgs.pkgExes.Exe001.im1(Exe001.java:83)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:39)
 
-"VM Thread" os_prio=2 tid=0x0000026a0f9b0800 nid=0xe6c runnable 
+"VM Thread" os_prio=2 tid=0x000001de92121800 nid=0x2510 runnable 
 
-"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x0000026a79eff000 nid=0x1318 runnable 
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x000001defc59f800 nid=0x21b0 runnable 
 
-"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000026a79f00800 nid=0x3260 runnable 
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x000001defc5a1000 nid=0x1ae4 runnable 
 
-"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x0000026a79f02000 nid=0x3780 runnable 
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x000001defc5a2800 nid=0x1f48 runnable 
 
-"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x0000026a79f05000 nid=0x3018 runnable 
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x000001defc5a4000 nid=0x2fa4 runnable 
 
-"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x0000026a79f07800 nid=0x3358 runnable 
+"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x000001defc5a6000 nid=0x2a08 runnable 
 
-"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x0000026a79f09800 nid=0x29d4 runnable 
+"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x000001defc5a8000 nid=0x2b98 runnable 
 
-"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x0000026a79f0c800 nid=0x500 runnable 
+"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x000001defc5ab000 nid=0x2604 runnable 
 
-"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x0000026a79f0e000 nid=0x35ac runnable 
+"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x000001defc5ac000 nid=0x1584 runnable 
 
-"VM Periodic Task Thread" os_prio=2 tid=0x0000026a1126f800 nid=0x23f4 waiting on condition 
+"VM Periodic Task Thread" os_prio=2 tid=0x000001de939d2800 nid=0x2840 waiting on condition 
 
-JNI global references: 1549
+JNI global references: 1589
 
-2025-08-24 11:55:04
+2025-08-25 07:37:39
 Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 
-"pool-1-thread-3" #16 prio=5 os_prio=0 tid=0x0000026a113b8800 nid=0x2de4 runnable [0x0000009fd22fe000]
+"pool-1-thread-3" #16 prio=5 os_prio=0 tid=0x000001de93cc5800 nid=0x3568 runnable [0x000000141affe000]
    java.lang.Thread.State: RUNNABLE
 	at java.lang.ProcessImpl.create(Native Method)
-	- locked <0x00000000e0a48278> (a java.lang.Class for java.lang.ProcessImpl)
+	- locked <0x00000000e0a43f78> (a java.lang.Class for java.lang.ProcessImpl)
 	at java.lang.ProcessImpl.<init>(ProcessImpl.java:458)
 	at java.lang.ProcessImpl.start(ProcessImpl.java:139)
 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
 	at java.lang.Runtime.exec(Runtime.java:593)
 	at java.lang.Runtime.exec(Runtime.java:423)
 	at java.lang.Runtime.exec(Runtime.java:320)
-	at pkgs.pkgExes.Exe001.lambda$2(Exe001.java:59)
-	at pkgs.pkgExes.Exe001$$Lambda$6/2083117811.run(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$3(Exe001.java:73)
+	at pkgs.pkgExes.Exe001$$Lambda$8/961419791.run(Unknown Source)
 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"pool-1-thread-2" #15 prio=5 os_prio=0 tid=0x0000026a115bf000 nid=0x3bfc waiting on condition [0x0000009fd21fe000]
+"pool-1-thread-2" #15 prio=5 os_prio=0 tid=0x000001de93c97000 nid=0xf4c waiting on condition [0x000000141aeff000]
    java.lang.Thread.State: WAITING (parking)
 	at sun.misc.Unsafe.park(Native Method)
-	- parking to wait for  <0x00000000e0967510> (a java.util.concurrent.FutureTask)
+	- parking to wait for  <0x00000000e0990640> (a java.util.concurrent.FutureTask)
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.FutureTask.awaitDone(FutureTask.java:429)
 	at java.util.concurrent.FutureTask.get(FutureTask.java:191)
-	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:51)
-	at pkgs.pkgExes.Exe001$$Lambda$5/1757143877.run(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$2(Exe001.java:65)
+	at pkgs.pkgExes.Exe001$$Lambda$7/527446182.run(Unknown Source)
 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"pool-1-thread-1" #14 prio=5 os_prio=0 tid=0x0000026a115be800 nid=0x39cc waiting on condition [0x0000009fd20fe000]
+"pool-1-thread-1" #14 prio=5 os_prio=0 tid=0x000001de93c95800 nid=0x1cb4 waiting on condition [0x000000141adff000]
    java.lang.Thread.State: TIMED_WAITING (sleeping)
 	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:47)
-	at pkgs.pkgExes.Exe001$$Lambda$4/841283083.call(Unknown Source)
+	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:61)
+	at pkgs.pkgExes.Exe001$$Lambda$6/1685232414.call(Unknown Source)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
-"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x0000026a111a5000 nid=0x2ebc runnable [0x0000000000000000]
+"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x000001de939a1800 nid=0xf28 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x0000026a111a4000 nid=0x23f8 waiting on condition [0x0000000000000000]
+"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x000001de93914800 nid=0x1dd8 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x0000026a1119f800 nid=0x2ac4 waiting on condition [0x0000000000000000]
+"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x000001de9390a000 nid=0x13dc waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x0000026a1119e800 nid=0x3684 waiting on condition [0x0000000000000000]
+"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x000001de93908000 nid=0x38b0 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x0000026a11196000 nid=0x38b0 waiting on condition [0x0000000000000000]
+"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x000001de9391e000 nid=0x1ff0 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x0000026a0fa41800 nid=0x25a8 runnable [0x0000000000000000]
+"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x000001de921af800 nid=0x2740 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x0000026a0fa33000 nid=0x52c runnable [0x0000000000000000]
+"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x000001de921a2800 nid=0xadc runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x0000026a0fa2d800 nid=0x1914 runnable [0x0000000000000000]
+"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x000001de9219e000 nid=0x3ab0 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x0000026a0fa0c800 nid=0x2318 waiting on condition [0x0000000000000000]
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x000001de9217c800 nid=0x2fb8 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x0000026a0fa0a800 nid=0x3248 runnable [0x0000000000000000]
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x000001de92179800 nid=0x1268 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x0000026a0f9e6000 nid=0x2b80 in Object.wait() [0x0000009fd14ff000]
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x000001de92152800 nid=0x754 in Object.wait() [0x000000141a0ff000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0008f08> (a java.lang.ref.ReferenceQueue$Lock)
@@ -571,7 +686,7 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:171)
 	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:188)
 
-"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x0000026a0f9df000 nid=0x1b04 in Object.wait() [0x0000009fd13fe000]
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x000001de9214b800 nid=0x3428 in Object.wait() [0x0000001419fff000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
@@ -580,111 +695,68 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	- locked <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
 	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
 
-"main" #1 prio=5 os_prio=0 tid=0x0000026a79ee8800 nid=0x331c waiting on condition [0x0000009fd09ff000]
+"main" #1 prio=5 os_prio=0 tid=0x000001defc589000 nid=0x2938 waiting on condition [0x00000014195ff000]
    java.lang.Thread.State: TIMED_WAITING (sleeping)
 	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.im1(Exe001.java:69)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:24)
+	at pkgs.pkgExes.Exe001.im1(Exe001.java:83)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:39)
 
-"VM Thread" os_prio=2 tid=0x0000026a0f9b0800 nid=0xe6c runnable 
+"VM Thread" os_prio=2 tid=0x000001de92121800 nid=0x2510 runnable 
 
-"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x0000026a79eff000 nid=0x1318 runnable 
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x000001defc59f800 nid=0x21b0 runnable 
 
-"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000026a79f00800 nid=0x3260 runnable 
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x000001defc5a1000 nid=0x1ae4 runnable 
 
-"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x0000026a79f02000 nid=0x3780 runnable 
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x000001defc5a2800 nid=0x1f48 runnable 
 
-"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x0000026a79f05000 nid=0x3018 runnable 
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x000001defc5a4000 nid=0x2fa4 runnable 
 
-"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x0000026a79f07800 nid=0x3358 runnable 
+"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x000001defc5a6000 nid=0x2a08 runnable 
 
-"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x0000026a79f09800 nid=0x29d4 runnable 
+"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x000001defc5a8000 nid=0x2b98 runnable 
 
-"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x0000026a79f0c800 nid=0x500 runnable 
+"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x000001defc5ab000 nid=0x2604 runnable 
 
-"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x0000026a79f0e000 nid=0x35ac runnable 
+"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x000001defc5ac000 nid=0x1584 runnable 
 
-"VM Periodic Task Thread" os_prio=2 tid=0x0000026a1126f800 nid=0x23f4 waiting on condition 
+"VM Periodic Task Thread" os_prio=2 tid=0x000001de939d2800 nid=0x2840 waiting on condition 
 
-JNI global references: 1549
+JNI global references: 1589
 
-2025-08-24 11:55:05
+2025-08-25 07:37:39
 Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 
-"pool-1-thread-3" #16 prio=5 os_prio=0 tid=0x0000026a113b8800 nid=0x2de4 runnable [0x0000009fd22fe000]
-   java.lang.Thread.State: RUNNABLE
-	at java.lang.ProcessImpl.create(Native Method)
-	- locked <0x00000000e0a48278> (a java.lang.Class for java.lang.ProcessImpl)
-	at java.lang.ProcessImpl.<init>(ProcessImpl.java:458)
-	at java.lang.ProcessImpl.start(ProcessImpl.java:139)
-	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
-	at java.lang.Runtime.exec(Runtime.java:593)
-	at java.lang.Runtime.exec(Runtime.java:423)
-	at java.lang.Runtime.exec(Runtime.java:320)
-	at pkgs.pkgExes.Exe001.lambda$2(Exe001.java:59)
-	at pkgs.pkgExes.Exe001$$Lambda$6/2083117811.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-
-"pool-1-thread-2" #15 prio=5 os_prio=0 tid=0x0000026a115bf000 nid=0x3bfc waiting on condition [0x0000009fd21fe000]
-   java.lang.Thread.State: WAITING (parking)
-	at sun.misc.Unsafe.park(Native Method)
-	- parking to wait for  <0x00000000e0967510> (a java.util.concurrent.FutureTask)
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.FutureTask.awaitDone(FutureTask.java:429)
-	at java.util.concurrent.FutureTask.get(FutureTask.java:191)
-	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:51)
-	at pkgs.pkgExes.Exe001$$Lambda$5/1757143877.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-
-"pool-1-thread-1" #14 prio=5 os_prio=0 tid=0x0000026a115be800 nid=0x39cc waiting on condition [0x0000009fd20fe000]
-   java.lang.Thread.State: TIMED_WAITING (sleeping)
-	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:47)
-	at pkgs.pkgExes.Exe001$$Lambda$4/841283083.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-
-"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x0000026a111a5000 nid=0x2ebc runnable [0x0000000000000000]
+"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x000001de939a1800 nid=0xf28 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x0000026a111a4000 nid=0x23f8 waiting on condition [0x0000000000000000]
+"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x000001de93914800 nid=0x1dd8 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x0000026a1119f800 nid=0x2ac4 waiting on condition [0x0000000000000000]
+"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x000001de9390a000 nid=0x13dc waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x0000026a1119e800 nid=0x3684 waiting on condition [0x0000000000000000]
+"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x000001de93908000 nid=0x38b0 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x0000026a11196000 nid=0x38b0 waiting on condition [0x0000000000000000]
+"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x000001de9391e000 nid=0x1ff0 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x0000026a0fa41800 nid=0x25a8 runnable [0x0000000000000000]
+"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x000001de921af800 nid=0x2740 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x0000026a0fa33000 nid=0x52c runnable [0x0000000000000000]
+"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x000001de921a2800 nid=0xadc runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x0000026a0fa2d800 nid=0x1914 runnable [0x0000000000000000]
+"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x000001de9219e000 nid=0x3ab0 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x0000026a0fa0c800 nid=0x2318 waiting on condition [0x0000000000000000]
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x000001de9217c800 nid=0x2fb8 waiting on condition [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x0000026a0fa0a800 nid=0x3248 runnable [0x0000000000000000]
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x000001de92179800 nid=0x1268 runnable [0x0000000000000000]
    java.lang.Thread.State: RUNNABLE
 
-"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x0000026a0f9e6000 nid=0x2b80 in Object.wait() [0x0000009fd14ff000]
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x000001de92152800 nid=0x754 in Object.wait() [0x000000141a0ff000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0008f08> (a java.lang.ref.ReferenceQueue$Lock)
@@ -693,7 +765,7 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:171)
 	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:188)
 
-"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x0000026a0f9df000 nid=0x1b04 in Object.wait() [0x0000009fd13fe000]
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x000001de9214b800 nid=0x3428 in Object.wait() [0x0000001419fff000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
 	- waiting on <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
@@ -702,232 +774,31 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
 	- locked <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
 	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
 
-"main" #1 prio=5 os_prio=0 tid=0x0000026a79ee8800 nid=0x331c waiting on condition [0x0000009fd09ff000]
+"main" #1 prio=5 os_prio=0 tid=0x000001defc589000 nid=0x2938 waiting on condition [0x00000014195ff000]
    java.lang.Thread.State: TIMED_WAITING (sleeping)
 	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.im1(Exe001.java:69)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:24)
+	at pkgs.pkgExes.Exe001.im1(Exe001.java:83)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:39)
 
-"VM Thread" os_prio=2 tid=0x0000026a0f9b0800 nid=0xe6c runnable 
+"VM Thread" os_prio=2 tid=0x000001de92121800 nid=0x2510 runnable 
 
-"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x0000026a79eff000 nid=0x1318 runnable 
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x000001defc59f800 nid=0x21b0 runnable 
 
-"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000026a79f00800 nid=0x3260 runnable 
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x000001defc5a1000 nid=0x1ae4 runnable 
 
-"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x0000026a79f02000 nid=0x3780 runnable 
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x000001defc5a2800 nid=0x1f48 runnable 
 
-"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x0000026a79f05000 nid=0x3018 runnable 
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x000001defc5a4000 nid=0x2fa4 runnable 
 
-"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x0000026a79f07800 nid=0x3358 runnable 
+"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x000001defc5a6000 nid=0x2a08 runnable 
 
-"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x0000026a79f09800 nid=0x29d4 runnable 
+"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x000001defc5a8000 nid=0x2b98 runnable 
 
-"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x0000026a79f0c800 nid=0x500 runnable 
+"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x000001defc5ab000 nid=0x2604 runnable 
 
-"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x0000026a79f0e000 nid=0x35ac runnable 
+"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x000001defc5ac000 nid=0x1584 runnable 
 
-"VM Periodic Task Thread" os_prio=2 tid=0x0000026a1126f800 nid=0x23f4 waiting on condition 
+"VM Periodic Task Thread" os_prio=2 tid=0x000001de939d2800 nid=0x2840 waiting on condition 
 
-JNI global references: 1549
-
-2025-08-24 11:55:05
-Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
-
-"pool-1-thread-3" #16 prio=5 os_prio=0 tid=0x0000026a113b8800 nid=0x2de4 runnable [0x0000009fd22fe000]
-   java.lang.Thread.State: RUNNABLE
-	at java.lang.ProcessImpl.create(Native Method)
-	- locked <0x00000000e0a48278> (a java.lang.Class for java.lang.ProcessImpl)
-	at java.lang.ProcessImpl.<init>(ProcessImpl.java:458)
-	at java.lang.ProcessImpl.start(ProcessImpl.java:139)
-	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
-	at java.lang.Runtime.exec(Runtime.java:593)
-	at java.lang.Runtime.exec(Runtime.java:423)
-	at java.lang.Runtime.exec(Runtime.java:320)
-	at pkgs.pkgExes.Exe001.lambda$2(Exe001.java:59)
-	at pkgs.pkgExes.Exe001$$Lambda$6/2083117811.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-
-"pool-1-thread-2" #15 prio=5 os_prio=0 tid=0x0000026a115bf000 nid=0x3bfc waiting on condition [0x0000009fd21fe000]
-   java.lang.Thread.State: WAITING (parking)
-	at sun.misc.Unsafe.park(Native Method)
-	- parking to wait for  <0x00000000e0967510> (a java.util.concurrent.FutureTask)
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.FutureTask.awaitDone(FutureTask.java:429)
-	at java.util.concurrent.FutureTask.get(FutureTask.java:191)
-	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:51)
-	at pkgs.pkgExes.Exe001$$Lambda$5/1757143877.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-
-"pool-1-thread-1" #14 prio=5 os_prio=0 tid=0x0000026a115be800 nid=0x39cc waiting on condition [0x0000009fd20fe000]
-   java.lang.Thread.State: TIMED_WAITING (sleeping)
-	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.lambda$0(Exe001.java:47)
-	at pkgs.pkgExes.Exe001$$Lambda$4/841283083.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-
-"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x0000026a111a5000 nid=0x2ebc runnable [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x0000026a111a4000 nid=0x23f8 waiting on condition [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x0000026a1119f800 nid=0x2ac4 waiting on condition [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x0000026a1119e800 nid=0x3684 waiting on condition [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x0000026a11196000 nid=0x38b0 waiting on condition [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x0000026a0fa41800 nid=0x25a8 runnable [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x0000026a0fa33000 nid=0x52c runnable [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x0000026a0fa2d800 nid=0x1914 runnable [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x0000026a0fa0c800 nid=0x2318 waiting on condition [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x0000026a0fa0a800 nid=0x3248 runnable [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x0000026a0f9e6000 nid=0x2b80 in Object.wait() [0x0000009fd14ff000]
-   java.lang.Thread.State: WAITING (on object monitor)
-	at java.lang.Object.wait(Native Method)
-	- waiting on <0x00000000e0008f08> (a java.lang.ref.ReferenceQueue$Lock)
-	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:150)
-	- locked <0x00000000e0008f08> (a java.lang.ref.ReferenceQueue$Lock)
-	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:171)
-	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:188)
-
-"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x0000026a0f9df000 nid=0x1b04 in Object.wait() [0x0000009fd13fe000]
-   java.lang.Thread.State: WAITING (on object monitor)
-	at java.lang.Object.wait(Native Method)
-	- waiting on <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
-	at java.lang.Object.wait(Object.java:502)
-	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
-	- locked <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
-	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
-
-"main" #1 prio=5 os_prio=0 tid=0x0000026a79ee8800 nid=0x331c waiting on condition [0x0000009fd09ff000]
-   java.lang.Thread.State: TIMED_WAITING (sleeping)
-	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.im1(Exe001.java:69)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:24)
-
-"VM Thread" os_prio=2 tid=0x0000026a0f9b0800 nid=0xe6c runnable 
-
-"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x0000026a79eff000 nid=0x1318 runnable 
-
-"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000026a79f00800 nid=0x3260 runnable 
-
-"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x0000026a79f02000 nid=0x3780 runnable 
-
-"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x0000026a79f05000 nid=0x3018 runnable 
-
-"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x0000026a79f07800 nid=0x3358 runnable 
-
-"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x0000026a79f09800 nid=0x29d4 runnable 
-
-"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x0000026a79f0c800 nid=0x500 runnable 
-
-"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x0000026a79f0e000 nid=0x35ac runnable 
-
-"VM Periodic Task Thread" os_prio=2 tid=0x0000026a1126f800 nid=0x23f4 waiting on condition 
-
-JNI global references: 1549
-
-2025-08-24 11:55:05
-Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.391-b13 mixed mode):
-
-"Service Thread" #13 daemon prio=9 os_prio=0 tid=0x0000026a111a5000 nid=0x2ebc runnable [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"C1 CompilerThread3" #12 daemon prio=9 os_prio=2 tid=0x0000026a111a4000 nid=0x23f8 waiting on condition [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"C2 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x0000026a1119f800 nid=0x2ac4 waiting on condition [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x0000026a1119e800 nid=0x3684 waiting on condition [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x0000026a11196000 nid=0x38b0 waiting on condition [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x0000026a0fa41800 nid=0x25a8 runnable [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x0000026a0fa33000 nid=0x52c runnable [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x0000026a0fa2d800 nid=0x1914 runnable [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x0000026a0fa0c800 nid=0x2318 waiting on condition [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x0000026a0fa0a800 nid=0x3248 runnable [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
-
-"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x0000026a0f9e6000 nid=0x2b80 in Object.wait() [0x0000009fd14ff000]
-   java.lang.Thread.State: WAITING (on object monitor)
-	at java.lang.Object.wait(Native Method)
-	- waiting on <0x00000000e0008f08> (a java.lang.ref.ReferenceQueue$Lock)
-	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:150)
-	- locked <0x00000000e0008f08> (a java.lang.ref.ReferenceQueue$Lock)
-	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:171)
-	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:188)
-
-"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x0000026a0f9df000 nid=0x1b04 in Object.wait() [0x0000009fd13fe000]
-   java.lang.Thread.State: WAITING (on object monitor)
-	at java.lang.Object.wait(Native Method)
-	- waiting on <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
-	at java.lang.Object.wait(Object.java:502)
-	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
-	- locked <0x00000000e0006ba0> (a java.lang.ref.Reference$Lock)
-	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
-
-"main" #1 prio=5 os_prio=0 tid=0x0000026a79ee8800 nid=0x331c waiting on condition [0x0000009fd09ff000]
-   java.lang.Thread.State: TIMED_WAITING (sleeping)
-	at java.lang.Thread.sleep(Native Method)
-	at pkgs.pkgExes.Exe001.im1(Exe001.java:69)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:24)
-
-"VM Thread" os_prio=2 tid=0x0000026a0f9b0800 nid=0xe6c runnable 
-
-"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x0000026a79eff000 nid=0x1318 runnable 
-
-"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000026a79f00800 nid=0x3260 runnable 
-
-"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x0000026a79f02000 nid=0x3780 runnable 
-
-"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x0000026a79f05000 nid=0x3018 runnable 
-
-"GC task thread#4 (ParallelGC)" os_prio=0 tid=0x0000026a79f07800 nid=0x3358 runnable 
-
-"GC task thread#5 (ParallelGC)" os_prio=0 tid=0x0000026a79f09800 nid=0x29d4 runnable 
-
-"GC task thread#6 (ParallelGC)" os_prio=0 tid=0x0000026a79f0c800 nid=0x500 runnable 
-
-"GC task thread#7 (ParallelGC)" os_prio=0 tid=0x0000026a79f0e000 nid=0x35ac runnable 
-
-"VM Periodic Task Thread" os_prio=2 tid=0x0000026a1126f800 nid=0x23f4 waiting on condition 
-
-JNI global references: 1546
+JNI global references: 1586
 
