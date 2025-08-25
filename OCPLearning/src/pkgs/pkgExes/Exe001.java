@@ -12,6 +12,10 @@ import java.util.concurrent.Future;
 public class Exe001 {
 
 	static {
+		System.out.println(LocalDateTime.now());
+	}
+
+	static {
 		try {
 			Files.list(Paths.get("C:\\Users\\Administrador\\git\\ROCP202502261035\\OCPLearning\\logs\\")).forEach(p->{
 				try {
@@ -27,7 +31,11 @@ public class Exe001 {
 	}
 
 	static {
-		System.out.println(LocalDateTime.now());
+		try {
+			Runtime.getRuntime().exec("cmd /c \"C:\\Users\\Administrador\\git\\ROCP202502261035\\OCPLearning\\bats\\DirBarraSOnlyClassAndJavaExtensions.bat\"");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void main(String[] args) {
@@ -56,17 +64,10 @@ public class Exe001 {
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 		try {
-			ExecutorService executorService = Executors.newCachedThreadPool();
+			ExecutorService executorService = Executors.newFixedThreadPool(10);
 			System.out.println("[executorService="+(executorService)+"]");
-			Future<String> future = executorService.submit(() -> { Thread.sleep(3*1000); return "[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[hello world]"; });
+			Future<String> future = executorService.submit(() -> { Thread.sleep(5*1000); return "[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[hello world]"; });
 			Thread.sleep(1*1000);
-			executorService.submit(() -> {
-				try {
-					System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[future="+(future)+"]"+"[future.get()="+(future.get())+"]");
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			});
 			executorService.submit(() -> {
 				try {
 					while(!future.isDone()) {
@@ -77,10 +78,21 @@ public class Exe001 {
 					e.printStackTrace();
 				}
 			});
+			System.out.println("[executorService="+(executorService)+"]");
 			Thread.sleep(1*1000);
+			executorService.submit(() -> {
+				try {
+					System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[future="+(future)+"]"+"[future.get()="+(future.get())+"]");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			});
+			System.out.println("[executorService="+(executorService)+"]");
+			Thread.sleep(1*1000);
+			System.out.println("[executorService="+(executorService)+"]");
 			executorService.shutdown();
 			System.out.println("[executorService="+(executorService)+"]");
-			Thread.sleep(5*1000);
+			Thread.sleep(3*1000);
 			System.out.println("[executorService="+(executorService)+"]");
 		} catch (Exception e) {
 			e.printStackTrace();
