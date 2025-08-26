@@ -1,13 +1,8 @@
 package pkgs.pkgExes;
 
-import java.lang.management.ManagementFactory;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 public class Exe001 {
 
@@ -63,40 +58,7 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		try {
-			ExecutorService executorService = Executors.newFixedThreadPool(10);
-			System.out.println("[executorService="+(executorService)+"]");
-			Future<String> future = executorService.submit(() -> { Thread.sleep(5*1000); return "[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[hello world]"; });
-			Thread.sleep(1*1000);
-			executorService.submit(() -> {
-				try {
-					while(!future.isDone()) {
-						Runtime.getRuntime().exec("cmd /c \"jstack "+(ManagementFactory.getRuntimeMXBean().getName().split("@")[0])+" >> C:\\Users\\Administrador\\git\\ROCP202502261035\\OCPLearning\\logs\\jstack_log.txt\"");
-						Thread.sleep((long)0.1*1000);
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			});
-			System.out.println("[executorService="+(executorService)+"]");
-			Thread.sleep(1*1000);
-			executorService.submit(() -> {
-				try {
-					System.out.println("[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[future="+(future)+"]"+"[future.get()="+(future.get())+"]");
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			});
-			System.out.println("[executorService="+(executorService)+"]");
-			Thread.sleep(1*1000);
-			System.out.println("[executorService="+(executorService)+"]");
-			executorService.shutdown();
-			System.out.println("[executorService="+(executorService)+"]");
-			Thread.sleep(3*1000);
-			System.out.println("[executorService="+(executorService)+"]");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		//System.out.println("[="+()+"]"+"");
  	}
 
 }
