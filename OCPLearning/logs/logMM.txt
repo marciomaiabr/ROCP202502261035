@@ -1,8 +1,8 @@
-2025-08-29T08:47:56.796
+2025-08-29T08:50:57.153
 <>
 Exe001.sm1()
 Exe001.im1()
 [SomaArray][SomaArray(int[] array, int inicio, int fim)][inicio=0][fim=6]
-[SomaArray][compute()][array=[I@7d54ca7e][inicio=0][fim=6]
+[SomaArray][compute()][array=[I@3bf634e7][inicio=0][fim=6]
 [pool.invoke(tarefa)=21]
 </>

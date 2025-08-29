@@ -3,6 +3,7 @@ package pkgs.pkgExes;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
@@ -29,6 +30,36 @@ class SomaArray extends RecursiveTask<Integer> {
         }
         return soma;
     }
+
+	@Override
+	public boolean cancel(boolean mayInterruptIfRunning) {
+    	System.out.println("[SomaArray][cancel(boolean mayInterruptIfRunning)]");
+		return super.cancel(mayInterruptIfRunning);
+	}
+
+	@Override
+	public void completeExceptionally(Throwable ex) {
+    	System.out.println("[SomaArray][completeExceptionally(Throwable ex)]");
+		super.completeExceptionally(ex);
+	}
+
+	@Override
+	public void complete(Integer value) {
+    	System.out.println("[SomaArray][complete(Integer value)]");
+		super.complete(value);
+	}
+
+	@Override
+	public void reinitialize() {
+    	System.out.println("[SomaArray][reinitialize()]");
+		super.reinitialize();
+	}
+
+	@Override
+	public boolean tryUnfork() {
+    	System.out.println("[SomaArray][tryUnfork()]");
+		return super.tryUnfork();
+	}
 
 }
 
