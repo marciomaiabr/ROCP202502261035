@@ -3,6 +3,34 @@ package pkgs.pkgExes;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.RecursiveTask;
+
+class SomaArray extends RecursiveTask<Integer> {
+
+	private static final long serialVersionUID = 1L;
+
+	private int[] array;
+    private int inicio, fim;
+
+    public SomaArray(int[] array, int inicio, int fim) {
+    	System.out.println("[SomaArray][SomaArray(int[] array, int inicio, int fim)]"+"[inicio="+(inicio)+"]"+"[fim="+(fim)+"]");
+        this.array = array;
+        this.inicio = inicio;
+        this.fim = fim;
+    }
+
+    @Override
+    protected Integer compute() {
+    	System.out.println("[SomaArray][compute()]"+"[array="+(array)+"]"+"[inicio="+(inicio)+"]"+"[fim="+(fim)+"]");
+        int soma = 0;
+        for (int i = inicio; i < fim; i++) {
+            soma += array[i];
+        }
+        return soma;
+    }
+
+}
 
 public class Exe001 {
 
@@ -58,7 +86,12 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		//System.out.println("[="+()+"]"+"");
+        int[] array = {1, 2, 3, 4, 5, 6};
+
+        ForkJoinPool pool = new ForkJoinPool();
+        SomaArray tarefa = new SomaArray(array, 0, array.length);
+
+		System.out.println("[pool.invoke(tarefa)="+(pool.invoke(tarefa))+"]"+"");
  	}
 
 }
