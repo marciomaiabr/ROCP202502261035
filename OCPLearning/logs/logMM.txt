@@ -1,8 +1,20 @@
-2025-08-29T08:50:57.153
+2025-08-30T10:23:09.275
 <>
 Exe001.sm1()
 Exe001.im1()
-[SomaArray][SomaArray(int[] array, int inicio, int fim)][inicio=0][fim=6]
-[SomaArray][compute()][array=[I@3bf634e7][inicio=0][fim=6]
+[SomaArray][SomaArray(int[] array, int inicio, int fim)][array=[I@64729b1e][inicio=0][fim=6]
+[SomaArray][compute()][array=[I@64729b1e][inicio=0][fim=6]
+[SomaArray][SomaArray(int[] array, int inicio, int fim)][array=[I@64729b1e][inicio=0][fim=3]
+[SomaArray][SomaArray(int[] array, int inicio, int fim)][array=[I@64729b1e][inicio=3][fim=6]
+[SomaArray][compute()][array=[I@64729b1e][inicio=3][fim=6]
+[SomaArray][SomaArray(int[] array, int inicio, int fim)][array=[I@64729b1e][inicio=3][fim=4]
+[SomaArray][SomaArray(int[] array, int inicio, int fim)][array=[I@64729b1e][inicio=4][fim=6]
+[SomaArray][compute()][array=[I@64729b1e][inicio=4][fim=6]
+[SomaArray][compute()][array=[I@64729b1e][inicio=3][fim=4]
+[SomaArray][compute()][array=[I@64729b1e][inicio=0][fim=3]
+[SomaArray][SomaArray(int[] array, int inicio, int fim)][array=[I@64729b1e][inicio=0][fim=1]
+[SomaArray][SomaArray(int[] array, int inicio, int fim)][array=[I@64729b1e][inicio=1][fim=3]
+[SomaArray][compute()][array=[I@64729b1e][inicio=0][fim=1]
+[SomaArray][compute()][array=[I@64729b1e][inicio=1][fim=3]
 [pool.invoke(tarefa)=21]
 </>

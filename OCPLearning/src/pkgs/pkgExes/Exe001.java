@@ -3,7 +3,6 @@ package pkgs.pkgExes;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
@@ -15,7 +14,7 @@ class SomaArray extends RecursiveTask<Integer> {
     private int inicio, fim;
 
     public SomaArray(int[] array, int inicio, int fim) {
-    	System.out.println("[SomaArray][SomaArray(int[] array, int inicio, int fim)]"+"[inicio="+(inicio)+"]"+"[fim="+(fim)+"]");
+    	System.out.println("[SomaArray][SomaArray(int[] array, int inicio, int fim)]"+"[array="+(array)+"]"+"[inicio="+(inicio)+"]"+"[fim="+(fim)+"]");
         this.array = array;
         this.inicio = inicio;
         this.fim = fim;
@@ -24,11 +23,23 @@ class SomaArray extends RecursiveTask<Integer> {
     @Override
     protected Integer compute() {
     	System.out.println("[SomaArray][compute()]"+"[array="+(array)+"]"+"[inicio="+(inicio)+"]"+"[fim="+(fim)+"]");
-        int soma = 0;
-        for (int i = inicio; i < fim; i++) {
-            soma += array[i];
+        if (fim - inicio <= 2) {
+            int soma = 0;
+            for (int i = inicio; i < fim; i++) {
+                soma += array[i];
+            }
+            return soma;
+        } else {
+            int meio = (inicio + fim) / 2;
+            SomaArray tarefa1 = new SomaArray(array, inicio, meio);
+            SomaArray tarefa2 = new SomaArray(array, meio, fim);
+
+            tarefa1.fork();
+            int resultado2 = tarefa2.compute();
+            int resultado1 = tarefa1.join();
+
+            return resultado1 + resultado2;
         }
-        return soma;
     }
 
 	@Override
