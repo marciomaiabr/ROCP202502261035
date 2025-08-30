@@ -1,5 +1,6 @@
 package pkgs.pkgExes;
 
+import java.lang.management.ManagementFactory;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
@@ -8,13 +9,21 @@ import java.util.concurrent.RecursiveTask;
 
 class SomaArray extends RecursiveTask<Integer> {
 
+	private static Integer tempo = 100;
+	private static Integer getTempo() {
+		synchronized (tempo) {
+			tempo = tempo-10;
+		}
+		return tempo;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	private int[] array;
     private int inicio, fim;
 
     public SomaArray(int[] array, int inicio, int fim) {
-    	System.out.println("[SomaArray][SomaArray(int[] array, int inicio, int fim)]"+"[array="+(array)+"]"+"[inicio="+(inicio)+"]"+"[fim="+(fim)+"]");
+    	System.out.println("[SomaArray]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[this="+(this)+"]"+"[SomaArray(int[] array, int inicio, int fim)]"+"[array="+(array)+"]"+"[inicio="+(inicio)+"]"+"[fim="+(fim)+"]");
         this.array = array;
         this.inicio = inicio;
         this.fim = fim;
@@ -22,14 +31,17 @@ class SomaArray extends RecursiveTask<Integer> {
 
     @Override
     protected Integer compute() {
-    	System.out.println("[SomaArray][compute()]"+"[array="+(array)+"]"+"[inicio="+(inicio)+"]"+"[fim="+(fim)+"]");
+    	Integer r = null;
+    	System.out.println("[SomaArray]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[this="+(this)+"]"+"[compute()]"+"[array="+(array)+"]"+"[inicio="+(inicio)+"]"+"[fim="+(fim)+"]");
         if (fim - inicio <= 2) {
+        	System.out.println("[SomaArray][processando]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[this="+(this)+"]");
             int soma = 0;
             for (int i = inicio; i < fim; i++) {
                 soma += array[i];
             }
-            return soma;
+            r = soma;
         } else {
+        	System.out.println("[SomaArray][dividindo]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[this="+(this)+"]");
             int meio = (inicio + fim) / 2;
             SomaArray tarefa1 = new SomaArray(array, inicio, meio);
             SomaArray tarefa2 = new SomaArray(array, meio, fim);
@@ -38,8 +50,20 @@ class SomaArray extends RecursiveTask<Integer> {
             int resultado2 = tarefa2.compute();
             int resultado1 = tarefa1.join();
 
-            return resultado1 + resultado2;
+            r = resultado1 + resultado2;
         }
+
+        System.out.println("[SomaArray][descansando]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[this="+(this)+"]");
+
+    	try {
+			Thread.sleep(getTempo()*1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+        System.out.println("[SomaArray][retornando]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[this="+(this)+"]");
+
+        return r;
     }
 
 	@Override
@@ -126,15 +150,61 @@ public class Exe001 {
 		//System.out.println("[="+()+"]"+"");
 	}
 
+	boolean podeFinalizarLog = false;
+
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-        int[] array = {1, 2, 3, 4, 5, 6};
+
+		new Thread(()->{
+			while(!podeFinalizarLog) {
+		        try {
+		        	Runtime.getRuntime().exec("cmd /c \"jstack "+(ManagementFactory.getRuntimeMXBean().getName().split("@")[0])+" >> C:\\Users\\Administrador\\git\\ROCP202502261035\\OCPLearning\\logs\\jstack_log.txt\"");
+					Thread.sleep(3*1000);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}).start();
+
+		int[] array = {1, 2, 3, 4, 5, 6};
 
         ForkJoinPool pool = new ForkJoinPool();
-        SomaArray tarefa = new SomaArray(array, 0, array.length);
+        System.out.println("[pool="+(pool)+"]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"");
 
-		System.out.println("[pool.invoke(tarefa)="+(pool.invoke(tarefa))+"]"+"");
- 	}
+        SomaArray tarefa = new SomaArray(array, 0, array.length);
+        System.out.println("[tarefa="+(tarefa)+"]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"");
+
+        try {
+			Thread.sleep(1*1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+        System.out.println("[pool="+(pool)+"]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"");
+        System.out.println("[tarefa="+(tarefa)+"]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"");
+
+        System.out.println(""+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"[LocalDateTime.now()="+(LocalDateTime.now())+"]"+"[pool.invoke(tarefa)="+(pool.invoke(tarefa))+"]"+"[LocalDateTime.now()="+(LocalDateTime.now())+"]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]");
+
+        try {
+			Thread.sleep(1*1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+        System.out.println("[pool="+(pool)+"]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"");
+        System.out.println("[tarefa="+(tarefa)+"]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"");
+
+        try {
+			Thread.sleep(5*1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+        System.out.println("[pool="+(pool)+"]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"");
+        System.out.println("[tarefa="+(tarefa)+"]"+"[Thread.currentThread().getName()="+(Thread.currentThread().getName())+"]"+"");
+
+        podeFinalizarLog = true;
+	}
 
 }
 
