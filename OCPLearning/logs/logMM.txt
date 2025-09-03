@@ -1,1 +1,5 @@
-2025-09-03T07:34:34.603
+2025-09-03T07:54:05.388
+java.sql.SQLException: No suitable driver found for jdbc:mysql://localhost:3306/ocp202509020748
+	at java.sql.DriverManager.getConnection(DriverManager.java:689)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:16)
