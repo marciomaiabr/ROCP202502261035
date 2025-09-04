@@ -1,2 +1,2 @@
-2025-09-04T07:22:10.598
-com.mysql.cj.jdbc.StatementImpl@38102d01
+2025-09-04T07:25:57.390
+[resultSet.getString("nome")=Marcio]
