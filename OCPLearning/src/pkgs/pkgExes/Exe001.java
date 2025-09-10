@@ -24,6 +24,20 @@ public class Exe001 {
 			System.out.println("[resultSet="+(resultSet)+"]"+"");
 			ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
 			System.out.println("[resultSetMetaData="+(resultSetMetaData)+"]"+"");
+
+			System.out.println("\nCampos:");
+			for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
+				System.out.println("[resultSetMetaData.getColumnName(i)="+(resultSetMetaData.getColumnName(i))+"]"+"");
+			}
+
+			System.out.println("\nDados:");
+			while(resultSet.next()) {
+				for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
+					System.out.print("[resultSet.getObject(i).toString()="+(resultSet.getObject(i).toString())+"]"+"");
+				}
+				System.out.println();
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,7 +1,16 @@
-2025-09-10T05:06:11.656
-[connection=com.mysql.cj.jdbc.ConnectionImpl@7494f96a]
-[statement=com.mysql.cj.jdbc.StatementImpl@37883b97]
-[resultSet=com.mysql.cj.jdbc.result.ResultSetImpl@68e965f5]
-[resultSetMetaData=com.mysql.cj.jdbc.result.ResultSetMetaData@7e9131d5 - Field level information: 
-	com.mysql.cj.result.Field@2e1d27ba[dbName=ocp202509020748,tableName=pessoa,originalTableName=pessoa,columnName=id,originalColumnName=id,mysqlType=3(FIELD_TYPE_INT),sqlType=4,flags= AUTO_INCREMENT PRIMARY_KEY, charsetIndex=63, charsetName=ISO-8859-1]
-	com.mysql.cj.result.Field@61d6015a[dbName=ocp202509020748,tableName=pessoa,originalTableName=pessoa,columnName=nome,originalColumnName=nome,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags=, charsetIndex=8, charsetName=WINDOWS-1252]]
+2025-09-10T06:31:45.558
+[connection=com.mysql.cj.jdbc.ConnectionImpl@26b3fd41]
+[statement=com.mysql.cj.jdbc.StatementImpl@38102d01]
+[resultSet=com.mysql.cj.jdbc.result.ResultSetImpl@76f2bbc1]
+[resultSetMetaData=com.mysql.cj.jdbc.result.ResultSetMetaData@2cdd0d4b - Field level information: 
+	com.mysql.cj.result.Field@7e9131d5[dbName=ocp202509020748,tableName=pessoa,originalTableName=pessoa,columnName=id,originalColumnName=id,mysqlType=3(FIELD_TYPE_INT),sqlType=4,flags= AUTO_INCREMENT PRIMARY_KEY, charsetIndex=63, charsetName=ISO-8859-1]
+	com.mysql.cj.result.Field@2e1d27ba[dbName=ocp202509020748,tableName=pessoa,originalTableName=pessoa,columnName=nome,originalColumnName=nome,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags=, charsetIndex=8, charsetName=WINDOWS-1252]]
+
+Campos:
+[resultSetMetaData.getColumnName(i)=id]
+[resultSetMetaData.getColumnName(i)=nome]
+
+Dados:
+[resultSet.getObject(i).toString()=4][resultSet.getObject(i).toString()=Marcio]
+[resultSet.getObject(i).toString()=5][resultSet.getObject(i).toString()=Ana]
+[resultSet.getObject(i).toString()=6][resultSet.getObject(i).toString()=Fernanda]
