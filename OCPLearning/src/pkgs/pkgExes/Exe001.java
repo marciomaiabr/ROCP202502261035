@@ -1,10 +1,9 @@
 package pkgs.pkgExes;
 
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.Statement;
 import java.time.LocalDateTime;
 
 public class Exe001 {
@@ -18,24 +17,33 @@ public class Exe001 {
 			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ocp202509020748", "root", "senha123");
 			System.out.println("[connection="+(connection)+"]"+"");
 
-			Statement statement = connection.createStatement();
-			System.out.println("[statement="+(statement)+"]"+"");
-			ResultSet resultSet = statement.executeQuery("select * from pessoa");
-			System.out.println("[resultSet="+(resultSet)+"]"+"");
-			ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
-			System.out.println("[resultSetMetaData="+(resultSetMetaData)+"]"+"");
+			DatabaseMetaData dbmd = connection.getMetaData();
 
-			System.out.println("\nCampos:");
-			for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
-				System.out.println("[resultSetMetaData.getColumnName(i)="+(resultSetMetaData.getColumnName(i))+"]"+"");
+			if (dbmd.supportsResultSetType(ResultSet.TYPE_FORWARD_ONLY)) {
+			    System.out.print("Supports TYPE_FORWARD_ONLY");
+			    if (dbmd.supportsResultSetConcurrency(
+			            ResultSet.TYPE_FORWARD_ONLY,
+			            ResultSet.CONCUR_UPDATABLE)) {
+			    	System.out.println(" and supports CONCUR_UPDATABLE");
+			    }
 			}
 
-			System.out.println("\nDados:");
-			while(resultSet.next()) {
-				for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
-					System.out.print("[resultSet.getObject(i).toString()="+(resultSet.getObject(i).toString())+"]"+"");
-				}
-				System.out.println();
+			if (dbmd.supportsResultSetType(ResultSet.TYPE_SCROLL_INSENSITIVE)) {
+				System.out.print("Supports TYPE_SCROLL_INSENSITIVE");
+			    if (dbmd.supportsResultSetConcurrency(
+			            ResultSet.TYPE_SCROLL_INSENSITIVE,
+			            ResultSet.CONCUR_UPDATABLE)) {
+			    	System.out.println(" and supports CONCUR_UPDATABLE");
+			    }
+			}
+
+			if (dbmd.supportsResultSetType(ResultSet.TYPE_SCROLL_SENSITIVE)) {
+				System.out.print("Supports TYPE_SCROLL_SENSITIVE");
+			    if (dbmd.supportsResultSetConcurrency(
+			            ResultSet.TYPE_SCROLL_SENSITIVE,
+			            ResultSet.CONCUR_UPDATABLE)) {
+			    	System.out.println("Supports CONCUR_UPDATABLE");
+			    }
 			}
 
 		} catch (Exception e) {
