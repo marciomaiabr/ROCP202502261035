@@ -1,14 +1,7 @@
-2025-09-04T08:04:30.686
-[r=false]
-[resultSet=null]
-[intRowSAffected=1]
-
-[r=true]
-[resultSet=com.mysql.cj.jdbc.result.ResultSetImpl@6f27a732]
-[resultSet.getString("nome")=Marcio2 B Maia]
-[intRowSAffected=-1]
-
-[r=false]
-[resultSet=null]
-[intRowSAffected=0]
-
+2025-09-10T05:06:11.656
+[connection=com.mysql.cj.jdbc.ConnectionImpl@7494f96a]
+[statement=com.mysql.cj.jdbc.StatementImpl@37883b97]
+[resultSet=com.mysql.cj.jdbc.result.ResultSetImpl@68e965f5]
+[resultSetMetaData=com.mysql.cj.jdbc.result.ResultSetMetaData@7e9131d5 - Field level information: 
+	com.mysql.cj.result.Field@2e1d27ba[dbName=ocp202509020748,tableName=pessoa,originalTableName=pessoa,columnName=id,originalColumnName=id,mysqlType=3(FIELD_TYPE_INT),sqlType=4,flags= AUTO_INCREMENT PRIMARY_KEY, charsetIndex=63, charsetName=ISO-8859-1]
+	com.mysql.cj.result.Field@61d6015a[dbName=ocp202509020748,tableName=pessoa,originalTableName=pessoa,columnName=nome,originalColumnName=nome,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags=, charsetIndex=8, charsetName=WINDOWS-1252]]
