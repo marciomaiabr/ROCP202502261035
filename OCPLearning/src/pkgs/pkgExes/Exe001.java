@@ -16,28 +16,29 @@ public class Exe001 {
 	public static void main(String[] args) {
 		try {
 			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ocp202509020748", "root", "senha123");
-			System.out.println("[connection="+(connection)+"]"+"");
 
 			Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-			System.out.println("[statement="+(statement)+"]"+"");
 
 			ResultSet resultSet = statement.executeQuery("select * from pessoa");
-			System.out.println("[resultSet="+(resultSet)+"]"+"");
 
+			System.out.println();
 			System.out.println("[resultSet.last()="+(resultSet.last())+"]"+"");
 			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
 
-			System.out.println("[resultSet.last()="+(resultSet.absolute(0))+"]"+"");
+			System.out.println();
+			System.out.println("[resultSet.absolute(4)="+(resultSet.absolute(4))+"]"+"");
 			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
+			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
 
-			System.out.println("[resultSet.last()="+(resultSet.absolute(2))+"]"+"");
+			System.out.println();
+			System.out.println("[resultSet.absolute(2)="+(resultSet.absolute(2))+"]"+"");
 			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
+			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
 
-			System.out.println("[resultSet.last()="+(resultSet.absolute(4))+"]"+"");
+			System.out.println();
+			System.out.println("[resultSet.absolute(4)="+(resultSet.absolute(4))+"]"+"");
 			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-
-			System.out.println("[resultSet.last()="+(resultSet.absolute(9))+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
+			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
 
 		} catch (Exception e) {
 			e.printStackTrace();
