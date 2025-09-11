@@ -18,7 +18,7 @@ public class Exe001 {
 			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ocp202509020748", "root", "senha123");
 			System.out.println("[connection="+(connection)+"]"+"");
 
-			Statement statement = connection.createStatement();
+			Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
 			System.out.println("[statement="+(statement)+"]"+"");
 
 			ResultSet resultSet = statement.executeQuery("select * from pessoa");
