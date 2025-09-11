@@ -26,19 +26,19 @@ public class Exe001 {
 			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
 
 			System.out.println();
-			System.out.println("[resultSet.absolute(4)="+(resultSet.absolute(4))+"]"+"");
+			System.out.println("[resultSet.absolute(4)="+(resultSet.absolute(0))+"]"+"");
+			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
+			//System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");//java.sql.SQLException: Before start of result set
+
+			System.out.println();
+			System.out.println("[resultSet.absolute(7)="+(resultSet.absolute(7))+"]"+"");
 			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
 			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
 
 			System.out.println();
-			System.out.println("[resultSet.absolute(2)="+(resultSet.absolute(2))+"]"+"");
+			System.out.println("[resultSet.absolute(8)="+(resultSet.absolute(8))+"]"+"");
 			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
-
-			System.out.println();
-			System.out.println("[resultSet.absolute(4)="+(resultSet.absolute(4))+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
+			//System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");//java.sql.SQLException: After end of result set
 
 		} catch (Exception e) {
 			e.printStackTrace();

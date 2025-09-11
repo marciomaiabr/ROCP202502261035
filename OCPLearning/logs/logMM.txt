@@ -1,16 +1,14 @@
-2025-09-11T08:37:18.264
+2025-09-11T08:42:34.416
 
 [resultSet.last()=true]
 [resultSet.getRow()=7]
 
-[resultSet.absolute(4)=true]
-[resultSet.getRow()=4]
-[resultSet.getRow()=Dani]
+[resultSet.absolute(4)=false]
+[resultSet.getRow()=0]
 
-[resultSet.absolute(2)=true]
-[resultSet.getRow()=2]
-[resultSet.getRow()=Ana]
+[resultSet.absolute(7)=true]
+[resultSet.getRow()=7]
+[resultSet.getRow()=Iza]
 
-[resultSet.absolute(4)=true]
-[resultSet.getRow()=4]
-[resultSet.getRow()=Dani]
+[resultSet.absolute(8)=false]
+[resultSet.getRow()=0]
