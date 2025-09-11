@@ -24,13 +24,20 @@ public class Exe001 {
 			ResultSet resultSet = statement.executeQuery("select * from pessoa");
 			System.out.println("[resultSet="+(resultSet)+"]"+"");
 
-			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println("[resultSet.next()="+(resultSet.next())+"]"+"");
 			System.out.println("[resultSet.last()="+(resultSet.last())+"]"+"");
 			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println("[resultSet.next()="+(resultSet.next())+"]"+"");
-			resultSet.beforeFirst();
-			System.out.println("[resultSet.next()="+(resultSet.next())+"]"+"");
+
+			System.out.println("[resultSet.last()="+(resultSet.absolute(0))+"]"+"");
+			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
+
+			System.out.println("[resultSet.last()="+(resultSet.absolute(2))+"]"+"");
+			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
+
+			System.out.println("[resultSet.last()="+(resultSet.absolute(4))+"]"+"");
+			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
+
+			System.out.println("[resultSet.last()="+(resultSet.absolute(9))+"]"+"");
+			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
 
 		} catch (Exception e) {
 			e.printStackTrace();
