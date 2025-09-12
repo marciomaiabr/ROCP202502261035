@@ -17,49 +17,15 @@ public class Exe001 {
 		try {
 			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ocp202509020748", "root", "senha123");
 
-			Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+			Statement statement = connection.createStatement();
 
 			ResultSet resultSet = statement.executeQuery("select * from pessoa");
 
 			System.out.println();
-			System.out.println("[resultSet.last()="+(resultSet.last())+"]"+"");
+			//System.out.println("[resultSet.last()="+(resultSet.last())+"]"+"");//java.sql.SQLException: Operation not allowed for a result set of type ResultSet.TYPE_FORWARD_ONLY.
 			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-
-			System.out.println();
-			System.out.println("[resultSet.absolute(0)="+(resultSet.absolute(0))+"]"+"");
+			System.out.println("[resultSet.next()="+(resultSet.next())+"]"+"");
 			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			//System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");//java.sql.SQLException: Before start of result set
-
-			System.out.println();
-			System.out.println("[resultSet.absolute(1)="+(resultSet.absolute(1))+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
-
-			System.out.println();
-			System.out.println("[resultSet.absolute(-1)="+(resultSet.absolute(-1))+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
-
-			System.out.println();
-			System.out.println("[resultSet.absolute(-2)="+(resultSet.absolute(-2))+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
-
-			System.out.println();
-			System.out.println("[resultSet.absolute(3)="+(resultSet.absolute(3))+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
-
-			System.out.println();
-			System.out.println("[resultSet.absolute(7)="+(resultSet.absolute(7))+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
-
-			System.out.println();
-			System.out.println("[resultSet.absolute(6)="+(resultSet.absolute(6))+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
