@@ -55,6 +55,9 @@ public class Exe001 {
 			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
 			System.out.println();
 
+			resultSet.absolute(1);
+			//resultSet.deleteRow();//SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`ocp202509020748`.`carros`, CONSTRAINT `carros_ibfk_1` FOREIGN KEY (`pessoa`) REFERENCES `pessoa` (`id`))
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
