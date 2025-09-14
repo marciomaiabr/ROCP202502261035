@@ -1,27 +1,8 @@
-2025-09-12T06:54:35.542
+2025-09-14T09:02:14.605
+Exe001.sm1()
+Exe001.im1()
+[resultSet.getRow()=3]
+[resultSet.getRow()=Fernanda]
+[resultSet.getRow()=Fernanda]
+[resultSet.getRow()=Fernanda Maia]
 
-[resultSet.last()=true]
-[resultSet.getRow()=7]
-
-[resultSet.getRow()=4]
-[resultSet.getRow()=Dani]
-
-[resultSet.relative(1)=true]
-[resultSet.getRow()=5]
-[resultSet.getRow()=Carla]
-
-[resultSet.relative(-3)=true]
-[resultSet.getRow()=2]
-[resultSet.getRow()=Ana]
-
-[resultSet.getRow()=4]
-[resultSet.getRow()=Dani]
-
-
-[resultSet.relative(10)=false]
-[resultSet.getRow()=0]
-[resultSet.getRow()=4]
-[resultSet.getRow()=Dani]
-
-[resultSet.relative(-10)=false]
-[resultSet.getRow()=0]
