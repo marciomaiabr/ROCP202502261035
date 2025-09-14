@@ -44,6 +44,17 @@ public class Exe001 {
 			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
 			System.out.println();
 
+			resultSet.absolute(2);
+			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
+			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
+			resultSet.updateString("nome", resultSet.getString("nome").concat(" Maia"));
+			//System.out.println("[resultSet.getRow()="+(resultSet.rowUpdated())+"]"+"");//java.sql.SQLFeatureNotSupportedException
+			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
+			resultSet.relative(1);
+			resultSet.relative(-1);
+			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
+			System.out.println();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

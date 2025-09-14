@@ -1,8 +1,13 @@
-2025-09-14T09:02:14.605
+2025-09-14T09:05:50.401
 Exe001.sm1()
 Exe001.im1()
 [resultSet.getRow()=3]
 [resultSet.getRow()=Fernanda]
 [resultSet.getRow()=Fernanda]
 [resultSet.getRow()=Fernanda Maia]
+
+[resultSet.getRow()=2]
+[resultSet.getRow()=Ana]
+[resultSet.getRow()=Ana]
+[resultSet.getRow()=Ana]
 
