@@ -28,71 +28,63 @@ public class Exe001 {
 		System.out.println("Exe001.im1()");
 		try {
 			preparaCenario();
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ocp202509020748", "root", "senha123");
-			connection.setAutoCommit(false);
 
-			Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+			new Thread(()->{
+				try {
+					Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ocp202509020748", "root", "senha123");
+					connection.setAutoCommit(false);
 
-			ResultSet resultSet = null;
-			resultSet = statement.executeQuery("select * from pessoa");
+					Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
 
-			System.out.println();
-			System.out.println("[resultSet.last()="+(resultSet.last())+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println();
+					ResultSet resultSet = statement.executeQuery("select * from pessoa");
 
-			System.out.println();
-			resultSet.beforeFirst();
-			while (resultSet.next())
-				System.out.println(resultSet.getString("nome"));
+					System.out.println("[aki][1]");
+					resultSet.next();
+					resultSet.next();
+					resultSet.next();
+					resultSet.updateString("nome", resultSet.getString("nome").concat(" Maia"));
+					resultSet.updateRow();
+					Thread.sleep(30*1000);
+					System.out.println("[aki][2]");
 
-			System.out.println();
+					connection.rollback();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}).start();
 
-			resultSet.absolute(3);
-			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
-			resultSet.updateString("nome", resultSet.getString("nome").concat(" Maia"));
-			//System.out.println("[resultSet.getRow()="+(resultSet.rowUpdated())+"]"+"");//java.sql.SQLFeatureNotSupportedException
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
-			resultSet.updateRow();
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
-			System.out.println();
+			System.out.println("[aki][3]");
+			try {
+				Thread.sleep(3*1000);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			System.out.println("[aki][4]");
 
-			resultSet.absolute(2);
-			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
-			resultSet.updateString("nome", resultSet.getString("nome").concat(" Maia"));
-			//System.out.println("[resultSet.getRow()="+(resultSet.rowUpdated())+"]"+"");//java.sql.SQLFeatureNotSupportedException
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
-			resultSet.relative(1);
-			resultSet.relative(-1);
-			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
-			System.out.println();
+			new Thread(()->{
+				try {
+					Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ocp202509020748", "root", "senha123");
+					connection.setAutoCommit(false);
 
-			resultSet.absolute(1);
-			//resultSet.deleteRow();//SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`ocp202509020748`.`carros`, CONSTRAINT `carros_ibfk_1` FOREIGN KEY (`pessoa`) REFERENCES `pessoa` (`id`))
-			resultSet.absolute(2);
-			resultSet.deleteRow();
+					//Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+					Statement statement = connection.createStatement();
 
-			System.out.println();
-			System.out.println("[resultSet.last()="+(resultSet.first())+"]"+"");
-			System.out.println("[resultSet.last()="+(resultSet.last())+"]"+"");
-			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-			System.out.println();
+					System.out.println("[aki][5]");
+					ResultSet resultSet = statement.executeQuery("select * from pessoa");
 
-			System.out.println();
-			resultSet.beforeFirst();
-			while (resultSet.next())
-				System.out.println(resultSet.getString("nome"));
+					System.out.println("[aki][6]");
+					resultSet.next();
+					resultSet.next();
+					resultSet.next();
+					System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
+					System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
+					System.out.println("[aki][7]");
 
-			connection.rollback();
-
-			resultSet = statement.executeQuery("select * from pessoa");
-
-			System.out.println();
-			resultSet.beforeFirst();
-			while (resultSet.next())
-				System.out.println(resultSet.getString("nome"));
+					connection.rollback();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}).start();
 
 		} catch (Exception e) {
 			e.printStackTrace();
