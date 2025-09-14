@@ -1,6 +1,10 @@
-2025-09-14T09:08:27.497
+2025-09-14T09:12:03.080
 Exe001.sm1()
 Exe001.im1()
+
+[resultSet.last()=true]
+[resultSet.getRow()=3]
+
 [resultSet.getRow()=3]
 [resultSet.getRow()=Fernanda]
 [resultSet.getRow()=Fernanda]
@@ -11,14 +15,8 @@ Exe001.im1()
 [resultSet.getRow()=Ana]
 [resultSet.getRow()=Ana]
 
-java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`ocp202509020748`.`carros`, CONSTRAINT `carros_ibfk_1` FOREIGN KEY (`pessoa`) REFERENCES `pessoa` (`id`))
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1103)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1450)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1086)
-	at com.mysql.cj.jdbc.result.UpdatableResultSet.deleteRow(UpdatableResultSet.java:437)
-	at pkgs.pkgExes.Exe001.im1(Exe001.java:59)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:19)
+
+[resultSet.last()=true]
+[resultSet.last()=true]
+[resultSet.getRow()=2]
+

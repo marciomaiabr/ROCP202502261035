@@ -34,6 +34,11 @@ public class Exe001 {
 
 			ResultSet resultSet = statement.executeQuery("select * from pessoa");
 
+			System.out.println();
+			System.out.println("[resultSet.last()="+(resultSet.last())+"]"+"");
+			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
+			System.out.println();
+
 			resultSet.absolute(3);
 			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
 			System.out.println("[resultSet.getRow()="+(resultSet.getString("nome"))+"]"+"");
@@ -57,6 +62,14 @@ public class Exe001 {
 
 			resultSet.absolute(1);
 			//resultSet.deleteRow();//SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`ocp202509020748`.`carros`, CONSTRAINT `carros_ibfk_1` FOREIGN KEY (`pessoa`) REFERENCES `pessoa` (`id`))
+			resultSet.absolute(2);
+			resultSet.deleteRow();
+
+			System.out.println();
+			System.out.println("[resultSet.last()="+(resultSet.first())+"]"+"");
+			System.out.println("[resultSet.last()="+(resultSet.last())+"]"+"");
+			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
+			System.out.println();
 
 		} catch (Exception e) {
 			e.printStackTrace();
