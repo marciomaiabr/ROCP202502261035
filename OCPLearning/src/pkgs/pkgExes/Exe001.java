@@ -29,14 +29,23 @@ public class Exe001 {
 		try {
 			preparaCenario();
 			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ocp202509020748", "root", "senha123");
+			connection.setAutoCommit(false);
 
 			Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
 
-			ResultSet resultSet = statement.executeQuery("select * from pessoa");
+			ResultSet resultSet = null;
+			resultSet = statement.executeQuery("select * from pessoa");
 
 			System.out.println();
 			System.out.println("[resultSet.last()="+(resultSet.last())+"]"+"");
 			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
+			System.out.println();
+
+			System.out.println();
+			resultSet.beforeFirst();
+			while (resultSet.next())
+				System.out.println(resultSet.getString("nome"));
+
 			System.out.println();
 
 			resultSet.absolute(3);
@@ -70,6 +79,20 @@ public class Exe001 {
 			System.out.println("[resultSet.last()="+(resultSet.last())+"]"+"");
 			System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
 			System.out.println();
+
+			System.out.println();
+			resultSet.beforeFirst();
+			while (resultSet.next())
+				System.out.println(resultSet.getString("nome"));
+
+			connection.rollback();
+
+			resultSet = statement.executeQuery("select * from pessoa");
+
+			System.out.println();
+			resultSet.beforeFirst();
+			while (resultSet.next())
+				System.out.println(resultSet.getString("nome"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
