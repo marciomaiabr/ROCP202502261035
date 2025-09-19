@@ -1,11 +1,5 @@
 package pkgs.pkgExes;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.time.LocalDateTime;
 
 public class Exe001 {
@@ -26,71 +20,8 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		try {
-			preparaCenario();
-
-			{
-				Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ocp202509020748", "root", "senha123");
-	
-				Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-	
-				ResultSet resultSet = statement.executeQuery("select * from pessoa");
-	
-				resultSet.next();
-				resultSet.next();
-				resultSet.next();
-				System.out.println("[resultSet.last()="+(resultSet.last())+"]"+"");
-				System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-				System.out.println("[resultSet.absolute(2)="+(resultSet.absolute(2))+"]"+"");
-				System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-				System.out.println("[resultSet.getString(\"nome\")="+(resultSet.getString("nome"))+"]"+"");
-				resultSet.moveToInsertRow();
-				System.out.println("[resultSet.getRow()="+(resultSet.getRow())+"]"+"");
-				System.out.println("[resultSet.getString(\"nome\")="+(resultSet.getString("nome"))+"]"+"");
-				resultSet.updateString("nome", "Bia");
-				System.out.println("[resultSet.getString(\"nome\")="+(resultSet.getString("nome"))+"]"+"");
-				resultSet.insertRow();
-				System.out.println("[resultSet.getString(\"nome\")="+(resultSet.getString("nome"))+"]"+"");
-			}
-
-			{
-				System.out.println();
-				Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ocp202509020748", "root", "senha123");
-	
-				Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-	
-				ResultSet resultSet = statement.executeQuery("select * from pessoa");
-	
-				while(resultSet.next())
-					System.out.println("[resultSet.getString(\"nome\")="+(resultSet.getString("nome"))+"]"+"");
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		//System.out.println("[="+()+"]"+"");
  	}
-
-	private void preparaCenario() {
-		Connection connection = null;
-		try {
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ocp202509020748", "root", "senha123");
-			connection.prepareStatement(" delete from carros ").execute();
-			connection.prepareStatement(" delete from pessoa ").execute();
-
-			connection.prepareStatement(" insert into pessoa (nome) values ('Marcio') ").execute();
-			connection.prepareStatement(" insert into pessoa (nome) values ('Ana') ").execute();
-			connection.prepareStatement(" insert into pessoa (nome) values ('Fernanda') ").execute();
-
-			connection.prepareStatement(" insert into carros (descricao, pessoa) values ('Ferrari', (select id from pessoa where nome = 'Marcio')) ").execute();
-			connection.prepareStatement(" insert into carros (descricao, pessoa) values ('Lamborghini', (select id from pessoa where nome = 'Marcio')) ").execute();
-		} catch (Exception e) {
-			throw new RuntimeException("Falha ao criar cenario", e);
-		} finally {
-			try {
-				connection.close();
-			} catch (Exception e2) { }
-		}
-	}
 
 }
 
