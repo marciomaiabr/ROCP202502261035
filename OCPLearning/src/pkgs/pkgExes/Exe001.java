@@ -2,10 +2,8 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
-class ClassA {
-	public static void mqqc() {
-		System.out.println("ClassA.mqqc()");
-	}
+interface InterfaceA {
+	public static int x = 5;
 }
 
 public class Exe001 {
@@ -26,8 +24,7 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		ClassA ca = null;
-		ca.mqqc();
+		//InterfaceA.x = 10;//The final field InterfaceA.x cannot be assigned
  	}
 
 }
