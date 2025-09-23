@@ -2,6 +2,12 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
+class ClassA {
+	public static void mqqc() {
+		System.out.println("ClassA.mqqc()");
+	}
+}
+
 public class Exe001 {
 
 	static {
@@ -20,7 +26,8 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		//System.out.println("[="+()+"]"+"");
+		ClassA ca = null;
+		ca.mqqc();
  	}
 
 }
