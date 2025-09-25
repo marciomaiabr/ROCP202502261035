@@ -12,15 +12,15 @@ interface InterfaceB {
 
 interface InterfaceC extends InterfaceA , InterfaceB {
 
-	@Override
-	default void m1() {
-		// TODO Auto-generated method stub
-		InterfaceA.super.m1();
-	}
-
 }
 
 class ClassA implements InterfaceC {
+
+	@Override
+	public void m1() {
+		// TODO Auto-generated method stub
+		InterfaceC.super.m1();
+	}
 
 }
 
