@@ -23,7 +23,7 @@ class ClassA implements InterfaceC {
 
 	@Override
 	public void m1() {
-		InterfaceC.super.m1();
+		InterfaceA.super.m1();
 	}
 
 }
