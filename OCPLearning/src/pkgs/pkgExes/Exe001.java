@@ -3,7 +3,20 @@ package pkgs.pkgExes;
 import java.time.LocalDateTime;
 
 interface InterfaceA {
-	public static int x = 5;
+	public default void m1() {}
+}
+
+interface InterfaceB {
+	public default void m1() {}
+}
+
+class ClassA implements InterfaceA , InterfaceB {
+
+	@Override
+	public void m1() {
+		InterfaceA.super.m1();
+	}
+
 }
 
 public class Exe001 {
@@ -24,7 +37,6 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		//InterfaceA.x = 10;//The final field InterfaceA.x cannot be assigned
  	}
 
 }
