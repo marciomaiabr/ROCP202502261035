@@ -10,12 +10,11 @@ interface InterfaceB {
 	public default void m1() {}
 }
 
-class ClassA implements InterfaceA , InterfaceB {
+interface InterfaceC extends InterfaceA , InterfaceB {
 
-	@Override
-	public void m1() {
-		InterfaceA.super.m1();
-	}
+}
+
+class ClassA implements InterfaceC {
 
 }
 
@@ -37,6 +36,8 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
+		ClassA o = new ClassA();
+		o.m1();
  	}
 
 }
