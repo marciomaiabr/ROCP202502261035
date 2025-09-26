@@ -2,30 +2,8 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
-interface InterfaceA {
-	public default void m1() {}
-}
-
-interface InterfaceB {
-	public default void m1() {}
-}
-
-interface InterfaceC extends InterfaceA , InterfaceB {
-
-	@Override
-	default void m1() {
-		InterfaceA.super.m1();
-	}
-
-}
-
-class ClassA implements InterfaceC {
-
-	@Override
-	public void m1() {
-		InterfaceA.super.m1();
-	}
-
+enum Animais {
+	Cachorro, Gato, Galinha
 }
 
 public class Exe001 {
@@ -46,8 +24,11 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		ClassA o = new ClassA();
-		o.m1();
+		Animais animais = null;
+		System.out.println("[="+(animais)+"]"+"");
+		//animais = new Animais();//Cannot instantiate the type Animais
+		animais = Animais.Cachorro;
+		System.out.println("[="+(animais)+"]"+"");
  	}
 
 }
