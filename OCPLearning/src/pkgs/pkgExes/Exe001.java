@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 enum Animais {
 	Cachorro, Gato, Galinha;
+	String som;
 }
 
 public class Exe001 {
