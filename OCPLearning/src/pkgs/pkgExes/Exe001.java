@@ -3,8 +3,7 @@ package pkgs.pkgExes;
 import java.time.LocalDateTime;
 
 enum Animais {
-	Cachorro, Gato, Galinha
-	String som;
+	Cachorro, Gato, Galinha;
 }
 
 public class Exe001 {
