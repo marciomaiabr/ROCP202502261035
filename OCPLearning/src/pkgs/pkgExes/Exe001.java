@@ -2,12 +2,6 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
-interface InterfaceA {
-	//final default void mqqc1() {}//Illegal modifier for the interface method mqqc1; only public, abstract, default, static and strictfp are permitted
-	//default static void mqqc2() {}//Illegal combination of modifiers for the interface method mqqc2; only one of abstract, default, or static permitted
-	default void mqqc3() {;;;}
-}
-
 public class Exe001 {
 
 	static {
@@ -23,6 +17,11 @@ public class Exe001 {
 		System.out.println("Exe001.sm1()");
 		//System.out.println("[="+()+"]"+"");
 	}
+
+	short m1() {return 32767;}
+	//short m2() {return 32768;}//Type mismatch: cannot convert from int to short
+	short m3() {return new Short((short)5);}
+	Short m4() {return (short)5;}
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
