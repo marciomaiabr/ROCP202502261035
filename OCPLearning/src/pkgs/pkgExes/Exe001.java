@@ -2,40 +2,10 @@ package pkgs.pkgExes;
 
 import java.time.LocalDateTime;
 
-enum Animais {
-
-	CACHORRO("latir","auau"){
-		public void movimentacao1() {System.out.println("correndo");}
-		public void movimentacao2() {System.out.println("correndo");}
-	}, GATO{
-		public void movimentacao2() {System.out.println("pula");}
-	}, GALINHA{
-		public void movimentacao2() {System.out.println("voa");}
-	};
-
-	private String nomeSom;
-	String som;
-
-	Animais() {
-		System.out.println("Animais.Animais()");
-	}
-
-	Animais(String nomeSom, String som) {
-		System.out.println("Animais.Animais(String nomeSom, String som)");
-		this.nomeSom = nomeSom;
-		this.som = som;
-	}
-
-	public String getNomeSom() {
-		return nomeSom;
-	}
-
-	public void setNomeSom(String nomeSom) {
-		this.nomeSom = nomeSom;
-	}
-
-	public abstract void movimentacao2();
-
+interface InterfaceA {
+	//final default void mqqc1() {}//Illegal modifier for the interface method mqqc1; only public, abstract, default, static and strictfp are permitted
+	//default static void mqqc2() {}//Illegal combination of modifiers for the interface method mqqc2; only one of abstract, default, or static permitted
+	default void mqqc3() {;;;}
 }
 
 public class Exe001 {
@@ -56,20 +26,6 @@ public class Exe001 {
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
-		Animais animal = null;
-		System.out.println("[="+(animal)+"]"+"");
-		//animal = new Animais();//Cannot instantiate the type Animais
-		animal = Animais.CACHORRO;
-		System.out.println("[="+(animal)+"]"+"");
-		System.out.println("[="+(animal.som)+"]"+"");
-		animal.som="muuuuu...";
-		System.out.println("[="+(animal.som)+"]"+"");
-		System.out.println("[="+(animal.getNomeSom())+"]"+"");
-		Animais.CACHORRO.setNomeSom("latindo");
-		System.out.println("[="+(animal.getNomeSom())+"]"+"");
-		//Animais.CACHORRO.movimentacao1();//The method movimentacao1() is undefined for the type Animais
-		Animais.CACHORRO.movimentacao2();
-		System.out.println("[="+(Animais.GATO)+"]"+"");
  	}
 
 }
