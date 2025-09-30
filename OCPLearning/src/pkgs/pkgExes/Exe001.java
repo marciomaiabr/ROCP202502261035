@@ -18,15 +18,14 @@ public class Exe001 {
 		//System.out.println("[="+()+"]"+"");
 	}
 
-	void m1(long l) {System.out.println("Exe001.m(long l)");}
-	void m1(Long l) {System.out.println("Exe001.m(Long l)");}
-	void m2(Long l) {System.out.println("Exe001.m(Long l)");}
+	void m1(int i) {System.out.println("Exe001.m1(int i)");}
+	void m1(Integer i) {System.out.println("Exe001.m1(Integer i)");}
+	void m2(Integer i) {System.out.println("Exe001.m2(Integer i)");}
 
 	public void im1(String[] args) {
 		System.out.println("Exe001.im1()");
 		m1(5);
-		//m2(5);//The method m2(Long) in the type Exe001 is not applicable for the arguments (int)
-		m2(5l);
+		m2(5);
  	}
 
 }
