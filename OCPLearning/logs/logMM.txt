@@ -1,11 +1,15 @@
-c
-
-a
-
-static ClassA 1 
-static ClassA 2 
-static ClassB 1 
-static ClassB 2 
-static ClassC 1 
-static ClassC 2 
-msClassC()
+static block ClassA 1 
+static block ClassA 2 
+static block ClassB 1 
+static block ClassB 2 
+static block ClassC 1 
+static block ClassC 2 
+instance block ClassA 1 
+instance block ClassA 2 
+ClassA()
+instance block ClassB 1 
+instance block ClassB 2 
+ClassB()
+instance block ClassC 1 
+instance block ClassC 2 
+ClassC()
