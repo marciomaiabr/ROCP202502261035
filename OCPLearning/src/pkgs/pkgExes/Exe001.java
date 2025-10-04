@@ -1,20 +1,17 @@
 package pkgs.pkgExes;
 
-class ClassA { public void mca() {} }
-class ClassB extends ClassA {}
+interface InterfaceA { default void mia() {}; }
 
-interface InterfaceA { default public void mia() {} }
+class ClassA { void mca() {} }
 
-public class Exe001 extends ClassB implements InterfaceA {
+public class Exe001 extends ClassA implements InterfaceA {
 
 	public static void main(String[] args) {
-		new Exe001().m();
 	}
 
-	public void m() {
-		super.mca();
-		//super.mia();//The method mia() is undefined for the type ClassB
-		InterfaceA.super.mia();
-	}
+	void mia() {}//mesmo sem o @Override o erro existe
+
+	//@Override
+	public void qqc() {}//o erro ocorre por causa  do @Override , tanto é que se vc tirar o erro para
 
 }
