@@ -1,33 +1,20 @@
 package pkgs.pkgExes;
 
-class ClassA {
-	static { System.out.println("static block ClassA 1 "); }
-	{ System.out.println("instance block ClassA 1 "); }
-	public ClassA() { System.out.println("ClassA()"); }
-	static { System.out.println("static block ClassA 2 "); }
-	{ System.out.println("instance block ClassA 2 "); }
-}
+class ClassA { public void mca() {} }
+class ClassB extends ClassA {}
 
-class ClassB extends ClassA {
-	static { System.out.println("static block ClassB 1 "); }
-	{ System.out.println("instance block ClassB 1 "); }
-	public ClassB() { System.out.println("ClassB()"); }
-	static { System.out.println("static block ClassB 2 "); }
-	{ System.out.println("instance block ClassB 2 "); }
-}
+interface InterfaceA { default public void mia() {} }
 
-class ClassC extends ClassB {
-	static { System.out.println("static block ClassC 1 "); }
-	{ System.out.println("instance block ClassC 1 "); }
-	public ClassC() { System.out.println("ClassC()"); }
-	static { System.out.println("static block ClassC 2 "); }
-	{ System.out.println("instance block ClassC 2 "); }
-}
-
-public class Exe001 {
+public class Exe001 extends ClassB implements InterfaceA {
 
 	public static void main(String[] args) {
-		new ClassC();
+		new Exe001().m();
+	}
+
+	public void m() {
+		super.mca();
+		//super.mia();//The method mia() is undefined for the type ClassB
+		InterfaceA.super.mia();
 	}
 
 }
