@@ -1,17 +1,23 @@
 package pkgs.pkgExes;
 
-interface InterfaceA { default void mia() {}; }
+class ClassA implements AutoCloseable {
 
-class ClassA { void mca() {} }
+	@Override public void close() throws Exception { System.out.println("ClassA.close()..."); }
 
-public class Exe001 extends ClassA implements InterfaceA {
+}
+
+public class Exe001 {
 
 	public static void main(String[] args) {
+
+		try (ClassA classA = new ClassA();) {
+			System.out.println("try...");
+		} catch (Exception e) {
+			System.out.println("catch...");
+		} finally {
+			System.out.println("finally...");
+		}
+
 	}
-
-	void mia() {}//mesmo sem o @Override o erro existe
-
-	//@Override
-	public void qqc() {}//o erro ocorre por causa  do @Override , tanto é que se vc tirar o erro para
 
 }
