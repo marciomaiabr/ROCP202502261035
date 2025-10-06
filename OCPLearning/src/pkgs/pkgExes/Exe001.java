@@ -1,8 +1,11 @@
 package pkgs.pkgExes;
 
-class ClassA implements AutoCloseable {
+import java.io.Closeable;
 
-	@Override public void close() throws Exception { System.out.println("ClassA.close()..."); throw new RuntimeException("RuntimeException close()..."); }
+class ClassA implements Closeable {
+
+	//@Override public void close() throws Exception { System.out.println("ClassA.close()..."); throw new RuntimeException("RuntimeException close()..."); }//Exception Exception is not compatible with throws clause in Closeable.close()
+	@Override public void close() { System.out.println("ClassA.close()..."); throw new RuntimeException("RuntimeException close()..."); }
 
 }
 
