@@ -26,10 +26,9 @@ public class Exe001 {
 			throw new RuntimeException("RuntimeException try...");
 		} catch (Exception e) {
 			System.out.println("catch...");
-			throw new RuntimeException("RuntimeException catch...", e);
+			throw new RuntimeException("RuntimeException catch...");
 		} finally {
 			System.out.println("finally...");
-			throw new RuntimeException("RuntimeException finally...");
 		}
 
 	}
