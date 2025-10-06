@@ -26,6 +26,7 @@ public class Exe001 {
 			throw new RuntimeException("RuntimeException catch...", e);
 		} finally {
 			System.out.println("finally...");
+			throw new RuntimeException("RuntimeException finally...");
 		}
 
 	}
