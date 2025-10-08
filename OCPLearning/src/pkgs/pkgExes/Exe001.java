@@ -1,34 +1,31 @@
 package pkgs.pkgExes;
 
-import java.io.Closeable;
-
-class ClassA implements Closeable {
-
-	//@Override public void close() throws Exception { System.out.println("ClassA.close()..."); throw new RuntimeException("RuntimeException close()..."); }//Exception Exception is not compatible with throws clause in Closeable.close()
-	@Override public void close() { System.out.println("ClassA.close()..."); throw new RuntimeException("RuntimeException close()..."); }
-
-}
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 public class Exe001 {
 
 	public static void main(String[] args) {
-		try {
-			new Exe001().mtd();
-		} catch (Exception e) {
-			e.printStackTrace();
+		//A
+		/*ZonedDateTime totalityUTC = ZonedDateTime.of(LocalDateTime.of(2019, 7, 2, 16, 55));
+		ZonedDateTime totalitySanJuan = totalityUTC.withZoneSameInstant(ZoneId.of("America/Argentina/San_Juan"));
+		System.out.println(totalitySanJuan);*/
+		//B
+		/*ZonedDateTime totalityUTC = ZonedDateTime.of (LocalDateTime.of(2019, 7, 2, 4, 55, "PM") , ZoneId.of("Z"));
+		ZonedDateTime totalitySanJuan = totalityUTC.withZoneSameInstant(ZoneId.of ("America/Argentina/San_Juan"));
+		System.out.println(totalitySanJuan);*/
+		//C
+		{
+			ZonedDateTime totalityUTC = ZonedDateTime.of(LocalDateTime.of (2019, 7, 2, 16, 55), ZoneId.of("Z"));
+			ZonedDateTime totalitySanJuan = totalityUTC.withZoneSameInstant (ZoneId.of("America/Argentina/San_Juan")) ;
+			System.out.println(totalitySanJuan);
 		}
-	}
-
-	public void mtd() throws Exception {
-
-		try (ClassA classA = new ClassA();) {
-			System.out.println("try...");
-			throw new RuntimeException("RuntimeException try...");
-		} catch (Exception e) {
-			System.out.println("catch...");
-			throw new RuntimeException("RuntimeException catch...");
-		} finally {
-			System.out.println("finally...");
+		//D
+		{
+			ZonedDateTime totalityUTC = ZonedDateTime.of(LocalDateTime.of(2019, 7, 2, 16, 55), ZoneId.of("America/Argentina/San_Juan"));
+			ZonedDateTime totalitySanJuan = totalityUTC.withZoneSameInstant(ZoneId.of("America/Argentina/San_Juan"));
+			System.out.println(totalitySanJuan);
 		}
 
 	}
