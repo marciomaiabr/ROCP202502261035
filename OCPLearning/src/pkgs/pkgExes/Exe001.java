@@ -1,87 +1,84 @@
 package pkgs.pkgExes;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Objects;
+import java.util.PriorityQueue;
+
+class Pessoa implements Comparable<Pessoa> {
+	private long id;
+	private String nome;
+	private Integer idade;
+	public Pessoa(long id, String nome, Integer idade) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.idade = idade;
+	}
+	@Override public String toString() { return "Pessoa [id=" + id + ", nome=" + nome + ", idade=" + idade + "]"; }
+	@Override public int compareTo(Pessoa pessoa) { int intCompareTo = this.idade.compareTo(pessoa.idade); System.out.println("[intCompareTo="+(intCompareTo)+"]"); return intCompareTo; }
+	@Override public int hashCode() { int intHashCode = Objects.hash(id); System.out.println("[intHashCode="+(intHashCode)+"]"); return intHashCode; }
+	@Override
+	public boolean equals(Object obj) {
+		System.out.println("Pessoa.equals()");
+		if (obj == null) return false;
+		if ( !(obj instanceof Pessoa) ) return false;
+		if (this == obj) return true;
+		return (new Long(id).equals(((Pessoa)obj).id));
+	}
+}
 
 public class Exe001 {
 
-	public static <E extends Number> void m_pede_List_extends_Number(List<E> nums) {}
-	public static <E extends Number> List<E> m_devolve_List_extends_Number() {return null;}
-	public static <E extends Number> void m_pede_ArrayList_extends_Number(ArrayList<E> nums) {}
-	public static <E extends Number> ArrayList<E> m_devolve_ArrayList_extends_Number() {return null;}
-
 	public static void main(String[] args) {
 
-		List<Number> oListNumber = null;
-		ArrayList<Number> oArrayListNumber = null;
-		List<Integer> oListInteger = null;
-		ArrayList<Integer> oArrayListInteger = null;
+		Pessoa pessoa1lPessoaA17 = new Pessoa(1l, "PessoaA", 17);
+		Pessoa pessoa2lPessoaB21 = new Pessoa(2l, "PessoaB", 21);
+		Pessoa pessoa3lPessoaC19 = new Pessoa(3l, "PessoaC", 19);
+		Pessoa pessoa4lPessoaD40 = new Pessoa(4l, "PessoaD", 40);
 
-		m_pede_List_extends_Number(oListNumber);
-		m_pede_List_extends_Number(oArrayListNumber);
-		m_pede_List_extends_Number(oListInteger);
-		m_pede_List_extends_Number(oArrayListInteger);
+		PriorityQueue<Pessoa> pq = new PriorityQueue<Pessoa>();
 
-		oListNumber = m_devolve_List_extends_Number();
-		//oArrayListNumber = m_devolve_List_extends_Number();//Type mismatch: cannot convert from List<Number> to ArrayList<Number>
-		oListInteger = m_devolve_List_extends_Number();
-		//oArrayListInteger = m_devolve_List_extends_Number();//Type mismatch: cannot convert from List<Number> to ArrayList<Integer>
-
-		//m_pede_ArrayList_extends_Number(oListNumber);//The method m_pede_ArrayList_extends_Number(ArrayList<E>) in the type Exe001 is not applicable for the arguments (List<Number>)
-		m_pede_ArrayList_extends_Number(oArrayListNumber);
-		//m_pede_ArrayList_extends_Number(oListInteger);//The method m_pede_ArrayList_extends_Number(ArrayList<E>) in the type Exe001 is not applicable for the arguments (List<Integer>)
-		m_pede_ArrayList_extends_Number(oArrayListInteger);
-
-		oListNumber = m_devolve_ArrayList_extends_Number();
-		oArrayListNumber = m_devolve_ArrayList_extends_Number();
-		oListInteger = m_devolve_ArrayList_extends_Number();
-		oArrayListInteger = m_devolve_ArrayList_extends_Number();
-
-		System.out.println(oListNumber);
-		System.out.println(oArrayListNumber);
-		System.out.println(oListInteger);
-		System.out.println(oArrayListInteger);
-
-		oListNumber = null;
-		oArrayListNumber = null;
-		oListInteger = null;
-		oArrayListInteger = null;
-
-		System.out.println(oListNumber);
-		System.out.println(oArrayListNumber);
-		System.out.println(oListInteger);
-		System.out.println(oArrayListInteger);
-
-		//oArrayListNumber = new ArrayList<>();
-		//oArrayListNumber.add(1);
-		oListNumber = oArrayListNumber;
-		//oListNumber = (List<Number>) oListInteger;//Cannot cast from List<Integer> to List<Number>
-		//oListNumber = (List<Number>) oArrayListInteger;//Cannot cast from ArrayList<Integer> to List<Number>
-
-		System.out.println(oListNumber);
-
-		//oListNumber = new LinkedList<>();
-		//oListNumber.add(2);
-		oArrayListNumber = (ArrayList<Number>) oListNumber;//ClassCastException: java.util.LinkedList cannot be cast to java.util.ArrayList
-		//oArrayListNumber = (ArrayList<Number>) oListInteger;//Cannot cast from List<Integer> to ArrayList<Number>
-		//oArrayListNumber = (ArrayList<Number>) oArrayListInteger;//Cannot cast from ArrayList<Integer> to ArrayList<Number>
-
-		System.out.println(oArrayListNumber);
-
-		//oArrayListInteger = new ArrayList<>();
-		//oArrayListInteger.add(3);
-		//oListInteger = (List<Integer>) oListNumber;//Cannot cast from List<Number> to List<Integer>
-		//oListInteger = (List<Integer>) oArrayListNumber;//Cannot cast from ArrayList<Number> to List<Integer>
-		oListInteger = (List<Integer>) oArrayListInteger;
-
-		System.out.println(oListInteger);
-
-		//oArrayListInteger = oListNumber;//Type mismatch: cannot convert from List<Number> to ArrayList<Integer>
-		//oArrayListInteger = oArrayListNumber;//Type mismatch: cannot convert from ArrayList<Number> to ArrayList<Integer>
-		//oArrayListInteger = oListInteger;//Type mismatch: cannot convert from List<Integer> to ArrayList<Integer>
-
-		System.out.println(oArrayListInteger);
+		System.out.println("pq.add(pessoa1lPessoaA17)");
+		System.out.println(pq.add(pessoa1lPessoaA17));
+		System.out.println("pq.add(pessoa2lPessoaB21)");
+		System.out.println(pq.add(pessoa2lPessoaB21));
+		System.out.println("pq");
+		System.out.println(pq);
+		System.out.println();
+		System.out.println("pq.peek()");
+		System.out.println(pq.peek());
+		System.out.println("pq");
+		System.out.println(pq);
+		System.out.println();
+		System.out.println("pq.offer(pessoa3lPessoaC19)");
+		System.out.println(pq.offer(pessoa3lPessoaC19));
+		System.out.println("pq");
+		System.out.println(pq);
+		System.out.println();
+		System.out.println("pq.add(pessoa4lPessoaD40)");
+		System.out.println(pq.add(pessoa4lPessoaD40));
+		System.out.println("pq");
+		System.out.println(pq);
+		System.out.println();
+		System.out.println("pq.add(pessoa2lPessoaB21)");
+		System.out.println(pq.add(pessoa2lPessoaB21));
+		System.out.println("pq");
+		System.out.println(pq);
+		System.out.println();
+		System.out.println("pq.remove(pessoa3lPessoaC19)");
+		System.out.println(pq.remove(pessoa3lPessoaC19));
+		System.out.println("pq");
+		System.out.println(pq);
+		System.out.println();
+		System.out.println("pq.remove()");
+		System.out.println(pq.remove());
+		System.out.println("pq");
+		System.out.println(pq);
+		System.out.println();
+		System.out.println("pq.poll()");
+		System.out.println(pq.poll());
+		System.out.println("pq");
+		System.out.println(pq);
+		System.out.println();
 
 	}
 
