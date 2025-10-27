@@ -1,66 +1,88 @@
 package pkgs.pkgExes;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Exe001 {
 
+	public static <E extends Number> void m_pede_List_extends_Number(List<E> nums) {}
+	public static <E extends Number> List<E> m_devolve_List_extends_Number() {return null;}
+	public static <E extends Number> void m_pede_ArrayList_extends_Number(ArrayList<E> nums) {}
+	public static <E extends Number> ArrayList<E> m_devolve_ArrayList_extends_Number() {return null;}
+
 	public static void main(String[] args) {
 
-		Path PATH_C_PASTA1_PASTA_A = Paths.get("c:/pasta1/pastaA");
-		Path PATH_C_PASTA1_PASTA_B = Paths.get("c:/pasta1/pastaB");
-		Path PATH_PASTA1_PASTA_A = Paths.get("pasta1/pastaA");
-		Path PATH_PASTA1_PASTA_B = Paths.get("pasta1/pastaB");
-		Path PATH_PASTA2_PASTA_C = Paths.get("pasta2/pastaC");
-		Path PATH_PASTA_D = Paths.get("pastaD");
-		Path PATH_DOT_DOT_PASTA_E = Paths.get("..\\pastaE");
-		Path PATH_DOT_PASTA_F = Paths.get(".\\pastaF");
-		Path PATH_DOT_DOT = Paths.get("..\\");
-		Path PATH_DOT = Paths.get(".\\");
+		List<Number> oListNumber = null;
+		ArrayList<Number> oArrayListNumber = null;
+		List<Integer> oListInteger = null;
+		ArrayList<Integer> oArrayListInteger = null;
 
-		System.out.println("\nrelativize\n");
-		System.out.println("["+"\""+PATH_C_PASTA1_PASTA_A+"\""+".relativize("+"\""+PATH_C_PASTA1_PASTA_B+"\""+")="+PATH_C_PASTA1_PASTA_A.relativize(PATH_C_PASTA1_PASTA_B)+"]");
-		System.out.println("["+"\""+PATH_C_PASTA1_PASTA_B+"\""+".relativize("+"\""+PATH_C_PASTA1_PASTA_A+"\""+")="+PATH_C_PASTA1_PASTA_B.relativize(PATH_C_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".relativize("+"\""+PATH_PASTA1_PASTA_B+"\""+")="+PATH_PASTA1_PASTA_A.relativize(PATH_PASTA1_PASTA_B)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_B+"\""+".relativize("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_PASTA1_PASTA_B.relativize(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".relativize("+"\""+PATH_PASTA2_PASTA_C+"\""+")="+PATH_PASTA1_PASTA_A.relativize(PATH_PASTA2_PASTA_C)+"]");
-		System.out.println("["+"\""+PATH_PASTA2_PASTA_C+"\""+".relativize("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_PASTA2_PASTA_C.relativize(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".relativize("+"\""+PATH_PASTA_D+"\""+")="+PATH_PASTA1_PASTA_A.relativize(PATH_PASTA_D)+"]");
-		System.out.println("["+"\""+PATH_PASTA_D+"\""+".relativize("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_PASTA_D.relativize(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".relativize("+"\""+PATH_DOT_DOT_PASTA_E+"\""+")="+PATH_PASTA1_PASTA_A.relativize(PATH_DOT_DOT_PASTA_E)+"]");
-		System.out.println("["+"\""+PATH_DOT_DOT_PASTA_E+"\""+".relativize("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_DOT_DOT_PASTA_E.relativize(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".relativize("+"\""+PATH_DOT_PASTA_F+"\""+")="+PATH_PASTA1_PASTA_A.relativize(PATH_DOT_PASTA_F)+"]");
-		System.out.println("["+"\""+PATH_DOT_PASTA_F+"\""+".relativize("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_DOT_PASTA_F.relativize(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".relativize("+"\""+PATH_DOT_DOT+"\""+")="+PATH_PASTA1_PASTA_A.relativize(PATH_DOT_DOT)+"]");
-		System.out.println("["+"\""+PATH_DOT_DOT+"\""+".relativize("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_DOT_DOT.relativize(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".relativize("+"\""+PATH_DOT+"\""+")="+PATH_PASTA1_PASTA_A.relativize(PATH_DOT)+"]");
-		System.out.println("["+"\""+PATH_DOT+"\""+".relativize("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_DOT.relativize(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_DOT_DOT+"\""+".relativize("+"\""+PATH_DOT+"\""+")="+PATH_DOT_DOT.relativize(PATH_DOT)+"]");
-		System.out.println("["+"\""+PATH_DOT+"\""+".relativize("+"\""+PATH_DOT_DOT+"\""+")="+PATH_DOT.relativize(PATH_DOT_DOT)+"]");
-		//System.out.println("["+"\""+PATH_C_PASTA1_PASTA_A+"\""+".relativize("+"\""+PATH_PASTA1_PASTA_B+"\""+")="+PATH_C_PASTA1_PASTA_A.relativize(PATH_PASTA1_PASTA_B)+"]");//IllegalArgumentException: 'other' is different type of Path
-		//System.out.println("["+"\""+PATH_PASTA1_PASTA_B+"\""+".relativize("+"\""+PATH_C_PASTA1_PASTA_A+"\""+")="+PATH_PASTA1_PASTA_B.relativize(PATH_C_PASTA1_PASTA_A)+"]");//IllegalArgumentException: 'other' is different type of Path
+		m_pede_List_extends_Number(oListNumber);
+		m_pede_List_extends_Number(oArrayListNumber);
+		m_pede_List_extends_Number(oListInteger);
+		m_pede_List_extends_Number(oArrayListInteger);
 
-		System.out.println("\nresolve\n");
-		System.out.println("["+"\""+PATH_C_PASTA1_PASTA_A+"\""+".resolve("+"\""+PATH_C_PASTA1_PASTA_B+"\""+")="+PATH_C_PASTA1_PASTA_A.resolve(PATH_C_PASTA1_PASTA_B)+"]");
-		System.out.println("["+"\""+PATH_C_PASTA1_PASTA_B+"\""+".resolve("+"\""+PATH_C_PASTA1_PASTA_A+"\""+")="+PATH_C_PASTA1_PASTA_B.resolve(PATH_C_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_C_PASTA1_PASTA_A+"\""+".resolve("+"\""+PATH_PASTA1_PASTA_B+"\""+")="+PATH_C_PASTA1_PASTA_A.resolve(PATH_PASTA1_PASTA_B)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_B+"\""+".resolve("+"\""+PATH_C_PASTA1_PASTA_A+"\""+")="+PATH_PASTA1_PASTA_B.resolve(PATH_C_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".resolve("+"\""+PATH_PASTA1_PASTA_B+"\""+")="+PATH_PASTA1_PASTA_A.resolve(PATH_PASTA1_PASTA_B)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_B+"\""+".resolve("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_PASTA1_PASTA_B.resolve(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".resolve("+"\""+PATH_PASTA2_PASTA_C+"\""+")="+PATH_PASTA1_PASTA_A.resolve(PATH_PASTA2_PASTA_C)+"]");
-		System.out.println("["+"\""+PATH_PASTA2_PASTA_C+"\""+".resolve("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_PASTA2_PASTA_C.resolve(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".resolve("+"\""+PATH_PASTA_D+"\""+")="+PATH_PASTA1_PASTA_A.resolve(PATH_PASTA_D)+"]");
-		System.out.println("["+"\""+PATH_PASTA_D+"\""+".resolve("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_PASTA_D.resolve(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".resolve("+"\""+PATH_DOT_DOT_PASTA_E+"\""+")="+PATH_PASTA1_PASTA_A.resolve(PATH_DOT_DOT_PASTA_E)+"]");
-		System.out.println("["+"\""+PATH_DOT_DOT_PASTA_E+"\""+".resolve("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_DOT_DOT_PASTA_E.resolve(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".resolve("+"\""+PATH_DOT_PASTA_F+"\""+")="+PATH_PASTA1_PASTA_A.resolve(PATH_DOT_PASTA_F)+"]");
-		System.out.println("["+"\""+PATH_DOT_PASTA_F+"\""+".resolve("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_DOT_PASTA_F.resolve(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".resolve("+"\""+PATH_DOT_DOT+"\""+")="+PATH_PASTA1_PASTA_A.resolve(PATH_DOT_DOT)+"]");
-		System.out.println("["+"\""+PATH_DOT_DOT+"\""+".resolve("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_DOT_DOT.resolve(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_PASTA1_PASTA_A+"\""+".resolve("+"\""+PATH_DOT+"\""+")="+PATH_PASTA1_PASTA_A.resolve(PATH_DOT)+"]");
-		System.out.println("["+"\""+PATH_DOT+"\""+".resolve("+"\""+PATH_PASTA1_PASTA_A+"\""+")="+PATH_DOT.resolve(PATH_PASTA1_PASTA_A)+"]");
-		System.out.println("["+"\""+PATH_DOT_DOT+"\""+".resolve("+"\""+PATH_DOT+"\""+")="+PATH_DOT_DOT.resolve(PATH_DOT)+"]");
-		System.out.println("["+"\""+PATH_DOT+"\""+".resolve("+"\""+PATH_DOT_DOT+"\""+")="+PATH_DOT.resolve(PATH_DOT_DOT)+"]");
+		oListNumber = m_devolve_List_extends_Number();
+		//oArrayListNumber = m_devolve_List_extends_Number();//Type mismatch: cannot convert from List<Number> to ArrayList<Number>
+		oListInteger = m_devolve_List_extends_Number();
+		//oArrayListInteger = m_devolve_List_extends_Number();//Type mismatch: cannot convert from List<Number> to ArrayList<Integer>
+
+		//m_pede_ArrayList_extends_Number(oListNumber);//The method m_pede_ArrayList_extends_Number(ArrayList<E>) in the type Exe001 is not applicable for the arguments (List<Number>)
+		m_pede_ArrayList_extends_Number(oArrayListNumber);
+		//m_pede_ArrayList_extends_Number(oListInteger);//The method m_pede_ArrayList_extends_Number(ArrayList<E>) in the type Exe001 is not applicable for the arguments (List<Integer>)
+		m_pede_ArrayList_extends_Number(oArrayListInteger);
+
+		oListNumber = m_devolve_ArrayList_extends_Number();
+		oArrayListNumber = m_devolve_ArrayList_extends_Number();
+		oListInteger = m_devolve_ArrayList_extends_Number();
+		oArrayListInteger = m_devolve_ArrayList_extends_Number();
+
+		System.out.println(oListNumber);
+		System.out.println(oArrayListNumber);
+		System.out.println(oListInteger);
+		System.out.println(oArrayListInteger);
+
+		oListNumber = null;
+		oArrayListNumber = null;
+		oListInteger = null;
+		oArrayListInteger = null;
+
+		System.out.println(oListNumber);
+		System.out.println(oArrayListNumber);
+		System.out.println(oListInteger);
+		System.out.println(oArrayListInteger);
+
+		//oArrayListNumber = new ArrayList<>();
+		//oArrayListNumber.add(1);
+		oListNumber = oArrayListNumber;
+		//oListNumber = (List<Number>) oListInteger;//Cannot cast from List<Integer> to List<Number>
+		//oListNumber = (List<Number>) oArrayListInteger;//Cannot cast from ArrayList<Integer> to List<Number>
+
+		System.out.println(oListNumber);
+
+		//oListNumber = new LinkedList<>();
+		//oListNumber.add(2);
+		oArrayListNumber = (ArrayList<Number>) oListNumber;//ClassCastException: java.util.LinkedList cannot be cast to java.util.ArrayList
+		//oArrayListNumber = (ArrayList<Number>) oListInteger;//Cannot cast from List<Integer> to ArrayList<Number>
+		//oArrayListNumber = (ArrayList<Number>) oArrayListInteger;//Cannot cast from ArrayList<Integer> to ArrayList<Number>
+
+		System.out.println(oArrayListNumber);
+
+		//oArrayListInteger = new ArrayList<>();
+		//oArrayListInteger.add(3);
+		//oListInteger = (List<Integer>) oListNumber;//Cannot cast from List<Number> to List<Integer>
+		//oListInteger = (List<Integer>) oArrayListNumber;//Cannot cast from ArrayList<Number> to List<Integer>
+		oListInteger = (List<Integer>) oArrayListInteger;
+
+		System.out.println(oListInteger);
+
+		//oArrayListInteger = oListNumber;//Type mismatch: cannot convert from List<Number> to ArrayList<Integer>
+		//oArrayListInteger = oArrayListNumber;//Type mismatch: cannot convert from ArrayList<Number> to ArrayList<Integer>
+		//oArrayListInteger = oListInteger;//Type mismatch: cannot convert from List<Integer> to ArrayList<Integer>
+
+		System.out.println(oArrayListInteger);
+
 	}
 
 }
