@@ -1,53 +1,35 @@
-pq.add(pessoa1lPessoaA17)
+q.add(pessoa3lPessoaC21)
 true
-pq.add(pessoa2lPessoaB21)
-[intCompareTo=1]
+q
+[Pessoa [id=3, nome=PessoaC, idade=21]]
+
+q.add(pessoa1lPessoaA17)
 true
-pq
-[Pessoa [id=1, nome=PessoaA, idade=17], Pessoa [id=2, nome=PessoaB, idade=21]]
+q
+[Pessoa [id=3, nome=PessoaC, idade=21], Pessoa [id=1, nome=PessoaA, idade=17]]
 
-pq.peek()
-Pessoa [id=1, nome=PessoaA, idade=17]
-pq
-[Pessoa [id=1, nome=PessoaA, idade=17], Pessoa [id=2, nome=PessoaB, idade=21]]
-
-pq.offer(pessoa3lPessoaC19)
-[intCompareTo=1]
+q.add(pessoa4lPessoaD40)
 true
-pq
-[Pessoa [id=1, nome=PessoaA, idade=17], Pessoa [id=2, nome=PessoaB, idade=21], Pessoa [id=3, nome=PessoaC, idade=19]]
+q
+[Pessoa [id=3, nome=PessoaC, idade=21], Pessoa [id=1, nome=PessoaA, idade=17], Pessoa [id=4, nome=PessoaD, idade=40]]
 
-pq.add(pessoa4lPessoaD40)
-[intCompareTo=1]
+q.add(pessoa2lPessoaB19)
 true
-pq
-[Pessoa [id=1, nome=PessoaA, idade=17], Pessoa [id=2, nome=PessoaB, idade=21], Pessoa [id=3, nome=PessoaC, idade=19], Pessoa [id=4, nome=PessoaD, idade=40]]
+q
+[Pessoa [id=3, nome=PessoaC, idade=21], Pessoa [id=1, nome=PessoaA, idade=17], Pessoa [id=4, nome=PessoaD, idade=40], Pessoa [id=2, nome=PessoaB, idade=19]]
 
-pq.add(pessoa2lPessoaB21)
-[intCompareTo=0]
+q.add(pessoa5lPessoaE40)
 true
-pq
-[Pessoa [id=1, nome=PessoaA, idade=17], Pessoa [id=2, nome=PessoaB, idade=21], Pessoa [id=3, nome=PessoaC, idade=19], Pessoa [id=4, nome=PessoaD, idade=40], Pessoa [id=2, nome=PessoaB, idade=21]]
+q
+[Pessoa [id=3, nome=PessoaC, idade=21], Pessoa [id=1, nome=PessoaA, idade=17], Pessoa [id=4, nome=PessoaD, idade=40], Pessoa [id=2, nome=PessoaB, idade=19], Pessoa [id=5, nome=PessoaE, idade=40]]
 
-pq.remove(pessoa3lPessoaC19)
-Pessoa.equals()
-Pessoa.equals()
-Pessoa.equals()
-[intCompareTo=1]
-true
-pq
-[Pessoa [id=1, nome=PessoaA, idade=17], Pessoa [id=2, nome=PessoaB, idade=21], Pessoa [id=2, nome=PessoaB, idade=21], Pessoa [id=4, nome=PessoaD, idade=40]]
+q.peek()
+Pessoa [id=3, nome=PessoaC, idade=21]
+q
+[Pessoa [id=3, nome=PessoaC, idade=21], Pessoa [id=1, nome=PessoaA, idade=17], Pessoa [id=4, nome=PessoaD, idade=40], Pessoa [id=2, nome=PessoaB, idade=19], Pessoa [id=5, nome=PessoaE, idade=40]]
 
-pq.remove()
-[intCompareTo=0]
-[intCompareTo=1]
-Pessoa [id=1, nome=PessoaA, idade=17]
-pq
-[Pessoa [id=2, nome=PessoaB, idade=21], Pessoa [id=4, nome=PessoaD, idade=40], Pessoa [id=2, nome=PessoaB, idade=21]]
-
-pq.poll()
-[intCompareTo=-1]
-Pessoa [id=2, nome=PessoaB, idade=21]
-pq
-[Pessoa [id=2, nome=PessoaB, idade=21], Pessoa [id=4, nome=PessoaD, idade=40]]
+q.poll()
+Pessoa [id=3, nome=PessoaC, idade=21]
+q
+[Pessoa [id=1, nome=PessoaA, idade=17], Pessoa [id=4, nome=PessoaD, idade=40], Pessoa [id=2, nome=PessoaB, idade=19], Pessoa [id=5, nome=PessoaE, idade=40]]
 
