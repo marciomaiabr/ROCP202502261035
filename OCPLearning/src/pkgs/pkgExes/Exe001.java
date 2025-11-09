@@ -1,84 +1,93 @@
 package pkgs.pkgExes;
 
-import java.util.*;
-
-class Pessoa implements Comparable<Pessoa> {
-	private long id;
-	private String nome;
-	private Integer idade;
-	public Pessoa(long id, String nome, Integer idade) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.idade = idade;
-	}
-	@Override public String toString() { return "Pessoa [id=" + id + ", nome=" + nome + ", idade=" + idade + "]"; }
-	@Override public int compareTo(Pessoa pessoa) { System.out.println("[this.idade="+(this.idade)+"]"+"[pessoa.idade="+(pessoa.idade)+"]"); int intCompareTo = this.idade.compareTo(pessoa.idade); System.out.println("[intCompareTo="+(intCompareTo)+"]"); return intCompareTo; }
-	@Override public int hashCode() { int intHashCode = Objects.hash(id); System.out.println("[intHashCode="+(intHashCode)+"]"); return intHashCode; }
-	@Override
-	public boolean equals(Object obj) {
-		System.out.println("Pessoa.equals()");
-		if (obj == null) return false;
-		if ( !(obj instanceof Pessoa) ) return false;
-		if (this == obj) return true;
-		return (new Long(id).equals(((Pessoa)obj).id));
-	}
-}
-
 public class Exe001 {
 
 	public static void main(String[] args) {
 
-		Pessoa pessoa1lPessoaA17 = new Pessoa(1l, "PessoaA", 17);
-		Pessoa pessoa2lPessoaB19 = new Pessoa(2l, "PessoaB", 19);
-		Pessoa pessoa3lPessoaC21 = new Pessoa(3l, "PessoaC", 21);
-		Pessoa pessoa4lPessoaD40 = new Pessoa(4l, "PessoaD", 40);
-		Pessoa pessoa5lPessoaE40 = new Pessoa(5l, "PessoaE", 40);
+		try {
+			go8(args);
+			//new Exe001().go6(args);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-		ArrayDeque<Pessoa> q = new ArrayDeque<>();
+	}
 
-		System.out.println("q.add(pessoa3lPessoaC21)");
-		System.out.println(q.add(pessoa3lPessoaC21));
-		System.out.println("q");
-		System.out.println(q);
-		System.out.println();
+	public synchronized static void go8(String[] args) throws InterruptedException {
+	    /*Thread t = new Thread();
+	    t.start();*/
+	    System.out.print("X");
+	    //t.wait(10000);
+    	Exe001.class.wait(10000);
+	    System.out.print("Y");
+	}
 
-		System.out.println("q.add(pessoa1lPessoaA17)");
-		System.out.println(q.add(pessoa1lPessoaA17));
-		System.out.println("q");
-		System.out.println(q);
-		System.out.println();
+	public static void go7(String[] args) throws InterruptedException {
+	    /*Thread t = new Thread();
+	    t.start();*/
+	    System.out.print("X");
+	    //t.wait(10000);
+	    synchronized(Exe001.class) {
+	    	Exe001.class.wait(10000);
+	    }
+	    System.out.print("Y");
+	}
 
-		System.out.println("q.add(pessoa4lPessoaD40)");
-		System.out.println(q.add(pessoa4lPessoaD40));
-		System.out.println("q");
-		System.out.println(q);
-		System.out.println();
+	public synchronized void go6(String[] args) throws InterruptedException {
+	    /*Thread t = new Thread();
+	    t.start();*/
+	    System.out.print("X");
+	    //t.wait(10000);
+	    synchronized(this) {
+	    	Thread.currentThread().wait(10000);
+	    }
+	    System.out.print("Y");
+	}
 
-		System.out.println("q.add(pessoa2lPessoaB19)");
-		System.out.println(q.add(pessoa2lPessoaB19));
-		System.out.println("q");
-		System.out.println(q);
-		System.out.println();
+	public void go5(String[] args) throws InterruptedException {
+	    /*Thread t = new Thread();
+	    t.start();*/
+	    System.out.print("X");
+	    //t.wait(10000);
+	    synchronized(Thread.currentThread()) {
+	    	Thread.currentThread().wait(10000);
+	    }
+	    System.out.print("Y");
+	}
 
-		System.out.println("q.add(pessoa5lPessoaE40)");
-		System.out.println(q.add(pessoa5lPessoaE40));
-		System.out.println("q");
-		System.out.println(q);
-		System.out.println();
+	public void go4(String[] args) throws InterruptedException {
+	    /*Thread t = new Thread();
+	    t.start();*/
+	    System.out.print("X");
+	    //t.wait(10000);
+	    Thread.currentThread().wait(10000);
+	    System.out.print("Y");
+	}
 
-		System.out.println("q.peek()");
-		System.out.println(q.peek());
-		System.out.println("q");
-		System.out.println(q);
-		System.out.println();
+	public synchronized void go3(String[] args) throws InterruptedException {
+	    /*Thread t = new Thread();
+	    t.start();*/
+	    System.out.print("X");
+	    //t.wait(10000);
+	    Thread.currentThread().wait(10000);
+	    System.out.print("Y");
+	}
 
-		System.out.println("q.poll()");
-		System.out.println(q.poll());
-		System.out.println("q");
-		System.out.println(q);
-		System.out.println();
+	public static synchronized void go2(String[] args) throws InterruptedException {
+	    /*Thread t = new Thread();
+	    t.start();*/
+	    System.out.print("X");
+	    //t.wait(10000);
+	    Thread.currentThread().wait(10000);
+	    System.out.print("Y");
+	}
 
+	public static synchronized void go(String[] args) throws InterruptedException {
+	    Thread t = new Thread();
+	    t.start();
+	    System.out.print("X");
+	    t.wait(10000);
+	    System.out.print("Y");
 	}
 
 }
