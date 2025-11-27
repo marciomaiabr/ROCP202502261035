@@ -1,93 +1,38 @@
 package pkgs.pkgExes;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+
 public class Exe001 {
 
 	public static void main(String[] args) {
 
-		try {
-			go8(args);
-			//new Exe001().go6(args);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		//System.out.println();
+		//ZoneId.getAvailableZoneIds().forEach(System.out::println);
 
-	}
+		System.out.println();
 
-	public synchronized static void go8(String[] args) throws InterruptedException {
-	    /*Thread t = new Thread();
-	    t.start();*/
-	    System.out.print("X");
-	    //t.wait(10000);
-    	Exe001.class.wait(10000);
-	    System.out.print("Y");
-	}
+		LocalDateTime ld = LocalDateTime.of(2025, 12, 31, 14, 59, 59, 999);
+		System.out.println("[ld="+(ld)+"]");
 
-	public static void go7(String[] args) throws InterruptedException {
-	    /*Thread t = new Thread();
-	    t.start();*/
-	    System.out.print("X");
-	    //t.wait(10000);
-	    synchronized(Exe001.class) {
-	    	Exe001.class.wait(10000);
-	    }
-	    System.out.print("Y");
-	}
+		System.out.println();
+		ZonedDateTime zonedDateTime_Greenwich = ZonedDateTime.of(ld, ZoneId.of("Greenwich"));
+		System.out.println("[zonedDateTime_Greenwich="+(zonedDateTime_Greenwich)+"]");
+		System.out.println("[zonedDateTime_Greenwich.toInstant()="+(zonedDateTime_Greenwich.toInstant())+"]");
 
-	public synchronized void go6(String[] args) throws InterruptedException {
-	    /*Thread t = new Thread();
-	    t.start();*/
-	    System.out.print("X");
-	    //t.wait(10000);
-	    synchronized(this) {
-	    	Thread.currentThread().wait(10000);
-	    }
-	    System.out.print("Y");
-	}
+		System.out.println();
 
-	public void go5(String[] args) throws InterruptedException {
-	    /*Thread t = new Thread();
-	    t.start();*/
-	    System.out.print("X");
-	    //t.wait(10000);
-	    synchronized(Thread.currentThread()) {
-	    	Thread.currentThread().wait(10000);
-	    }
-	    System.out.print("Y");
-	}
+		ZonedDateTime zonedDateTime_USAlaska = ZonedDateTime.of(ld, ZoneId.of("US/Alaska"));
+		System.out.println("[zonedDateTime_USAlaska="+(zonedDateTime_USAlaska)+"]");
+		System.out.println("[zonedDateTime_USAlaska.toInstant()="+(zonedDateTime_USAlaska.toInstant())+"]");
 
-	public void go4(String[] args) throws InterruptedException {
-	    /*Thread t = new Thread();
-	    t.start();*/
-	    System.out.print("X");
-	    //t.wait(10000);
-	    Thread.currentThread().wait(10000);
-	    System.out.print("Y");
-	}
+		System.out.println();
 
-	public synchronized void go3(String[] args) throws InterruptedException {
-	    /*Thread t = new Thread();
-	    t.start();*/
-	    System.out.print("X");
-	    //t.wait(10000);
-	    Thread.currentThread().wait(10000);
-	    System.out.print("Y");
-	}
+		ZonedDateTime zonedDateTime_Japan = ZonedDateTime.of(ld, ZoneId.of("Japan"));
+		System.out.println("[zonedDateTime_Japan="+(zonedDateTime_Japan)+"]");
+		System.out.println("[zonedDateTime_Japan.toInstant()="+(zonedDateTime_Japan.toInstant())+"]");
 
-	public static synchronized void go2(String[] args) throws InterruptedException {
-	    /*Thread t = new Thread();
-	    t.start();*/
-	    System.out.print("X");
-	    //t.wait(10000);
-	    Thread.currentThread().wait(10000);
-	    System.out.print("Y");
-	}
-
-	public static synchronized void go(String[] args) throws InterruptedException {
-	    Thread t = new Thread();
-	    t.start();
-	    System.out.print("X");
-	    t.wait(10000);
-	    System.out.print("Y");
 	}
 
 }

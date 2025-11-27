@@ -1,1 +1,11 @@
-XY
+
+[ld=2025-12-31T14:59:59.000000999]
+
+[zonedDateTime_Greenwich=2025-12-31T14:59:59.000000999Z[Greenwich]]
+[zonedDateTime_Greenwich.toInstant()=2025-12-31T14:59:59.000000999Z]
+
+[zonedDateTime_USAlaska=2025-12-31T14:59:59.000000999-09:00[US/Alaska]]
+[zonedDateTime_USAlaska.toInstant()=2025-12-31T23:59:59.000000999Z]
+
+[zonedDateTime_Japan=2025-12-31T14:59:59.000000999+09:00[Japan]]
+[zonedDateTime_Japan.toInstant()=2025-12-31T05:59:59.000000999Z]
