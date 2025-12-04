@@ -1,14 +1,13 @@
-"56"
-"12"
-
-12
-56
-
-12
-56
-
-
-12
-56
-
-
+[cm={1=qwe, 2=qwe, 3=qwe, 4=zaq, 5=xsw, 6=cde}]
+[cm=qwe]
+[cm={1=qwe, 3=qwe, 4=zaq, 5=xsw, 6=cde}]
+[cm=false]
+[cm={1=qwe, 3=qwe, 4=zaq, 5=xsw, 6=cde}]
+[cm=false]
+[cm={1=qwe, 3=qwe, 4=zaq, 5=xsw, 6=cde}]
+[cm=false]
+[cm={1=qwe, 3=qwe, 4=zaq, 5=xsw, 6=cde}]
+[cm=false]
+[cm={1=qwe, 3=qwe, 4=zaq, 5=xsw, 6=cde}]
+[cm=true]
+[cm={1=qwe, 4=zaq, 5=xsw, 6=cde}]
