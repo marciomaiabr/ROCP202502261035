@@ -1,33 +1,21 @@
 package pkgs.pkgExes;
 
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.List;
+import java.util.OptionalDouble;
+import java.util.stream.Collectors;
 
 public class Exe001 {
 
 	public static void main(String[] args) {
 
-		ConcurrentMap<Integer, String> cm = new ConcurrentHashMap<>();
-		cm.put(1, "qwe");
-		cm.put(2, "qwe");
-		cm.put(3, "qwe");
-		cm.put(4, "zaq");
-		cm.put(5, "xsw");
-		cm.put(6, "cde");
-		System.out.println("[cm="+(cm)+"]");
-		System.out.println("[cm="+(cm.remove(2))+"]");
-		System.out.println("[cm="+(cm)+"]");
-		System.out.println("[cm="+(cm.remove(3, "qwee"))+"]");
-		System.out.println("[cm="+(cm)+"]");
-		System.out.println("[cm="+(cm.remove(33, "qwe"))+"]");
-		System.out.println("[cm="+(cm)+"]");
-		System.out.println("[cm="+(cm.remove(55, "xsw"))+"]");
-		System.out.println("[cm="+(cm)+"]");
-		System.out.println("[cm="+(cm.remove(5, "xsww"))+"]");
-		System.out.println("[cm="+(cm)+"]");
-		System.out.println("[cm="+(cm.remove(3, "qwe"))+"]");
-		System.out.println("[cm="+(cm)+"]");
-
+		List<String> strings = Arrays.asList("2025-01-01","2025-02-02","2025-03-03");
+		strings.forEach(System.out::println);
+		System.out.println();
+		List<LocalDate> dates = strings.stream().map(v->LocalDate.parse(v)).collect(Collectors.toList());
+		dates.forEach(v->System.out.println(v.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))));
 	}
 
 }

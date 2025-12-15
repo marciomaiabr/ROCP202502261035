@@ -1,13 +1,7 @@
-[cm={1=qwe, 2=qwe, 3=qwe, 4=zaq, 5=xsw, 6=cde}]
-[cm=qwe]
-[cm={1=qwe, 3=qwe, 4=zaq, 5=xsw, 6=cde}]
-[cm=false]
-[cm={1=qwe, 3=qwe, 4=zaq, 5=xsw, 6=cde}]
-[cm=false]
-[cm={1=qwe, 3=qwe, 4=zaq, 5=xsw, 6=cde}]
-[cm=false]
-[cm={1=qwe, 3=qwe, 4=zaq, 5=xsw, 6=cde}]
-[cm=false]
-[cm={1=qwe, 3=qwe, 4=zaq, 5=xsw, 6=cde}]
-[cm=true]
-[cm={1=qwe, 4=zaq, 5=xsw, 6=cde}]
+2025-01-01
+2025-02-02
+2025-03-03
+
+01/01/2025
+02/02/2025
+03/03/2025
