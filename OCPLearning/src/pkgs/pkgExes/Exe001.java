@@ -1,21 +1,27 @@
 package pkgs.pkgExes;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
-import java.util.List;
-import java.util.OptionalDouble;
-import java.util.stream.Collectors;
+import java.sql.SQLException;
+
+@FunctionalInterface
+interface FunctionalInterface1 { String mA(int i1) throws SQLException ; }
+
+@FunctionalInterface
+interface FunctionalInterface2 { void mB(int i2); }
 
 public class Exe001 {
 
 	public static void main(String[] args) {
 
-		List<String> strings = Arrays.asList("2025-01-01","2025-02-02","2025-03-03");
-		strings.forEach(System.out::println);
-		System.out.println();
-		List<LocalDate> dates = strings.stream().map(v->LocalDate.parse(v)).collect(Collectors.toList());
-		dates.forEach(v->System.out.println(v.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))));
+		new Exe001().go();
+
 	}
+
+	private void go() {
+		mqqc(v->{return (v*2)+"";});
+	}
+
+	private void mqqc(FunctionalInterface1 ff1) {System.out.println("Exe001.mqqcA()");}
+
+	private void mqqc(FunctionalInterface2 ff2) {System.out.println("Exe001.mqqcB()");}
 
 }
