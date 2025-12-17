@@ -1,15 +1,19 @@
 package pkgs.pkgExes;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.io.FileOutputStream;
 
 public class Exe001 {
 
 	public static void main(String[] args) {
 
-		System.out.println(LocalDate.now().format(DateTimeFormatter.ISO_DATE));
-
-		System.out.println(DateTimeFormatter.ISO_DATE.format(LocalDate.now()));
+		try {
+			FileOutputStream o = new FileOutputStream("C:\\temp\\f202512170746.txt");
+			o.write("c202512170746".getBytes());
+			o.flush();
+			o.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 
