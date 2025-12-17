@@ -1,20 +1,16 @@
 package pkgs.pkgExes;
 
-import java.io.IOException;
-import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Exe001 {
 
 	public static void main(String[] args) {
 
-		try {
-			qqc();
-		} catch (SQLException | IOException e) {
-			e.printStackTrace();
-		}
+		System.out.println(LocalDate.now().format(DateTimeFormatter.ISO_DATE));
+
+		System.out.println(DateTimeFormatter.ISO_DATE.format(LocalDate.now()));
 
 	}
-
-	static void qqc() throws SQLException , IOException {}
 
 }
