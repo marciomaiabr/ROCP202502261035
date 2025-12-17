@@ -1,17 +1,12 @@
 package pkgs.pkgExes;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.File;
 
 public class Exe001 {
 
 	public static void main(String[] args) {
 
-		try {
-			System.out.println(Files.size(Paths.get("c:", "temp", "fqqc.txt")));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		System.out.println(new File("C:\\temp\\fqqc.txt").length());
 
 	}
 
