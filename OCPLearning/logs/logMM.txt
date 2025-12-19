@@ -1,3 +1,2 @@
-bag null
-java.util.PropertyResourceBundle@4e25154f
-bag
+false
+true
