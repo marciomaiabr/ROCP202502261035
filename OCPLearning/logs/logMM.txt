@@ -1,7 +1,4 @@
-[path=C:\temp\f202512201045.txt]
-
-[path0=temp]
-[path0.toAbsolutePath()=C:\Users\Administrador\git\ROCP202502261035\OCPLearning\temp]
-
-[path1=f202512201045.txt]
-[path1.toAbsolutePath()=C:\Users\Administrador\git\ROCP202502261035\OCPLearning\f202512201045.txt]
+false
+true
+true
+true

@@ -1,26 +1,21 @@
 package pkgs.pkgExes;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 public class Exe001 {
 
 	public static void main(String[] args) {
 
-		Path path = Paths.get("C:\\temp\\f202512201045.txt");
-		System.out.println("[path="+(path)+"]");
+		Integer o1 = null;
+		System.out.println(o1 instanceof Integer);
 
-		System.out.println();
+		Integer o11 = null;
+		System.out.println(o11 == o1);
 
-		Path path0 = path.getName(0);
-		System.out.println("[path0="+(path0)+"]"+"");
-		System.out.println("[path0.toAbsolutePath()="+(path0.toAbsolutePath())+"]"+"");
+		String o111 = null;
+		//System.out.println(o111 == o1);//compilation problem:Incompatible operand types String and Integer
+		System.out.println(((Object)o111) == ((Object)o1));
 
-		System.out.println();
-
-		Path path1 = path.getName(1);
-		System.out.println("[path1="+(path1)+"]"+"");
-		System.out.println("[path1.toAbsolutePath()="+(path1.toAbsolutePath())+"]"+"");
+		Integer o2 = 7;
+		System.out.println(o2 instanceof Integer);
 
 	}
 
