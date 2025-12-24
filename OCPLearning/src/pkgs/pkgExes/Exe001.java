@@ -1,22 +1,27 @@
 package pkgs.pkgExes;
 
-class ClassA {
-	@Override
-	public Object clone() throws CloneNotSupportedException {
-		return super.clone();
-	}
+enum DIAS_SEMANAS{
+	SEG{
+		@Override
+		void mq() {}
+	},  
+	TER{
+		@Override
+		void mq() {}
+	},
+	QUAR{
+		@Override
+		void mq() {}
+	};
+	abstract void mq();
 }
 
 public class Exe001 {
 
-	ClassA classA;
-
 	public static void main(String[] args) {
 
-	}
 
-	void m(ClassA classA) throws Exception {
-		this.classA = (ClassA) classA.clone();
+
 	}
 
 }
