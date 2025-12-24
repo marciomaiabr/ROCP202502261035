@@ -1,8 +1,0 @@
-[tipo_ClassA_instance_ClassA=A]
-[tipo_ClassA_instance_Exe001=A][((Exe001)tipo_ClassA_instance_Exe001).s=E]
-[tipo_ClassA_instance_ClassAA=A][((ClassAA)tipo_ClassA_instance_ClassAA).s=AA]
-
-[tipo_Exe001_instance_Exe001=E]
-[tipo_Exe001_instance_ClassAA=E][((ClassAA)tipo_Exe001_instance_ClassAA).s=AA][((ClassA)tipo_Exe001_instance_ClassAA).s=A]
-
-[tipo_ClassAA_instance_ClassAA=AA][((Exe001)tipo_ClassAA_instance_ClassAA).s=E][((ClassA)tipo_ClassAA_instance_ClassAA).s=A]
