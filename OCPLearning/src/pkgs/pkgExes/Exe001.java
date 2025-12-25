@@ -1,27 +1,50 @@
 package pkgs.pkgExes;
 
-public class Exe001 {
-	private int level = 0;
-	@Override public String toString() { return ("["+this.getClass().getSimpleName()+"]"+"["+this.level+"]"); }
-	class NivelA {
-		private int level = 1;
-		@Override public String toString() { return ("["+Exe001.this.getClass().getSimpleName()+"]"+"["+Exe001.this.level+"]"+"[.]"+"["+this.getClass().getSimpleName()+"]"+"["+this.level+"]"); }
-		class NivelB {
-			private int level = 2;
-			@Override public String toString() { return ("["+Exe001.this.getClass().getSimpleName()+"]"+"["+Exe001.this.level+"]"+"[.]"+"["+NivelA.this.getClass().getSimpleName()+"]"+"["+NivelA.this.level+"]"+"[.]"+"["+this.getClass().getSimpleName()+"]"+"["+this.level+"]"); }
-			class NivelC {
-				private int level = 3;
-				@Override public String toString() { return ("["+Exe001.this.getClass().getSimpleName()+"]"+"["+Exe001.this.level+"]"+"[.]"+"["+NivelA.this.getClass().getSimpleName()+"]"+"["+NivelA.this.level+"]"+"[.]"+"["+NivelB.this.getClass().getSimpleName()+"]"+"["+NivelB.this.level+"]"+"[.]"+"["+this.getClass().getSimpleName()+"]"+"["+this.level+"]"); }
-			}
-		}
+class ClassA {}
+class ClassAA extends ClassA{}
+class ClassAAA extends ClassAA{}
+class ClassAB extends ClassA{}
+
+class ClassB {}
+
+interface Comic<G> {
+	void draw(G p);
+}
+
+class ComicClass<G> implements Comic<G> {
+	public void draw(G p) {
+		System.out.println(p);
 	}
+}
+
+class SnoopyClass implements Comic<ClassAA> {
+	public void draw(ClassAA p) {
+		System.out.println(p);
+	}
+}
+
+class SnoopyClass2<ClassX> implements Comic<ClassAA> {
+	public void draw(ClassAA p) {
+		System.out.println(p);
+	}
+}
+
+/*class SnoopyComic implements Comic<G> {//The type SnoopyComic must implement the inherited abstract method Comic<G>.draw(G)
+	public void draw(G p) {//G cannot be resolved to a type
+		System.out.println(p);
+	}
+}*/
+
+public class Exe001 {
 
 	public static void main(String[] args) {
 
-		System.out.println(new Exe001());
-		System.out.println(new Exe001().new NivelA());
-		System.out.println(new Exe001().new NivelA().new NivelB());
-		System.out.println(new Exe001().new NivelA().new NivelB().new NivelC());
+		Comic<Exe001> c1 = c -> System.out.println(c);
+		Comic<Exe001> c2 = new ComicClass<>();
+		Comic<ClassAA> c3 = new SnoopyClass();
+		//Comic<ClassA> c33 = new SnoopyClass();//Type mismatch: cannot convert from SnoopyClass to Comic<ClassA>
+		//Comic<ClassAAA> c34 = new SnoopyClass();//Type mismatch: cannot convert from SnoopyClass to Comic<ClassAAA>
+		//Comic<Exe001> c4 = new SnoopyComic();
 
 	}
 
