@@ -1,16 +1,17 @@
 package pkgs.pkgExes;
 
 import java.util.ArrayDeque;
+import java.util.Queue;
 
 public class Exe001 {
 
 	public static void main(String[] args) {
 
-		ArrayDeque<Integer> d = new ArrayDeque<>();
+		Queue<Integer> d = new ArrayDeque<>();
 		d.offer(18);
 		d.offer(5);
 		System.out.println(d);
-		d.push(13);
+		//d.push(13);//The method push(int) is undefined for the type Queue<Integer>
 		d.add(10);
 		d.add(10);
 		System.out.println(d);
