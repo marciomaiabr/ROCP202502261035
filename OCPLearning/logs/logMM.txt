@@ -1,0 +1,4 @@
+pkgs.pkgExes.ClassA@15db9742
+Exception in thread "main" java.lang.RuntimeException: ClassA... close()... RuntimeException...
+	at pkgs.pkgExes.ClassA.close(Exe001.java:6)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:16)
