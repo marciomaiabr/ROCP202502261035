@@ -1,1 +1,3 @@
-2017-05-09 false
+[f=Localized(SHORT,)][f.getLocale()=pt_BR]
+[f.format(pieDay)=23/01/17]
+[f.format(pieTime)=23/01/17]

@@ -1,9 +1,11 @@
 package pkgs.pkgExes;
 
-import java.time.Duration;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.Month;
-import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 public class Exe001 {
 
@@ -11,13 +13,15 @@ public class Exe001 {
 
 	public static void main(String[] args) {
 
-		LocalDate montyPythonDay = LocalDate.of(2017, Month.MAY, 10);
-		LocalDate aprilFools = LocalDate.of(2018, Month.APRIL, 1);
-		Duration duration = Duration.ofDays(1);
-		Period period = Period.ofDays(1);
-		//LocalDate result = montyPythonDay.minus(duration);//UnsupportedTemporalTypeException: Unsupported unit: Seconds
-		LocalDate result = montyPythonDay.minus(period);
-		System.out.println(result + " " + aprilFools.isBefore(result));
+		LocalDate pieDay = LocalDate.of(2017, Month.JANUARY, 23);
+		LocalTime midnight = LocalTime.of(0, 0);
+		LocalDateTime pieTime = LocalDateTime.of(pieDay, midnight);
+
+		DateTimeFormatter f = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT);
+		System.out.println("[f="+(f)+"]"+"[f.getLocale()="+(f.getLocale())+"]");
+		System.out.println("[f.format(pieDay)="+(f.format(pieDay))+"]");
+		System.out.println("[f.format(pieTime)="+(f.format(pieTime))+"]");
+		//f.format(midnight);//UnsupportedTemporalTypeException: Unsupported field: DayOfMonth
 
 	}
 
