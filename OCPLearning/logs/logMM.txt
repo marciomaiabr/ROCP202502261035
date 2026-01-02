@@ -1,0 +1,12 @@
+..\..\..\..\..\..\country\d1\d2\.\..\.\Swift.mp3
+country\Swift.mp3
+country\Swift.mp3
+..\..\home3\java4\country\Swift.mp3
+
+
+\highway\street\house\.
+\highway\street\house
+\highway\street\house\..\.
+\highway\street\house\..\.\spot.txt
+\highway\street\spot.txt
+AM I HOME? yes
