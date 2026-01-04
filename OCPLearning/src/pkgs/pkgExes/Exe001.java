@@ -8,29 +8,47 @@ public class Exe001 {
 
 	public static void main(String[] args) {
 
-		ZonedDateTime zdt = null;
+		LocalTime o3 = null;
 
-		//zdt = ZonedDateTime.from(LocalDate.now());//DateTimeException: Unable to obtain ZonedDateTime from TemporalAccessor: 2026-01-04 of type java.time.LocalDate
-		System.out.println(zdt);
+		//o3 = LocalTime.from(LocalDate.now());//DateTimeException: Unable to obtain LocalTime from TemporalAccessor: 2026-01-04 of type java.time.LocalDate
+		System.out.println(o3);
 
-		//zdt = ZonedDateTime.from(LocalTime.now());//DateTimeException: Unable to obtain ZoneId from TemporalAccessor: 09:53:08.970 of type java.time.LocalTime
-		System.out.println(zdt);
+		o3 = LocalTime.from(LocalTime.now());
+		System.out.println(o3);
 
-		//zdt = ZonedDateTime.from(LocalDateTime.now());//DateTimeException: Unable to obtain ZonedDateTime from TemporalAccessor: 2026-01-04T09:53:28.386 of type java.time.LocalDateTime
-		System.out.println(zdt);
+		o3 = LocalTime.from(LocalDateTime.now());
+		System.out.println(o3);
 
-		zdt = ZonedDateTime.from(LocalDateTime.now().atZone(ZoneId.systemDefault()));
-		System.out.println(zdt);
+		o3 = LocalTime.from(LocalDateTime.now().atZone(ZoneId.systemDefault()));
+		System.out.println(o3);
 
+		LocalDate o2 = null;
 
+		o2 = LocalDate.from(LocalDate.now());
+		System.out.println(o2);
 
-		System.out.println(ZonedDateTime.parse("2025-12-31T23:59-04:00"));
-		//System.out.println(LocalDateTime.parse("2025-12-31T23:59-04:00"));//DateTimeParseException: Text '2025-12-31T23:59-04:00' could not be parsed, unparsed text found at index 16
-		System.out.println(LocalDateTime.parse("2025-12-31T23:59"));
-		//System.out.println(LocalDate.parse("2025-12-31T23:59-04:00"));//DateTimeParseException: Text '2025-12-31T23:59-04:00' could not be parsed, unparsed text found at index 10
-		System.out.println(LocalDate.parse("2025-12-31"));
-		//System.out.println(LocalTime.parse("2025-12-31T23:59-04:00"));//DateTimeParseException: Text '2025-12-31T23:59-04:00' could not be parsed at index 2
-		System.out.println(LocalTime.parse("23:59"));
+		//o2 = LocalDate.from(LocalTime.now());//DateTimeException: Unable to obtain LocalDate from TemporalAccessor: 10:18:19.997 of type java.time.LocalTime
+		System.out.println(o2);
+
+		o2 = LocalDate.from(LocalDateTime.now());
+		System.out.println(o2);
+
+		o2 = LocalDate.from(LocalDateTime.now().atZone(ZoneId.systemDefault()));
+		System.out.println(o2);
+
+		LocalDateTime o = null;
+
+		//o = LocalDateTime.from(LocalDate.now());//DateTimeException: Unable to obtain LocalTime from TemporalAccessor: 2026-01-04 of type java.time.LocalDate
+		System.out.println(o);
+
+		//o = LocalDateTime.from(LocalTime.now());//DateTimeException: Unable to obtain LocalDateTime from TemporalAccessor: 10:15:54.356 of type java.time.LocalTime
+		System.out.println(o);
+
+		o = LocalDateTime.from(LocalDateTime.now());
+		System.out.println(o);
+
+		o = LocalDateTime.from(LocalDateTime.now().atZone(ZoneId.systemDefault()));
+		System.out.println(o);
 
 	}
 
