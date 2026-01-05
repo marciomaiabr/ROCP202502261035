@@ -1,0 +1,7 @@
+[Locale.getDefault()=pt_BR]
+[rb=java.util.PropertyResourceBundle@6d06d69c][rb.getLocale()=]
+VA1
+
+[Locale.getDefault()=]
+[rb=java.util.PropertyResourceBundle@6d06d69c][rb=]
+VA1
