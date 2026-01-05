@@ -10,25 +10,9 @@ public class Exe001 {
 	public static void main(String[] args) {
 
 		try{
+			//Locale.setDefault(new Locale("fr"));
 			System.out.println("[Locale.getDefault()="+(Locale.getDefault())+"]");
-			ResourceBundle rb = ResourceBundle.getBundle("R1");
-			System.out.println("[rb="+(rb)+"]"+"[rb.getLocale()="+(rb.getLocale())+"]");
-			System.out.println(rb.getString("A1"));
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-
-		System.out.println();
-
-		//Locale.setDefault(new Locale(null));//NullPointerException
-		//Locale.setDefault(null);//NullPointerException: Can't set default locale to NULL
-		//Locale.setDefault(new Locale("", null));//NullPointerException
-		//Locale.setDefault(new Locale(null, ""));//NullPointerException
-		//Locale.setDefault(new Locale(null, null));//NullPointerException
-		Locale.setDefault(new Locale("", ""));
-		System.out.println("[Locale.getDefault()="+(Locale.getDefault())+"]");
-
-		try{
+			//ResourceBundle rb = ResourceBundle.getBundle("R1" , new Locale("it") );//MissingResourceException: Can't find bundle for base name R1, locale it
 			ResourceBundle rb = ResourceBundle.getBundle("R1");
 			System.out.println("[rb="+(rb)+"]"+"[rb="+(rb.getLocale())+"]");
 			System.out.println(rb.getString("A1"));

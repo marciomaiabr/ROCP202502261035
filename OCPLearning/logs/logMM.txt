@@ -1,7 +1,6 @@
 [Locale.getDefault()=pt_BR]
-[rb=java.util.PropertyResourceBundle@6d06d69c][rb.getLocale()=]
-VA1
-
-[Locale.getDefault()=]
-[rb=java.util.PropertyResourceBundle@6d06d69c][rb=]
-VA1
+java.util.MissingResourceException: Can't find bundle for base name R1, locale pt_BR
+	at java.util.ResourceBundle.throwMissingResourceException(ResourceBundle.java:1581)
+	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1396)
+	at java.util.ResourceBundle.getBundle(ResourceBundle.java:782)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:16)
