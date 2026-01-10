@@ -8,19 +8,17 @@ public class Exe001 {
 
 	public static void main(String[] args) {
 
-		Set set = null;
+		Map map = null;
 
-		set = new HashSet<>();
-		set.add("2");
-		set.add(3);
-		set.add("1");
-		set.forEach(System.out::println);
+		map = new HashMap<>();
+		map.put("1", "1");
+		map.put(2, 2);
+		map.forEach((k,v)->System.out.println("[k="+(k)+"]"+"[v="+(v)+"]"));
 
-		set = new TreeSet<>();
-		set.add("2");
-		//set.add(3);//ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-		set.add("1");
-		set.forEach(System.out::println);
+		map = new TreeMap<>();
+		map.put("1", "1");
+		//map.put(2, 2);//ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+		map.forEach((k,v)->System.out.println("[k="+(k)+"]"+"[v="+(v)+"]"));
 
 	}
 
