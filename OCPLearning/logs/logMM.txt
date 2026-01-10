@@ -1,3 +1,22 @@
-[k=1][v=1]
-[k=2][v=2]
-[k=1][v=1]
+
+[MMObject][hashCode()]
+[MMId][hashCode()][this=[MMId][id=100]][inthashCode=131]
+[MMObject][hashCode()][this=[MMObject][id=[MMId][id=100]][value=X]][inthashCode=131]
+[set.add(key1A, objectA_X_id100A)=true]
+
+[MMObject][hashCode()]
+[MMId][hashCode()][this=[MMId][id=100]][inthashCode=131]
+[MMObject][hashCode()][this=[MMObject][id=[MMId][id=100]][value=X]][inthashCode=131]
+[set.add(key1A, objectA_X_id100A)=false]
+[MMObject][id=[MMId][id=100]][value=X]
+
+
+
+[MMKey][hashCode()][this=[MMKey][key=1]][inthashCode=32]
+[map.put(key1A, objectA_X_id100A)=null]
+
+[MMKey][hashCode()][this=[MMKey][key=1]][inthashCode=32]
+[map.put(key1A, objectA_X_id100A)=[MMObject][id=[MMId][id=100]][value=X]]
+[k=[MMKey][key=1]][v=[MMObject][id=[MMId][id=100]][value=X]]
+
+
