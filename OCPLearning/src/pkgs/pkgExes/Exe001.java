@@ -1,81 +1,39 @@
 package pkgs.pkgExes;
 
-import java.util.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.time.LocalDate;
 
-class MMKey {
-	private Long key;
-	public MMKey(Long key) {
+class ClassA implements Serializable {
+	private static final long serialVersionUID = 202601111030L;
+	private String attr1;
+	private String attr2;
+	private String attr3;
+	public ClassA(String attr1, String attr2, String attr3) {
 		super();
-		this.key = key;
+		this.attr1 = attr1;
+		this.attr2 = attr2;
+		this.attr3 = attr3;
 	}
 	@Override
 	public String toString() {
-		return "[MMKey][key="+key+"]";
+		return "ClassA [attr1=" + attr1 + ", attr2=" + attr2 + ", attr3=" + attr3 + "]";
 	}
-	@Override
-	public int hashCode() {
-		int inthashCode = Objects.hash(key);
-		System.out.println("[MMKey][hashCode()][this="+this+"]"+"[inthashCode="+inthashCode+"]");
-		return inthashCode;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		boolean booleanequals = this.key.equals(((MMKey) obj).key);
-		System.out.println("[MMKey][equals(Object obj)][this="+this+"]"+"[booleanequals="+booleanequals+"]");
-		return booleanequals;
-	}
-}
-
-class MMId {
-	private Long id;
-	public MMId(Long id) {
-		super();
-		this.id = id;
-	}
-	@Override
-	public String toString() {
-		return "[MMId][id="+id+"]";
-	}
-	@Override
-	public int hashCode() {
-		int inthashCode = Objects.hash(id);
-		System.out.println("[MMId][hashCode()][this="+this+"]"+"[inthashCode="+inthashCode+"]");
-		return inthashCode;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		boolean booleanequals = this.id.equals(((MMId) obj).id);
-		System.out.println("[MMId][equals(Object obj)][this="+this+"]"+"[booleanequals="+booleanequals+"]");
-		return booleanequals;
-	}
-}
-
-class MMObject {
-	private MMId id;
-	private String value;
-	public MMObject(MMId id, String value) {
-		super();
-		this.id = id;
-		this.value = value;
-	}
-	@Override
-	public String toString() {
-		return "[MMObject]"+"[id="+id+"]"+"[value="+value+"]";
-	}
-	@Override
-	public int hashCode() {
-		System.out.println("[MMObject][hashCode()]");
-		int inthashCode = id.hashCode();
-		System.out.println("[MMObject][hashCode()][this="+this+"]"+"[inthashCode="+inthashCode+"]");
-		return inthashCode;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		System.out.println("[MMObject][equals(Object obj)]"+"[this="+this+"]"+"[obj="+obj+"]");
-		boolean booleanequals = this.id.equals(obj);
-		System.out.println("[MMObject][equals(Object obj)]"+"[booleanequals="+booleanequals+"]");
-		return booleanequals;
-	}
+    private void writeObject(ObjectOutputStream oos) throws IOException {
+    	System.out.println("ClassA.writeObject()");
+        oos.defaultWriteObject();
+        oos.writeObject(LocalDate.of(2025, 12, 31));
+    }
+    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+    	System.out.println("ClassA.readObject()");
+        ois.defaultReadObject();
+        System.out.println("[ois.readObject()="+(ois.readObject())+"]");
+        //System.out.println("[ois.readObject()="+(ois.readObject())+"]");//java.io.OptionalDataException
+    }
 }
 
 public class Exe001 {
@@ -84,46 +42,34 @@ public class Exe001 {
 
 	public static void main(String[] args) {
 
-		MMKey key1A = new MMKey(1l);
-		MMKey key1B = new MMKey(1l);
+		try {
+			ClassA classA = new ClassA("A","B","C");
+			System.out.println(classA);
+			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("C:\\temp\\obj.instance"));
+			oos.writeObject(classA);
+			oos.flush();
+			oos.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-		MMId id100A = new MMId(100l);
-		MMId id100B = new MMId(100l);
+		try {
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\temp\\obj.instance"));
+			ClassA classA = (ClassA) ois.readObject();
+			ois.close();
+			System.out.println(classA);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-		MMObject objectA_X_id100A = new MMObject(id100A, "X");
-		MMObject objectB_X_id100A = new MMObject(id100A, "X");
-
-		System.out.println();
-
-		Set set = null;
-
-		set = new HashSet<>();
-		System.out.println("[set.add(key1A, objectA_X_id100A)="+(set.add(objectA_X_id100A))+"]");
-		System.out.println();
-		System.out.println("[set.add(key1A, objectA_X_id100A)="+(set.add(objectA_X_id100A))+"]");
-		set.forEach(System.out::println);
-
-		System.out.println('\n');
-
-		set = new TreeSet<>();
-		//System.out.println("[set.add(objectA_X_id100A)="+(set.add(objectA_X_id100A))+"]");//ClassCastException: pkgs.pkgExes.MMObject cannot be cast to java.lang.Comparable
-		set.forEach(System.out::println);
-
-		System.out.println();
-
-		Map map = null;
-
-		map = new HashMap<>();
-		System.out.println("[map.put(key1A, objectA_X_id100A)="+(map.put(key1A, objectA_X_id100A))+"]");
-		System.out.println();
-		System.out.println("[map.put(key1A, objectA_X_id100A)="+(map.put(key1A, objectA_X_id100A))+"]");
-		map.forEach((k,v)->System.out.println("[k="+(k)+"]"+"[v="+(v)+"]"));
-
-		System.out.println('\n');
-
-		map = new TreeMap<>();
-		//System.out.println("[map.put(key1A, objectA_X_id100A)="+(map.put(key1A, objectA_X_id100A))+"]");//ClassCastException: pkgs.pkgExes.MMKey cannot be cast to java.lang.Comparable
-		map.forEach((k,v)->System.out.println("[k="+(k)+"]"+"[v="+(v)+"]"));
+		try {
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\temp\\obj.instance"));
+			Object classA = ois.readObject();
+			ois.close();
+			System.out.println(classA);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 
