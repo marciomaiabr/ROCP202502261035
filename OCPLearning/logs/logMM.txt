@@ -1,8 +1,0 @@
-ClassA [attr1=A, attr2=B, attr3=C]
-ClassA.writeObject()
-ClassA.readObject()
-[ois.readObject()=2025-12-31]
-ClassA [attr1=A, attr2=B, attr3=C]
-ClassA.readObject()
-[ois.readObject()=2025-12-31]
-ClassA [attr1=A, attr2=B, attr3=C]
