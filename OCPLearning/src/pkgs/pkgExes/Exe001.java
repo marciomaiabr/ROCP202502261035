@@ -1,6 +1,7 @@
 package pkgs.pkgExes;
 
-interface InterfaceA<E> { void m1(E e); void m2(Object e); void m3(java.util.List<?> e); void m4(? e); }
+//interface InterfaceA<?> {  }//Syntax error on token "?", Identifier expected
+//interface InterfaceA { void m1(? e);  }//Syntax error on token "?", byte expected
 
 public class Exe001 {
 
@@ -10,11 +11,6 @@ public class Exe001 {
 
 
 
-	}
-
-	void m1(InterfaceA<? super Object> ia) {
-		ia.m1("");
-		ia.m2("");
 	}
 
 }
