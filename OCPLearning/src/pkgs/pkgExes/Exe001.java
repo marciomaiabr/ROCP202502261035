@@ -12,7 +12,7 @@ public class Exe001 {
 
 	}
 
-	void m1(InterfaceA<? extends Object> ia) {
+	void m1(InterfaceA<? super Object> ia) {
 		ia.m1("");
 		ia.m2("");
 	}
