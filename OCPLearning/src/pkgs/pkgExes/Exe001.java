@@ -1,6 +1,6 @@
 package pkgs.pkgExes;
 
-interface InterfaceA<E> { void m1(E e); void m2(Object e); }
+interface InterfaceA<E> { void m1(E e); void m2(Object e); void m3(java.util.List<?> e); void m4(? e); }
 
 public class Exe001 {
 
