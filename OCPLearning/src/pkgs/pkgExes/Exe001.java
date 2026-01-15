@@ -12,8 +12,8 @@ public class Exe001 {
 
 	}
 
-	void m1(InterfaceA<?> ia) {
-		ia.m1("");//ele não sabe o que vai adicionar
+	void m1(InterfaceA<? extends Object> ia) {
+		ia.m1("");
 		ia.m2("");
 	}
 
