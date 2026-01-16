@@ -1,36 +1,6 @@
 package pkgs.pkgExes;
 
-
-
-/*
-interface Hungry<E> { void munch(E x); }
-
-interface Herbivore<E extends Plant> extends Hungry<E> {}
-interface Carnivore<E extends Animal> extends Hungry<E> {}
-
-abstract class Plant {}
-abstract class Animal {}
-
-class Grass extends Plant {}
-
-class Sheep extends Animal implements Herbivore<Sheep> { public void munch(Sheep x) {} }
-class Wolf extends Animal implements Carnivore<Sheep> { public void munch(Sheep x) {} }
-*/
-
-interface Hungry<E> { void munch(E x); }
-
-interface Herbivore<E extends Animal> extends Hungry<E> {}
-interface Carnivore<E extends Animal> extends Hungry<E> {}
-
-abstract class Plant {}
-abstract class Animal {}
-
-class Grass extends Plant {}
-
-class Sheep extends Animal implements Herbivore<Sheep> { public void munch(Sheep x) {} }
-class Wolf extends Animal implements Carnivore<Sheep> { public void munch(Sheep x) {} }
-
-
+import java.util.*;
 
 public class Exe001 {
 
@@ -38,10 +8,29 @@ public class Exe001 {
 
 	public static void main(String[] args) {
 
+		//ArrayList<Integer> input = null;
+		//List<Integer> output = null;
 
+		//ArrayList<Integer> input = null;
+		//List<Number> output = null;
+
+		//ArrayList<Number> input = null;
+		//List<Integer> output = null;
+
+		//List<Number> input = null;
+		//List<Number> output = null;
+
+		//List<Integer> input = null;
+		//List<Integer> output = null;
+
+		input = null;
+		output = process(input);
+		System.out.println(input);
+		System.out.println(output);
 
 	}
 
-
+	public static <E extends Number> List<E> process(List<E> nums){ return null; }
+	//public static List process(List nums){ return null; }
 
 }
