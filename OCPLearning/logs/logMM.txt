@@ -1,1 +1,3 @@
-[ClassMM][2][level=2]
+[ca=[ClassA][level=0]][ca.letra=A]
+[cb=[ClassB][level=1]][cb.letra=B]
+[cc=[ClassC][level=2]][cc.letra=C][cc.getClassBthis()=[ClassB][level=1]][cc.getClassAClassBthis()=[ClassB][level=1]][cc.getClassAthis()=[ClassA][level=0]]
