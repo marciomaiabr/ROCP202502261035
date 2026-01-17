@@ -1,0 +1,26 @@
+
+Pessoa [nome=Ana, idade=37, uf=SP]
+Pessoa [nome=Lay, idade=18, uf=MT]
+Pessoa [nome=Carla, idade=25, uf=SC]
+Pessoa [nome=Julia, idade=21, uf=MG]
+Pessoa [nome=Bia, idade=30, uf=RJ]
+
+Pessoa [nome=Ana, idade=37, uf=SP]
+Pessoa [nome=Bia, idade=30, uf=RJ]
+Pessoa [nome=Carla, idade=25, uf=SC]
+Pessoa [nome=Julia, idade=21, uf=MG]
+Pessoa [nome=Lay, idade=18, uf=MT]
+
+Pessoa [nome=Julia, idade=21, uf=MG]
+Pessoa [nome=Lay, idade=18, uf=MT]
+Pessoa [nome=Bia, idade=30, uf=RJ]
+Pessoa [nome=Carla, idade=25, uf=SC]
+Pessoa [nome=Ana, idade=37, uf=SP]
+
+[comparator=java.util.Comparator$$Lambda$5/1096979270@2d98a335]
+
+Pessoa [nome=Lay, idade=18, uf=MT]
+Pessoa [nome=Julia, idade=21, uf=MG]
+Pessoa [nome=Carla, idade=25, uf=SC]
+Pessoa [nome=Bia, idade=30, uf=RJ]
+Pessoa [nome=Ana, idade=37, uf=SP]
