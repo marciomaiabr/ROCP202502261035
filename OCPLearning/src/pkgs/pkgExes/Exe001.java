@@ -14,7 +14,9 @@ public class Exe001 {
 
 	void go() {
 
-
+		System.out.println(null instanceof Thread);
+		Object o = null;
+		System.out.println(o instanceof Thread);
 
 	}
 
