@@ -1,11 +1,4 @@
-[aki][1]
-[aki][5]
-[aki][6]
-[aki][2]
-[aki][3]
-[aki][8]
-[aki][7]
-java.lang.IllegalMonitorStateException
-	at java.lang.Object.notify(Native Method)
-	at pkgs.pkgExes.Exe001.lambda$1(Exe001.java:39)
-	at java.lang.Thread.run(Thread.java:750)
+1...
+Exception in thread "main" java.lang.NullPointerException
+	at pkgs.pkgExes.Exe001.go(Exe001.java:19)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:11)
