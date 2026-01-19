@@ -14,11 +14,7 @@ public class Exe001 {
 
 	void go() {
 
-		System.out.println("1...");
-		synchronized (null) {
-			System.out.println("2...");
-		}
-		System.out.println("3...");
+
 
 	}
 

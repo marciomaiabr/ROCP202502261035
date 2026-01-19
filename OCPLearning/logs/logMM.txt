@@ -1,5 +1,0 @@
-Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
-	null is not a valid argument for the synchronized statement
-
-	at pkgs.pkgExes.Exe001.go(Exe001.java:18)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:11)
