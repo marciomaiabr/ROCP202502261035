@@ -14,9 +14,8 @@ public class Exe001 {
 
 	void go() {
 
-		Object o = null;
 		System.out.println("1...");
-		synchronized (o) {//NullPointerException
+		synchronized (null) {
 			System.out.println("2...");
 		}
 		System.out.println("3...");
