@@ -14,9 +14,14 @@ public class Exe001 {
 
 	void go() {
 
-		System.out.println(null instanceof Thread);
-		Object o = null;
-		System.out.println(o instanceof Thread);
+		Object o = new Object();
+		//o.notify();//IllegalMonitorStateException
+		try {
+			//o.wait();//IllegalMonitorStateException
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println(o);
 
 	}
 
