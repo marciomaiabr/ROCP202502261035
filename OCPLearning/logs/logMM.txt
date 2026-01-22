@@ -1,9 +1,1 @@
-null
-1
-{John=23}
-false
-{John=23}
-false
-{John=23}
-true
-{}
+55
