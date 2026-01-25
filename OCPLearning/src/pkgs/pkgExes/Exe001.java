@@ -1,7 +1,17 @@
 package pkgs.pkgExes;
 
+//abstract enum DaysOff {//Illegal modifier for the enum DaysOff; only public is permitted
 enum DaysOff {
-	Thanksgiving, PresidentsDay, ValentinesDay
+	Thanksgiving{
+		void ma() {}
+	},
+	PresidentsDay{
+		void ma() {}
+	},
+	ValentinesDay{
+		void ma() {}
+	};
+	abstract void ma();
 }
 
 public class Exe001 {
