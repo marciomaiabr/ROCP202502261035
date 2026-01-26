@@ -8,22 +8,30 @@ public class Exe001 {
 
 	public static void main(String[] args) {
 
-		new Exe001().go();
+/*
+Um switch funciona com os tipos de dados primitivos byte, short, char e int.
+Ele também funciona com tipos enumerados, a classe String e algumas classes especiais que encapsulam certos tipos primitivos: Character, Byte, Short e Integer.
+*/
+
+		String sp = new String("");
+
+		final int i1 = new Integer(1);
+		final int i2 = new Integer(2);
+		final int i3 = new Integer(3);
+
+		switch (sp) {
+		case "1":
+			break;
+		case "2":
+			break;
+		case "3":
+			break;
+		default:
+			break;
+		}
 
 	}
 
-	private void go() {
-		int intA = retorna_int();
-		System.out.println(intA);
-		intA = retorna_Integer();
-		System.out.println(intA);
-		Integer integerB = retorna_Integer();
-		System.out.println(integerB);
-		integerB = retorna_int();
-		System.out.println(integerB);
-	}
 
-	private int retorna_int() { return 0; }
-	private int retorna_Integer() { return new Integer(0); }
 
 }
