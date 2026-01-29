@@ -1,4 +1,0 @@
-java.io.ByteArrayInputStream@15db9742
-A
-java.io.ByteArrayInputStream@6d06d69c
-5
