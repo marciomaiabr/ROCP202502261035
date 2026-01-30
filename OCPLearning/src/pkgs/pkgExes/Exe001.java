@@ -24,6 +24,8 @@ public class Exe001 {
 		System.out.println();
 		System.out.println("[path="+(path)+"]"+"");
 		System.out.println();
+		System.out.println("[path.getName(0)="+(path.getName(0))+"]"+"");
+		System.out.println();
 		System.out.println("[path.subpath(0,3)="+(path.subpath(0,3))+"]"+"");
 		System.out.println("[path.subpath(1,3)="+(path.subpath(1,3))+"]"+"");
 		System.out.println("[path.subpath(2,3)="+(path.subpath(2,3))+"]"+"");
