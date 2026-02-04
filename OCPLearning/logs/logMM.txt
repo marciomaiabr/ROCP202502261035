@@ -1,1 +1,2 @@
-Ana
+[duration=PT24H]
+[period=P1D]
