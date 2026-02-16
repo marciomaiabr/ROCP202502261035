@@ -1,0 +1,6 @@
+ko
+en_AU
+en
+qq
+qq_Q1
+fr_FR
