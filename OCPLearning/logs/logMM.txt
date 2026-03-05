@@ -1,5 +1,0 @@
-[sA1=Student [nome=Bia]]
-[sA2=null]
-[sA3=Student [nome=Ana]]
-[sB4=Student [nome=Carla]]
-null
