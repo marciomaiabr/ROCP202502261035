@@ -1,6 +1,6 @@
 package pkgs.pkgExes;
 
-
+import java.time.LocalDate;
 
 public class Exe001 {
 
@@ -13,6 +13,7 @@ public class Exe001 {
 	}
 
 	private void go() {
+		System.out.println(LocalDate.now());
 	}
 
 
