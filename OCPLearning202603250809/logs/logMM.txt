@@ -1,0 +1,5 @@
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	The method forEach(Consumer<? super Double>) in the type Iterable<Double> is not applicable for the arguments (DoubleConsumer)
+
+	at pkgs.pkgExes.Exe001.go(Exe001.java:32)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:13)
