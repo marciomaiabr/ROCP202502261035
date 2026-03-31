@@ -1,0 +1,5 @@
+[(char)br.read()=G]
+java.io.IOException: mark/reset not supported
+	at java.io.InputStream.reset(InputStream.java:348)
+	at pkgs.pkgExes.Exe001.go(Exe001.java:51)
+	at pkgs.pkgExes.Exe001.main(Exe001.java:14)
