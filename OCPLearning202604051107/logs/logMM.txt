@@ -1,0 +1,35 @@
+[nThreads=3]
+
+[260405105930.833000000][Thread.currentThread().activeCount()=1]
+[260405105930.834000000][go()][Thread.currentThread().getId()=1][Thread.currentThread().getName()=main][aki][1]
+
+[260405105937.844000000][Thread.currentThread().activeCount()=2]
+[260405105937.844000000][Thread.currentThread().getId()=14][Thread.currentThread().getName()=pool-1-thread-1][this.tchutchuca=Ana][->iniciando]
+[260405105944.857000000][Thread.currentThread().activeCount()=3]
+[260405105944.857000000][Thread.currentThread().getId()=15][Thread.currentThread().getName()=pool-1-thread-2][this.tchutchuca=Paula][->iniciando]
+[260405105951.871000000][Thread.currentThread().activeCount()=4]
+[260405105951.871000000][Thread.currentThread().getId()=16][Thread.currentThread().getName()=pool-1-thread-3][this.tchutchuca=Carla][->iniciando]
+[260405105958.880000000][Thread.currentThread().activeCount()=4]
+[260405110005.892000000][Thread.currentThread().activeCount()=4]
+[260405110012.902000000][Thread.currentThread().activeCount()=4]
+
+temos 4 Threads criadas e ativas
+[260405110019.906000000][Thread.currentThread().activeCount()=4][f1.isDone()=false][f2.isDone()=false][f3.isDone()=false][f4.isDone()=false][f5.isDone()=false]
+[260405110047.853000000][Thread.currentThread().getId()=14][Thread.currentThread().getName()=pool-1-thread-1][this.tchutchuca=Ana][finalizando->]
+[260405110047.853000000][Thread.currentThread().getId()=14][Thread.currentThread().getName()=pool-1-thread-1][this.tchutchuca=Bruna][->iniciando]
+[260405110054.862000000][Thread.currentThread().getId()=15][Thread.currentThread().getName()=pool-1-thread-2][this.tchutchuca=Paula][finalizando->]
+[260405110054.862000000][Thread.currentThread().getId()=15][Thread.currentThread().getName()=pool-1-thread-2][this.tchutchuca=Bia][->iniciando]
+[260405110101.874000000][Thread.currentThread().getId()=16][Thread.currentThread().getName()=pool-1-thread-3][this.tchutchuca=Carla][finalizando->]
+
+temos 4 Threads criadas e nenhuma mais ativa
+[260405110122.917000000][Thread.currentThread().activeCount()=4][f1.isDone()=true][f2.isDone()=true][f3.isDone()=true][f4.isDone()=false][f5.isDone()=false]
+
+[260405110136.918000000][go()][Thread.currentThread().getId()=1][Thread.currentThread().getName()=main][aki][3]
+[260405110143.922000000][Thread.currentThread().activeCount()=4]
+[260405110150.936000000][Thread.currentThread().activeCount()=4]
+[260405110157.865000000][Thread.currentThread().getId()=14][Thread.currentThread().getName()=pool-1-thread-1][this.tchutchuca=Bruna][finalizando->]
+[260405110157.943000000][Thread.currentThread().activeCount()=4]
+[260405110204.873000000][Thread.currentThread().getId()=15][Thread.currentThread().getName()=pool-1-thread-2][this.tchutchuca=Bia][finalizando->]
+[260405110204.952000000][Thread.currentThread().activeCount()=4]
+[260405110211.958000000][Thread.currentThread().activeCount()=4]
+[260405110218.968000000][Thread.currentThread().activeCount()=4]
