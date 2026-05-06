@@ -1,4 +1,0 @@
-Exception in thread "main" [cai.equals(can)=false]
-java.lang.NullPointerException
-	at pkgs.pkgExes.Exe001.go(Exe001.java:19)
-	at pkgs.pkgExes.Exe001.main(Exe001.java:11)
