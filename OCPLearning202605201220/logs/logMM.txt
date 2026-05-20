@@ -1,0 +1,45 @@
+
+[rb1.getLocale()=it_IT]
+[Key0RecursoAproperties=Value0RecursoAproperties]
+[KeyRecursoAproperties=ValueRecursoA_it_ITproperties]
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_ja_JPproperties
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_ja_BRproperties
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_japroperties
+[KeyRecursoA_it_ITproperties=ValueRecursoA_it_ITproperties]
+[KeyRecursoA_itproperties=ValueRecursoA_it_ITproperties]
+
+[rb1.getLocale()=ja]
+[Key0RecursoAproperties=Value0RecursoAproperties]
+[KeyRecursoAproperties=ValueRecursoA_japroperties]
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_ja_JPproperties
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_ja_BRproperties
+[KeyRecursoA_japroperties=ValueRecursoA_japroperties]
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_it_ITproperties
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_it_ITproperties
+
+[rb1.getLocale()=ja_BR]
+[Key0RecursoAproperties=Value0RecursoAproperties]
+[KeyRecursoAproperties=ValueRecursoA_ja_BRproperties]
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_ja_JPproperties
+[KeyRecursoA_ja_BRproperties=ValueRecursoA_ja_BRproperties]
+[KeyRecursoA_japroperties=ValueRecursoA_japroperties]
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_it_ITproperties
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_it_ITproperties
+
+[rb1.getLocale()=it_IT]
+[Key0RecursoAproperties=Value0RecursoAproperties]
+[KeyRecursoAproperties=ValueRecursoA_it_ITproperties]
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_ja_JPproperties
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_ja_BRproperties
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_japroperties
+[KeyRecursoA_it_ITproperties=ValueRecursoA_it_ITproperties]
+[KeyRecursoA_itproperties=ValueRecursoA_it_ITproperties]
+
+[rb1.getLocale()=ja_JP]
+[Key0RecursoAproperties=Value0RecursoAproperties]
+[KeyRecursoAproperties=ValueRecursoA_ja_JPproperties]
+[KeyRecursoA_ja_JPproperties=ValueRecursoA_ja_JPproperties]
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_ja_BRproperties
+[KeyRecursoA_japroperties=ValueRecursoA_japroperties]
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_it_ITproperties
+Can't find resource for bundle java.util.PropertyResourceBundle, key KeyRecursoA_it_ITproperties
